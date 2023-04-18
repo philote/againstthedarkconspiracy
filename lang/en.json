@@ -1,0 +1,22 @@
+{
+  "ATDC.AbilityStr": "Strength",
+  "ATDC.AbilityCon": "Constitution",
+  "ATDC.AbilityDex": "Dexterity",
+  "ATDC.AbilityInt": "Intelligence",
+  "ATDC.AbilityWis": "Wisdom",
+  "ATDC.AbilityCha": "Charisma",
+
+  "ATDC.AbilityStrAbbr": "str",
+  "ATDC.AbilityConAbbr": "con",
+  "ATDC.AbilityDexAbbr": "dex",
+  "ATDC.AbilityIntAbbr": "int",
+  "ATDC.AbilityWisAbbr": "wis",
+  "ATDC.AbilityChaAbbr": "cha",
+
+  "ATDC.EffectCreate": "Create Effect",
+  "ATDC.EffectToggle": "Toggle Effect",
+  "ATDC.EffectEdit": "Edit Effect",
+  "ATDC.EffectDelete": "Delete Effect",
+
+  "ATDC.Add": "Add"
+}

@@ -4,9 +4,6 @@
 
 An unofficial, community-supported system for playing the [Against the Dark Conspiracy](https://gallusgames.itch.io/against-the-dark-conspiracy) TTRPG (Created by [Alun Rees](https://twitter.com/AlunRees14)) on the Foundry VTT platform.
 
-<!-- TTRPG designer - Gallus Games at Drivethru or http://gallusgames.itch.io
-(gallusgamesar@gmail.com or Mastodon: @GallusGames@dice.camp) -->
-
 - The Against the Dark Conspiracy Game: https://gallusgames.itch.io/against-the-dark-conspiracy
 
 <!-- ![A screenshot of the Against the Dark Conspiracy character sheet and chat output in Foundry VTT](screenshot.webp) -->
