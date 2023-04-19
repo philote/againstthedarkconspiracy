@@ -16,7 +16,7 @@ export class AtDCItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/atdc/templates/item";
+    const path = "systems/againstthedarkconspiracy/templates/item";
     // Return a single sheet for all item types.
     // return `${path}/item-sheet.html`;
 

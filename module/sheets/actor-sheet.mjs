@@ -10,7 +10,7 @@ export class AtDCActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["atdc", "sheet", "actor"],
-      template: "systems/atdc/templates/actor/actor-sheet.html",
+      template: "systems/againstthedarkconspiracy/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -19,7 +19,7 @@ export class AtDCActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/atdc/templates/actor/actor-${this.actor.type}-sheet.html`;
+    return `systems/againstthedarkconspiracy/templates/actor/actor-${this.actor.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
