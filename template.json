@@ -60,7 +60,16 @@
       }
     },
     "npc": {
-      "templates": ["base"]
+      "templates": ["base"],
+      "stress": {
+        "min": 0,
+        "value": [0],
+        "max": 0     
+      },
+      "skills": "",
+      "glance": "",
+      "motivation": "",
+      "personalityTraits": ""
     }
   },
   "Item": {
