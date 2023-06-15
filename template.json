@@ -3,71 +3,82 @@
     "types": ["character", "npc"],
     "templates": {
       "base": {
-        "health": {
-          "value": 10,
-          "min": 0,
-          "max": 10
-        },
-        "power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
-        },
-        "biography": ""
+        "notes": ""
       }
     },
     "character": {
       "templates": ["base"],
-      "attributes": {
-        "level": {
-          "value": 1
-        }
+      "intel": {
+        "min":0,
+        "max":6,
+        "value": [0],
+        "states":[false, false, false, false, false, false]
       },
-      "abilities": {
-        "str": {
-          "value": 10
-        },
-        "dex": {
-          "value": 10
-        },
-        "con": {
-          "value": 10
-        },
-        "int": {
-          "value": 10
-        },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
-          "value": 10
-        }
+      "stress": {
+        "min":0,
+        "max":6,
+        "value": [1],
+        "states":[false, false, false, false, false, false],
+        "manifestTwo": "",
+        "manifestThree": "",
+        "manifestFour": "",
+        "manifestFive": ""
+      },
+      "load": {
+        "min": 0,
+        "value": [0],
+        "max": 3
+      },
+      "gear": {
+        "light": [false, false, false],
+        "medium": [false, false],
+        "heavy": [false]
+      },
+      "expertise": {
+        "defaultOne": "",
+        "defaultTwo": "",
+        "workedFor": "",
+        "specialism": "",
+        "other": "",
+        "specialismUsed": false
+      },
+      "selfDescription": "",
+      "nationOrganization": "",
+      "whyConfrontConspiracy": "",
+      "anchor": {
+        "name": "",
+        "relationship": "",
+        "target": false,
+        "missing": false,
+        "taken": false
+      },
+      "team": {
+        "careMostName": "",
+        "careMostDetails": "",
+        "careLeastName": "",
+        "careLeastDetails": ""
       }
     },
     "npc": {
-      "templates": ["base"],
-      "cr": 0
+      "templates": ["base"]
     }
   },
   "Item": {
-    "types": ["item", "feature", "spell"],
+    "types": ["gear", "move", "contact"],
     "templates": {
       "base": {
         "description": ""
       }
     },
-    "item": {
+    "gear": {
       "templates": ["base"],
-      "quantity": 1,
-      "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+      "tags": "",
+      "load": 0
     },
-    "feature": {
-      "templates": ["base"]
-    },
-    "spell": {
+    "contact": {
       "templates": ["base"],
-      "spellLevel": 1
+      "blown": false,
+      "expertise": ""
     }
   }
 }
