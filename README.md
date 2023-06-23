@@ -1,7 +1,5 @@
 # Against the Dark Conspiracy System
 
-![Foundry v10](https://img.shields.io/badge/foundry-v10-green)
-
 An unofficial, community-supported system for playing the [Against the Dark Conspiracy](https://gallusgames.itch.io/against-the-dark-conspiracy) TTRPG (Created by [Alun Rees](https://twitter.com/AlunRees14), Will Hobson, Paul Rivers, and Lowell Francis) on the Foundry VTT platform.
 
 - The Against the Dark Conspiracy Game: https://gallusgames.itch.io/against-the-dark-conspiracy
