@@ -1,5 +1,19 @@
-.item-form {
-  font-family: $font-primary;
+h1 {
+  font-weight: bold;
+  border: none;
+}
+
+h2 {
+  font-weight: bold;
+  border: none;
+}
+
+h3 {
+  border: none;
+}
+
+h4 {
+  // border: none;
 }
 
 .sheet-header {
@@ -12,9 +26,9 @@
   margin-bottom: 10px;
 
   .profile-img {
-    flex: 0 0 100px;
-    height: 100px;
-    margin-right: 10px;
+    flex: 0 0 195px;
+    height: 195px;
+    margin-right: 5px;
   }
 
   .header-fields {
@@ -22,15 +36,131 @@
   }
 
   h1.charname {
-    height: 50px;
+    height: 40px;
     padding: 0px;
-    margin: 5px 0;
-    border-bottom: 0;
+    margin: 0 0 5px 0;
+
     input {
       width: 100%;
       height: 100%;
       margin: 0;
     }
+  }
+
+  .resources {
+    margin: 0;
+    gap: 5px;
+
+    .stress-box {
+      border: 1px solid black;
+      padding: 5px;
+      background-color: rgb(128 128 128 / 20%);
+
+      .stress {
+        align-items: center;
+        flex-grow: 0;
+
+        input[type=checkbox] {
+          margin-left: 2px;
+          margin-right: 1px;
+        }
+        
+        a {
+          margin-right: 10px;
+          flex: auto;
+
+          i {
+            flex-grow: 0;
+            align-self: center;
+          }
+  
+          h2 {
+            margin: 0;
+            margin-left: 2px;
+            flex-grow: 0;
+          }
+        }
+      }
+
+      label {
+        flex-grow: 0;
+        align-self: end;
+        margin-right: 5px;
+        padding-top: 6px;
+      }
+
+      span {
+        font-size: small;
+        font-style: italic;
+        margin-top: 5px;
+      }
+
+      input[type=text] {
+        box-sizing: border-box;
+        border: none;
+        background: none;
+        border-bottom: 1px solid black;
+        border-radius: 0;
+        height: 15px;
+        padding-top: 0px;
+        margin-top: 5px;
+      }
+    }
+
+    .intel-load-box {
+      border: 1px solid black;
+      padding: 5px;
+      background-color: rgb(128 128 128 / 20%);
+
+      h3 {
+        margin: 0;
+      }
+      
+      h4 {
+        margin: 0;
+      }
+
+      hr {
+        flex-grow: 0;
+        width: -webkit-fill-available;
+        margin: 0;
+        padding: 0;
+        border: 1px solid black;
+      }
+
+      .intel {
+        align-items: center;
+        flex-grow: 0;
+
+        h2 {
+          margin: 0;
+          margin-right: 10px;
+          flex-grow: 0;
+        }
+  
+        input[type=checkbox] {
+          margin-left: 2px;
+          margin-right: 1px;
+        }
+      }
+
+      .load-grid {
+        display: grid;
+        grid-template-columns: minmax(10px, 2fr) minmax(10px, 3fr) minmax(10px, 2fr) minmax(10px, 1fr);
+        grid-template-rows: repeat(3, minmax(10px, 1fr));
+        grid-column-gap: 5px;
+        
+        .item {
+          place-self: center;
+        }
+
+        input[type=checkbox] {
+          margin-left: 1px;
+          margin-right: 1px;
+        }
+      }
+    }
+
   }
 }
 

@@ -11,9 +11,9 @@ export class AtDCActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["atdc", "sheet", "actor"],
       template: "systems/againstthedarkconspiracy/templates/actor/actor-sheet.html",
-      width: 600,
+      width: 715,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "main" }]
     });
   }
 
@@ -68,9 +68,10 @@ export class AtDCActorSheet extends ActorSheet {
    */
   _prepareCharacterData(context) {
     // Handle ability scores.
-    for (let [k, v] of Object.entries(context.system.abilities)) {
-      v.label = game.i18n.localize(CONFIG.ATDC.abilities[k]) ?? k;
-    }
+    // INFO commented out for breaking with new data structs
+    // for (let [k, v] of Object.entries(context.system.abilities)) {
+    //   v.label = game.i18n.localize(CONFIG.ATDC.abilities[k]) ?? k;
+    // }
   }
 
   /**

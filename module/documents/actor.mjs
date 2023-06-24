@@ -49,10 +49,11 @@ export class AtDCActor extends Actor {
     const systemData = actorData.system;
 
     // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, ability] of Object.entries(systemData.abilities)) {
-      // Calculate the modifier using d20 rules.
-      ability.mod = Math.floor((ability.value - 10) / 2);
-    }
+    // INFO commented out for breaking with new data structs
+    // for (let [key, ability] of Object.entries(systemData.abilities)) {
+    //   // Calculate the modifier using d20 rules.
+    //   ability.mod = Math.floor((ability.value - 10) / 2);
+    // }
   }
 
   /**
@@ -94,9 +95,10 @@ export class AtDCActor extends Actor {
     }
 
     // Add level for easier access, or fall back to 0.
-    if (data.attributes.level) {
-      data.lvl = data.attributes.level.value ?? 0;
-    }
+    // INFO commented out for breaking with new data structs
+    // if (data.attributes.level) {
+    //   data.lvl = data.attributes.level.value ?? 0;
+    // }
   }
 
   /**

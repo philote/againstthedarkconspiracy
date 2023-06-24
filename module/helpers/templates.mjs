@@ -7,9 +7,8 @@
   return loadTemplates([
 
     // Actor partials.
-    "systems/againstthedarkconspiracy/templates/actor/parts/actor-features.html",
-    "systems/againstthedarkconspiracy/templates/actor/parts/actor-items.html",
-    "systems/againstthedarkconspiracy/templates/actor/parts/actor-spells.html",
-    "systems/againstthedarkconspiracy/templates/actor/parts/actor-effects.html",
+    "systems/againstthedarkconspiracy/templates/actor/parts/actor-main.html",
+    "systems/againstthedarkconspiracy/templates/actor/parts/actor-biography.html",
+    "systems/againstthedarkconspiracy/templates/actor/parts/actor-relationships.html"
   ]);
 };
