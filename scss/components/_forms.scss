@@ -240,9 +240,9 @@ nav.sheet-tabs {
           flex-grow: 1;
         }
 
-        span {
-          margin-right: 5px;
-          flex-grow: 2;
+        div {
+          flex-grow: 3;
+          align-self: center;
         }
       }
     }
