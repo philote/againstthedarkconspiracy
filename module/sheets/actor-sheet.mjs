@@ -11,8 +11,8 @@ export class AtDCActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["atdc", "sheet", "actor"],
       template: "systems/againstthedarkconspiracy/templates/actor/actor-sheet.html",
-      width: 715,
-      height: 600,
+      width: 720,
+      height: 700,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "main" }]
     });
   }

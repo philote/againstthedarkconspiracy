@@ -220,8 +220,13 @@ nav.sheet-tabs {
       flex-grow: 3;
     }
 
-    .main-right {
+    .actions {
       flex-grow: 2;
+
+      .box {
+        padding: 2px;
+        margin: 5px;
+      }
     }
 
     .expertise-grid {
@@ -230,6 +235,7 @@ nav.sheet-tabs {
       grid-template-rows: repeat(5, minmax(10px, 1fr));
       grid-column-gap: 5px;
       row-gap: 5px;
+      flex-grow: 0;
 
       h3 {
         font-weight: bold;
