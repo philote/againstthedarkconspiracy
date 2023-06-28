@@ -1,22 +1,118 @@
 {
-  "ATDC.AbilityStr": "Strength",
-  "ATDC.AbilityCon": "Constitution",
-  "ATDC.AbilityDex": "Dexterity",
-  "ATDC.AbilityInt": "Intelligence",
-  "ATDC.AbilityWis": "Wisdom",
-  "ATDC.AbilityCha": "Charisma",
-
-  "ATDC.AbilityStrAbbr": "str",
-  "ATDC.AbilityConAbbr": "con",
-  "ATDC.AbilityDexAbbr": "dex",
-  "ATDC.AbilityIntAbbr": "int",
-  "ATDC.AbilityWisAbbr": "wis",
-  "ATDC.AbilityChaAbbr": "cha",
-
-  "ATDC.EffectCreate": "Create Effect",
-  "ATDC.EffectToggle": "Toggle Effect",
-  "ATDC.EffectEdit": "Edit Effect",
-  "ATDC.EffectDelete": "Delete Effect",
-
-  "ATDC.Add": "Add"
+  "ATDC.actor": {
+    "name.placeholder": "Operator Cover Name",
+    "stress": {
+      "title": "Stress",
+      "manifestsAs": {
+        "title": "Increasing Stress Manifests As:",
+        "label.2": "2.",
+        "label.3": "3.",
+        "label.4": "4.",
+        "label.5": "5."
+      }
+    },
+    "intel.title": "INTEL",
+    "load": {
+      "light.label": "Lt",
+      "medium.label": "Med",
+      "heavy.label": "Hvy",
+      "label": "Load",
+      "gear.label": "Gear"
+    },
+    "tabs": {
+      "main.label": "Expertise, Actions & Gear",
+      "biography.label": "Biography",
+      "relationships.label": "Relationships"
+    },
+    "expertise": {
+      "professionalHistory.label": "Professional History",
+      "label": "Expertise",
+      "nationOrganisation.placeholder": "Nation/Organisation",
+      "initial.value": "Small Arms & Hand-to-Hand",
+      "workedFor": {
+        "placeholder": "Who did you work for?",
+        "option.1": "Criminal Organisation",
+        "option.2": "Espionage Service",
+        "option.3": "Law Enforcement",
+        "option.4": "Signals Intelligence",
+        "option.5": "Special Forces"
+      },
+      "specialism": {
+        "placeholder": "Your Specialism was...",
+        "option.1": "Analyst",
+        "option.2": "Assassin",
+        "option.3": "Burglar",
+        "option.4": "Driver",
+        "option.5": "False-face",
+        "option.6": "Hacker",
+        "option.7": "Handler",
+        "option.8": "Sparks"
+      },
+      "available.label": "Expertise Available?",
+      "final": {
+        "placeholder": "Choose a Final Expertise...",
+        "option.1": "Authority",
+        "option.2": "Deadly",
+        "option.3": "Digital Intrusion",
+        "option.4": "Disguise",
+        "option.5": "Insight",
+        "option.6": "Intrusion",
+        "option.7": "Larceny",
+        "option.8": "Military Fieldcraft",
+        "option.9": "Negotiation",
+        "option.10": "Persuasion",
+        "option.11": "Research",
+        "option.12": "Surveillance",
+        "option.13": "Technical",
+        "option.14": "Tradecraft",
+        "option.15": "Vehicles",
+        "option.16": "Lore"
+      }
+    },
+    "actions": {
+      "investigate": {
+        "label": "Investigate",
+        "description": "When you want to ask a question about someone, something,  or somewhere. Or you want control to reveal something about the situation."
+      },
+      "takeThemOut": {
+        "label": "Take Them Out",
+        "description": "If you fight or shoot at a threat or they attack you, say what success looks like: Harm them, Subdue them, Avoid their attempt to hurt you, some other outcome."
+      },
+      "harm": {
+        "label": "Roll for Harm",
+        "description": "TBD"
+      },
+      "flee": {
+        "label": "Flee For Your Life",
+        "description": "When you want to escape your fate by leaving the scene and Control agrees there's a reasonable route by which you could get away"
+      },
+      "chase": {
+        "label": "Chase Them Down",
+        "description": "TBD"
+      }
+    },
+    "seekRelief": {
+      "behaveBadly": {
+        "label": "Behave Badly",
+        "description": "TBD"
+      },
+      "vice": {
+        "label": "Indulge a Vice",
+        "description": "TBD"
+      },
+      "seekSolaceRelationship": {
+        "label": "Seek solace in a relationship",
+        "description": "TBD"
+      },
+      "revealHistory": {
+        "label": "Reveal some of your history together",
+        "description": "TBD"
+      },
+      "seekReliefHorror": {
+        "label": "Seek relief from the horror",
+        "description": "TBD"
+      }
+    }
+  },
+  "ATDC.roll.label": "Roll"
 }

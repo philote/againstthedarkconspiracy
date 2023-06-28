@@ -4,11 +4,11 @@
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="190" width="190"/>
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Operator Cover Name"/></h1>
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "ATDC.actor.name.placeholder"}}"/></h1>
       <div class="resources grid grid-2col">
         <div class="stress-box flexcol box">
           <div class="stress flexrow">
-            <a class="flexrow" data-roll-type="" title="rollstress" data-item-id=""><i class="fa-regular fa-dice"></i><h2>Stress</h2></a>
+            <a class="flexrow" data-roll-type="" title="rollstress" data-item-id=""><i class="fa-regular fa-dice"></i><h2>{{localize "ATDC.actor.stress.title"}}</h2></a>
             <input type="checkbox" name="" checked>
             <input type="checkbox" name="">
             <input type="checkbox" name="">
@@ -16,28 +16,28 @@
             <input type="checkbox" name="">
             <input type="checkbox" name="">
           </div>
-          <span class="full-width">Increasing Stress Manifests As:</span>
+          <span class="full-width">{{localize "ATDC.actor.stress.manifestsAs.title"}}</span>
           <div class="flexrow full-width">
-            <label for="stress2">2.</label>
+            <label for="stress2">{{localize "ATDC.actor.stress.manifestsAs.label.2"}}</label>
             <input class="underline-input" id="stress2" type="text">
           </div>
           <div class="flexrow full-width">
-            <label for="stress3">3.</label>
+            <label for="stress3">{{localize "ATDC.actor.stress.manifestsAs.label.3"}}</label>
             <input class="underline-input" id="stress3" type="text">
           </div>
           <div class="flexrow full-width">
-            <label for="stress4">4.</label>
+            <label for="stress4">{{localize "ATDC.actor.stress.manifestsAs.label.4"}}</label>
             <input class="underline-input" id="stress4" type="text">
           </div>
           <div class="flexrow full-width">
-            <label for="stress5">5.</label>
+            <label for="stress5">{{localize "ATDC.actor.stress.manifestsAs.label.5"}}</label>
             <input class="underline-input" id="stress5" type="text">
           </div>
 
         </div>
         <div class="intel-load-box flexcol box">
           <div class="intel flexrow">
-            <h2>INTEL</h2>
+            <h2>{{localize "ATDC.actor.intel.title"}}</h2>
             <input type="checkbox" name="">
             <input type="checkbox" name="">
             <input type="checkbox" name="">
@@ -48,16 +48,16 @@
           <hr>
           <div class="load-grid full-width">
             <div class="item">{{!-- empty --}}</div>
-            <h4 class="item">Lt</h4>
-            <h4 class="item">Med</h4>
-            <h4 class="item">Hvy</h4>
+            <h4 class="item">{{localize "ATDC.actor.load.light.label"}}</h4>
+            <h4 class="item">{{localize "ATDC.actor.load.medium.label"}}</h4>
+            <h4 class="item">{{localize "ATDC.actor.load.heavy.label"}}</h4>
 
-            <h3 class="item">Load</h3>
+            <h3 class="item">{{localize "ATDC.actor.load.label"}}</h3>
             <input class="item" type="checkbox" name="">
             <input class="item" type="checkbox" name="">
             <input class="item" type="checkbox" name="">
 
-            <h3 class="item">Gear</h3>  
+            <h3 class="item">{{localize "ATDC.actor.load.gear.label"}}</h3>  
             <div class="item">
               <input type="checkbox" name="">
               <input type="checkbox" name="">
@@ -76,10 +76,9 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="main">Expertise, Actions &amp; Gear</a>
-    <a class="item" data-tab="biography">Biography</a>
-    <a class="item" data-tab="relationships">Relationships</a>
+    <a class="item" data-tab="main">{{localize "ATDC.actor.tabs.main.label"}}</a>
+    <a class="item" data-tab="biography">{{localize "ATDC.actor.tabs.biography.label"}}</a>
+    <a class="item" data-tab="relationships">{{localize "ATDC.actor.tabs.relationships.label"}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
