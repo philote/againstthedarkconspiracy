@@ -112,6 +112,10 @@
         "label": "Seek relief from the horror",
         "description": "TBD"
       }
+    },
+    "gear": {
+      "label": "Gear",
+      "description": "You have <b>False Papers</b>, <b>Secure Personal Comms</b>, & a <b>Knapsack/Bag</b> unless you say you don't. Pick other gear as needed, up to your limit."
     }
   },
   "ATDC.roll.label": "Roll"
