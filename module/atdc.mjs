@@ -25,15 +25,6 @@ Hooks.once('init', async function() {
   // Add custom constants for configuration.
   CONFIG.ATDC = ATDC;
 
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
-  CONFIG.Combat.initiative = {
-    formula: "1d20 + @abilities.dex.mod",
-    decimals: 2
-  };
-
   // Define custom Document classes
   CONFIG.Actor.documentClass = AtDCActor;
   CONFIG.Item.documentClass = AtDCItem;

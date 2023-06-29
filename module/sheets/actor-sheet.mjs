@@ -53,9 +53,6 @@ export class AtDCActorSheet extends ActorSheet {
     // Add roll data for TinyMCE editors.
     context.rollData = context.actor.getRollData();
 
-    // Prepare active effects
-    context.effects = prepareActiveEffectCategories(this.actor.effects);
-
     return context;
   }
 
@@ -67,11 +64,7 @@ export class AtDCActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterData(context) {
-    // Handle ability scores.
-    // INFO commented out for breaking with new data structs
-    // for (let [k, v] of Object.entries(context.system.abilities)) {
-    //   v.label = game.i18n.localize(CONFIG.ATDC.abilities[k]) ?? k;
-    // }
+    
   }
 
   /**
@@ -84,43 +77,24 @@ export class AtDCActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
-    const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
-    };
+    const contact = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
       // Append to gear.
-      if (i.type === 'item') {
+      if (i.type === 'gear') {
         gear.push(i);
       }
       // Append to features.
-      else if (i.type === 'feature') {
+      else if (i.type === 'contact') {
         features.push(i);
-      }
-      // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
       }
     }
 
     // Assign and return
     context.gear = gear;
-    context.features = features;
-    context.spells = spells;
+    context.contact = contact;
   }
 
   /* -------------------------------------------- */
@@ -150,9 +124,6 @@ export class AtDCActorSheet extends ActorSheet {
       item.delete();
       li.slideUp(200, () => this.render(false));
     });
-
-    // Active Effect management
-    html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));
 
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));

@@ -58,7 +58,7 @@
   // Control Buttons
   .item-controls {
     display: flex;
-    flex: 0 0 100px;
+    flex: 0 0 75px;
     justify-content: flex-end;
     a {
       font-size: 12px;
@@ -113,8 +113,12 @@
   }
 }
 
-/* Example style for AtDC (can be removed if not needed) */
-.item-formula {
-  flex: 0 0 200px;
+.item-load {
+  flex: 1;
+  padding: 0 8px;
+}
+
+.item-tags {
+  flex: 2;
   padding: 0 8px;
 }
