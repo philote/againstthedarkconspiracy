@@ -30,8 +30,7 @@ export class AtDCActor extends Actor {
    */
   prepareDerivedData() {
     const actorData = this;
-    const systemData = actorData.system;
-    const flags = actorData.flags.atdc || {};
+    // const systemData = actorData.system;
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
@@ -57,7 +56,7 @@ export class AtDCActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    systemData.xp = (systemData.cr * systemData.cr) * 100;
+    // systemData.xp = (systemData.cr * systemData.cr) * 100;
   }
 
   /**
