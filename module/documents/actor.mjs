@@ -46,6 +46,10 @@ export class AtDCActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
+
+    // update Stress and Intel so they can be used as token resources
+    systemData.stress.value = systemData.stress.states.filter(Boolean).length;
+    systemData.intel.value = systemData.intel.states.filter(Boolean).length;
   }
 
   /**

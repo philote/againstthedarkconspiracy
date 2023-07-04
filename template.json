@@ -18,7 +18,7 @@
         "min":0,
         "max":6,
         "value": [1],
-        "states":[false, false, false, false, false, false],
+        "states":[true, false, false, false, true, false],
         "manifestTwo": "",
         "manifestThree": "",
         "manifestFour": "",

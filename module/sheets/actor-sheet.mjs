@@ -123,8 +123,8 @@ export class AtDCActorSheet extends ActorSheet {
       li.slideUp(200, () => this.render(false));
     });
 
-    // Rollable abilities.
-    html.find('.rollable').click(this._onRoll.bind(this));
+    // Clickable UI.
+    html.find('.clickable').click(this._onClick.bind(this));
 
     // Drag events for macros.
     if (this.actor.isOwner) {
@@ -165,22 +165,36 @@ export class AtDCActorSheet extends ActorSheet {
   }
 
   /**
-   * Handle clickable rolls.
+   * Handle clickable events.
    * @param {Event} event   The originating click event
    * @private
    */
-  _onRoll(event) {
+  _onClick(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
 
     // Handle item rolls.
     if (dataset.rollType) {
-      if (dataset.rollType == 'item') {
-        const itemId = element.closest('.item').dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        if (item) return item.roll();
+      switch (dataset.rollType) {
+        case 'toggle-stress': {
+          this._onToggleStress(dataset.pos);
+          return;
+        }
+        case 'toggle-intel': {
+          this._onToggleIntel(dataset.pos);
+          return;
+        }
+        default: {
+          console.error("_onRoll, bad roll type.");
+          return;
+        }
       }
+      // if (dataset.rollType == 'item') {
+      //   const itemId = element.closest('.item').dataset.itemId;
+      //   const item = this.actor.items.get(itemId);
+      //   if (item) return item.roll();
+      // }
     }
 
     // Handle rolls that supply the formula directly.
@@ -194,6 +208,36 @@ export class AtDCActorSheet extends ActorSheet {
       });
       return roll;
     }
+  }
+
+  _onToggleStress(pos) {
+    let currentArray = this.actor.system.stress.states;
+    let currentState = currentArray[pos];
+    let newState = 0;
+
+    if(currentState === false) {
+        newState = true;
+    } else {
+        newState = false;
+    }
+
+    currentArray[pos] = newState;
+    return this.actor.update({["system.stress.states"]:currentArray});
+  }
+
+  _onToggleIntel(pos) {
+    let currentArray = this.actor.system.intel.states;
+    let currentState = currentArray[pos];
+    let newState = 0;
+
+    if(currentState === false) {
+        newState = true;
+    } else {
+        newState = false;
+    }
+
+    currentArray[pos] = newState;
+    return this.actor.update({["system.intel.states"]:currentArray});
   }
 
 }

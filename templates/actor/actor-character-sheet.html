@@ -9,12 +9,9 @@
         <div class="stress-box flexcol box">
           <div class="stress flexrow">
             <a class="flexrow" data-roll-type="" title="rollstress" data-item-id=""><i class="fa-regular fa-dice"></i><h2>{{localize "ATDC.actor.stress.title"}}</h2></a>
-            <input type="checkbox" name="" checked>
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
+            {{#each system.stress.states as |state count|}}
+                <input class="clickable" type="checkbox" data-pos="{{count}}" data-roll-type="toggle-stress" {{#if state}}checked{{/if}} >
+            {{/each}}
           </div>
           <span class="full-width">{{localize "ATDC.actor.stress.manifestsAs.title"}}</span>
           <div class="flexrow full-width">
@@ -38,12 +35,9 @@
         <div class="intel-load-box flexcol box">
           <div class="intel flexrow">
             <h2>{{localize "ATDC.actor.intel.title"}}</h2>
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
+            {{#each system.intel.states as |state count|}}
+                <input class="clickable" type="checkbox" data-pos="{{count}}" data-roll-type="toggle-intel" {{#if state}}checked{{/if}} >
+            {{/each}}
           </div>
           <hr>
           <div class="load-grid full-width">
