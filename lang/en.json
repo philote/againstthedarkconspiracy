@@ -109,6 +109,7 @@
       }
     },
     "seekRelief": {
+      "info": "When the fiction allows, choose one from below to reduce Stress by 1 and discover the consequences.",
       "behaveBadly": {
         "label": "Behave Badly",
         "description": "TBD"
