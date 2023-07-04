@@ -27,7 +27,8 @@
       "load": {
         "min": 0,
         "value": [0],
-        "max": 3
+        "max": 3,
+        "states":[false, false, false]
       },
       "gear": {
         "light": [false, false, false],
@@ -35,12 +36,85 @@
         "heavy": [false]
       },
       "expertise": {
-        "defaultOne": "",
-        "defaultTwo": "",
         "workedFor": "",
+        "workedForOptions": {
+          "workedFor1": {
+            "question": "ATDC.actor.expertise.workedFor.option.1",
+            "answer": ""
+          },
+          "workedFor2": {
+            "question": "ATDC.actor.expertise.workedFor.option.2",
+            "answer": ""
+          },
+          "workedFor3": {
+            "question": "ATDC.actor.expertise.workedFor.option.3",
+            "answer": ""
+          },
+          "workedFor4": {
+            "question": "ATDC.actor.expertise.workedFor.option.4",
+            "answer": ""
+          },
+          "workedFor5": {
+            "question": "ATDC.actor.expertise.workedFor.option.5",
+            "answer": ""
+          }
+        },
         "specialism": "",
-        "other": "",
-        "specialismUsed": false
+        "specialismOptions": {
+          "specialism1": {
+            "question": "ATDC.actor.expertise.specialism.option.1",
+            "answer": ""
+          },
+          "specialism2": {
+            "question": "ATDC.actor.expertise.specialism.option.2",
+            "answer": ""
+          },
+          "specialism3": {
+            "question": "ATDC.actor.expertise.specialism.option.3",
+            "answer": ""
+          },
+          "specialism4": {
+            "question": "ATDC.actor.expertise.specialism.option.4",
+            "answer": ""
+          },
+          "specialism5": {
+            "question": "ATDC.actor.expertise.specialism.option.5",
+            "answer": ""
+          },
+          "specialism6": {
+            "question": "ATDC.actor.expertise.specialism.option.6",
+            "answer": ""
+          },
+          "specialism7": {
+            "question": "ATDC.actor.expertise.specialism.option.7",
+            "answer": ""
+          },
+          "specialism8": {
+            "question": "ATDC.actor.expertise.specialism.option.8",
+            "answer": ""
+          }
+        },
+        "final": "",
+        "finalOptions": {
+          "final1": "ATDC.actor.expertise.final.option.1",
+          "final2": "ATDC.actor.expertise.final.option.2",
+          "final3": "ATDC.actor.expertise.final.option.3",
+          "final4": "ATDC.actor.expertise.final.option.4",
+          "final5": "ATDC.actor.expertise.final.option.5",
+          "final6": "ATDC.actor.expertise.final.option.6",
+          "final7": "ATDC.actor.expertise.final.option.7",
+          "final8": "ATDC.actor.expertise.final.option.8",
+          "final9": "ATDC.actor.expertise.final.option.9",
+          "final10": "ATDC.actor.expertise.final.option.10",
+          "final11": "ATDC.actor.expertise.final.option.11",
+          "final12": "ATDC.actor.expertise.final.option.12",
+          "final13": "ATDC.actor.expertise.final.option.13",
+          "final14": "ATDC.actor.expertise.final.option.14",
+          "final15": "ATDC.actor.expertise.final.option.15",
+          "final16": "ATDC.actor.expertise.final.option.16"
+        },
+        "specialismUsed": false,
+        "expertiseUsed": false
       },
       "selfDescription": "",
       "nationOrganization": "",

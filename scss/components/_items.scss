@@ -72,7 +72,6 @@
     align-items: center;
     padding: 0 2px; // to align with the header border
     border-bottom: 1px solid $c-faint;
-    &:last-child { border-bottom: none; }
     .item-name {
       color: $c-dark;
       .item-image {
@@ -81,6 +80,8 @@
         background-size: 30px;
         border: none;
         margin-right: 5px;
+        display: flex;
+        align-items: center;
       }
     }
   }

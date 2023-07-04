@@ -1,4 +1,4 @@
-<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+<form class="{{cssClass}} {{actor.type}} flexcol sheet" autocomplete="off">
 
   {{!-- Sheet Header --}}
   <header class="sheet-header">
@@ -19,19 +19,19 @@
           <span class="full-width">{{localize "ATDC.actor.stress.manifestsAs.title"}}</span>
           <div class="flexrow full-width">
             <label for="stress2">{{localize "ATDC.actor.stress.manifestsAs.label.2"}}</label>
-            <input class="underline-input" id="stress2" type="text">
+            <input class="underline-input" id="stress2" type="text" name="system.stress.manifestTwo" value="{{system.stress.manifestTwo}}">
           </div>
           <div class="flexrow full-width">
             <label for="stress3">{{localize "ATDC.actor.stress.manifestsAs.label.3"}}</label>
-            <input class="underline-input" id="stress3" type="text">
+            <input class="underline-input" id="stress3" type="text" name="system.stress.manifestThree" value="{{system.stress.manifestThree}}">
           </div>
           <div class="flexrow full-width">
             <label for="stress4">{{localize "ATDC.actor.stress.manifestsAs.label.4"}}</label>
-            <input class="underline-input" id="stress4" type="text">
+            <input class="underline-input" id="stress4" type="text" name="system.stress.manifestFour" value="{{system.stress.manifestFour}}">
           </div>
           <div class="flexrow full-width">
             <label for="stress5">{{localize "ATDC.actor.stress.manifestsAs.label.5"}}</label>
-            <input class="underline-input" id="stress5" type="text">
+            <input class="underline-input" id="stress5" type="text" name="system.stress.manifestFive" value="{{system.stress.manifestFive}}">
           </div>
 
         </div>

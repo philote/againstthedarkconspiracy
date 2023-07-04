@@ -118,5 +118,17 @@
       "description": "You have <b>False Papers</b>, <b>Secure Personal Comms</b>, & a <b>Knapsack/Bag</b> unless you say you don't. Pick other gear as needed, up to your limit."
     }
   },
-  "ATDC.roll.label": "Roll"
+  "ATDC.roll.label": "Roll",
+  "ATDC.item": {
+    "name.placeholder": "Name",
+    "description.label": "Description",
+    "gear": {
+      "tags.label": "Tags",
+      "load.label": "Load"
+    },
+    "contact": {
+      "blown.label": "Blown?",
+      "expertise.label": "Expertise"
+    }
+  }
 }

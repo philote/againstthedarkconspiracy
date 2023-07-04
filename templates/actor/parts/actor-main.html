@@ -4,61 +4,54 @@
       <h3>{{localize "ATDC.actor.expertise.professionalHistory.label"}}</h3>
       <div><!-- empty --></div>
       <h3>{{localize "ATDC.actor.expertise.label"}}</h3>
-      <input class="underline-input" type="text" id="nation-org" placeholder="{{localize "ATDC.actor.expertise.nationOrganisation.placeholder"}}">
+      <input class="underline-input" type="text" id="nation-org" name="system.nationOrganization" value="{{system.nationOrganization}}" placeholder="{{localize "ATDC.actor.expertise.nationOrganisation.placeholder"}}">
       <div><!-- empty --></div>
       <input class="underline-input" type="text" id="init-expertise" value="{{localize "ATDC.actor.expertise.initial.value"}}" disabled>
-      <select name="worked-for" id="worked-for">
-        <option value="" disabled selected>{{localize "ATDC.actor.expertise.workedFor.placeholder"}}</option>
-        <option value="worked-for1">{{localize "ATDC.actor.expertise.workedFor.option.1"}}</option>
-        <option value="worked-for2">{{localize "ATDC.actor.expertise.workedFor.option.2"}}</option>
-        <option value="worked-for3">{{localize "ATDC.actor.expertise.workedFor.option.3"}}</option>
-        <option value="worked-for4">{{localize "ATDC.actor.expertise.workedFor.option.4"}}</option>
-        <option value="worked-for5">{{localize "ATDC.actor.expertise.workedFor.option.5"}}</option>
+      <!-- workedFor -->
+      <select name="system.expertise.workedFor" data-type="String">
+        {{#select system.expertise.workedFor}}
+          <option value="" disabled selected>{{localize "ATDC.actor.expertise.workedFor.placeholder"}}</option>
+          {{#each system.expertise.workedForOptions as |option key|}}
+            <option  value="{{key}}">{{localize option.question}}</option>
+          {{/each}}
+        {{/select}}
       </select>
       <div><i class="fa-solid fa-caret-right"></i></div>
       <input class="underline-input" type="text" id="expertise1" placeholder="-" disabled>
+      <!-- specialism -->
       <div class="specialism flexrow">
-        <input type="checkbox" id="specialism-used">
-        <select name="specialism" id="specialism">
-          <option value="" disabled selected>{{localize "ATDC.actor.expertise.specialism.placeholder"}}</option>
-          <option value="specialism1">{{localize "ATDC.actor.expertise.specialism.option.1"}}</option>
-          <option value="specialism2">{{localize "ATDC.actor.expertise.specialism.option.2"}}</option>
-          <option value="specialism3">{{localize "ATDC.actor.expertise.specialism.option.3"}}</option>
-          <option value="specialism4">{{localize "ATDC.actor.expertise.specialism.option.4"}}</option>
-          <option value="specialism5">{{localize "ATDC.actor.expertise.specialism.option.5"}}</option>
-          <option value="specialism6">{{localize "ATDC.actor.expertise.specialism.option.6"}}</option>
-          <option value="specialism7">{{localize "ATDC.actor.expertise.specialism.option.7"}}</option>
-          <option value="specialism8">{{localize "ATDC.actor.expertise.specialism.option.8"}}</option>
+        <input type="checkbox" name="system.expertise.specialismUsed" {{checked system.expertise.specialismUsed}}>
+        <select name="system.expertise.specialism" data-type="String">
+          {{#select system.expertise.specialism}}
+            <option value="" disabled selected>{{localize "ATDC.actor.expertise.specialism.placeholder"}}</option>
+            {{#each system.expertise.specialismOptions as |option key|}}
+              <option  value="{{key}}">{{localize option.question}}</option>
+            {{/each}}
+          {{/select}}
         </select>
       </div>
       <div><i class="fa-solid fa-caret-right"></i></div>
       <input class="underline-input" type="text" id="expertise2" placeholder="-" disabled>
+      
+      <!-- expertise-available -->
       <div class="flexrow expertise-available">
         <div>{{localize "ATDC.actor.expertise.available.label"}}</div>
         <label class="switch">
-          <input type="checkbox">
+          <input type="checkbox" name="system.expertise.expertiseUsed" {{checked system.expertise.expertiseUsed}}>
           <span class="slider round"></span>
         </label>
       </div>
+      
       <div><!-- empty --></div>
-      <select name="expertise3" id="expertise3">
+      
+      <!-- final expertise -->
+      <select name="system.expertise.final" data-type="String">
+        {{#select system.expertise.final}}
         <option value="" disabled selected>{{localize "ATDC.actor.expertise.final.placeholder"}}</option>
-        <option value="final1">{{localize "ATDC.actor.expertise.final.option.1"}}</option>
-        <option value="final2">{{localize "ATDC.actor.expertise.final.option.2"}}</option>
-        <option value="final3">{{localize "ATDC.actor.expertise.final.option.3"}}</option>
-        <option value="final4">{{localize "ATDC.actor.expertise.final.option.4"}}</option>
-        <option value="final5">{{localize "ATDC.actor.expertise.final.option.5"}}</option>
-        <option value="final6">{{localize "ATDC.actor.expertise.final.option.6"}}</option>
-        <option value="final7">{{localize "ATDC.actor.expertise.final.option.7"}}</option>
-        <option value="final8">{{localize "ATDC.actor.expertise.final.option.8"}}</option>
-        <option value="final9">{{localize "ATDC.actor.expertise.final.option.9"}}</option>
-        <option value="final10">{{localize "ATDC.actor.expertise.final.option.10"}}</option>
-        <option value="final11">{{localize "ATDC.actor.expertise.final.option.11"}}</option>
-        <option value="final12">{{localize "ATDC.actor.expertise.final.option.12"}}</option>
-        <option value="final13">{{localize "ATDC.actor.expertise.final.option.13"}}</option>
-        <option value="final14">{{localize "ATDC.actor.expertise.final.option.14"}}</option>
-        <option value="final15">{{localize "ATDC.actor.expertise.final.option.15"}}</option>
-        <option value="final16">{{localize "ATDC.actor.expertise.final.option.16"}}</option>
+          {{#each system.expertise.finalOptions as |option key|}}
+            <option  value="{{key}}">{{localize option}}</option>
+          {{/each}}
+        {{/select}}
       </select>
     </div>
     <div class="box gear">
@@ -81,7 +74,8 @@
               </div>
               <h4>{{item.name}}</h4>
             </div>
-            <div class="item-formula item-prop">{{item.system.formula}}</div>
+            <div class="item-tags item-prop">{{item.system.tags}}</div>
+            <div class="item-load item-prop">{{item.system.load}}</div>
             <div class="item-controls">
               <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
               <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>

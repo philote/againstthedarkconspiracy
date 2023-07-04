@@ -10,7 +10,7 @@ export class AtDCActorSheet extends ActorSheet {
       classes: ["atdc", "sheet", "actor"],
       template: "systems/againstthedarkconspiracy/templates/actor/actor-sheet.html",
       width: 720,
-      height: 700,
+      height: 710,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "main" }]
     });
   }

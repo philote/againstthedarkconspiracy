@@ -1,20 +1,22 @@
-h1 {
-  font-weight: bold;
-  border: none;
-}
+.sheet {
+  h1 {
+    font-weight: bold;
+    border: none;
+  }
+  
+  h2 {
+    font-weight: bold;
+    border: none;
+  }
+  
+  h3 {
+    border: none;
+  }
 
-h2 {
-  font-weight: bold;
-  border: none;
+  a{
+    color: rgb(129, 33, 33);
+  }
 }
-
-h3 {
-  border: none;
-}
-
-// h4 {
-//   // border: none;
-// }
 
 .underline-input {
   box-sizing: border-box;
@@ -195,7 +197,7 @@ nav.sheet-tabs {
 .sheet-body,
 .sheet-body .tab,
 .sheet-body .tab .editor {
-  height: 100%;
+  height: auto;
 }
 
 .sheet-body {
