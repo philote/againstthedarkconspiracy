@@ -8,28 +8,28 @@
       <div><!-- empty --></div>
       <input class="underline-input" type="text" id="init-expertise" value="{{localize "ATDC.actor.expertise.initial.value"}}" disabled>
       <!-- workedFor -->
-      <select name="system.expertise.workedFor" data-type="String">
-        {{#select system.expertise.workedFor}}
-          {{#each system.expertise.workedForOptions as |option key|}}
+      <select name="system.expertise.workedFor.index" data-type="String">
+        {{#select system.expertise.workedFor.index}}
+          {{#each system.expertise.workedFor.options as |option key|}}
             <option value="{{key}}">{{localize option.question}}</option>
           {{/each}}
         {{/select}}
       </select>
       <div><i class="fa-solid fa-caret-right"></i></div>
-      <input class="underline-input" type="text" value="{{system.expertise.workedForAnswer}}" disabled>
+      <input class="underline-input" type="text" value="{{system.expertise.workedFor.answer}}" disabled>
       <!-- specialism -->
       <div class="specialism flexrow">
-        <input type="checkbox" name="system.expertise.specialismUsed" {{checked system.expertise.specialismUsed}}>
-        <select name="system.expertise.specialism" data-type="String">
-          {{#select system.expertise.specialism}}
-            {{#each system.expertise.specialismOptions as |option key|}}
-              <option  value="{{key}}">{{localize option.question}}</option>
+        <input type="checkbox" name="system.expertise.specialism.used" {{checked system.expertise.specialism.used}}>
+        <select name="system.expertise.specialism.index">
+          {{#select system.expertise.specialism.index}}
+            {{#each system.expertise.specialism.options as |option key|}}
+              <option value="{{key}}">{{localize option.question}}</option>
             {{/each}}
           {{/select}}
         </select>
       </div>
       <div><i class="fa-solid fa-caret-right"></i></div>
-      <input class="underline-input" type="text" value="{{system.expertise.specialismAnswer}}" disabled>
+      <input class="underline-input" type="text" value="{{system.expertise.specialism.answer}}" disabled>
       
       <!-- expertise-available -->
       <div class="flexrow expertise-available">
@@ -43,11 +43,10 @@
       <div><!-- empty --></div>
       
       <!-- final expertise -->
-      <select name="system.expertise.final" data-type="String">
-        {{#select system.expertise.final}}
-        <option value="" disabled selected>{{localize "ATDC.actor.expertise.final.placeholder"}}</option>
-          {{#each system.expertise.finalOptions as |option key|}}
-            <option  value="{{key}}">{{localize option}}</option>
+      <select name="system.expertise.final.index">
+        {{#select system.expertise.final.index}}
+          {{#each system.expertise.final.options as |option key|}}
+            <option value="{{key}}">{{localize option}}</option>
           {{/each}}
         {{/select}}
       </select>

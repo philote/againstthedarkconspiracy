@@ -134,6 +134,44 @@
     "gear": {
       "label": "Gear",
       "description": "You have <b>False Papers</b>, <b>Secure Personal Comms</b>, & a <b>Knapsack/Bag</b> unless you say you don't. Pick other gear as needed, up to your limit."
+    },
+    "biography": {
+      "describeYourself.label": "Describe yourself as other see you:",
+      "notes.label": "Notes:",
+      "whyConfrontConspiracy": {
+        "label": "Why did you choose to confront the Conspiracy:",
+        "answer": {
+          "placeholder": "Why did you choose to confront the Conspiracy?",
+          "option.1": "Betrayal…",
+          "option.2": "Curiosity…",
+          "option.3": "Excitement…",
+          "option.4": "Faith…",
+          "option.5": "Greed…",
+          "option.6": "Humanity…",
+          "option.7": "Loss…",
+          "option.8": "Revenge…"
+        },
+        "moreAnswer": {
+          "option.1": "… you were a cog in the Conspiracy machine, then you were betrayed.",
+          "option.2": "… you are fascinated by the allure of the blasphemous unknown.",
+          "option.3": "… you live for the sheer unadulterated adrenaline rush of the chase.",
+          "option.4": "… you believe in something that drives you but that the Conspiracy threatens.",
+          "option.5": "… you like the good things, and this life sometimes delivers them.",
+          "option.6": "… when you found out what they were doing you had to get involved.",
+          "option.7": "… they took someone that mattered from you.",
+          "option.8": "… they destroyed the life you had."
+        },
+        "question": {
+          "option.1": "What did you do for the Conspiracy that you are ashamed of and haven’t shared with anyone yet? How could the Conspiracy entice you back into the fold?",
+          "option.2": "What have you seen that fuels your fascination with the Conspiracy? What would you give up to know more about them?",
+          "option.3": "What happened that confirmed the Conspiracy as a worthy challenge? What would you risk for the rush you crave in your pursuit of the Conspiracy?",
+          "option.4": "What do you believe in and how has the Conspiracy threatened your beliefs? What would it take for you to discard your beliefs?",
+          "option.5": "What have you seen that demonstrates the Conspiracy’s wealth &/or power? What could they tempt you with?",
+          "option.6": "What have you seen that demonstrated the Conspiracy's inhumanity? What would you sacrifice to stop them?",
+          "option.7": "Who was it and what were the circumstances? If you haven’t seen their body, or perhaps even if you have, what would you do to get them back?",
+          "option.8": "What was the most important thing you lost and how did they take it from you? What did they do? What would your sacrifice to get your revenge?"
+        }
+      }
     }
   },
   "ATDC.roll.label": "Roll",

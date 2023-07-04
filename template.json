@@ -44,99 +44,123 @@
         }
       },
       "expertise": {
-        "workedFor": 0,
-        "workedForAnswer": "",
-        "workedForOptions": [
-          {
-            "question": "ATDC.actor.expertise.workedFor.placeholder",
-            "answer": "-"
-          },
-          {
-            "question": "ATDC.actor.expertise.workedFor.option.1",
-            "answer": "ATDC.actor.expertise.workedForExpertise.option.1"
-          },
-          {
-            "question": "ATDC.actor.expertise.workedFor.option.2",
-            "answer": "ATDC.actor.expertise.workedForExpertise.option.2"
-          },
-          {
-            "question": "ATDC.actor.expertise.workedFor.option.3",
-            "answer": "ATDC.actor.expertise.workedForExpertise.option.3"
-          },
-          {
-            "question": "ATDC.actor.expertise.workedFor.option.4",
-            "answer": "ATDC.actor.expertise.workedForExpertise.option.4"
-          },
-          {
-            "question": "ATDC.actor.expertise.workedFor.option.5",
-            "answer": "ATDC.actor.expertise.workedForExpertise.option.5"
-          }
-        ],
-        "specialism": 0,
-        "specialismAnswer": "",
-        "specialismOptions": [
-          {
-            "question": "ATDC.actor.expertise.specialism.placeholder",
-            "answer": "-"
-          },
-          {
-            "question": "ATDC.actor.expertise.specialism.option.1",
-            "answer": "ATDC.actor.expertise.specialismExpertise.option.1"
-          },
-          {
-            "question": "ATDC.actor.expertise.specialism.option.2",
-            "answer": "ATDC.actor.expertise.specialismExpertise.option.2"
-          },
-          {
-            "question": "ATDC.actor.expertise.specialism.option.3",
-            "answer": "ATDC.actor.expertise.specialismExpertise.option.3"
-          },
-          {
-            "question": "ATDC.actor.expertise.specialism.option.4",
-            "answer": "ATDC.actor.expertise.specialismExpertise.option.4"
-          },
-          {
-            "question": "ATDC.actor.expertise.specialism.option.5",
-            "answer": "ATDC.actor.expertise.specialismExpertise.option.5"
-          },
-          {
-            "question": "ATDC.actor.expertise.specialism.option.6",
-            "answer": "ATDC.actor.expertise.specialismExpertise.option.6"
-          },
-          {
-            "question": "ATDC.actor.expertise.specialism.option.7",
-            "answer": "ATDC.actor.expertise.specialismExpertise.option.7"
-          },
-          {
-            "question": "ATDC.actor.expertise.specialism.option.8",
-            "answer": "ATDC.actor.expertise.specialismExpertise.option.8"
-          }
-        ],
-        "final": 0,
-        "finalOptions": [
-          "ATDC.actor.expertise.final.option.1",
-          "ATDC.actor.expertise.final.option.2",
-          "ATDC.actor.expertise.final.option.3",
-          "ATDC.actor.expertise.final.option.4",
-          "ATDC.actor.expertise.final.option.5",
-          "ATDC.actor.expertise.final.option.6",
-          "ATDC.actor.expertise.final.option.7",
-          "ATDC.actor.expertise.final.option.8",
-          "ATDC.actor.expertise.final.option.9",
-          "ATDC.actor.expertise.final.option.10",
-          "ATDC.actor.expertise.final.option.11",
-          "ATDC.actor.expertise.final.option.12",
-          "ATDC.actor.expertise.final.option.13",
-          "ATDC.actor.expertise.final.option.14",
-          "ATDC.actor.expertise.final.option.15",
-          "ATDC.actor.expertise.final.option.16"
-        ],
-        "specialismUsed": false,
+        "workedFor": {
+          "index": 0,
+          "answer": "",
+          "options": [
+            {
+              "question": "ATDC.actor.expertise.workedFor.placeholder",
+              "answer": "-"
+            },
+            {
+              "question": "ATDC.actor.expertise.workedFor.option.1",
+              "answer": "ATDC.actor.expertise.workedForExpertise.option.1"
+            },
+            {
+              "question": "ATDC.actor.expertise.workedFor.option.2",
+              "answer": "ATDC.actor.expertise.workedForExpertise.option.2"
+            },
+            {
+              "question": "ATDC.actor.expertise.workedFor.option.3",
+              "answer": "ATDC.actor.expertise.workedForExpertise.option.3"
+            },
+            {
+              "question": "ATDC.actor.expertise.workedFor.option.4",
+              "answer": "ATDC.actor.expertise.workedForExpertise.option.4"
+            },
+            {
+              "question": "ATDC.actor.expertise.workedFor.option.5",
+              "answer": "ATDC.actor.expertise.workedForExpertise.option.5"
+            }
+          ]
+        },
+        "specialism": {
+          "used": false,
+          "index": 0,
+          "answer": "",
+          "options": [
+            {
+              "question": "ATDC.actor.expertise.specialism.placeholder",
+              "answer": "-"
+            },
+            {
+              "question": "ATDC.actor.expertise.specialism.option.1",
+              "answer": "ATDC.actor.expertise.specialismExpertise.option.1"
+            },
+            {
+              "question": "ATDC.actor.expertise.specialism.option.2",
+              "answer": "ATDC.actor.expertise.specialismExpertise.option.2"
+            },
+            {
+              "question": "ATDC.actor.expertise.specialism.option.3",
+              "answer": "ATDC.actor.expertise.specialismExpertise.option.3"
+            },
+            {
+              "question": "ATDC.actor.expertise.specialism.option.4",
+              "answer": "ATDC.actor.expertise.specialismExpertise.option.4"
+            },
+            {
+              "question": "ATDC.actor.expertise.specialism.option.5",
+              "answer": "ATDC.actor.expertise.specialismExpertise.option.5"
+            },
+            {
+              "question": "ATDC.actor.expertise.specialism.option.6",
+              "answer": "ATDC.actor.expertise.specialismExpertise.option.6"
+            },
+            {
+              "question": "ATDC.actor.expertise.specialism.option.7",
+              "answer": "ATDC.actor.expertise.specialismExpertise.option.7"
+            },
+            {
+              "question": "ATDC.actor.expertise.specialism.option.8",
+              "answer": "ATDC.actor.expertise.specialismExpertise.option.8"
+            }
+          ]
+        },
+        "final": {
+          "index": 0,
+          "options": [
+            "ATDC.actor.expertise.final.placeholder",
+            "ATDC.actor.expertise.final.option.1",
+            "ATDC.actor.expertise.final.option.2",
+            "ATDC.actor.expertise.final.option.3",
+            "ATDC.actor.expertise.final.option.4",
+            "ATDC.actor.expertise.final.option.5",
+            "ATDC.actor.expertise.final.option.6",
+            "ATDC.actor.expertise.final.option.7",
+            "ATDC.actor.expertise.final.option.8",
+            "ATDC.actor.expertise.final.option.9",
+            "ATDC.actor.expertise.final.option.10",
+            "ATDC.actor.expertise.final.option.11",
+            "ATDC.actor.expertise.final.option.12",
+            "ATDC.actor.expertise.final.option.13",
+            "ATDC.actor.expertise.final.option.14",
+            "ATDC.actor.expertise.final.option.15",
+            "ATDC.actor.expertise.final.option.16"
+          ]
+        },
         "expertiseUsed": false
       },
       "selfDescription": "",
       "nationOrganization": "",
-      "whyConfrontConspiracy": "",
+      "whyConfrontConspiracy": {
+        "index": 0,
+        "text": "",
+        "answer": "-",
+        "question": "-",
+        "options": [
+          {
+            "answer": "ATDC.actor.biography.whyConfrontConspiracy.answer.placeholder",
+            "answerMore": "-",
+            "question": "-"
+          },
+          {
+            "answer": "ATDC.actor.biography.whyConfrontConspiracy.answer.option.1",
+            "answerMore": "ATDC.actor.biography.whyConfrontConspiracy.moreAnswer.option.1",
+            "question": "ATDC.actor.biography.whyConfrontConspiracy.question.option.1"
+          }
+        ]
+      },
       "anchor": {
         "name": "",
         "relationship": "",

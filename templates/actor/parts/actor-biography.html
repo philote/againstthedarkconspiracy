@@ -1,3 +1,28 @@
-<div>
-  Biography stuff goes here.
+<div class="biography flexrow">
+  <div class="flexcol">
+    <div class="box">
+      <h3>{{localize "ATDC.actor.biography.describeYourself.label"}}</h3>
+      <textarea type="text" name="system.selfDescription" value="{{system.selfDescription}}">{{system.selfDescription}}</textarea>
+    </div>
+
+    <div class="box why-conspiracy">
+      <select name="system.whyConfrontConspiracy.index" data-type="String">
+        {{#select system.whyConfrontConspiracy.index}}
+          {{#each system.whyConfrontConspiracy.options as |option key|}}
+            <option  value="{{key}}">{{localize option.answer}}</option>
+          {{/each}}
+        {{/select}}
+      </select>
+      <p class="answer">{{system.whyConfrontConspiracy.answer}}</p>
+      <p class="question">{{system.whyConfrontConspiracy.question}}</p>
+      {{editor system.whyConfrontConspiracy.text target="system.whyConfrontConspiracy.text" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+  </div>
+  
+  <div class="flexcol">
+    <div class="box actor-notes">
+      <h3>{{localize "ATDC.actor.biography.notes.label"}}</h3>
+      {{editor system.notes target="system.notes" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+  </div>
 </div>

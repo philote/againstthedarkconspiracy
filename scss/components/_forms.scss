@@ -11,10 +11,17 @@
   
   h3 {
     border: none;
+    font-weight: bold;
   }
 
   a{
     color: rgb(129, 33, 33);
+  }
+
+  .editor {
+    border: 1px black solid;
+    background: rgb(0 0 0 / 5%);
+    padding: 5px;
   }
 }
 
@@ -245,7 +252,6 @@ nav.sheet-tabs {
       flex-grow: 0;
 
       h3 {
-        font-weight: bold;
         margin: 0;
       }
 
@@ -282,6 +288,37 @@ nav.sheet-tabs {
         font-size: 0.9em;
       }
     }
+  }
+
+  .biography {
+    
+    .why-conspiracy {
+      .editor {
+        height: 160px;
+      }
+      
+      p {
+        font-size: 0.9em;
+      }
+
+      .answer {
+        font-weight: bold;
+      }
+
+      .question {
+        color: rgb(58, 58, 58);
+      }
+    }
+
+    .actor-notes {
+      .editor {
+        height: 360px;
+      }
+    }
+  }
+
+  .relationships {
+    
   }
 }
 
