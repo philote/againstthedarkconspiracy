@@ -10,20 +10,18 @@
       <!-- workedFor -->
       <select name="system.expertise.workedFor" data-type="String">
         {{#select system.expertise.workedFor}}
-          <option value="" disabled selected>{{localize "ATDC.actor.expertise.workedFor.placeholder"}}</option>
           {{#each system.expertise.workedForOptions as |option key|}}
-            <option  value="{{key}}">{{localize option.question}}</option>
+            <option value="{{key}}">{{localize option.question}}</option>
           {{/each}}
         {{/select}}
       </select>
       <div><i class="fa-solid fa-caret-right"></i></div>
-      <input class="underline-input" type="text" id="expertise1" placeholder="-" disabled>
+      <input class="underline-input" type="text" value="{{system.expertise.workedForAnswer}}" disabled>
       <!-- specialism -->
       <div class="specialism flexrow">
         <input type="checkbox" name="system.expertise.specialismUsed" {{checked system.expertise.specialismUsed}}>
         <select name="system.expertise.specialism" data-type="String">
           {{#select system.expertise.specialism}}
-            <option value="" disabled selected>{{localize "ATDC.actor.expertise.specialism.placeholder"}}</option>
             {{#each system.expertise.specialismOptions as |option key|}}
               <option  value="{{key}}">{{localize option.question}}</option>
             {{/each}}
@@ -31,7 +29,7 @@
         </select>
       </div>
       <div><i class="fa-solid fa-caret-right"></i></div>
-      <input class="underline-input" type="text" id="expertise2" placeholder="-" disabled>
+      <input class="underline-input" type="text" value="{{system.expertise.specialismAnswer}}" disabled>
       
       <!-- expertise-available -->
       <div class="flexrow expertise-available">

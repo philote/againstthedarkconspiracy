@@ -50,6 +50,9 @@ export class AtDCActor extends Actor {
     // update Stress and Intel so they can be used as token resources
     systemData.stress.value = systemData.stress.states.filter(Boolean).length;
     systemData.intel.value = systemData.intel.states.filter(Boolean).length;
+    systemData.expertise.workedForAnswer = game.i18n.localize(systemData.expertise.workedForOptions[systemData.expertise.workedFor].answer);
+    systemData.expertise.specialismAnswer = game.i18n.localize(systemData.expertise.specialismOptions[systemData.expertise.specialism].answer);
+
   }
 
   /**

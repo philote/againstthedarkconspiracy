@@ -37,6 +37,13 @@
         "option.4": "Signals Intelligence",
         "option.5": "Special Forces"
       },
+      "workedForExpertise": {
+        "option.1": "Larceny",
+        "option.2": "Tradecraft",
+        "option.3": "Authority",
+        "option.4": "Research",
+        "option.5": "Military Fieldcraft"
+      },
       "specialism": {
         "placeholder": "Your Specialism was...",
         "option.1": "Analyst",
@@ -47,6 +54,16 @@
         "option.6": "Hacker",
         "option.7": "Handler",
         "option.8": "Sparks"
+      },
+      "specialismExpertise": {
+        "option.1": "Insight",
+        "option.2": "Deadly",
+        "option.3": "Intrusion",
+        "option.4": "Vehicles",
+        "option.5": "Disguise",
+        "option.6": "Digital Intrusion",
+        "option.7": "Persuasion",
+        "option.8": "Technical"
       },
       "available.label": "Expertise Available?",
       "final": {

@@ -47,21 +47,21 @@
             <h4 class="item">{{localize "ATDC.actor.load.heavy.label"}}</h4>
 
             <h3 class="item">{{localize "ATDC.actor.load.label"}}</h3>
-            <input class="item" type="checkbox" name="">
-            <input class="item" type="checkbox" name="">
-            <input class="item" type="checkbox" name="">
-
-            <h3 class="item">{{localize "ATDC.actor.load.gear.label"}}</h3>  
+            <input class="item" type="checkbox" name="system.load.light" {{checked system.load.light}}>
+            <input class="item" type="checkbox" name="system.load.medium" {{#if system.load.light}}{{checked system.load.medium}}{{else}}disabled{{/if}}>
+            <input class="item" type="checkbox" name="system.load.heavy" {{#if system.load.medium}}{{checked system.load.medium}}{{else}}disabled{{/if}}>
+            
+            <h3 class="item">{{localize "ATDC.actor.load.gear.label"}}</h3>
             <div class="item">
-              <input type="checkbox" name="">
-              <input type="checkbox" name="">
-              <input type="checkbox" name="">
+              <input type="checkbox" name="system.gear.light.one" {{#if system.load.light}}{{checked system.gear.light.one}}{{else}}disabled{{/if}}>
+              <input type="checkbox" name="system.gear.light.two" {{#if system.load.light}}{{checked system.gear.light.two}}{{else}}disabled{{/if}}>
+              <input type="checkbox" name="system.gear.light.three" {{#if system.load.light}}{{checked system.gear.light.three}}{{else}}disabled{{/if}}>
             </div>
             <div class="item">
-              <input type="checkbox" name="">
-              <input type="checkbox" name="">
+              <input type="checkbox" name="system.gear.medium.one" {{#if system.load.medium}}{{checked system.gear.medium.one}}{{else}}disabled{{/if}}>
+              <input type="checkbox" name="system.gear.medium.two" {{#if system.load.medium}}{{checked system.gear.medium.two}}{{else}}disabled{{/if}}>
             </div>
-            <input class="item" type="checkbox" name="">
+            <input class="item" type="checkbox" name="system.gear.heavy.one" {{#if system.load.heavy}}{{checked system.gear.heavy.one}}{{else}}disabled{{/if}}>
           </div>
         </div>
       </div>

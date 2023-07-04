@@ -18,101 +18,119 @@
         "min":0,
         "max":6,
         "value": [1],
-        "states":[true, false, false, false, true, false],
+        "states":[true, false, false, false, false, false],
         "manifestTwo": "",
         "manifestThree": "",
         "manifestFour": "",
         "manifestFive": ""
       },
       "load": {
-        "min": 0,
-        "value": [0],
-        "max": 3,
-        "states":[false, false, false]
+        "light": false,
+        "medium": false,
+        "heavy": false
       },
       "gear": {
-        "light": [false, false, false],
-        "medium": [false, false],
-        "heavy": [false]
+        "light": {
+          "one": false,
+          "two": false,
+          "three": false
+        },
+        "medium": {
+          "one": false,
+          "two": false
+        },
+        "heavy": {
+          "one": false
+        }
       },
       "expertise": {
-        "workedFor": "",
-        "workedForOptions": {
-          "workedFor1": {
+        "workedFor": 0,
+        "workedForAnswer": "",
+        "workedForOptions": [
+          {
+            "question": "ATDC.actor.expertise.workedFor.placeholder",
+            "answer": "-"
+          },
+          {
             "question": "ATDC.actor.expertise.workedFor.option.1",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.workedForExpertise.option.1"
           },
-          "workedFor2": {
+          {
             "question": "ATDC.actor.expertise.workedFor.option.2",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.workedForExpertise.option.2"
           },
-          "workedFor3": {
+          {
             "question": "ATDC.actor.expertise.workedFor.option.3",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.workedForExpertise.option.3"
           },
-          "workedFor4": {
+          {
             "question": "ATDC.actor.expertise.workedFor.option.4",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.workedForExpertise.option.4"
           },
-          "workedFor5": {
+          {
             "question": "ATDC.actor.expertise.workedFor.option.5",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.workedForExpertise.option.5"
           }
-        },
-        "specialism": "",
-        "specialismOptions": {
-          "specialism1": {
+        ],
+        "specialism": 0,
+        "specialismAnswer": "",
+        "specialismOptions": [
+          {
+            "question": "ATDC.actor.expertise.specialism.placeholder",
+            "answer": "-"
+          },
+          {
             "question": "ATDC.actor.expertise.specialism.option.1",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.specialismExpertise.option.1"
           },
-          "specialism2": {
+          {
             "question": "ATDC.actor.expertise.specialism.option.2",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.specialismExpertise.option.2"
           },
-          "specialism3": {
+          {
             "question": "ATDC.actor.expertise.specialism.option.3",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.specialismExpertise.option.3"
           },
-          "specialism4": {
+          {
             "question": "ATDC.actor.expertise.specialism.option.4",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.specialismExpertise.option.4"
           },
-          "specialism5": {
+          {
             "question": "ATDC.actor.expertise.specialism.option.5",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.specialismExpertise.option.5"
           },
-          "specialism6": {
+          {
             "question": "ATDC.actor.expertise.specialism.option.6",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.specialismExpertise.option.6"
           },
-          "specialism7": {
+          {
             "question": "ATDC.actor.expertise.specialism.option.7",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.specialismExpertise.option.7"
           },
-          "specialism8": {
+          {
             "question": "ATDC.actor.expertise.specialism.option.8",
-            "answer": ""
+            "answer": "ATDC.actor.expertise.specialismExpertise.option.8"
           }
-        },
-        "final": "",
-        "finalOptions": {
-          "final1": "ATDC.actor.expertise.final.option.1",
-          "final2": "ATDC.actor.expertise.final.option.2",
-          "final3": "ATDC.actor.expertise.final.option.3",
-          "final4": "ATDC.actor.expertise.final.option.4",
-          "final5": "ATDC.actor.expertise.final.option.5",
-          "final6": "ATDC.actor.expertise.final.option.6",
-          "final7": "ATDC.actor.expertise.final.option.7",
-          "final8": "ATDC.actor.expertise.final.option.8",
-          "final9": "ATDC.actor.expertise.final.option.9",
-          "final10": "ATDC.actor.expertise.final.option.10",
-          "final11": "ATDC.actor.expertise.final.option.11",
-          "final12": "ATDC.actor.expertise.final.option.12",
-          "final13": "ATDC.actor.expertise.final.option.13",
-          "final14": "ATDC.actor.expertise.final.option.14",
-          "final15": "ATDC.actor.expertise.final.option.15",
-          "final16": "ATDC.actor.expertise.final.option.16"
-        },
+        ],
+        "final": 0,
+        "finalOptions": [
+          "ATDC.actor.expertise.final.option.1",
+          "ATDC.actor.expertise.final.option.2",
+          "ATDC.actor.expertise.final.option.3",
+          "ATDC.actor.expertise.final.option.4",
+          "ATDC.actor.expertise.final.option.5",
+          "ATDC.actor.expertise.final.option.6",
+          "ATDC.actor.expertise.final.option.7",
+          "ATDC.actor.expertise.final.option.8",
+          "ATDC.actor.expertise.final.option.9",
+          "ATDC.actor.expertise.final.option.10",
+          "ATDC.actor.expertise.final.option.11",
+          "ATDC.actor.expertise.final.option.12",
+          "ATDC.actor.expertise.final.option.13",
+          "ATDC.actor.expertise.final.option.14",
+          "ATDC.actor.expertise.final.option.15",
+          "ATDC.actor.expertise.final.option.16"
+        ],
         "specialismUsed": false,
         "expertiseUsed": false
       },
