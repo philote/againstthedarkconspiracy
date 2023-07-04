@@ -1,19 +1,28 @@
 <div class="relationships flexrow">
   <div class="flexcol">
     <div class="box">
-      <h3>Your Anchor</h3>
-      
+      <h3>{{localize "ATDC.actor.relationships.yourAnchor.label"}}</h3>
+      <input type="text" placeholder="{{localize "ATDC.actor.relationships.yourAnchor.name.placeholder"}}" value="{{system.anchor.name}}">
+      <input type="text" placeholder="{{localize "ATDC.actor.relationships.yourAnchor.relationship.placeholder"}}" value="{{system.anchor.relationship}}">
+      <div class="flexrow">
+        <label for="target">{{localize "ATDC.actor.relationships.yourAnchor.target.label"}}</label>
+        <input id="target" type="checkbox" name="system.anchor.target" {{checked system.anchor.target}}>
+        <label for="missing">{{localize "ATDC.actor.relationships.yourAnchor.missing.label"}}</label>
+        <input id="missing" type="checkbox" name="system.anchor.missing" {{checked system.anchor.missing}}>
+        <label for="taken">{{localize "ATDC.actor.relationships.yourAnchor.taken.label"}}</label>
+        <input id="taken" type="checkbox" name="system.anchor.taken" {{checked system.anchor.taken}}>
+      </div>
     </div>
 
     <div class="box">
-      <h3>Contacts</h3>
+      <h3>{{localize "ATDC.actor.relationships.contacts.label"}}</h3>
 
     </div>
   </div>
   
   <div class="flexcol">
     <div class="box">
-      <h3>Team Members</h3>
+      <h3>{{localize "ATDC.actor.relationships.teamMembers.label"}}</h3>
       
     </div>
   </div>

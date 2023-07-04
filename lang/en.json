@@ -172,6 +172,18 @@
           "option.8": "What was the most important thing you lost and how did they take it from you? What did they do? What would your sacrifice to get your revenge?"
         }
       }
+    },
+    "relationships": {
+      "yourAnchor": {
+        "label": "Your Anchor",
+        "name.placeholder": "Name",
+        "relationship.placeholder": "Relationship",
+        "target.label": "Target",
+        "missing.label": "Missing",
+        "taken.label": "Taken"
+      },
+      "contacts.label": "Contacts",
+      "teamMembers.label": "Team Members"
     }
   },
   "ATDC.roll.label": "Roll",
