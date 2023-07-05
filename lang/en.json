@@ -180,10 +180,47 @@
         "relationship.placeholder": "Relationship",
         "target.label": "Target",
         "missing.label": "Missing",
-        "taken.label": "Taken"
+        "taken.label": "Taken",
+        "details.label": "Reveal things when the rules tell you to:"
       },
-      "contacts.label": "Contacts",
-      "teamMembers.label": "Team Members"
+      "contacts": {
+        "label": "Contacts",
+        "expertiseOptions": {
+          "placeholder": "Choose an Expertise",
+          "option.1": "Accountant … they can follow the money or get it to you",
+          "option.2": "Analyst …  they can put it together",
+          "option.3": "Assassin … they can kill people",
+          "option.4": "Bomb-maker … they can blow it up",
+          "option.5": "Burglar … they can break into places",
+          "option.6": "Cleaner … they can erase the traces you leave",
+          "option.7": "Driver … they can  provide the vehicle you need",
+          "option.8": "False face … they can pretend to be other people",
+          "option.9": "Fixer … they can provide … stuff …",
+          "option.10": "Forger … they can provide you with ID etc.",
+          "option.11": "Hacker … they can break into systems",
+          "option.12": "Handler … they can manipulated people",
+          "option.13": "Information Broker… they can find things out",
+          "option.14": "Librarian … they can tell you about weird shit",
+          "option.15": "Medic … they can treat your injuries",
+          "option.16": "Muscle … they can protect people",
+          "option.17": "Smuggler … they get people or things across borders",
+          "option.18": "Sparks … they can make things for you",
+          "option.19": "Watcher … they can keep eyes on your target"
+        }
+      },
+      "teamMembers": {
+        "label": "Team Members",
+        "careMost": {
+          "label": "Which member of the team do you care most about?",
+          "name.placeholder": "Team Member Name",
+          "details.label": "Reveal a piece of the history you share when the rules tell you to:"
+        },
+        "careLeast": {
+          "label": "Which member of the team do you care least about?",
+          "name.placeholder": "Team Member Name",
+          "details.label": "Reveal a piece of the history you share when the rules tell you to:"
+        }
+      }
     }
   },
   "ATDC.roll.label": "Roll",

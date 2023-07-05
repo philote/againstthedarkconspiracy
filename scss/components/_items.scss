@@ -123,3 +123,25 @@
   flex: 2;
   padding: 0 8px;
 }
+
+.relationships {
+  .item-blown {
+    flex: 0;
+    width: 50px;
+    padding: 0 8px;
+  }
+  
+  .item-expertise {
+    width: 100px;
+    padding: 0 8px;
+  
+    select {
+      width: 100px;
+    }
+  }
+
+  // Control Buttons
+  .item-controls {
+    flex: 0 0 70px;
+  }
+}

@@ -319,6 +319,33 @@ nav.sheet-tabs {
 
   .relationships {
     
+    input[type=text] {
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 0.8em;
+    }
+
+    .editor {
+      height: 100px;
+    }
+
+    .anchor {
+
+      .taken {
+
+        label {
+          text-align: center;
+          align-self: center;
+        }
+  
+        input[type=checkbox] {
+          flex: 1;
+        }
+      }
+
+    }
   }
 }
 

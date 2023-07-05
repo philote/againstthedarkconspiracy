@@ -86,7 +86,7 @@ export class AtDCActorSheet extends ActorSheet {
       }
       // Append to features.
       else if (i.type === 'contact') {
-        features.push(i);
+        contact.push(i);
       }
     }
 

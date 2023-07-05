@@ -158,6 +158,41 @@
             "answer": "ATDC.actor.biography.whyConfrontConspiracy.answer.option.1",
             "answerMore": "ATDC.actor.biography.whyConfrontConspiracy.moreAnswer.option.1",
             "question": "ATDC.actor.biography.whyConfrontConspiracy.question.option.1"
+          },
+          {
+            "answer": "ATDC.actor.biography.whyConfrontConspiracy.answer.option.2",
+            "answerMore": "ATDC.actor.biography.whyConfrontConspiracy.moreAnswer.option.2",
+            "question": "ATDC.actor.biography.whyConfrontConspiracy.question.option.2"
+          },
+          {
+            "answer": "ATDC.actor.biography.whyConfrontConspiracy.answer.option.3",
+            "answerMore": "ATDC.actor.biography.whyConfrontConspiracy.moreAnswer.option.3",
+            "question": "ATDC.actor.biography.whyConfrontConspiracy.question.option.3"
+          },
+          {
+            "answer": "ATDC.actor.biography.whyConfrontConspiracy.answer.option.4",
+            "answerMore": "ATDC.actor.biography.whyConfrontConspiracy.moreAnswer.option.4",
+            "question": "ATDC.actor.biography.whyConfrontConspiracy.question.option.4"
+          },
+          {
+            "answer": "ATDC.actor.biography.whyConfrontConspiracy.answer.option.5",
+            "answerMore": "ATDC.actor.biography.whyConfrontConspiracy.moreAnswer.option.5",
+            "question": "ATDC.actor.biography.whyConfrontConspiracy.question.option.5"
+          },
+          {
+            "answer": "ATDC.actor.biography.whyConfrontConspiracy.answer.option.6",
+            "answerMore": "ATDC.actor.biography.whyConfrontConspiracy.moreAnswer.option.6",
+            "question": "ATDC.actor.biography.whyConfrontConspiracy.question.option.6"
+          },
+          {
+            "answer": "ATDC.actor.biography.whyConfrontConspiracy.answer.option.7",
+            "answerMore": "ATDC.actor.biography.whyConfrontConspiracy.moreAnswer.option.7",
+            "question": "ATDC.actor.biography.whyConfrontConspiracy.question.option.7"
+          },
+          {
+            "answer": "ATDC.actor.biography.whyConfrontConspiracy.answer.option.8",
+            "answerMore": "ATDC.actor.biography.whyConfrontConspiracy.moreAnswer.option.8",
+            "question": "ATDC.actor.biography.whyConfrontConspiracy.question.option.8"
           }
         ]
       },
@@ -166,7 +201,8 @@
         "relationship": "",
         "target": false,
         "missing": false,
-        "taken": false
+        "taken": false,
+        "details": ""
       },
       "team": {
         "careMostName": "",
@@ -203,7 +239,31 @@
     "contact": {
       "templates": ["base"],
       "blown": false,
-      "expertise": ""
+      "expertise": {
+        "index": 0,
+        "options": [
+          "ATDC.actor.relationships.contacts.expertiseOptions.placeholder",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.1",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.2",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.3",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.4",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.5",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.6",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.7",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.8",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.9",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.10",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.11",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.12",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.13",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.14",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.15",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.16",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.17",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.18",
+          "ATDC.actor.relationships.contacts.expertiseOptions.option.19"
+        ]
+      }
     }
   }
 }

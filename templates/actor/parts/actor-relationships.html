@@ -1,10 +1,10 @@
 <div class="relationships flexrow">
   <div class="flexcol">
-    <div class="box">
+    <div class="box anchor">
       <h3>{{localize "ATDC.actor.relationships.yourAnchor.label"}}</h3>
-      <input type="text" placeholder="{{localize "ATDC.actor.relationships.yourAnchor.name.placeholder"}}" value="{{system.anchor.name}}">
-      <input type="text" placeholder="{{localize "ATDC.actor.relationships.yourAnchor.relationship.placeholder"}}" value="{{system.anchor.relationship}}">
-      <div class="flexrow">
+      <input type="text" placeholder="{{localize "ATDC.actor.relationships.yourAnchor.name.placeholder"}}" name="system.anchor.name" value="{{system.anchor.name}}">
+      <input type="text" placeholder="{{localize "ATDC.actor.relationships.yourAnchor.relationship.placeholder"}}" name="system.anchor.relationship" value="{{system.anchor.relationship}}">
+      <div class="flexrow taken">
         <label for="target">{{localize "ATDC.actor.relationships.yourAnchor.target.label"}}</label>
         <input id="target" type="checkbox" name="system.anchor.target" {{checked system.anchor.target}}>
         <label for="missing">{{localize "ATDC.actor.relationships.yourAnchor.missing.label"}}</label>
@@ -12,18 +12,63 @@
         <label for="taken">{{localize "ATDC.actor.relationships.yourAnchor.taken.label"}}</label>
         <input id="taken" type="checkbox" name="system.anchor.taken" {{checked system.anchor.taken}}>
       </div>
+      <p><i>{{localize "ATDC.actor.relationships.yourAnchor.details.label"}}</i></p>
+      <textarea type="text" name="system.anchor.details" value="{{system.anchor.details}}">{{system.anchor.details}}</textarea>
     </div>
 
     <div class="box">
       <h3>{{localize "ATDC.actor.relationships.contacts.label"}}</h3>
-
+      <ol class="items-list">
+        <li class="item flexrow items-header">
+          <div class="item-name">Name</div>
+          <div class="item-blown">Blown?</div>
+          <div class="item-expertise">Expertise</div>
+          <div class="item-controls">
+            <a class="item-control item-create" title="Create item" data-type="contact"><i class="fas fa-plus"></i> Contact</a>
+          </div>
+        </li>
+        {{#each contact as |item id|}}
+          <li class="item flexrow" data-item-id="{{item._id}}">
+            <div class="item-name">
+              <h4>{{item.name}}</h4>
+            </div>
+            <div class="item-prop item-blown">
+              <input type="checkbox" name="item.system.blown" {{checked item.system.blown}}>
+            </div>
+            <div class="item-prop item-expertise">
+              <select name="item.system.expertise.index">
+                {{#select item.system.expertise.index}}
+                  {{#each item.system.expertise.options as |option key|}}
+                    <option value="{{key}}">{{localize option}}</option>
+                  {{/each}}
+                {{/select}}
+              </select>
+            </div>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+        {{/each}}
+      </ol>
     </div>
   </div>
   
   <div class="flexcol">
     <div class="box">
       <h3>{{localize "ATDC.actor.relationships.teamMembers.label"}}</h3>
-      
+
+      <p><i>{{localize "ATDC.actor.relationships.teamMembers.careMost.label"}}</i></p>
+      <input type="text" placeholder="{{localize "ATDC.actor.relationships.teamMembers.careMost.name.placeholder"}}" name="system.team.careMostName" value="{{system.team.careMostName}}">
+      <p><i>{{localize "ATDC.actor.relationships.teamMembers.careMost.details.label"}}</i></p>
+      <textarea type="text" name="system.team.careMostDetails" value="{{system.team.careMostDetails}}">{{system.team.careMostDetails}}</textarea>
+      <hr>
+
+      <p><i>{{localize "ATDC.actor.relationships.teamMembers.careLeast.label"}}</i></p>
+      <input type="text" placeholder="{{localize "ATDC.actor.relationships.teamMembers.careLeast.name.placeholder"}}" name="system.team.careLeastName" value="{{system.team.careLeastName}}">
+      <p><i>{{localize "ATDC.actor.relationships.teamMembers.careLeast.details.label"}}</i></p>
+      <textarea type="text" name="system.team.careLeastDetails" value="{{system.team.careLeastDetails}}">{{system.team.careLeastDetails}}</textarea>
+
     </div>
   </div>
 </div>
