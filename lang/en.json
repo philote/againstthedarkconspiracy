@@ -225,6 +225,16 @@
   },
   "ATDC.roll.label": "Roll",
   "ATDC.item": {
+    "gearList": {
+      "name.label": "Name",
+      "tags.label": "Tags",
+      "load.label": "Load"
+    },
+    "contactList": {
+      "name.label": "Name",
+      "blown.label": "Blown",
+      "expertise.label": "Expertise"
+    },
     "name.placeholder": "Name",
     "description.label": "Description",
     "gear": {
@@ -232,7 +242,7 @@
       "load.label": "Load"
     },
     "contact": {
-      "blown.label": "Blown?",
+      "blown.label": "Blown",
       "expertise.label": "Expertise"
     }
   }

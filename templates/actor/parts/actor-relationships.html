@@ -20,23 +20,23 @@
       <h3>{{localize "ATDC.actor.relationships.contacts.label"}}</h3>
       <ol class="items-list">
         <li class="item flexrow items-header">
-          <div class="item-name">Name</div>
-          <div class="item-blown">Blown?</div>
-          <div class="item-expertise">Expertise</div>
+          <div class="item-name">{{localize "ATDC.item.contactList.name.label"}}</div>
+          <div class="item-blown">{{localize "ATDC.item.contactList.blown.label"}}</div>
+          <div class="item-expertise">{{localize "ATDC.item.contactList.expertise.label"}}</div>
           <div class="item-controls">
-            <a class="item-control item-create" title="Create item" data-type="contact"><i class="fas fa-plus"></i> Contact</a>
+            <a class="item-control item-create" title="Create item" data-type="contact"><i class="fas fa-plus"></i></a>
           </div>
         </li>
         {{#each contact as |item id|}}
           <li class="item flexrow" data-item-id="{{item._id}}">
             <div class="item-name">
-              <h4>{{item.name}}</h4>
+              <input class="inline-edit-item" type="text" name="item.name" data-field="name" data-item-id="{{item._id}}" value="{{item.name}}">
             </div>
             <div class="item-prop item-blown">
-              <input type="checkbox" name="item.system.blown" {{checked item.system.blown}}>
+              <input class="item-edit-checked" type="checkbox" name="item.system.blown" data-field="system.blown" data-item-id="{{item._id}}" {{checked item.system.blown}}>
             </div>
             <div class="item-prop item-expertise">
-              <select name="item.system.expertise.index">
+              <select class="item-edit-checked" name="item.system.expertise.index" data-field="system.expertise.index" data-item-id="{{item._id}}">
                 {{#select item.system.expertise.index}}
                   {{#each item.system.expertise.options as |option key|}}
                     <option value="{{key}}">{{localize option}}</option>

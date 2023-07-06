@@ -101,6 +101,10 @@ export class AtDCActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
+    html.find('.inline-edit-item').blur(this._onInlineEditItem.bind(this));
+    html.find('.item-edit-checked').change(this._onInlineEditItem.bind(this));
+    // html.find('.item-edit-checked').
+
     // Render the item sheet for viewing/editing prior to the editable check.
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
@@ -135,6 +139,25 @@ export class AtDCActorSheet extends ActorSheet {
         li.addEventListener("dragstart", handler, false);
       });
     }
+  }
+
+  _onInlineEditItem(e) {
+    e.preventDefault();
+
+    let el = e.currentTarget;
+    let id = el.dataset.itemId;
+    let field = el.dataset.field;
+    let item = this.actor.items.get(id);
+
+    // console.log("field "+field);
+    // console.log("el.value "+el.value);
+    // console.log("el.type "+el.type);
+
+    if (el.type === "checkbox") {
+      return item.update({[field]:el.checked })
+    }
+
+    return item.update({[field]:el.value});
   }
 
   /**
