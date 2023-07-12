@@ -85,7 +85,7 @@
 
   <div class="actions">
     <div class="collapsable box">
-      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.roll.label"}}</a>
+      <a class="clickable" data-roll-type="investigate" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
       <details>
         <summary>{{localize "ATDC.actor.actions.investigate.label"}}</summary>
         <p>{{localize "ATDC.actor.actions.investigate.description"}}</p>
@@ -93,7 +93,7 @@
     </div>
 
     <div class="collapsable box">
-      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.roll.label"}}</a>
+      <a class="clickable" data-roll-type="takeThemOut" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
       <details>
         <summary>{{localize "ATDC.actor.actions.takeThemOut.label"}}</summary>
         <p>{{localize "ATDC.actor.actions.takeThemOut.description"}}</p>
@@ -101,7 +101,7 @@
     </div>
 
     <div class="collapsable box">
-      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.roll.label"}}</a>
+      <a class="clickable" data-roll-type="harm" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
       <details>
         <summary>{{localize "ATDC.actor.actions.harm.label"}}</summary>
         <p>{{localize "ATDC.actor.actions.harm.description"}}</p>
@@ -109,7 +109,15 @@
     </div>
     
     <div class="collapsable box">
-      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.roll.label"}}</a>
+      <a class="clickable" data-roll-type="cover" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
+      <details>
+        <summary>{{localize "ATDC.actor.actions.cover.label"}}</summary>
+        <p>{{localize "ATDC.actor.actions.cover.description"}}</p>
+      </details>
+    </div>
+
+    <div class="collapsable box">
+      <a class="clickable" data-roll-type="flee" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
       <details>
         <summary>{{localize "ATDC.actor.actions.flee.label"}}</summary>
         <p>{{localize "ATDC.actor.actions.flee.description"}}</p>
@@ -117,7 +125,7 @@
     </div>
 
     <div class="collapsable box">
-      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.roll.label"}}</a>
+      <a class="clickable" data-roll-type="chase" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
       <details>
         <summary>{{localize "ATDC.actor.actions.chase.label"}}</summary>
         <p>{{localize "ATDC.actor.actions.chase.description"}}</p>
@@ -127,7 +135,7 @@
     <hr>
     <p class="seek-relief-info">{{localize "ATDC.actor.seekRelief.info"}}</p>
     <div class="collapsable box">
-      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.roll.label"}}</a>
+      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
       <details>
         <summary>{{localize "ATDC.actor.seekRelief.behaveBadly.label"}}</summary>
         <p>{{localize "ATDC.actor.seekRelief.behaveBadly.description"}}</p>
@@ -135,7 +143,7 @@
     </div>
 
     <div class="collapsable box">
-      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.roll.label"}}</a>
+      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
       <details>
         <summary>{{localize "ATDC.actor.seekRelief.vice.label"}}</summary>
         <p>{{localize "ATDC.actor.seekRelief.vice.description"}}</p>
@@ -143,7 +151,7 @@
     </div>
 
     <div class="collapsable box">
-      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.roll.label"}}</a>
+      <a class="clickable" data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
       <details>
         <summary>{{localize "ATDC.actor.seekRelief.seekSolaceRelationship.label"}}</summary>
         <p>{{localize "ATDC.actor.seekRelief.seekSolaceRelationship.description"}}</p>
@@ -151,7 +159,7 @@
     </div>
     
     <div class="collapsable box">
-      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.roll.label"}}</a>
+      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
       <details>
         <summary>{{localize "ATDC.actor.seekRelief.revealHistory.label"}}</summary>
         <p>{{localize "ATDC.actor.seekRelief.revealHistory.description"}}</p>
@@ -159,7 +167,7 @@
     </div>
     
     <div class="collapsable box">
-      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.roll.label"}}</a>
+      <a data-roll-type="" title="roll" data-item-id=""><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
       <details>
         <summary>{{localize "ATDC.actor.seekRelief.seekReliefHorror.label"}}</summary>
         <p>{{localize "ATDC.actor.seekRelief.seekReliefHorror.description"}}</p>

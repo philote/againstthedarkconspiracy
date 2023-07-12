@@ -87,6 +87,10 @@
       }
     },
     "actions": {
+      "label": "Roll!",
+      "intel.colored": "INTEL",
+      "risk.colored": "Stress",
+      "heat.colored": "HEAT",
       "investigate": {
         "label": "Investigate",
         "description": "When you want to ask a question about someone, something,  or somewhere. Or you want control to reveal something about the situation."
@@ -99,6 +103,10 @@
         "label": "Roll for Harm",
         "description": "TBD"
       },
+      "cover": {
+        "label": "Maintain Your Cover",
+        "description": "TBD."
+      },
       "flee": {
         "label": "Flee For Your Life",
         "description": "When you want to escape your fate by leaving the scene and Control agrees there's a reasonable route by which you could get away"
@@ -106,6 +114,10 @@
       "chase": {
         "label": "Chase Them Down",
         "description": "TBD"
+      },
+      "default": {
+        "label": "Do Something Else",
+        "description": "-"
       }
     },
     "seekRelief": {
@@ -123,7 +135,7 @@
         "description": "TBD"
       },
       "revealHistory": {
-        "label": "Reveal some of your history together",
+        "label": "Reveal your history together",
         "description": "TBD"
       },
       "seekReliefHorror": {
@@ -223,7 +235,6 @@
       }
     }
   },
-  "ATDC.roll.label": "Roll",
   "ATDC.item": {
     "gearList": {
       "name.label": "Name",
