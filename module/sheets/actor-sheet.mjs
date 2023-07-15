@@ -3,15 +3,21 @@
  * @extends {ActorSheet}
  */
 export class AtDCActorSheet extends ActorSheet {
-
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["atdc", "sheet", "actor"],
-      template: "systems/againstthedarkconspiracy/templates/actor/actor-sheet.html",
+      template:
+        "systems/againstthedarkconspiracy/templates/actor/actor-sheet.html",
       width: 720,
       height: 720,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "main" }]
+      tabs: [
+        {
+          navSelector: ".sheet-tabs",
+          contentSelector: ".sheet-body",
+          initial: "main",
+        },
+      ],
     });
   }
 
@@ -38,13 +44,13 @@ export class AtDCActorSheet extends ActorSheet {
     // context.flags = actorData.flags;
 
     // Prepare character data and items.
-    if (actorData.type == 'character') {
+    if (actorData.type == "character") {
       this._prepareItems(context);
       this._prepareCharacterData(context);
     }
 
     // Prepare NPC data and items.
-    if (actorData.type == 'npc') {
+    if (actorData.type == "npc") {
       this._prepareItems(context);
     }
 
@@ -61,9 +67,7 @@ export class AtDCActorSheet extends ActorSheet {
    *
    * @return {undefined}
    */
-  _prepareCharacterData(context) {
-    
-  }
+  _prepareCharacterData(context) {}
 
   /**
    * Organize and classify Items for Character sheets.
@@ -81,11 +85,11 @@ export class AtDCActorSheet extends ActorSheet {
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
       // Append to gear.
-      if (i.type === 'gear') {
+      if (i.type === "gear") {
         gear.push(i);
       }
       // Append to features.
-      else if (i.type === 'contact') {
+      else if (i.type === "contact") {
         contact.push(i);
       }
     }
@@ -101,12 +105,12 @@ export class AtDCActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-    html.find('.inline-edit-item').blur(this._onInlineEditItem.bind(this));
-    html.find('.item-edit-checked').change(this._onInlineEditItem.bind(this));
+    html.find(".inline-edit-item").blur(this._onInlineEditItem.bind(this));
+    html.find(".item-edit-checked").change(this._onInlineEditItem.bind(this));
     // html.find('.item-edit-checked').
 
     // Render the item sheet for viewing/editing prior to the editable check.
-    html.find('.item-edit').click(ev => {
+    html.find(".item-edit").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
@@ -117,10 +121,10 @@ export class AtDCActorSheet extends ActorSheet {
     if (!this.isEditable) return;
 
     // Add Inventory Item
-    html.find('.item-create').click(this._onItemCreate.bind(this));
+    html.find(".item-create").click(this._onItemCreate.bind(this));
 
     // Delete Inventory Item
-    html.find('.item-delete').click(ev => {
+    html.find(".item-delete").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.delete();
@@ -128,12 +132,12 @@ export class AtDCActorSheet extends ActorSheet {
     });
 
     // Clickable UI.
-    html.find('.clickable').click(this._onClick.bind(this));
+    html.find(".clickable").click(this._onClick.bind(this));
 
     // Drag events for macros.
     if (this.actor.isOwner) {
-      let handler = ev => this._onDragStart(ev);
-      html.find('li.item').each((i, li) => {
+      let handler = (ev) => this._onDragStart(ev);
+      html.find("li.item").each((i, li) => {
         if (li.classList.contains("inventory-header")) return;
         li.setAttribute("draggable", true);
         li.addEventListener("dragstart", handler, false);
@@ -154,10 +158,10 @@ export class AtDCActorSheet extends ActorSheet {
     // console.log("el.type "+el.type);
 
     if (el.type === "checkbox") {
-      return item.update({[field]:el.checked })
+      return item.update({ [field]: el.checked });
     }
 
-    return item.update({[field]:el.value});
+    return item.update({ [field]: el.value });
   }
 
   /**
@@ -178,13 +182,13 @@ export class AtDCActorSheet extends ActorSheet {
     const itemData = {
       name: name,
       type: type,
-      system: data
+      system: data,
     };
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.system["type"];
 
     // Finally, create the item!
-    return await Item.create(itemData, {parent: this.actor});
+    return await Item.create(itemData, { parent: this.actor });
   }
 
   /**
@@ -200,79 +204,83 @@ export class AtDCActorSheet extends ActorSheet {
     // Handle item rolls.
     if (dataset.rollType) {
       switch (dataset.rollType) {
-        case 'toggle-stress': {
+        case "toggle-stress": {
           this._onToggleStress(dataset.pos);
           return;
         }
-        case 'toggle-intel': {
+        case "toggle-intel": {
           this._onToggleIntel(dataset.pos);
           return;
         }
-        case 'investigate': {
+        case "investigate": {
           const move = 1;
           const title = this._dialogTitle(move);
           const content = this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
-        case 'cover': {
+        case "cover": {
           const move = 2;
           const title = this._dialogTitle(move);
           const content = this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
-        case 'flee': {
+        case "flee": {
           const move = 3;
           const title = this._dialogTitle(move);
           const content = this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
-        case 'chase': {
+        case "chase": {
           const move = 5;
           const title = this._dialogTitle(move);
           const content = this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
-        case 'takeThemOut': {
+        case "takeThemOut": {
           const move = 6;
           const title = this._dialogTitle(move);
           const content = this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
-        case 'harm': {}
-        case 'stress': {}
+        case "doSomethingElse": {
+          const move = 4;
+          const title = this._dialogTitle(move);
+          const content = this._dialogContent(move);
+          this.asyncActionDialog({ title, content, move });
+          return;
+        }
+        case "harm": {
+          const move = 7;
+          const title = this._dialogTitle(move);
+          const content = this._dialogContent(move);
+          this.asyncHarmDialog({ title, content, move });
+          return;
+        }
+        case "stress": {
+          this.asyncStressRoll()
+          return;
+        }
 
-        case 'behaveBadly': {}
-        case 'indulgeVice': {}
-        case 'seekSolace': {}
-        case 'revealHistoryTogether': {}
-        case 'seekRelief': {}
+        case "behaveBadly": {
+        }
+        case "indulgeVice": {
+        }
+        case "seekSolace": {
+        }
+        case "revealHistoryTogether": {
+        }
+        case "seekRelief": {
+        }
         default: {
           console.error("_onRoll, bad roll type.");
           return;
         }
       }
-      // if (dataset.rollType == 'item') {
-      //   const itemId = element.closest('.item').dataset.itemId;
-      //   const item = this.actor.items.get(itemId);
-      //   if (item) return item.roll();
-      // }
-    }
-
-    // Handle rolls that supply the formula directly.
-    if (dataset.roll) {
-      let label = dataset.label ? `[ability] ${dataset.label}` : '';
-      let roll = new Roll(dataset.roll, this.actor.getRollData());
-      roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get('core', 'rollMode'),
-      });
-      return roll;
     }
   }
 
@@ -281,14 +289,14 @@ export class AtDCActorSheet extends ActorSheet {
     let currentState = currentArray[pos];
     let newState = 0;
 
-    if(currentState === false) {
-        newState = true;
+    if (currentState === false) {
+      newState = true;
     } else {
-        newState = false;
+      newState = false;
     }
 
     currentArray[pos] = newState;
-    return this.actor.update({["system.stress.states"]:currentArray});
+    return this.actor.update({ ["system.stress.states"]: currentArray });
   }
 
   _onToggleIntel(pos) {
@@ -296,14 +304,14 @@ export class AtDCActorSheet extends ActorSheet {
     let currentState = currentArray[pos];
     let newState = 0;
 
-    if(currentState === false) {
-        newState = true;
+    if (currentState === false) {
+      newState = true;
     } else {
-        newState = false;
+      newState = false;
     }
 
     currentArray[pos] = newState;
-    return this.actor.update({["system.intel.states"]:currentArray});
+    return this.actor.update({ ["system.intel.states"]: currentArray });
   }
 
   // ----------------------
@@ -312,26 +320,30 @@ export class AtDCActorSheet extends ActorSheet {
 
   _dialogTitle(moveNumber) {
     switch (moveNumber) {
-        case 1:
-            return `${game.i18n.localize("ATDC.actor.actions.investigate.label")}`;
-        case 2:
-            return `${game.i18n.localize("ATDC.actor.actions.cover.label")}`;
-        case 3:
-            return `${game.i18n.localize("ATDC.actor.actions.flee.label")}`;
-        case 5:
-            return `${game.i18n.localize("ATDC.actor.actions.chase.label")}`;
-        case 6:
-            return `${game.i18n.localize("ATDC.actor.actions.takeThemOut.label")}`;
-        case 4:
-        default:
-            return `${game.i18n.localize("ATDC.actor.actions.default.label")}`;
+      case 1:
+        return `${game.i18n.localize("ATDC.actor.actions.investigate.label")}`;
+      case 2:
+        return `${game.i18n.localize("ATDC.actor.actions.cover.label")}`;
+      case 3:
+        return `${game.i18n.localize("ATDC.actor.actions.flee.label")}`;
+      case 5:
+        return `${game.i18n.localize("ATDC.actor.actions.chase.label")}`;
+      case 6:
+        return `${game.i18n.localize("ATDC.actor.actions.takeThemOut.label")}`;
+      case 7:
+        return `${game.i18n.localize("ATDC.actor.actions.harm.label")}`;
+      case 4:
+      default:
+        return `${game.i18n.localize(
+          "ATDC.actor.actions.doSomethingElse.label"
+        )}`;
     }
   }
 
   _dialogContent(moveNumber) {
     switch (moveNumber) {
-        case 1: // Investigate
-            return `
+      case 1: // Investigate
+        return `
                 <p>
                     <b>When you want to ask a question about someone, something or somewhere, or want Control to reveal something about the situation</b>, roll:
                 </p>
@@ -351,8 +363,8 @@ export class AtDCActorSheet extends ActorSheet {
                 </form>
                 </br>
             `;
-        case 2: // Maintain Your Cover
-                return `
+      case 2: // Maintain Your Cover
+        return `
                     <p>
                         <b>When you are at risk of exposure, say how you brazen it out, avoid detection or hide from those who suspect you, or are looking for you</b>, roll:
                     </p>
@@ -372,8 +384,8 @@ export class AtDCActorSheet extends ActorSheet {
                     </form>
                     </br>
                 `;
-        case 3: // Flee For Your Life
-            return `
+      case 3: // Flee For Your Life
+        return `
                 <p>
                     <b>When you want to escape your fate by leaving the scene and Control agrees there’s a reasonable route by which you could get away</b>, roll:
                 </p>
@@ -400,8 +412,8 @@ export class AtDCActorSheet extends ActorSheet {
                 </form>
                 </br>
             `;
-        case 5: // Chase Them Down
-            return `
+      case 5: // Chase Them Down
+        return `
                 <p>
                     <b>When they are getting away and Control agrees there’s a reasonable way for you to catch them before they escape, and their Powers don’t make it impossible</b>, roll:
                 </p>
@@ -428,8 +440,8 @@ export class AtDCActorSheet extends ActorSheet {
                 </form>
                 </br>
             `;
-        case 6: // Take Them Out
-            return `
+      case 6: // Take Them Out
+        return `
                 <p>
                     <b>If you fight or shoot at a threat or they attack
                     you, say what success looks like: Hurt them; Subdue them; Avoid their attempt to hurt you; Some other narrative outcome</b>, then roll:
@@ -480,9 +492,39 @@ export class AtDCActorSheet extends ActorSheet {
                 </form>
                 </br>
             `;
-        case 4: // Do Something Else
-        default:
-            return `
+      case 7: // harm
+        return `
+            <p>
+                <b>If any Risk Die rolls equal to or greater than your highest roll</b>, you suffer a Harmful Consequence:
+            </p>
+            <form class="flexcol">
+                <div class="form-group">
+                    <input type="checkbox" id="baseDie" name="baseDie" checked>
+                    <label for="baseDie">Roll 1d6 to find out how bad it is.</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="stressDie" name="stressDie">
+                    <label for="stressDie">Add your <b><span style="color: ${CONFIG.ATDC.riskDieColor}">Stress Die</span></b> if you are willing to take that risk</label>
+                </div>
+                <hr>
+                <div>
+                    <input type="radio" id="namelessPawn" name="rollBonus" value="3">
+                    <label for="namelessPawn">+3 if they are nameless pawns</label>
+                </div>
+                <div>
+                    <input type="radio" id="namelessPawnLeader" name="rollBonus" value="2">
+                    <label for="namelessPawnLeader">+2 if they are the leader of nameless pawns</label>
+                </div>
+                <div>
+                    <input type="radio" id="supernatural" name="rollBonus" value="-1">
+                    <label for="supernatural">-1 if they are a Supernatural</label>
+                </div>
+            </form>
+            </br>
+            `;
+      case 4: // Do Something Else
+      default:
+        return `
                 <p>
                     <b>When you do something that isn't covered by another move</b>, say what success looks like and roll:
                 </p>
@@ -526,96 +568,128 @@ export class AtDCActorSheet extends ActorSheet {
 
   _getMaxDieMessage(moveNumber, maxDieNumber) {
     switch (moveNumber) {
-        case 1: { // Investigate
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                    return `you get the minimum amount of information you need to proceed and mark <b><i>${this._getWordHeatWithFormatting()}</b></i>`;
-                case "4":
-                case "5":
-                    return `you get the minimum needed to proceed and <b><i>Control will also answer 1 question</b></i>.`;
-                case "6":
-                    return `you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>, also <b><i>mark ${this._getWordIntelWithFormatting()}</b></i> and <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
-            }
+      case 1: {
+        // Investigate
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+            return `you get the minimum amount of information you need to proceed and mark <b><i>${this._getWordHeatWithFormatting()}</b></i>`;
+          case "4":
+          case "5":
+            return `you get the minimum needed to proceed and <b><i>Control will also answer 1 question</b></i>.`;
+          case "6":
+            return `you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>, also <b><i>mark ${this._getWordIntelWithFormatting()}</b></i> and <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
         }
-        case 2: // Maintain Your Cover
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                    return `you’re blown! Choose to either <b><i>get caught</b></i> or <b><i>mark ${this._getWordHeatWithFormatting()}</b></i> and <b><i>flee for your life</b></i>.`;
-                case "4":
-                case "5":
-                    return `your cover holds, or they don’t find you.`;
-                case "6":
-                    return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</b></i> and <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
-            }
-        case 3: // Flee For Your Life
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                    return `you’re in trouble! Choose to either <b><i>get caught</b></i> or <b><i>agree with Control who or what gets left behind</b></i> and <b><i>mark ${this._getWordHeatWithFormatting()}</b></i> and <b><i>flee for your life</b></i>, again.`;
-                case "4":
-                case "5":
-                    return `you get away clean unless Control chooses to spend ${this._getWordHeatWithFormatting()} to maintain the pursuit and forces you to <b><i>flee for your life</b></i>, again.`;
-                case "6":
-                    return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
-            }
-        case 5: // Chase Them Down
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                    return `Dammit, they’re fast! Choose to either <b><i>let them get away</i></b> or <b><i>agree with Control the practical cost of staying in the race</i></b> and <b><i>mark ${this._getWordHeatWithFormatting()}</i></b> and <b><i>chase them down again</i></b>.`;
-                case "4":
-                case "5":
-                    return `you catch them unless Control chooses to spend ${this._getWordHeatWithFormatting()} to impede you and force you to <b><i>chase them down</i></b>, again.`;
-                case "6":
-                    return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
-            }
-        case 6: // Take Them Out
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                    return `you <b><i>fail</i></b>, or <b><i>succeed at a cost</i></b>, but always <b><i>mark ${this._getWordHeatWithFormatting()}</i></b>.`;
-                case "4":
-                case "5":
-                    return `you succeed with no obvious complication or benefit`;
-                case "6":
-                    return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.6)</span>`;
-            }
-        case 4: // Do Something Else
-        default:
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                    return `you either fail or <b><i>Control may offer you success at a cost</i></b>, but always <b><i>mark ${this._getWordHeatWithFormatting()}</i></b>.`;
-                case "4":
-                case "5":
-                    return `you succeed with no obvious complication or benefit.`;
-                case "6":
-                    return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for  ${this._getWordRiskWithFormatting()}</i></b>.`;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
-            }
+      }
+      case 2: // Maintain Your Cover
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+            return `you’re blown! Choose to either <b><i>get caught</b></i> or <b><i>mark ${this._getWordHeatWithFormatting()}</b></i> and <b><i>flee for your life</b></i>.`;
+          case "4":
+          case "5":
+            return `your cover holds, or they don’t find you.`;
+          case "6":
+            return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</b></i> and <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
+        }
+      case 3: // Flee For Your Life
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+            return `you’re in trouble! Choose to either <b><i>get caught</b></i> or <b><i>agree with Control who or what gets left behind</b></i> and <b><i>mark ${this._getWordHeatWithFormatting()}</b></i> and <b><i>flee for your life</b></i>, again.`;
+          case "4":
+          case "5":
+            return `you get away clean unless Control chooses to spend ${this._getWordHeatWithFormatting()} to maintain the pursuit and forces you to <b><i>flee for your life</b></i>, again.`;
+          case "6":
+            return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
+        }
+      case 5: // Chase Them Down
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+            return `Dammit, they’re fast! Choose to either <b><i>let them get away</i></b> or <b><i>agree with Control the practical cost of staying in the race</i></b> and <b><i>mark ${this._getWordHeatWithFormatting()}</i></b> and <b><i>chase them down again</i></b>.`;
+          case "4":
+          case "5":
+            return `you catch them unless Control chooses to spend ${this._getWordHeatWithFormatting()} to impede you and force you to <b><i>chase them down</i></b>, again.`;
+          case "6":
+            return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
+        }
+      case 6: // Take Them Out
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+            return `you <b><i>fail</i></b>, or <b><i>succeed at a cost</i></b>, but always <b><i>mark ${this._getWordHeatWithFormatting()}</i></b>.`;
+          case "4":
+          case "5":
+            return `you succeed with no obvious complication or benefit`;
+          case "6":
+            return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.6)</span>`;
+        }
+      case 7: // Harm
+        switch (maxDieNumber) {
+          case 1:
+          case 2:
+          case 3:
+            return `
+                        The consequences are serious, say if:
+                        <ul>
+                            <li>It’s mortal. You<b><i>fill your ${this._getWordRiskWithFormatting()} track</i></b> and crack.</li>
+                            <li>It’s bloody. You’ll <b><i>die after one more action</i></b> without medical treatment.</li>
+                            <li>It’s painful. You <b><i>cannot use your Expertise</i></b> until you get medical treatment.</li>
+                        </ul>
+                        Medical treatment requires an Operator, who could be the one needing treatment, to mark a gear slot and declare a "Medical Kit".
+                    `;
+          case 4:
+          case 5:
+            return `You were lucky this time! It hurts, but you’ll live`;
+          case 6:
+          case 7:
+          case 8:
+          case 9:
+            return `You were lucky this time! It hurts, but you’ll live, also <b><i>Mark ${this._getWordIntelWithFormatting()}</b></i> But that was close <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.7)</span>`;
+        }
+      case 4: // Do Something Else
+      default:
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+            return `you either fail or <b><i>Control may offer you success at a cost</i></b>, but always <b><i>mark ${this._getWordHeatWithFormatting()}</i></b>.`;
+          case "4":
+          case "5":
+            return `you succeed with no obvious complication or benefit.`;
+          case "6":
+            return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for  ${this._getWordRiskWithFormatting()}</i></b>.`;
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
+        }
     }
   }
 
-  _chatContent(moveNumber, diceOutput, maxDieNumber, stressMessage, harmMessage) {
+  _chatContent(
+    moveNumber,
+    diceOutput,
+    maxDieNumber,
+    stressMessage,
+    harmMessage
+  ) {
     const moveName = this._dialogTitle(moveNumber);
     return `
         <p style="font-size: 1.5em;"><b>${moveName}</b> Result:</p>
@@ -625,37 +699,75 @@ export class AtDCActorSheet extends ActorSheet {
         ${harmMessage}
     `;
   }
-  
-  _harmMoveMessage() {
+
+  _stressChatContent(diceOutput, stressMessage, stressValMessage) {
     return `
-      <hr>
-      <div style="font-size: 18px">
-          <b>You suffer a <i>Harmful Consequence</i>!</b>
-          </br><i style="color: ${CONFIG.ATDC.takeThemOutDieColor}">Roll for Harm</i> to find out how bad it is.
-      <div>
+        ${stressValMessage}
+        <p>
+            <span style="font-size: 1.5em;"><b>${game.i18n.localize(
+              "ATDC.actor.actions.stress.label"
+            )}</b> Result: </span> ${diceOutput}
+        </p>
+        <hr>
+        <span style="font-size: 1.2em;">${stressMessage}</span>
     `;
   }
 
+  _harmChatContent(
+    moveNumber,
+    diceOutput,
+    maxDieNumber,
+    stressMessage,
+    bonusValue
+  ) {
+    const moveName = this._dialogTitle(moveNumber);
+    return `
+            <p style="font-size: 1.5em;"><b>${moveName}</b> Result:</p>
+            <p>${diceOutput}</p>
+            <b>Antagonist Modifier:</b> ${bonusValue}
+            </br><b>Final Result:</b> ${maxDieNumber}
+            <hr>
+            ${this._getMaxDieMessage(moveNumber, maxDieNumber)}
+            ${stressMessage}
+        `;
+  }
+
+  _harmMoveMessage() {
+    return `
+            <hr>
+            <div style="font-size: 18px">
+                <b>You suffer a <i>Harmful Consequence</i>!</b>
+                </br><i style="color: ${CONFIG.ATDC.takeThemOutDieColor}">Roll for Harm</i> to find out how bad it is.
+            <div>
+        `;
+  }
+
   _getWordIntelWithFormatting() {
-    return `<span style="color: ${CONFIG.ATDC.intelColor}">${game.i18n.localize("ATDC.actor.actions.intel.colored")}</span>`;
+    return `<b style="color: ${CONFIG.ATDC.intelColor}">${game.i18n.localize(
+      "ATDC.actor.actions.intel.colored"
+    )}</b>`;
   }
-  
+
   _getWordRiskWithFormatting() {
-    return `<span style="color: ${CONFIG.ATDC.riskDieColor}">${game.i18n.localize("ATDC.actor.actions.risk.colored")}</span>`;
+    return `<b style="color: ${
+      CONFIG.ATDC.riskDieColor
+    }">${game.i18n.localize("ATDC.actor.actions.risk.colored")}</b>`;
   }
-  
+
   _getWordHeatWithFormatting() {
-    return `<span style="color: ${CONFIG.ATDC.heatColor}">${game.i18n.localize("ATDC.actor.actions.heat.colored")}</span>`;
+    return `<b style="color: ${CONFIG.ATDC.heatColor}">${game.i18n.localize(
+      "ATDC.actor.actions.heat.colored"
+    )}</b>`;
   }
 
   _stressMoveMessage() {
     return `
-      <hr>
-      <div style="font-size: 18px">
-          <b>The situation causes you ${this._getWordRiskWithFormatting()}, increase your ${this._getWordRiskWithFormatting()} by one!</b>
-          </br><i style="font-size: 12px">(Do not roll for ${this._getWordRiskWithFormatting()} if prompted by the move.)</i>
-      <div>
-    `;
+            <hr>
+            <div style="font-size: 18px">
+                <b>The situation causes you ${this._getWordRiskWithFormatting()}, increase your ${this._getWordRiskWithFormatting()} by one!</b>
+                </br><i style="font-size: 12px">(Do not roll for ${this._getWordRiskWithFormatting()} if prompted by the move.)</i>
+            <div>
+        `;
   }
 
   async asyncActionDialog({ title = "", content = "", move = 0 } = {}) {
@@ -670,219 +782,254 @@ export class AtDCActorSheet extends ActorSheet {
               label: game.i18n.localize("ATDC.actor.actions.label"),
               callback: async (html) => {
                 const dice = [];
-                
+
                 if (document.getElementById("baseDie").checked) {
-                  let hdRoll = await new Roll('1d6').evaluate({ async: true });
+                  let hdRoll = await new Roll("1d6").evaluate({ async: true });
                   dice.push({
-                      dieColor: CONFIG.ATDC.baseDieColor,
-                      isStress: false,
-                      isRisk: false,
-                      rollVal: hdRoll.result
+                    dieColor: CONFIG.ATDC.baseDieColor,
+                    isStress: false,
+                    isRisk: false,
+                    rollVal: hdRoll.result,
                   });
-              }
+                }
 
-              if (document.getElementById("expertiseDie").checked) {
-                  let odRoll = await new Roll('1d6').evaluate({ async: true });
+                if (document.getElementById("expertiseDie").checked) {
+                  let odRoll = await new Roll("1d6").evaluate({ async: true });
                   dice.push({
-                      dieColor: CONFIG.ATDC.baseDieColor,
-                      isStress: false,
-                      isRisk: false,
-                      rollVal: odRoll.result
+                    dieColor: CONFIG.ATDC.baseDieColor,
+                    isStress: false,
+                    isRisk: false,
+                    rollVal: odRoll.result,
                   });
-              };
+                }
 
-              if (document.getElementById("stressDie").checked) {
-                  let idRoll = await new Roll('1d6').evaluate({ async: true });
+                if (document.getElementById("stressDie").checked) {
+                  let idRoll = await new Roll("1d6").evaluate({ async: true });
                   dice.push({
-                      dieColor: CONFIG.ATDC.riskDieColor,
-                      isStress: true,
-                      isRisk: false,
-                      rollVal: idRoll.result
+                    dieColor: CONFIG.ATDC.riskDieColor,
+                    isStress: true,
+                    isRisk: false,
+                    rollVal: idRoll.result,
                   });
-              };
-              
-              if (document.getElementById("bonusDie") != null) {
+                }
+
+                if (document.getElementById("bonusDie") != null) {
                   if (document.getElementById("bonusDie").checked) {
-                      let idRoll = await new Roll('1d6').evaluate({ async: true });
-                      dice.push({
-                          dieColor: CONFIG.ATDC.bonusDieColor,
-                          isStress: false,
-                          isRisk: false,
-                          rollVal: idRoll.result
-                      });
+                    let idRoll = await new Roll("1d6").evaluate({
+                      async: true,
+                    });
+                    dice.push({
+                      dieColor: CONFIG.ATDC.bonusDieColor,
+                      isStress: false,
+                      isRisk: false,
+                      rollVal: idRoll.result,
+                    });
                   }
-              }
+                }
 
+                // Take them out Die
+                const threatDice = [];
 
-              // Take them out Die
-              const threatDice = [];
-
-              if (document.getElementById("threatHarmDie") != null) {
+                if (document.getElementById("threatHarmDie") != null) {
                   if (document.getElementById("threatHarmDie").checked) {
-                      let idRoll = await new Roll('1d6').evaluate({ async: true });
-                      threatDice.push({
-                          dieColor: CONFIG.ATDC.takeThemOutDieColor,
-                          isStress: false,
-                          isRisk: true,
-                          rollVal: idRoll.result
-                      });
+                    let idRoll = await new Roll("1d6").evaluate({
+                      async: true,
+                    });
+                    threatDice.push({
+                      dieColor: CONFIG.ATDC.takeThemOutDieColor,
+                      isStress: false,
+                      isRisk: true,
+                      rollVal: idRoll.result,
+                    });
                   }
-              }
-              
-              if (document.getElementById("threatSupernaturalDie") != null) {
-                  if (document.getElementById("threatSupernaturalDie").checked) {
-                      let idRoll = await new Roll('1d6').evaluate({ async: true });
-                      threatDice.push({
-                          dieColor: CONFIG.ATDC.takeThemOutDieColor,
-                          isStress: false,
-                          isRisk: true,
-                          rollVal: idRoll.result
-                      });
-                  }
-              }
+                }
 
-              if (document.getElementById("outnumberedDie") != null) {
+                if (document.getElementById("threatSupernaturalDie") != null) {
+                  if (
+                    document.getElementById("threatSupernaturalDie").checked
+                  ) {
+                    let idRoll = await new Roll("1d6").evaluate({
+                      async: true,
+                    });
+                    threatDice.push({
+                      dieColor: CONFIG.ATDC.takeThemOutDieColor,
+                      isStress: false,
+                      isRisk: true,
+                      rollVal: idRoll.result,
+                    });
+                  }
+                }
+
+                if (document.getElementById("outnumberedDie") != null) {
                   if (document.getElementById("outnumberedDie").checked) {
-                      let idRoll = await new Roll('1d6').evaluate({ async: true });
-                      threatDice.push({
-                          dieColor: CONFIG.ATDC.takeThemOutDieColor,
-                          isStress: false,
-                          isRisk: true,
-                          rollVal: idRoll.result
-                      });
+                    let idRoll = await new Roll("1d6").evaluate({
+                      async: true,
+                    });
+                    threatDice.push({
+                      dieColor: CONFIG.ATDC.takeThemOutDieColor,
+                      isStress: false,
+                      isRisk: true,
+                      rollVal: idRoll.result,
+                    });
                   }
-              }
+                }
 
-              if (document.getElementById("weaponDie") != null) {
+                if (document.getElementById("weaponDie") != null) {
                   if (document.getElementById("weaponDie").checked) {
-                      let idRoll = await new Roll('1d6').evaluate({ async: true });
-                      threatDice.push({
-                          dieColor: CONFIG.ATDC.takeThemOutDieColor,
-                          isStress: false,
-                          isRisk: true,
-                          rollVal: idRoll.result
-                      });
+                    let idRoll = await new Roll("1d6").evaluate({
+                      async: true,
+                    });
+                    threatDice.push({
+                      dieColor: CONFIG.ATDC.takeThemOutDieColor,
+                      isStress: false,
+                      isRisk: true,
+                      rollVal: idRoll.result,
+                    });
                   }
-              }
+                }
 
-              if (document.getElementById("SupernaturalPowersDie1") != null) {
-                  if (document.getElementById("SupernaturalPowersDie1").checked) {
-                      let idRoll = await new Roll('1d6').evaluate({ async: true });
-                      threatDice.push({
-                          dieColor: CONFIG.ATDC.takeThemOutDieColor,
-                          isStress: false,
-                          isRisk: true,
-                          rollVal: idRoll.result
-                      });
+                if (document.getElementById("SupernaturalPowersDie1") != null) {
+                  if (
+                    document.getElementById("SupernaturalPowersDie1").checked
+                  ) {
+                    let idRoll = await new Roll("1d6").evaluate({
+                      async: true,
+                    });
+                    threatDice.push({
+                      dieColor: CONFIG.ATDC.takeThemOutDieColor,
+                      isStress: false,
+                      isRisk: true,
+                      rollVal: idRoll.result,
+                    });
                   }
-              }
+                }
 
-              if (document.getElementById("SupernaturalPowersDie2") != null) {
-                  if (document.getElementById("SupernaturalPowersDie2").checked) {
-                      let idRoll = await new Roll('1d6').evaluate({ async: true });
-                      threatDice.push({
-                          dieColor: CONFIG.ATDC.takeThemOutDieColor,
-                          isStress: false,
-                          isRisk: true,
-                          rollVal: idRoll.result
-                      });
+                if (document.getElementById("SupernaturalPowersDie2") != null) {
+                  if (
+                    document.getElementById("SupernaturalPowersDie2").checked
+                  ) {
+                    let idRoll = await new Roll("1d6").evaluate({
+                      async: true,
+                    });
+                    threatDice.push({
+                      dieColor: CONFIG.ATDC.takeThemOutDieColor,
+                      isStress: false,
+                      isRisk: true,
+                      rollVal: idRoll.result,
+                    });
                   }
-              }
+                }
 
-              if (document.getElementById("SupernaturalPowersDie3") != null) {
-                  if (document.getElementById("SupernaturalPowersDie3").checked) {
-                      let idRoll = await new Roll('1d6').evaluate({ async: true });
-                      threatDice.push({
-                          dieColor: CONFIG.ATDC.takeThemOutDieColor,
-                          isStress: false,
-                          isRisk: true,
-                          rollVal: idRoll.result
-                      });
+                if (document.getElementById("SupernaturalPowersDie3") != null) {
+                  if (
+                    document.getElementById("SupernaturalPowersDie3").checked
+                  ) {
+                    let idRoll = await new Roll("1d6").evaluate({
+                      async: true,
+                    });
+                    threatDice.push({
+                      dieColor: CONFIG.ATDC.takeThemOutDieColor,
+                      isStress: false,
+                      isRisk: true,
+                      rollVal: idRoll.result,
+                    });
                   }
-              }
+                }
 
-              if (document.getElementById("SupernaturalPowersDie4") != null) {
-                  if (document.getElementById("SupernaturalPowersDie4").checked) {
-                      let idRoll = await new Roll('1d6').evaluate({ async: true });
-                      threatDice.push({
-                          dieColor: CONFIG.ATDC.takeThemOutDieColor,
-                          isStress: false,
-                          isRisk: true,
-                          rollVal: idRoll.result
-                      });
+                if (document.getElementById("SupernaturalPowersDie4") != null) {
+                  if (
+                    document.getElementById("SupernaturalPowersDie4").checked
+                  ) {
+                    let idRoll = await new Roll("1d6").evaluate({
+                      async: true,
+                    });
+                    threatDice.push({
+                      dieColor: CONFIG.ATDC.takeThemOutDieColor,
+                      isStress: false,
+                      isRisk: true,
+                      rollVal: idRoll.result,
+                    });
                   }
-              }
+                }
 
-              // -----------------
+                // -----------------
 
-              const maxDie = dice.reduce((a, b) => (a.rollVal > b.rollVal) ? a : b);
+                const maxDie = dice.reduce((a, b) =>
+                  a.rollVal > b.rollVal ? a : b
+                );
 
-              // Determine if the stress die won
-              let isStressDie = false;
-              dice.every(die => {
-                  if ((die.rollVal == maxDie.rollVal) && die.isStress) {
-                      isStressDie = true;
-                      return false;
+                // Determine if the stress die won
+                let isStressDie = false;
+                dice.every((die) => {
+                  if (die.rollVal == maxDie.rollVal && die.isStress) {
+                    isStressDie = true;
+                    return false;
                   }
                   return true;
-              });
+                });
 
-              let stressMessage = "";
-              if (isStressDie) {
+                let stressMessage = "";
+                if (isStressDie) {
                   stressMessage = this._stressMoveMessage();
-              }
+                }
 
-              // Build Dice list
-              let diceOutput = "";
-              dice.forEach(die => {
-                  diceOutput = diceOutput.concat(this._getDiceForOutput(die.rollVal, die.dieColor), " ");
-              });
+                // Build Dice list
+                let diceOutput = "";
+                dice.forEach((die) => {
+                  diceOutput = diceOutput.concat(
+                    this._getDiceForOutput(die.rollVal, die.dieColor),
+                    " "
+                  );
+                });
 
+                // threatDice
+                let harmMessage = "";
+                if (threatDice.length > 0) {
+                  const maxThreatDie = threatDice.reduce((a, b) =>
+                    a.rollVal > b.rollVal ? a : b
+                  );
 
-              // threatDice
-              let harmMessage = "";
-              if (threatDice.length > 0) {
-                  const maxThreatDie = threatDice.reduce((a, b) => (a.rollVal > b.rollVal) ? a : b);
-                  
                   if (maxThreatDie.rollVal >= maxDie.rollVal) {
-                      harmMessage = this._harmMoveMessage();
+                    harmMessage = this._harmMoveMessage();
                   }
 
                   // Build Threat Dice list
                   let threatDiceOutput = "";
-                  threatDice.forEach(die => {
-                      threatDiceOutput = threatDiceOutput.concat(this._getDiceForOutput(die.rollVal, die.dieColor), " ");
+                  threatDice.forEach((die) => {
+                    threatDiceOutput = threatDiceOutput.concat(
+                      this._getDiceForOutput(die.rollVal, die.dieColor),
+                      " "
+                    );
                   });
-                  
+
                   if (threatDiceOutput) {
-                      diceOutput = 
-                      `
+                    diceOutput = `
                           ${diceOutput}</br></br><b style="font-size:1.2em">Risk Die:</b></br>${threatDiceOutput}
-                      `
+                      `;
                   }
-              }
+                }
 
-              // Initialize chat data.
-              const chatContentMessage = this._chatContent(
-                move,
-                diceOutput,
-                maxDie.rollVal,
-                stressMessage,
-                harmMessage
-              );
-              const user = game.user.id;
-              const speaker = ChatMessage.getSpeaker({ actor: this.actor });
-              const rollMode = game.settings.get("core", "rollMode");
+                // Initialize chat data.
+                const chatContentMessage = this._chatContent(
+                  move,
+                  diceOutput,
+                  maxDie.rollVal,
+                  stressMessage,
+                  harmMessage
+                );
+                const user = game.user.id;
+                const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+                const rollMode = game.settings.get("core", "rollMode");
 
-              ChatMessage.create({
-                user: user,
-                speaker: speaker,
-                rollMode: rollMode,
-                content: chatContentMessage,
-              });
+                ChatMessage.create({
+                  user: user,
+                  speaker: speaker,
+                  rollMode: rollMode,
+                  content: chatContentMessage,
+                });
 
-              // ----
-              resolve(null);
+                // ----
+                resolve(null);
               },
             },
           },
@@ -895,4 +1042,169 @@ export class AtDCActorSheet extends ActorSheet {
     });
   }
 
+  async asyncHarmDialog({ title = "", content = "", move = 0 } = {}) {
+    return await new Promise(async (resolve) => {
+      new Dialog(
+        {
+          title: title,
+          content: content,
+          buttons: {
+            button1: {
+              icon: '<i class="fa-solid fa-dice"></i>',
+              label: game.i18n.localize("ATDC.actor.actions.label"),
+              callback: async (html) => {
+                const dice = [];
+
+                if (document.getElementById("baseDie").checked) {
+                  let hdRoll = await new Roll("1d6").evaluate({ async: true });
+                  dice.push({
+                    dieColor: CONFIG.ATDC.baseDieColor,
+                    isStress: false,
+                    rollVal: hdRoll.result,
+                  });
+                }
+
+                if (document.getElementById("stressDie").checked) {
+                  let idRoll = await new Roll("1d6").evaluate({ async: true });
+                  dice.push({
+                    dieColor: CONFIG.ATDC.riskDieColor,
+                    isStress: true,
+                    rollVal: idRoll.result,
+                  });
+                }
+
+                // bonuses
+
+                const radios = document.getElementsByName("rollBonus");
+                let bonusValue = 0;
+                for (var i = 0, length = radios.length; i < length; i++) {
+                  if (radios[i].checked) {
+                    bonusValue = parseInt(radios[i].value);
+                    break;
+                  }
+                }
+
+                // -----------------
+
+                let diceOutput = "";
+
+                const maxDieValue = dice.reduce((a, b) =>
+                  a.rollVal > b.rollVal ? a : b
+                ).rollVal;
+                const setOfMaxDice = dice.filter((obj) => {
+                  return obj.rollVal === maxDieValue;
+                });
+
+                // Stress
+                let stressMessage = "";
+                var stressDieR = setOfMaxDice.find((obj) => {
+                  return obj.isStress === true;
+                });
+
+                let maxDie = null;
+                if (stressDieR) {
+                  stressMessage = this._stressMoveMessage();
+                  maxDie = stressDieR;
+                } else {
+                  maxDie = setOfMaxDice[0];
+                }
+
+                const maxDieModified = parseInt(maxDie.rollVal) + bonusValue;
+
+                dice.forEach((die) => {
+                  diceOutput = diceOutput.concat(
+                    this._getDiceForOutput(die.rollVal, die.dieColor),
+                    " "
+                  );
+                });
+
+                // Initialize chat data.
+                const chatContentMessage = this._harmChatContent(
+                  move,
+                  diceOutput,
+                  maxDieModified,
+                  stressMessage,
+                  bonusValue
+                );
+                const user = game.user.id;
+                const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+                const rollMode = game.settings.get("core", "rollMode");
+
+                ChatMessage.create({
+                  user: user,
+                  speaker: speaker,
+                  rollMode: rollMode,
+                  content: chatContentMessage,
+                });
+
+                // ----
+                resolve(null);
+              },
+            },
+          },
+          close: () => {
+            resolve(null);
+          },
+        },
+        { id: "ID-for-CSS" }
+      ).render(true);
+    });
+  }
+
+  async asyncStressRoll() {
+    const dice = [];
+    let hdRoll = await new Roll('1d6').evaluate({ async: true });
+    dice.push({
+        dieColor: CONFIG.ATDC.riskDieColor,
+        isStress: false,
+        rollVal: hdRoll.result
+    });
+
+    let diceOutput = "";
+
+    const maxDieValue = dice.reduce((a, b) => (a.rollVal > b.rollVal) ? a : b).rollVal;
+    const setOfMaxDice = dice.filter(obj => {
+        return obj.rollVal === maxDieValue
+    });
+
+    let maxDie = setOfMaxDice[0];
+
+    const maxDieModified = parseInt(maxDie.rollVal);
+
+    let stressVal = null;
+    let stressMessage = ""
+    let stressValMessage = ""
+    if(game.user.character != null) {
+        stressVal = game.user.character.system.stress.value;
+        
+        if(stressVal != null) {
+            if(maxDieModified > stressVal) {
+                stressMessage=`Immediately increase ${this._getWordRiskWithFormatting} by one!`;
+            } else {
+                stressMessage="All good, this time...";
+            }
+
+            stressValMessage = `Your Current Stress is ${this._getWordRiskWithFormatting} <b>${stressVal}</b>`
+        }
+    } else {
+        console.log("game.user.character is null")
+    }
+    
+    dice.forEach(die => {
+        diceOutput = diceOutput.concat(this._getDiceForOutput(die.rollVal, die.dieColor), " ");
+    });
+
+    const chatContentMessage = this._stressChatContent(diceOutput, stressMessage, stressValMessage);
+
+    const user = game.user.id;
+    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+    const rollMode = game.settings.get("core", "rollMode");
+
+    ChatMessage.create({
+      user: user,
+      speaker: speaker,
+      rollMode: rollMode,
+      content: chatContentMessage,
+    });
+  }
 }
