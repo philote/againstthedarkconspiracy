@@ -70,16 +70,19 @@
 .collapsable {
 
     a {
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    a.float {
         position: relative;
         top: 5px;
         right: -210px;
         height: 0;
         display: flex;
         width: fit-content;
-
-        i {
-            margin-right: 5px;
-        }
     }
 
     details > summary {

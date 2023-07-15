@@ -93,54 +93,57 @@
       "heat.colored": "HEAT",
       "investigate": {
         "label": "Investigate",
-        "description": "When you want to ask a question about someone, something,  or somewhere. Or you want control to reveal something about the situation."
+        "description": "When you want to ask a question about someone, something, or somewhere. Or want Control to reveal something about a threat or the situation."
       },
       "takeThemOut": {
-        "label": "Take Them Out",
-        "description": "If you fight or shoot at a threat or they attack you, say what success looks like: Harm them, Subdue them, Avoid their attempt to hurt you, some other outcome."
-      },
-      "harm": {
-        "label": "Roll for Harm",
-        "description": "TBD"
+        "label": "Take them out",
+        "description": "If you attack a threat or they attack you, say what success looks like: Harm them, Subdue them, Avoid their attempt to hurt you, some other narrative outcome agreed with Control.",
+        "harm.label": "Roll for HARM!"
       },
       "cover": {
-        "label": "Maintain Your Cover",
-        "description": "TBD."
+        "label": "Maintain your cover",
+        "description": "When you are at risk of exposure, say how you brazen it out, avoid detection, or hide from those who suspect you or are looking for you."
       },
       "flee": {
-        "label": "Flee For Your Life",
-        "description": "When you want to escape your fate by leaving the scene and Control agrees there's a reasonable route by which you could get away"
+        "label": "Flee for your life",
+        "description": "When you want to escape your fate by leaving the scene and Control agrees there's a reasonable route by which you could get away, for now at least."
       },
       "chase": {
-        "label": "Chase Them Down",
-        "description": "TBD"
+        "label": "Chase them down",
+        "description": "When they are getting away and Control agrees there’s a reasonable way for you to catch them before they escape, and their Powers don’t make it impossible."
       },
-      "default": {
-        "label": "Do Something Else",
-        "description": "-"
+      "doSomethingElse": {
+        "label": "Do something else",
+        "description": "When you do something that isn't covered by another move, say what success looks like, and roll."
+      },
+      "harm": {
+        "label": "Harmful consequences"
+      },
+      "stress": {
+        "label": "Stress Roll"
       }
     },
     "seekRelief": {
       "info": "When the fiction allows, choose one from below to reduce Stress by 1 and discover the consequences.",
       "behaveBadly": {
-        "label": "Behave Badly",
-        "description": "TBD"
+        "label": "Behave badly",
+        "description": "If you verbally or physically abuse someone, or manipulate them in the hope of meaningless sex…"
       },
       "vice": {
-        "label": "Indulge a Vice",
-        "description": "TBD"
+        "label": "Indulge a vice",
+        "description": "If you get drunk or high…"
+      },
+      "seekGuidance": {
+        "label": "Look for guidance",
+        "description": "If you seek the advice of a mentor, confidante, or someone else you trust, including a priest…"
       },
       "seekSolaceRelationship": {
         "label": "Seek solace in a relationship",
-        "description": "TBD"
+        "description": "If you say something new about your Anchor…"
       },
       "revealHistory": {
         "label": "Reveal your history together",
-        "description": "TBD"
-      },
-      "seekReliefHorror": {
-        "label": "Seek relief from the horror",
-        "description": "TBD"
+        "description": "If you reveal something new about your history with one of your key relationships in the team…"
       }
     },
     "gear": {
@@ -244,7 +247,8 @@
     "contactList": {
       "name.label": "Name",
       "blown.label": "Blown",
-      "expertise.label": "Expertise"
+      "expertise.label": "Expertise",
+      "call.label": "Call on a Contact"
     },
     "name.placeholder": "Name",
     "description.label": "Description",

@@ -17,15 +17,16 @@
     </div>
 
     <div class="box">
-      <h3>{{localize "ATDC.actor.relationships.contacts.label"}}</h3>
+      <div class="flexrow contacts-header">
+        <h3>{{localize "ATDC.actor.relationships.contacts.label"}}</h3>
+        <a class="item-control item-create" title="Create item" data-type="contact"><i class="fas fa-plus"></i> {{localize "ATDC.item.contactList.call.label"}}</a>
+      </div>
       <ol class="items-list">
         <li class="item flexrow items-header">
           <div class="item-name">{{localize "ATDC.item.contactList.name.label"}}</div>
           <div class="item-blown">{{localize "ATDC.item.contactList.blown.label"}}</div>
           <div class="item-expertise">{{localize "ATDC.item.contactList.expertise.label"}}</div>
-          <div class="item-controls">
-            <a class="item-control item-create" title="Create item" data-type="contact"><i class="fas fa-plus"></i></a>
-          </div>
+          <div class="item-controls"></div>
         </li>
         {{#each contact as |item id|}}
           <li class="item flexrow" data-item-id="{{item._id}}">

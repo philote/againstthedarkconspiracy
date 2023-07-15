@@ -16,6 +16,7 @@
 
   a{
     color: rgb(129, 33, 33);
+    font-weight: bold;
   }
 
   .editor {
@@ -345,6 +346,19 @@ nav.sheet-tabs {
         }
       }
 
+    }
+
+    .contacts-header {
+      align-items: center;
+      margin: 0 0 0.5rem;
+
+      h3 {
+        margin: 0;
+      }
+
+      a {
+        text-align-last: end;
+      }
     }
   }
 }

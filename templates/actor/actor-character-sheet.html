@@ -8,7 +8,7 @@
       <div class="resources grid grid-2col">
         <div class="stress-box flexcol box">
           <div class="stress flexrow">
-            <a class="flexrow" data-roll-type="" title="rollstress" data-item-id=""><i class="fa-regular fa-dice"></i><h2>{{localize "ATDC.actor.stress.title"}}</h2></a>
+            <a class="flexrow clickable" data-roll-type="stress"><i class="fa-regular fa-dice"></i><h2>{{localize "ATDC.actor.stress.title"}}</h2></a>
             {{#each system.stress.states as |state count|}}
                 <input class="clickable" type="checkbox" data-pos="{{count}}" data-roll-type="toggle-stress" {{#if state}}checked{{/if}} >
             {{/each}}
