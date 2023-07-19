@@ -6,6 +6,7 @@
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "ATDC.actor.name.placeholder"}}"/></h1>
       <div class="resources grid grid-2col">
+        <!-- Stress -->
         <div class="stress-box flexcol box">
           <div class="stress flexrow">
             <a class="flexrow clickable" data-roll-type="stress"><i class="fa-regular fa-dice"></i><h2>{{localize "ATDC.actor.stress.title"}}</h2></a>
@@ -30,8 +31,8 @@
             <label for="stress5">{{localize "ATDC.actor.stress.manifestsAs.label.5"}}</label>
             <input class="underline-input" id="stress5" type="text" name="system.stress.manifestFive" value="{{system.stress.manifestFive}}">
           </div>
-
         </div>
+
         <div class="intel-load-box flexcol box">
           <div class="intel flexrow">
             <h2>{{localize "ATDC.actor.intel.title"}}</h2>

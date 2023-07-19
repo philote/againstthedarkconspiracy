@@ -10,7 +10,7 @@ export class AtDCActorSheet extends ActorSheet {
       template:
         "systems/againstthedarkconspiracy/templates/actor/actor-sheet.html",
       width: 720,
-      height: 720,
+      height: 730,
       tabs: [
         {
           navSelector: ".sheet-tabs",
@@ -152,10 +152,6 @@ export class AtDCActorSheet extends ActorSheet {
     let id = el.dataset.itemId;
     let field = el.dataset.field;
     let item = this.actor.items.get(id);
-
-    // console.log("field "+field);
-    // console.log("el.value "+el.value);
-    // console.log("el.type "+el.type);
 
     if (el.type === "checkbox") {
       return item.update({ [field]: el.checked });
@@ -1179,12 +1175,12 @@ export class AtDCActorSheet extends ActorSheet {
         
         if(stressVal != null) {
             if(maxDieModified > stressVal) {
-                stressMessage=`Immediately increase ${this._getWordRiskWithFormatting} by one!`;
+                stressMessage=`Immediately increase ${this._getWordRiskWithFormatting()} by one!`;
             } else {
                 stressMessage="All good, this time...";
             }
 
-            stressValMessage = `Your Current Stress is ${this._getWordRiskWithFormatting} <b>${stressVal}</b>`
+            stressValMessage = `Your Current Stress is ${this._getWordRiskWithFormatting()} <b>${stressVal}</b>`
         }
     } else {
         console.log("game.user.character is null")
