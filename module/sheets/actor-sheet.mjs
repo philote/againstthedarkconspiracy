@@ -575,7 +575,7 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `you get the minimum needed to proceed and <b><i>Control will also answer 1 question</b></i>.`;
           case "6":
-            return `you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>, also <b><i>mark ${this._getWordIntelWithFormatting()}</b></i> and <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
+            return `you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>, also <b><i>${this._getWordIntelWithFormatting()} increases</b></i> and <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
         }
@@ -590,7 +590,7 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `your cover holds, or they don’t find you.`;
           case "6":
-            return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</b></i> and <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
+            return `you succeed brilliantly: <b><i>agree what extra benefit you get; ${this._getWordIntelWithFormatting()} increases;</b></i> and <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
         }
@@ -604,7 +604,7 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `you get away clean unless Control chooses to spend ${this._getWordHeatWithFormatting()} to maintain the pursuit and forces you to <b><i>flee for your life</b></i>, again.`;
           case "6":
-            return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
+            return `you succeed brilliantly: <b><i>agree what extra benefit you get; ${this._getWordIntelWithFormatting()} increases;</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
         }
@@ -618,7 +618,7 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `you catch them unless Control chooses to spend ${this._getWordHeatWithFormatting()} to impede you and force you to <b><i>chase them down</i></b>, again.`;
           case "6":
-            return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
+            return `you succeed brilliantly: <b><i>agree what extra benefit you get; ${this._getWordIntelWithFormatting()} increases;</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
         }
@@ -632,7 +632,7 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `you succeed with no obvious complication or benefit`;
           case "6":
-            return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
+            return `you succeed brilliantly: <b><i>agree what extra benefit you get; ${this._getWordIntelWithFormatting()} increases;</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.6)</span>`;
         }
@@ -657,7 +657,7 @@ export class AtDCActorSheet extends ActorSheet {
           case 7:
           case 8:
           case 9:
-            return `You were lucky this time! It hurts, but you’ll live, also <b><i>Mark ${this._getWordIntelWithFormatting()}</b></i> But that was close <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
+            return `You were lucky this time! It hurts, but you’ll live, also <b><i>${this._getWordIntelWithFormatting()} increases</b></i> But that was close <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.7)</span>`;
         }
@@ -672,7 +672,7 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `you succeed with no obvious complication or benefit.`;
           case "6":
-            return `you succeed brilliantly: <b><i>agree what extra benefit you get; mark ${this._getWordIntelWithFormatting()};</i></b> and <b><i>roll for  ${this._getWordRiskWithFormatting()}</i></b>.`;
+            return `you succeed brilliantly: <b><i>agree what extra benefit you get; ${this._getWordIntelWithFormatting()} increases  ;</i></b> and <b><i>roll for  ${this._getWordRiskWithFormatting()}</i></b>.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
         }
@@ -1024,6 +1024,11 @@ export class AtDCActorSheet extends ActorSheet {
                   content: chatContentMessage,
                 });
 
+                // Check if intel should increase
+                if (maxDie.rollVal == 6) {
+                  this._increaseIntelByOne();
+                }
+
                 // ----
                 resolve(null);
               },
@@ -1133,6 +1138,11 @@ export class AtDCActorSheet extends ActorSheet {
                   content: chatContentMessage,
                 });
 
+                // Check if intel should increase
+                if (maxDieModified == 6) {
+                  this._increaseIntelByOne();
+                }
+
                 // ----
                 resolve(null);
               },
@@ -1175,7 +1185,8 @@ export class AtDCActorSheet extends ActorSheet {
         
         if(stressVal != null) {
             if(maxDieModified > stressVal) {
-                stressMessage=`Immediately increase ${this._getWordRiskWithFormatting()} by one!`;
+              this._increaseStressByOne();
+                stressMessage=`Your ${this._getWordRiskWithFormatting()} is increases by one!`;
             } else {
                 stressMessage="All good, this time...";
             }
@@ -1202,5 +1213,39 @@ export class AtDCActorSheet extends ActorSheet {
       rollMode: rollMode,
       content: chatContentMessage,
     });
+  }
+
+  _increaseStressByOne() {
+    let newStress = duplicate(this.actor.system.stress.value);
+
+    if (newStress < 6) {
+      let currentArray = this.actor.system.stress.states;
+      const isFalse = (element) => element === false;
+      const firstPos = currentArray.findIndex(isFalse);
+      currentArray[firstPos] = true;
+      return this.actor.update({["system.stress.states"]:currentArray});
+    }
+
+    // update Stress
+    ++newStress;
+    this.actor.system.stress.value = newStress;
+    this.actor.update({ "system.stress.value": newStress });
+  }
+
+  _increaseIntelByOne() {
+    let newIntel = duplicate(this.actor.system.intel.value);
+
+    if (newIntel < 6) {
+      let currentArray = this.actor.system.intel.states;
+      const isFalse = (element) => element === false;
+      const firstPos = currentArray.findIndex(isFalse);
+      currentArray[firstPos] = true;
+      return this.actor.update({["system.intel.states"]:currentArray});
+    }
+
+    // update Intel
+    ++newIntel;
+    this.actor.system.intel.value = newIntel;
+    this.actor.update({ "system.intel.value": newIntel });
   }
 }
