@@ -107,7 +107,6 @@ export class AtDCActorSheet extends ActorSheet {
 
     html.find(".inline-edit-item").blur(this._onInlineEditItem.bind(this));
     html.find(".item-edit-checked").change(this._onInlineEditItem.bind(this));
-    // html.find('.item-edit-checked').
 
     // Render the item sheet for viewing/editing prior to the editable check.
     html.find(".item-edit").click((ev) => {
@@ -348,20 +347,20 @@ export class AtDCActorSheet extends ActorSheet {
 
   _seekReliefDialogTitle(moveNumber) {
     switch (moveNumber) {
-        case 1:
-            return `Behave Badly`;
-        case 2:
-            return `Indulge a Vice`;
-        case 3:
-            return `Look for Guidance`;
-        case 4:
-            return `Seek solace in a relationship`;
-        case 5:
-            return `Reveal some of your history together`;
-        default:
-            return `Seek relief from the horror`;
+      case 1:
+        return `Behave Badly`;
+      case 2:
+        return `Indulge a Vice`;
+      case 3:
+        return `Look for Guidance`;
+      case 4:
+        return `Seek solace in a relationship`;
+      case 5:
+        return `Reveal some of your history together`;
+      default:
+        return `Seek relief from the horror`;
     }
-}
+  }
 
   _dialogContent(moveNumber) {
     switch (moveNumber) {
@@ -725,119 +724,120 @@ export class AtDCActorSheet extends ActorSheet {
 
   _seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
     switch (moveNumber) {
-        case 1: { // Behave Badly
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                    return `Your inadequacy is clear, they pity you. You can’t use your Expertise until ${this._getWordRiskWithFormatting()} goes up.`;
-                case "4":
-                case "5":
-                    return `
+      case 1: {
+        // Behave Badly
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+            return `Your inadequacy is clear, they pity you. You can’t use your Expertise until ${this._getWordRiskWithFormatting()} goes up.`;
+          case "4":
+          case "5":
+            return `
                     <b>If they are an Operator</b>, agree with them why and they take it so badly & <b><i>THEY roll for ${this._getWordRiskWithFormatting()}</i></b>.
                     </br>
                     <b>If they are an NPC, <i>mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
                     `;
-                case "6":
-                    return `
+          case "6":
+            return `
                     <b>If they are an Operator</b>, agree with them why and they take it so badly & <b><i>THEY roll for ${this._getWordRiskWithFormatting()}</i></b>.
                     </br>
                     <b>If they are an NPC, <i>mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
                     </br></br>It was really worth it: reduce ${this._getWordRiskWithFormatting()} by an extra 1.
                     `;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
-            }
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
         }
-        case 2: // Indulge a Vice
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                    return `You’re ashamed of yourself & distracted. You can’t use your Expertise until ${this._getWordRiskWithFormatting()} goes up.`;
-                case "4":
-                case "5":
-                    return `<b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.`;
-                case "6":
-                    return `
+      }
+      case 2: // Indulge a Vice
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+            return `You’re ashamed of yourself & distracted. You can’t use your Expertise until ${this._getWordRiskWithFormatting()} goes up.`;
+          case "4":
+          case "5":
+            return `<b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.`;
+          case "6":
+            return `
                         <b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
                         </br></br>It was really worth it: reduce ${this._getWordRiskWithFormatting()} by an extra 1.
                     `;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
-            }
-        case 3: // Look for Guidance
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                    return `They see through your false contrition. You can’t use your Expertise until ${this._getWordRiskWithFormatting()} goes up.`;
-                case "4":
-                case "5":
-                    return `<b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.`;
-                case "6":
-                    return `
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
+        }
+      case 3: // Look for Guidance
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+            return `They see through your false contrition. You can’t use your Expertise until ${this._getWordRiskWithFormatting()} goes up.`;
+          case "4":
+          case "5":
+            return `<b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.`;
+          case "6":
+            return `
                         <b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.
                         </br></br>It was really worth it: reduce ${this._getWordRiskWithFormatting()} by an extra 1.
                     `;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
-            }
-        case 4: // Seek solace in a relationship
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                case "4":
-                case "5":
-                    return `<b><i>Mark your ${this._getWordAnchorWithFormatting()}</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. Only Control can mark Taken.`;
-                case "6":
-                    return `
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
+        }
+      case 4: // Seek solace in a relationship
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+          case "4":
+          case "5":
+            return `<b><i>Mark your ${this._getWordAnchorWithFormatting()}</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. Only Control can mark Taken.`;
+          case "6":
+            return `
                         <b><i>Mark your ${this._getWordAnchorWithFormatting()}</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. Only Control can mark Taken.    
                         </br></br>It was really worth it: reduce ${this._getWordRiskWithFormatting()} by an extra 1.
                     `;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
-            }
-        case 5: // Reveal some of your history together
-            switch (maxDieNumber) {
-                case "1":
-                case "2":
-                case "3":
-                    return `
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
+        }
+      case 5: // Reveal some of your history together
+        switch (maxDieNumber) {
+          case "1":
+          case "2":
+          case "3":
+            return `
                         <b>EITHER</b> say why you feel bad about the event and you can’t use your Expertise until ${this._getWordRiskWithFormatting()} goes up; 
                         </br><b>OR</b> add something about your ${this._getWordAnchorWithFormatting()} to your recollection or its aftermath and <b><i>mark them</b></i>.
                     `;
-                case "4":
-                case "5":
-                    return `
+          case "4":
+          case "5":
+            return `
                         The other Operator describes a different version or view of the same event. 
                         </br>They <b>EITHER</b> say why they are hurt by it and they <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>; 
                         </br><b>OR</b> they choose to add something about their ${this._getWordAnchorWithFormatting()} to their recollection or its aftermath and <b><i>they mark their ${this._getWordAnchorWithFormatting()}</b></i>.
                     `;
-                case "6":
-                    return `
+          case "6":
+            return `
                         The other Operator describes a different version or view of the same event. 
                         </br>They <b>EITHER</b> say why they are hurt by it and they <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>; 
                         </br><b>OR</b> they choose to add something about their ${this._getWordAnchorWithFormatting()} to their recollection or its aftermath and <b><i>they mark their ${this._getWordAnchorWithFormatting()}</b></i>.
                         </br></br>It was really worth it; reduce ${this._getWordRiskWithFormatting()} by an extra 1.
                     `;
-                default:
-                    return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
-            }
-        default:
-            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.default)</span>`;
+          default:
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
+        }
+      default:
+        return `<span style="color:#ff0000">ERROR(getMaxDieMessage.default)</span>`;
     }
-}
+  }
 
-_seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
+  _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
     const moveName = this._seekReliefDialogTitle(moveNumber);
     return `
         <p style="font-size: 1.5em;"><b>${moveName}</b> Result:</p>
         <p>${diceOutput}</p>
         <p>${this._seekReliefMaxDieMessage(moveNumber, maxDieNumber)}</p>
     `;
-}
+  }
 
   _stressChatContent(diceOutput, stressMessage, stressValMessage) {
     return `
@@ -888,9 +888,9 @@ _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
   }
 
   _getWordRiskWithFormatting() {
-    return `<b style="color: ${
-      CONFIG.ATDC.riskDieColor
-    }">${game.i18n.localize("ATDC.actor.actions.risk.colored")}</b>`;
+    return `<b style="color: ${CONFIG.ATDC.riskDieColor}">${game.i18n.localize(
+      "ATDC.actor.actions.risk.colored"
+    )}</b>`;
   }
 
   _getWordHeatWithFormatting() {
@@ -1309,18 +1309,18 @@ _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
 
   async asyncStressRoll() {
     const dice = [];
-    let hdRoll = await new Roll('1d6').evaluate({ async: true });
+    let hdRoll = await new Roll("1d6").evaluate({ async: true });
     dice.push({
-        dieColor: CONFIG.ATDC.riskDieColor,
-        isStress: false,
-        rollVal: hdRoll.result
+      dieColor: CONFIG.ATDC.riskDieColor,
+      isStress: false,
+      rollVal: hdRoll.result,
     });
 
     let diceOutput = "";
 
-    const maxDieValue = dice.reduce((a, b) => (a.rollVal > b.rollVal) ? a : b).rollVal;
-    const setOfMaxDice = dice.filter(obj => {
-        return obj.rollVal === maxDieValue
+    const maxDieValue = dice.reduce((a, b) => a.rollVal > b.rollVal ? a : b).rollVal;
+    const setOfMaxDice = dice.filter((obj) => {
+      return obj.rollVal === maxDieValue;
     });
 
     let maxDie = setOfMaxDice[0];
@@ -1328,30 +1328,37 @@ _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
     const maxDieModified = parseInt(maxDie.rollVal);
 
     let stressVal = null;
-    let stressMessage = ""
-    let stressValMessage = ""
-    if(game.user.character != null) {
-        stressVal = game.user.character.system.stress.value;
-        
-        if(stressVal != null) {
-            if(maxDieModified > stressVal) {
-              this._increaseStressByOne();
-                stressMessage=`Your ${this._getWordRiskWithFormatting()} is increases by one!`;
-            } else {
-                stressMessage="All good, this time...";
-            }
+    let stressMessage = "";
+    let stressValMessage = "";
+    if (game.user.character != null) {
+      stressVal = game.user.character.system.stress.value;
 
-            stressValMessage = `Your Current Stress is ${this._getWordRiskWithFormatting()} <b>${stressVal}</b>`
+      if (stressVal != null) {
+        if (maxDieModified > stressVal) {
+          this._increaseStressByOne();
+          stressMessage = `Your ${this._getWordRiskWithFormatting()} is increases by one!`;
+        } else {
+          stressMessage = "All good, this time...";
         }
+
+        stressValMessage = `Your Current Stress is ${this._getWordRiskWithFormatting()} <b>${stressVal}</b>`;
+      }
     } else {
-        console.log("game.user.character is null")
+      console.log("game.user.character is null");
     }
-    
-    dice.forEach(die => {
-        diceOutput = diceOutput.concat(this._getDiceForOutput(die.rollVal, die.dieColor), " ");
+
+    dice.forEach((die) => {
+      diceOutput = diceOutput.concat(
+        this._getDiceForOutput(die.rollVal, die.dieColor),
+        " "
+      );
     });
 
-    const chatContentMessage = this._stressChatContent(diceOutput, stressMessage, stressValMessage);
+    const chatContentMessage = this._stressChatContent(
+      diceOutput,
+      stressMessage,
+      stressValMessage
+    );
 
     const user = game.user.id;
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
@@ -1366,9 +1373,16 @@ _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
   }
 
   async asyncSeekReliefRoll(move = 0) {
-    const roll = await new Roll('1d6').evaluate({ async: true });
-    const diceOutput = this._getDiceForOutput(roll.result, CONFIG.ATDC.baseDieColor);
-    const chatContentMessage = this._seekReliefChatContent(move, diceOutput, roll.result);
+    const roll = await new Roll("1d6").evaluate({ async: true });
+    const diceOutput = this._getDiceForOutput(
+      roll.result,
+      CONFIG.ATDC.baseDieColor
+    );
+    const chatContentMessage = this._seekReliefChatContent(
+      move,
+      diceOutput,
+      roll.result
+    );
 
     const user = game.user.id;
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
@@ -1380,7 +1394,7 @@ _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
       rollMode: rollMode,
       content: chatContentMessage,
     });
-    
+
     /* TODO
     if [behave, vice, guidance]
     - mark expertise unavailable if 1,2,3
@@ -1388,7 +1402,6 @@ _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
     - mark anchor
      */
     if (roll.result == "6") {
-      console.log("result: "+roll.result);
       this._reduceStress(2);
     } else {
       this._reduceStress(1);
@@ -1403,7 +1416,7 @@ _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
       const firstPos = currentArray.indexOf(false);
       if (firstPos != -1) {
         currentArray[firstPos] = true;
-        this.actor.update({["system.stress.states"]:currentArray});
+        this.actor.update({ ["system.stress.states"]: currentArray });
       }
     }
 
@@ -1414,7 +1427,6 @@ _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
   }
 
   _reduceStress(amount = 1) {
-    console.log("amount: "+amount);
     let newStress = duplicate(this.actor.system.stress.value);
 
     if (newStress > 0) {
@@ -1423,7 +1435,7 @@ _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
         const firstPos = currentArray.lastIndexOf(true);
         if (firstPos != -1) {
           currentArray[firstPos] = false;
-          this.actor.update({["system.stress.states"]:currentArray});
+          this.actor.update({ ["system.stress.states"]: currentArray });
         }
       }
     }
@@ -1442,7 +1454,7 @@ _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
       const isFalse = (element) => element === false;
       const firstPos = currentArray.findIndex(isFalse);
       currentArray[firstPos] = true;
-      return this.actor.update({["system.intel.states"]:currentArray});
+      return this.actor.update({ ["system.intel.states"]: currentArray });
     }
 
     // update Intel
