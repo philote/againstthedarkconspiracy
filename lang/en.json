@@ -91,6 +91,7 @@
       "intel.colored": "INTEL",
       "risk.colored": "Stress",
       "heat.colored": "HEAT",
+      "anchor.colored": "Anchor",
       "investigate": {
         "label": "Investigate",
         "description": "When you want to ask a question about someone, something, or somewhere. Or want Control to reveal something about a threat or the situation."
