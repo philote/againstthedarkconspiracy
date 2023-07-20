@@ -34,6 +34,7 @@
         </div>
 
         <div class="intel-load-box flexcol box">
+          <!-- INTEL -->
           <div class="intel flexrow">
             <h2>{{localize "ATDC.actor.intel.title"}}</h2>
             {{#each system.intel.states as |state count|}}
@@ -41,6 +42,7 @@
             {{/each}}
           </div>
           <hr>
+          <!-- Load & Gear -->
           <div class="load-grid full-width">
             <div class="item">{{!-- empty --}}</div>
             <h4 class="item">{{localize "ATDC.actor.load.light.label"}}</h4>
@@ -49,20 +51,20 @@
 
             <h3 class="item">{{localize "ATDC.actor.load.label"}}</h3>
             <input class="item" type="checkbox" name="system.load.light" {{checked system.load.light}}>
-            <input class="item" type="checkbox" name="system.load.medium" {{#if system.load.light}}{{checked system.load.medium}}{{else}}disabled{{/if}}>
-            <input class="item" type="checkbox" name="system.load.heavy" {{#if system.load.medium}}{{checked system.load.medium}}{{else}}disabled{{/if}}>
+            <input class="item" type="checkbox" name="system.load.medium" {{checked system.load.medium}} {{#if system.load.medDisabled}}disabled{{/if}}>
+            <input class="item" type="checkbox" name="system.load.heavy" {{checked system.load.heavy}} {{#if system.load.hvyDisabled}}disabled{{/if}}>
             
             <h3 class="item">{{localize "ATDC.actor.load.gear.label"}}</h3>
             <div class="item">
-              <input type="checkbox" name="system.gear.light.one" {{#if system.load.light}}{{checked system.gear.light.one}}{{else}}disabled{{/if}}>
-              <input type="checkbox" name="system.gear.light.two" {{#if system.load.light}}{{checked system.gear.light.two}}{{else}}disabled{{/if}}>
-              <input type="checkbox" name="system.gear.light.three" {{#if system.load.light}}{{checked system.gear.light.three}}{{else}}disabled{{/if}}>
+              <input type="checkbox" name="system.gear.light.one" {{checked system.gear.light.one}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
+              <input type="checkbox" name="system.gear.light.two" {{checked system.gear.light.two}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
+              <input type="checkbox" name="system.gear.light.three" {{checked system.gear.light.three}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
             </div>
             <div class="item">
-              <input type="checkbox" name="system.gear.medium.one" {{#if system.load.medium}}{{checked system.gear.medium.one}}{{else}}disabled{{/if}}>
-              <input type="checkbox" name="system.gear.medium.two" {{#if system.load.medium}}{{checked system.gear.medium.two}}{{else}}disabled{{/if}}>
+              <input type="checkbox" name="system.gear.medium.one" {{checked system.gear.medium.one}} {{#if system.load.medGearDisabled}}disabled{{/if}}>
+              <input type="checkbox" name="system.gear.medium.two" {{checked system.gear.medium.two}} {{#if system.load.medGearDisabled}}disabled{{/if}}>
             </div>
-            <input class="item" type="checkbox" name="system.gear.heavy.one" {{#if system.load.heavy}}{{checked system.gear.heavy.one}}{{else}}disabled{{/if}}>
+            <input class="item" type="checkbox" name="system.gear.heavy.one" {{checked system.gear.heavy.one}} {{#if system.load.hvyGearDisabled}}disabled{{/if}}>
           </div>
         </div>
       </div>

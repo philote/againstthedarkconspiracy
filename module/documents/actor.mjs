@@ -54,6 +54,41 @@ export class AtDCActor extends Actor {
     systemData.expertise.specialism.answer = game.i18n.localize(systemData.expertise.specialism.options[systemData.expertise.specialism.index].answer);
     systemData.whyConfrontConspiracy.answer = game.i18n.localize(systemData.whyConfrontConspiracy.options[systemData.whyConfrontConspiracy.index].answerMore);
     systemData.whyConfrontConspiracy.question = game.i18n.localize(systemData.whyConfrontConspiracy.options[systemData.whyConfrontConspiracy.index].question);
+
+    // Load & Gear helpers
+    if (systemData.load.light) {
+      systemData.load.medDisabled = false;
+    } else {
+      systemData.load.medDisabled = true;
+    }
+
+    if (systemData.load.light) {
+      if (systemData.load.medium) {
+        systemData.load.hvyDisabled = false;
+        systemData.load.medGearDisabled = false;
+      } else {
+        systemData.load.hvyDisabled = true;
+        systemData.load.medGearDisabled = true;
+      }
+    } else {
+      systemData.load.hvyDisabled = true;
+      systemData.load.medGearDisabled = true;
+    }
+
+    if (systemData.load.light) {
+      if (systemData.load.medium) {
+        if (systemData.load.heavy) {
+          systemData.load.hvyGearDisabled = false;
+        } else {
+          systemData.load.hvyGearDisabled = true;
+        }
+      } else {
+        systemData.load.hvyGearDisabled = true;
+      }
+    } else {
+      systemData.load.hvyGearDisabled = true;
+    }
+
   }
 
   /**
