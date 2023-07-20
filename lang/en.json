@@ -92,6 +92,11 @@
       "risk.colored": "Stress",
       "heat.colored": "HEAT",
       "anchor.colored": "Anchor",
+      "chat.result": {
+        "label": "Result:",
+        "harm.modifier.label": "Antagonist Modifier:",
+        "harm.final.label": "Final Result:"
+      },
       "investigate": {
         "label": "Investigate",
         "description": "When you want to ask a question about someone, something, or somewhere. Or want Control to reveal something about a threat or the situation."

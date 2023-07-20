@@ -50,6 +50,7 @@ export class AtDCActor extends Actor {
     // update Stress and Intel so they can be used as token resources
     systemData.stress.value = systemData.stress.states.filter(Boolean).length;
     systemData.intel.value = systemData.intel.states.filter(Boolean).length;
+    console.log("systemData.stress.value: "+systemData.stress.value);
     systemData.expertise.workedFor.answer = game.i18n.localize(systemData.expertise.workedFor.options[systemData.expertise.workedFor.index].answer);
     systemData.expertise.specialism.answer = game.i18n.localize(systemData.expertise.specialism.options[systemData.expertise.specialism.index].answer);
     systemData.whyConfrontConspiracy.answer = game.i18n.localize(systemData.whyConfrontConspiracy.options[systemData.whyConfrontConspiracy.index].answerMore);

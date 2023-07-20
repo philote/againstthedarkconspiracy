@@ -260,7 +260,6 @@ export class AtDCActorSheet extends ActorSheet {
           this.asyncStressRoll();
           return;
         }
-
         case "behaveBadly": {
           this.asyncSeekReliefRoll(1);
           return;
@@ -269,16 +268,16 @@ export class AtDCActorSheet extends ActorSheet {
           this.asyncSeekReliefRoll(2);
           return;
         }
+        case "seekGuidance": {
+          this.asyncSeekReliefRoll(3);
+          return;
+        }
         case "seekSolace": {
           this.asyncSeekReliefRoll(4);
           return;
         }
         case "revealHistoryTogether": {
           this.asyncSeekReliefRoll(5);
-          return;
-        }
-        case "seekGuidance": {
-          this.asyncSeekReliefRoll(3);
           return;
         }
         default: {
@@ -338,27 +337,28 @@ export class AtDCActorSheet extends ActorSheet {
       case 7:
         return `${game.i18n.localize("ATDC.actor.actions.harm.label")}`;
       case 4:
+        return `${game.i18n.localize("ATDC.actor.actions.doSomethingElse.label")}`;
       default:
-        return `${game.i18n.localize(
-          "ATDC.actor.actions.doSomethingElse.label"
-        )}`;
+        console.error("Error: case not matched in _dialogTitle");
+        return `error`;
     }
   }
 
   _seekReliefDialogTitle(moveNumber) {
     switch (moveNumber) {
       case 1:
-        return `Behave Badly`;
+        return `${game.i18n.localize("ATDC.actor.seekRelief.behaveBadly.label")}`;
       case 2:
-        return `Indulge a Vice`;
+        return `${game.i18n.localize("ATDC.actor.seekRelief.vice.label")}`;
       case 3:
-        return `Look for Guidance`;
+        return `${game.i18n.localize("ATDC.actor.seekRelief.seekGuidance.label")}`;
       case 4:
-        return `Seek solace in a relationship`;
+        return `${game.i18n.localize("ATDC.actor.seekRelief.seekSolaceRelationship.label")}`;
       case 5:
-        return `Reveal some of your history together`;
+        return `${game.i18n.localize("ATDC.actor.seekRelief.revealHistory.label")}`;
       default:
-        return `Seek relief from the horror`;
+        console.error("Error: case not matched in _seekReliefDialogTitle");
+        return `error`;
     }
   }
 
@@ -584,7 +584,8 @@ export class AtDCActorSheet extends ActorSheet {
       case "6":
         return `<i class="fas fa-dice-six" style="color:${colorHex}; font-size: 2em;"></i>`;
       default:
-        console.error(game.i18n.localize("ATDC.roll.error.getDiceForOutput"));
+        console.error("Error: case not matched in _getDiceForOutput");
+        return `error`;
     }
   }
 
@@ -734,7 +735,7 @@ export class AtDCActorSheet extends ActorSheet {
           case "4":
           case "5":
             return `
-                    <b>If they are an Operator</b>, agree with them why and they take it so badly & <b><i>THEY roll for ${this._getWordRiskWithFormatting()}</i></b>.
+                    <b>If they are an Operator</b>, agree with them why and they take it so badly that <b><i>THEY roll for ${this._getWordRiskWithFormatting()}</i></b>.
                     </br>
                     <b>If they are an NPC, <i>mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
                     `;
@@ -833,7 +834,7 @@ export class AtDCActorSheet extends ActorSheet {
   _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
     const moveName = this._seekReliefDialogTitle(moveNumber);
     return `
-        <p style="font-size: 1.5em;"><b>${moveName}</b> Result:</p>
+        <p style="font-size: 1.5em;"><b>${moveName}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")}</p>
         <p>${diceOutput}</p>
         <p>${this._seekReliefMaxDieMessage(moveNumber, maxDieNumber)}</p>
     `;
@@ -843,9 +844,9 @@ export class AtDCActorSheet extends ActorSheet {
     return `
         ${stressValMessage}
         <p>
-            <span style="font-size: 1.5em;"><b>${game.i18n.localize(
-              "ATDC.actor.actions.stress.label"
-            )}</b> Result: </span> ${diceOutput}
+            <span style="font-size: 1.5em;">
+              <b>${game.i18n.localize("ATDC.actor.actions.stress.label")}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")} 
+            </span> ${diceOutput}
         </p>
         <hr>
         <span style="font-size: 1.2em;">${stressMessage}</span>
@@ -861,10 +862,11 @@ export class AtDCActorSheet extends ActorSheet {
   ) {
     const moveName = this._dialogTitle(moveNumber);
     return `
-            <p style="font-size: 1.5em;"><b>${moveName}</b> Result:</p>
+            <p style="font-size: 1.5em;"><b>${moveName}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")}</p>
             <p>${diceOutput}</p>
-            <b>Antagonist Modifier:</b> ${bonusValue}
-            </br><b>Final Result:</b> ${maxDieNumber}
+            <b>${game.i18n.localize("ATDC.actor.actions.chat.result.harm.modifier.label")}</b> ${bonusValue}
+            </br>
+            <b>${game.i18n.localize("ATDC.actor.actions.chat.result.harm.final.label")}</b> ${maxDieNumber}
             <hr>
             ${this._getMaxDieMessage(moveNumber, maxDieNumber)}
             ${stressMessage}
@@ -903,16 +905,6 @@ export class AtDCActorSheet extends ActorSheet {
     return `<b style="color: ${CONFIG.ATDC.anchorColor}">${game.i18n.localize(
       "ATDC.actor.actions.anchor.colored"
     )}</b>`;
-  }
-
-  _stressMoveMessage() {
-    return `
-            <hr>
-            <div style="font-size: 18px">
-                <b>The situation causes you ${this._getWordRiskWithFormatting()}, increase your ${this._getWordRiskWithFormatting()} by one!</b>
-                </br><i style="font-size: 12px">(Do not roll for ${this._getWordRiskWithFormatting()} if prompted by the move.)</i>
-            <div>
-        `;
   }
 
   async asyncActionDialog({ title = "", content = "", move = 0 } = {}) {
@@ -1331,7 +1323,9 @@ export class AtDCActorSheet extends ActorSheet {
     let stressMessage = "";
     let stressValMessage = "";
     if (game.user.character != null) {
+      // BUG this is always zero!!
       stressVal = game.user.character.system.stress.value;
+      console.log("game.user.character.system.stress.value: "+game.user.character.system.stress);
 
       if (stressVal != null) {
         if (maxDieModified > stressVal) {
@@ -1354,21 +1348,22 @@ export class AtDCActorSheet extends ActorSheet {
       );
     });
 
-    const chatContentMessage = this._stressChatContent(
-      diceOutput,
-      stressMessage,
-      stressValMessage
-    );
-
-    const user = game.user.id;
-    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
-    const rollMode = game.settings.get("core", "rollMode");
+    // BUG: current stress is always zero
+    console.log("stressValMessage: "+stressValMessage);
+    const dialogData = {
+      diceOutput: diceOutput,
+      stressMessage: stressMessage,
+      stressValMessage: stressValMessage
+    }
+    const template = 'systems/againstthedarkconspiracy/templates/msg/stress-chat-content.hbs';
+    const rendered_html = await renderTemplate(template, dialogData);
 
     ChatMessage.create({
-      user: user,
-      speaker: speaker,
-      rollMode: rollMode,
-      content: chatContentMessage,
+      user:game.user_id,
+      type:CONST.CHAT_MESSAGE_TYPES.ROLL,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      rollMode: game.settings.get("core", "rollMode"),
+      content: rendered_html
     });
   }
 
@@ -1395,17 +1390,79 @@ export class AtDCActorSheet extends ActorSheet {
       content: chatContentMessage,
     });
 
-    /* TODO
-    if [behave, vice, guidance]
-    - mark expertise unavailable if 1,2,3
-    if [solace]
-    - mark anchor
-     */
-    if (roll.result == "6") {
-      this._reduceStress(2);
-    } else {
-      this._reduceStress(1);
+    // Mark anchor
+    // TODO wording update for chat
+    if (move == 4) {
+      this._markAnchor(true);
     }
+    
+    // mark expertise
+    // TODO wording update for chat
+    if (move >= 1 && move <= 3) {
+      if (roll.result >= 1 && roll.result <= 3) {
+        console.log("mark expertise");
+        this._switchExpertise(true);
+      }
+    }
+
+    // Stress reduction
+    // TODO wording update for chat; plus get result texts to add to chat
+    if (move == 4 && (this.actor.system.anchor.missing || this.actor.system.anchor.taken)) {
+      // don't reduce stress
+      // TODO solace should be disabled in this state in the future
+    } else {
+      // reduce stress
+      if (roll.result == "6") {
+        this._reduceStress(2);
+      } else {
+        this._reduceStress(1);
+      }      
+    }
+  }
+
+  /* TODO
+    When expertise used
+    - disable it in move popups
+    - some visual thing on the expertise area on the char sheet
+
+    moves
+    - update wording for things that are now automated
+      - especially stress stuff on a 6
+    - create stress roll button in chats
+
+    - if anchor missing or taken, disable the solace move
+  */
+
+  // TODO return text to put in the 
+  _markAnchor() {
+    const anchorName = this.actor.system.anchor.name;
+    let target = this.actor.system.anchor.target;
+    let missing = this.actor.system.anchor.missing;
+    let taken = this.actor.system.anchor.taken;
+    if (!target) {
+      target = true;
+      this.actor.update({ "system.anchor.target": target });
+      console.log("Anchor target");
+      return `${anchorName} has become a target of the conspiracy!`;
+    } else if (!missing) {
+      missing = true;
+      this.actor.update({ "system.anchor.missing": missing });
+      console.log("Anchor missing");
+      return `${anchorName} has gone missing!`;
+    } else if (!taken) {
+      taken = true;
+      this.actor.update({ "system.anchor.taken": taken });
+      console.log("Anchor taken");
+      return `${anchorName} has been taken!`;
+    } else {
+      console.log("Anchor already taken!");
+      return `${anchorName} has already been taken, you nee to save them.`;
+    }
+  }
+
+  _switchExpertise(toggle) {
+    this.actor.system.expertise.expertiseUsed = toggle;
+    this.actor.update({ "system.expertise.expertiseUsed": toggle });
   }
 
   _increaseStressByOne() {
