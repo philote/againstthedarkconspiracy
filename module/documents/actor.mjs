@@ -62,33 +62,19 @@ export class AtDCActor extends Actor {
       systemData.load.medDisabled = true;
     }
 
-    if (systemData.load.light) {
-      if (systemData.load.medium) {
-        systemData.load.hvyDisabled = false;
-        systemData.load.medGearDisabled = false;
-      } else {
-        systemData.load.hvyDisabled = true;
-        systemData.load.medGearDisabled = true;
-      }
+    if ((systemData.load.light && systemData.load.medium)) {
+      systemData.load.hvyDisabled = false;
+      systemData.load.medGearDisabled = false;
     } else {
       systemData.load.hvyDisabled = true;
       systemData.load.medGearDisabled = true;
     }
-
-    if (systemData.load.light) {
-      if (systemData.load.medium) {
-        if (systemData.load.heavy) {
-          systemData.load.hvyGearDisabled = false;
-        } else {
-          systemData.load.hvyGearDisabled = true;
-        }
-      } else {
-        systemData.load.hvyGearDisabled = true;
-      }
+ 
+    if ((systemData.load.light && systemData.load.medium && systemData.load.heavy)) {
+      systemData.load.hvyGearDisabled = false;
     } else {
       systemData.load.hvyGearDisabled = true;
     }
-
   }
 
   /**
