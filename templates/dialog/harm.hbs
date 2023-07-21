@@ -1,0 +1,29 @@
+<form>
+    <p>
+        <b>If any Risk Die rolls equal to or greater than your highest roll</b>, you suffer a Harmful Consequence:
+    </p>
+    <form class="flexcol">
+        <div class="form-group">
+            <input type="checkbox" id="baseDie" name="baseDie" checked>
+            <label for="baseDie">Roll 1d6 to find out how bad it is.</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="stressDie" name="stressDie">
+            <label for="stressDie">Add your <b><span style="color: {{riskDieColor}}">Stress Die</span></b> if you are willing to take that risk</label>
+        </div>
+        <hr>
+        <div>
+            <input type="radio" id="namelessPawn" name="rollBonus" value="3">
+            <label for="namelessPawn">+3 if they are nameless pawns</label>
+        </div>
+        <div>
+            <input type="radio" id="namelessPawnLeader" name="rollBonus" value="2">
+            <label for="namelessPawnLeader">+2 if they are the leader of nameless pawns</label>
+        </div>
+        <div>
+            <input type="radio" id="supernatural" name="rollBonus" value="-1">
+            <label for="supernatural">-1 if they are a Supernatural</label>
+        </div>
+    </form>
+    </br>
+</form>

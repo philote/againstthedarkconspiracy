@@ -55,6 +55,8 @@ export class AtDCActor extends Actor {
     systemData.whyConfrontConspiracy.answer = game.i18n.localize(systemData.whyConfrontConspiracy.options[systemData.whyConfrontConspiracy.index].answerMore);
     systemData.whyConfrontConspiracy.question = game.i18n.localize(systemData.whyConfrontConspiracy.options[systemData.whyConfrontConspiracy.index].question);
 
+    systemData.anchor.noSolace = (systemData.anchor.missing || systemData.anchor.taken);
+
     // Load & Gear helpers
     if (systemData.load.light) {
       systemData.load.medDisabled = false;

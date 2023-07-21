@@ -166,7 +166,9 @@
     </div>
 
     <div class="collapsable box">
-      <a class="clickable float" data-roll-type="seekSolace" title="roll"><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
+      <div {{#if system.anchor.noSolace}}class="disabled"{{/if}}>
+        <a class="clickable float" data-roll-type="seekSolace" title="roll"><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.actions.label"}}</a>
+      </div>
       <details>
         <summary>{{localize "ATDC.actor.seekRelief.seekSolaceRelationship.label"}}</summary>
         <p>{{localize "ATDC.actor.seekRelief.seekSolaceRelationship.description"}}</p>

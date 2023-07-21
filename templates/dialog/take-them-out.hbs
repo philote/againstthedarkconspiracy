@@ -1,0 +1,51 @@
+<form>
+    <p>
+        <b>If you fight or shoot at a threat or they attack
+        you, say what success looks like: Hurt them; Subdue them; Avoid their attempt to hurt you; Some other narrative outcome</b>, then roll:
+    </p>
+    <form class="flexcol">
+        <div class="form-group">
+            <input type="checkbox" id="baseDie" name="baseDie" checked>
+            <label for="baseDie">Always start with <b>1d6</b></label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="expertiseDie" name="expertiseDie" {{#if expertiseUsed}}disabled{{/if}}>
+            <label for="expertiseDie">Add your Expertise Die if <b>Small Arms</b> or <b>Hand-toHand</b> is relevant and it isn’t cancelled.</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="bonusDie" name="bonusDie">
+            <label for="bonusDie">Add the <span style="color: {{bonusDieColor}}"><b>Bonus Die</b></span> if your weapon is <b>heavy</b> or <b>explode</b> or you have <b>Deadly</b>.</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="stressDie" name="stressDie">
+            <label for="stressDie">Add your <b><span style="color: {{riskDieColor}}">Stress Die</span></b> if you are willing to take that risk</label>
+        </div>
+        </br>
+        <p><b style="font-size: 20px;color: {{takeThemOutDieColor}}">Take Them Out Risk Dice</b></p>
+        <div class="form-group">
+            <input type="checkbox" id="threatHarmDie" name="threatHarmDie">
+            <label for="threatHarmDie"><b>If the threat is able to do you harm</b>, add 1 Risk Die to the dice pool.</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="threatSupernaturalDie" name="threatSupernaturalDie">
+            <label for="threatSupernaturalDie"><b>If they are a Supernatural</b>, add a 2nd Risk Die.</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="outnumberedDie" name="outnumberedDie">
+            <label for="outnumberedDie"><b>If you are outnumbered</b>, add another Risk Die.</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="weaponDie" name="weaponDie">
+            <label for="weaponDie"><b>If their weapon is heavy or explode</b>, add another Risk Die.</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="SupernaturalPowersDie1" name="SupernaturalPowersDie1">
+            <input type="checkbox" id="SupernaturalPowersDie2" name="SupernaturalPowersDie2">
+            <input type="checkbox" id="SupernaturalPowersDie3" name="SupernaturalPowersDie3">
+            <input type="checkbox" id="SupernaturalPowersDie4" name="SupernaturalPowersDie4">
+            <label for="SupernaturalPowersDie1">If they have Powers, add another Risk Die per relevant Power.</label>
+        </div>
+        <p><i>Maximum number of Risk Dice added = 5.</i></p>
+    </form>
+    </br>
+</form>

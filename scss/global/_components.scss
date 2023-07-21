@@ -69,6 +69,14 @@
 // action boxes
 .collapsable {
 
+    .disabled {
+        pointer-events: none;
+    }
+
+    div.disabled a {
+        color: #828282;
+    }
+
     a {
 
         i {

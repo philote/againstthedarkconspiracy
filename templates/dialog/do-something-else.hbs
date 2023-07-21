@@ -1,0 +1,20 @@
+<form>
+    <p>
+        <b>When you do something that isn’t covered by another move</b>, say what success looks like and roll:
+    </p>
+    <form class="flexcol">
+        <div class="form-group">
+            <input type="checkbox" id="baseDie" name="baseDie" checked>
+            <label for="baseDie">Always start with 1d6</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="expertiseDie" name="expertiseDie" {{#if expertiseUsed}}disabled{{/if}}>
+            <label for="expertiseDie">Add another 1d6 if your <b>Expertise</b> is relevant.</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="stressDie" name="stressDie">
+            <label for="stressDie">Add your <b><span style="color: {{riskDieColor}}">Stress Die</span></b> if you are willing to take that risk</label>
+        </div>
+    </form>
+    </br>
+</form>

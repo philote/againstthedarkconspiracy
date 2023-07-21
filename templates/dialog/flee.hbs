@@ -1,0 +1,27 @@
+<form>
+    <p>
+        <b>When you want to escape your fate by leaving the scene and Control agrees there’s a reasonable route by which you could get away</b>, roll:
+    </p>
+    <form class="flexcol">
+        <div class="form-group">
+            <input type="checkbox" id="baseDie" name="baseDie" checked>
+            <label for="baseDie">Always start with <b>1d6</b></label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="expertiseDie" name="expertiseDie" {{#if expertiseUsed}}disabled{{/if}}>
+            <label for="expertiseDie">
+                Add your <b>Expertise Die</b> if… 
+                <ul>
+                    <li><b>it’s a foot chase</b> &amp; you have <b>Military Fieldcraft</b>.</li>
+                    <li><b>you’re blending into a crowd</b> &amp; you have <b>Tradecraft</b>, <b>Larceny</b> or <b>Disguise</b>.</li> 
+                    <li><b>If it’s a vehicle chase</b> &amp; you have <b>Vehicles</b>.</li>
+                </ul>
+            </label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="stressDie" name="stressDie">
+            <label for="stressDie">Add your <b><span style="color: {{riskDieColor}}">Stress Die</span></b> if you are willing to take that risk</label>
+        </div>
+    </form>
+    </br>
+</form>

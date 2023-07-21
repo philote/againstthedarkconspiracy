@@ -42,7 +42,7 @@ export class AtDCActorSheet extends ActorSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
     // context.flags = actorData.flags;
-
+    
     // Prepare character data and items.
     if (actorData.type == "character") {
       this._prepareItems(context);
@@ -191,7 +191,7 @@ export class AtDCActorSheet extends ActorSheet {
    * @param {Event} event   The originating click event
    * @private
    */
-  _onClick(event) {
+  async _onClick(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
@@ -210,54 +210,54 @@ export class AtDCActorSheet extends ActorSheet {
         case "investigate": {
           const move = 1;
           const title = this._dialogTitle(move);
-          const content = this._dialogContent(move);
+          const content = await this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
         case "cover": {
           const move = 2;
           const title = this._dialogTitle(move);
-          const content = this._dialogContent(move);
+          const content = await this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
         case "flee": {
           const move = 3;
           const title = this._dialogTitle(move);
-          const content = this._dialogContent(move);
+          const content = await this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
         case "chase": {
           const move = 5;
           const title = this._dialogTitle(move);
-          const content = this._dialogContent(move);
+          const content = await this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
         case "takeThemOut": {
           const move = 6;
           const title = this._dialogTitle(move);
-          const content = this._dialogContent(move);
+          const content = await this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
         case "doSomethingElse": {
           const move = 4;
           const title = this._dialogTitle(move);
-          const content = this._dialogContent(move);
+          const content = await this._dialogContent(move);
           this.asyncActionDialog({ title, content, move });
           return;
         }
         case "harm": {
           const move = 7;
           const title = this._dialogTitle(move);
-          const content = this._dialogContent(move);
+          const content = await this._dialogContent(move);
           this.asyncHarmDialog({ title, content, move });
           return;
         }
         case "stress": {
-          this.asyncStressRoll(game.user.character);
+          this.asyncStressRoll();
           return;
         }
         case "behaveBadly": {
@@ -362,210 +362,29 @@ export class AtDCActorSheet extends ActorSheet {
     }
   }
 
-  _dialogContent(moveNumber) {
+  async _dialogContent(moveNumber) {
+    const dialogData = {
+      riskDieColor: CONFIG.ATDC.riskDieColor,
+      bonusDieColor: CONFIG.ATDC.bonusDieColor,
+      takeThemOutDieColor: CONFIG.ATDC.takeThemOutDieColor,
+      expertiseUsed: this.actor.system.expertise.expertiseUsed
+    }
     switch (moveNumber) {
       case 1: // Investigate
-        return `
-                <p>
-                    <b>When you want to ask a question about someone, something or somewhere, or want Control to reveal something about the situation</b>, roll:
-                </p>
-                <form class="flexcol">
-                    <div class="form-group">
-                        <input type="checkbox" id="baseDie" name="baseDie" checked>
-                        <label for="baseDie">Always start with <b>1d6</b></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="expertiseDie" name="expertiseDie">
-                        <label for="expertiseDie">Add another 1d6 if your <b>Expertise</b> is relevant</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="stressDie" name="stressDie">
-                        <label for="stressDie">Add your <b><span style="color: ${CONFIG.ATDC.riskDieColor}">Stress Die</span></b> if you are willing to take that risk</label>
-                    </div>
-                </form>
-                </br>
-            `;
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/investigate.hbs', dialogData);
       case 2: // Maintain Your Cover
-        return `
-                    <p>
-                        <b>When you are at risk of exposure, say how you brazen it out, avoid detection or hide from those who suspect you, or are looking for you</b>, roll:
-                    </p>
-                    <form class="flexcol">
-                        <div class="form-group">
-                            <input type="checkbox" id="baseDie" name="baseDie" checked>
-                            <label for="baseDie">Always start with <b>1d6</b></label>
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" id="expertiseDie" name="expertiseDie">
-                            <label for="expertiseDie">Add another 1d6 if your <b>Expertise</b> is relevant</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" id="stressDie" name="stressDie">
-                            <label for="stressDie">Add your <b><span style="color: ${CONFIG.ATDC.riskDieColor}">Stress Die</span></b> if you are willing to take that risk</label>
-                        </div>
-                    </form>
-                    </br>
-                `;
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/maintain-cover.hbs', dialogData);
       case 3: // Flee For Your Life
-        return `
-                <p>
-                    <b>When you want to escape your fate by leaving the scene and Control agrees there’s a reasonable route by which you could get away</b>, roll:
-                </p>
-                <form class="flexcol">
-                    <div class="form-group">
-                        <input type="checkbox" id="baseDie" name="baseDie" checked>
-                        <label for="baseDie">Always start with <b>1d6</b></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="expertiseDie" name="expertiseDie">
-                        <label for="expertiseDie">
-                            Add your <b>Expertise Die</b> if… 
-                            <ul>
-                                <li><b>it’s a foot chase</b> & you have <b>Military Fieldcraft</b>.</li>
-                                <li><b>you’re blending into a crowd</b> & you have <b>Tradecraft</b>, <b>Larceny</b> or <b>Disguise</b>.</li> 
-                                <li><b>If it’s a vehicle chase</b> & you have <b>Vehicles</b> <i>(only you roll)</i>.</li>
-                            </ul>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="stressDie" name="stressDie">
-                        <label for="stressDie">Add your <b><span style="color: ${CONFIG.ATDC.riskDieColor}">Stress Die</span></b> if you are willing to take that risk</label>
-                    </div>
-                </form>
-                </br>
-            `;
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/flee.hbs', dialogData);
       case 5: // Chase Them Down
-        return `
-                <p>
-                    <b>When they are getting away and Control agrees there’s a reasonable way for you to catch them before they escape, and their Powers don’t make it impossible</b>, roll:
-                </p>
-                <form class="flexcol">
-                    <div class="form-group">
-                        <input type="checkbox" id="baseDie" name="baseDie" checked>
-                        <label for="baseDie">Always start with <b>1d6</b></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="expertiseDie" name="expertiseDie">
-                        <label for="expertiseDie">
-                            Add your <b>Expertise Die</b> if… 
-                            <ul>
-                                <li><b>it’s a foot chase</b> & you have <b>Military Fieldcraft</b>.</li>
-                                <li><b>they’re blending into a crowd</b> & you have <b>Tradecraft</b>, <b>Larceny</b> or <b>Surveillance</b>.</li> 
-                                <li><b>If it’s a vehicle chase</b> & you have <b>Vehicles</b> <i>(only you roll)</i>.</li>
-                            </ul>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="stressDie" name="stressDie">
-                        <label for="stressDie">Add your <b><span style="color: ${CONFIG.ATDC.riskDieColor}">Stress Die</span></b> if you are willing to take that risk</label>
-                    </div>
-                </form>
-                </br>
-            `;
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/chase.hbs', dialogData);
       case 6: // Take Them Out
-        return `
-                <p>
-                    <b>If you fight or shoot at a threat or they attack
-                    you, say what success looks like: Hurt them; Subdue them; Avoid their attempt to hurt you; Some other narrative outcome</b>, then roll:
-                </p>
-                <form class="flexcol">
-                    <div class="form-group">
-                        <input type="checkbox" id="baseDie" name="baseDie" checked>
-                        <label for="baseDie">Always start with <b>1d6</b></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="expertiseDie" name="expertiseDie">
-                        <label for="expertiseDie">Add your Expertise Die if <b>Small Arms</b> or <b>Hand-toHand</b> is relevant and it isn’t cancelled.</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="bonusDie" name="bonusDie">
-                        <label for="bonusDie">Add the <span style="color: ${CONFIG.ATDC.bonusDieColor}"><b>Bonus Die</b></span> if your weapon is <b>heavy</b> or <b>explode</b> or you have <b>Deadly</b>.</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="stressDie" name="stressDie">
-                        <label for="stressDie">Add your <b><span style="color: ${CONFIG.ATDC.riskDieColor}">Stress Die</span></b> if you are willing to take that risk</label>
-                    </div>
-                    </br>
-                    <p><b style="font-size: 20px;color: ${CONFIG.ATDC.takeThemOutDieColor}">Take Them Out Risk Dice</b></p>
-                    <div class="form-group">
-                        <input type="checkbox" id="threatHarmDie" name="threatHarmDie">
-                        <label for="threatHarmDie"><b>If the threat is able to do you harm</b>, add 1 Risk Die to the dice pool.</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="threatSupernaturalDie" name="threatSupernaturalDie">
-                        <label for="threatSupernaturalDie"><b>If they are a Supernatural</b>, add a 2nd Risk Die.</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="outnumberedDie" name="outnumberedDie">
-                        <label for="outnumberedDie"><b>If you are outnumbered</b>, add another Risk Die.</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="weaponDie" name="weaponDie">
-                        <label for="weaponDie"><b>If their weapon is heavy or explode</b>, add another Risk Die.</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="SupernaturalPowersDie1" name="SupernaturalPowersDie1">
-                        <input type="checkbox" id="SupernaturalPowersDie2" name="SupernaturalPowersDie2">
-                        <input type="checkbox" id="SupernaturalPowersDie3" name="SupernaturalPowersDie3">
-                        <input type="checkbox" id="SupernaturalPowersDie4" name="SupernaturalPowersDie4">
-                        <label for="SupernaturalPowersDie1">If they have Powers, add another Risk Die per relevant Power.</label>
-                    </div>
-                    <p><i>Maximum number of Risk Dice added = 5.</i></p>
-                </form>
-                </br>
-            `;
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/take-them-out.hbs', dialogData);
       case 7: // harm
-        return `
-            <p>
-                <b>If any Risk Die rolls equal to or greater than your highest roll</b>, you suffer a Harmful Consequence:
-            </p>
-            <form class="flexcol">
-                <div class="form-group">
-                    <input type="checkbox" id="baseDie" name="baseDie" checked>
-                    <label for="baseDie">Roll 1d6 to find out how bad it is.</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="stressDie" name="stressDie">
-                    <label for="stressDie">Add your <b><span style="color: ${CONFIG.ATDC.riskDieColor}">Stress Die</span></b> if you are willing to take that risk</label>
-                </div>
-                <hr>
-                <div>
-                    <input type="radio" id="namelessPawn" name="rollBonus" value="3">
-                    <label for="namelessPawn">+3 if they are nameless pawns</label>
-                </div>
-                <div>
-                    <input type="radio" id="namelessPawnLeader" name="rollBonus" value="2">
-                    <label for="namelessPawnLeader">+2 if they are the leader of nameless pawns</label>
-                </div>
-                <div>
-                    <input type="radio" id="supernatural" name="rollBonus" value="-1">
-                    <label for="supernatural">-1 if they are a Supernatural</label>
-                </div>
-            </form>
-            </br>
-            `;
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/harm.hbs', dialogData);
       case 4: // Do Something Else
       default:
-        return `
-                <p>
-                    <b>When you do something that isn't covered by another move</b>, say what success looks like and roll:
-                </p>
-                <form class="flexcol">
-                    <div class="form-group">
-                        <input type="checkbox" id="baseDie" name="baseDie" checked>
-                        <label for="baseDie">Always start with 1d6</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="expertiseDie" name="expertiseDie">
-                        <label for="expertiseDie">Add another 1d6 if your <b>Expertise</b> is relevant.</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="stressDie" name="stressDie">
-                        <label for="stressDie">Add your <b><span style="color: ${CONFIG.ATDC.riskDieColor}">Stress Die</span></b> if you are willing to take that risk</label>
-                    </div>
-                </form>
-                </br>
-            `;
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/do-something-else.hbs', dialogData);
     }
   }
 
@@ -697,15 +516,13 @@ export class AtDCActorSheet extends ActorSheet {
           case 1:
           case 2:
           case 3:
-            return `
-                        The consequences are serious, say if:
-                        <ul>
-                            <li>It’s mortal. You<b><i> fill your ${this._getWordRiskWithFormatting()} track</i></b> and crack.</li>
-                            <li>It’s bloody. You’ll <b><i>die after one more action</i></b> without medical treatment.</li>
-                            <li>It’s painful. You <b><i>cannot use your Expertise</i></b> until you get medical treatment.</li>
-                        </ul>
-                        <i>Medical treatment requires an Operator, who could be the one needing treatment, to mark a gear slot and declare a "Medical Kit".</i>
-                    `;
+            return `The consequences are serious, say if:
+                    <ul>
+                        <li>It’s mortal. You<b><i> fill your ${this._getWordRiskWithFormatting()} track</i></b> and crack.</li>
+                        <li>It’s bloody. You’ll <b><i>die after one more action</i></b> without medical treatment.</li>
+                        <li>It’s painful. You <b><i>cannot use your Expertise</i></b> until you get medical treatment.</li>
+                    </ul>
+                    <i>Medical treatment requires an Operator, who could be the one needing treatment, to mark a gear slot and declare a "Medical Kit".</i>`;
           case 4:
           case 5:
           case 6:
@@ -756,7 +573,7 @@ export class AtDCActorSheet extends ActorSheet {
   ) {
     const moveName = this._dialogTitle(moveNumber);
     return `
-        <p style="font-size: 1.5em"><b>${moveName}</b> Result:</p>
+        <p style="font-size: 1.5em"><b>${moveName}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")}</p>
         <p>${diceOutput}</p>
         <p>${this._getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix)}</p>
         ${stressMessage}
@@ -775,18 +592,14 @@ export class AtDCActorSheet extends ActorSheet {
             return `Your inadequacy is clear, they pity you. You can’t use your Expertise until ${this._getWordRiskWithFormatting()} goes up.`;
           case "4":
           case "5":
-            return `
-                    <b>If they are an Operator</b>, agree with them why and they take it so badly that <b><i>THEY roll for ${this._getWordRiskWithFormatting()}</i></b>.
-                    </br>
-                    <b>If they are an NPC, <i>mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
-                    `;
+            return `<b>If they are an Operator</b>, agree with them why and they take it so badly that <b><i>THEY roll for ${this._getWordRiskWithFormatting()}</i></b>.
+            </br>
+            <b>If they are an NPC, <i>mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.`;
           case "6":
-            return `
-                    <b>If they are an Operator</b>, agree with them why and they take it so badly & <b><i>THEY roll for ${this._getWordRiskWithFormatting()}</i></b>.
-                    </br>
-                    <b>If they are an NPC, <i>mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
-                    </br></br>It was really worth it: reduce ${this._getWordRiskWithFormatting()} by an extra 1.
-                    `;
+            return `<b>If they are an Operator</b>, agree with them why and they take it so badly & <b><i>THEY roll for ${this._getWordRiskWithFormatting()}</i></b>.
+            </br>
+            <b>If they are an NPC, <i>mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
+            </br></br>It was really worth it: ${this._getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
         }
@@ -801,10 +614,8 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `<b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.`;
           case "6":
-            return `
-                        <b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
-                        </br></br>It was really worth it: reduce ${this._getWordRiskWithFormatting()} by an extra 1.
-                    `;
+            return `<b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
+            </br></br>It was really worth it: ${this._getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
         }
@@ -818,10 +629,8 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `<b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.`;
           case "6":
-            return `
-                        <b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.
-                        </br></br>It was really worth it: reduce ${this._getWordRiskWithFormatting()} by an extra 1.
-                    `;
+            return `<b><i>Mark ${this._getWordHeatWithFormatting()}</i></b> and describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.
+            </br></br>It was really worth it: ${this._getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
         }
@@ -832,12 +641,10 @@ export class AtDCActorSheet extends ActorSheet {
           case "3":
           case "4":
           case "5":
-            return `<b><i>Mark your ${this._getWordAnchorWithFormatting()}</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. Only Control can mark Taken.`;
+            return `<b><i>Your ${this._getWordAnchorWithFormatting()} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i>`;
           case "6":
-            return `
-                        <b><i>Mark your ${this._getWordAnchorWithFormatting()}</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. Only Control can mark Taken.    
-                        </br></br>It was really worth it: reduce ${this._getWordRiskWithFormatting()} by an extra 1.
-                    `;
+            return `<b><i>Your ${this._getWordAnchorWithFormatting()} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i>
+            </br></br>It was really worth it: ${this._getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
         }
@@ -846,24 +653,18 @@ export class AtDCActorSheet extends ActorSheet {
           case "1":
           case "2":
           case "3":
-            return `
-                        <b>EITHER</b> say why you feel bad about the event and you can’t use your Expertise until ${this._getWordRiskWithFormatting()} goes up; 
-                        </br><b>OR</b> add something about your ${this._getWordAnchorWithFormatting()} to your recollection or its aftermath and <b><i>mark them</b></i>.
-                    `;
+            return `<b>EITHER</b> say why you feel bad about the event, then you can’t use your Expertise until ${this._getWordRiskWithFormatting()} goes up;
+            </br><b>OR</b> add something about your ${this._getWordAnchorWithFormatting()} to your recollection or its aftermath and <b><i>mark them</b></i>.`;
           case "4":
           case "5":
-            return `
-                        The other Operator describes a different version or view of the same event. 
-                        </br>They <b>EITHER</b> say why they are hurt by it and they <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>; 
-                        </br><b>OR</b> they choose to add something about their ${this._getWordAnchorWithFormatting()} to their recollection or its aftermath and <b><i>they mark their ${this._getWordAnchorWithFormatting()}</b></i>.
-                    `;
+            return `The other Operator describes a different version or view of the same event. They: 
+            </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>;
+            </br><b>OR</b> they choose to add something about their ${this._getWordAnchorWithFormatting()} to their recollection or its aftermath and then <b><i>they mark their ${this._getWordAnchorWithFormatting()}</b></i>.`;
           case "6":
-            return `
-                        The other Operator describes a different version or view of the same event. 
-                        </br>They <b>EITHER</b> say why they are hurt by it and they <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>; 
-                        </br><b>OR</b> they choose to add something about their ${this._getWordAnchorWithFormatting()} to their recollection or its aftermath and <b><i>they mark their ${this._getWordAnchorWithFormatting()}</b></i>.
-                        </br></br>It was really worth it; reduce ${this._getWordRiskWithFormatting()} by an extra 1.
-                    `;
+            return `The other Operator describes a different version or view of the same event. They: 
+            </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>;
+            </br><b>OR</b> they choose to add something about their ${this._getWordAnchorWithFormatting()} to their recollection or its aftermath and then <b><i>they mark their ${this._getWordAnchorWithFormatting()}</b></i>.
+            </br></br>It was really worth it: ${this._getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
         }
@@ -875,7 +676,7 @@ export class AtDCActorSheet extends ActorSheet {
   _seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
     const moveName = this._seekReliefDialogTitle(moveNumber);
     return `
-        <p style="font-size: 1.5em;"><b>${moveName}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")}</p>
+        <p style="font-size: 1.5em"><b>${moveName}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")}</p>
         <p>${diceOutput}</p>
         <p>${this._seekReliefMaxDieMessage(moveNumber, maxDieNumber)}</p>
     `;
@@ -904,23 +705,19 @@ export class AtDCActorSheet extends ActorSheet {
   }
 
   _harmMoveMessage() {
-    return `
-            <hr>
+    return `<hr>
             <div style="font-size: 1em">
                 <b>You suffer a <i>Harmful Consequence!</i></b>
                 </br><b><i style="color: ${CONFIG.ATDC.takeThemOutDieColor}">Roll for Harm</i></b> to find out how bad it is.
-            <div>
-        `;
+            <div>`;
   }
 
   _stressMoveMessage() {
-    return `
-            <hr>
+    return `<hr>
             <div style="font-size: 1em">
                 <b>The situation causes you ${this._getWordRiskWithFormatting()}!</b>
                 </br>Your ${this._getWordRiskWithFormatting()} has increased.
-            <div>
-        `;
+            <div>`;
   }
 
   _getWordIntelWithFormatting() {
@@ -1149,7 +946,6 @@ export class AtDCActorSheet extends ActorSheet {
                 if (isStressDie) {
                   this._increaseStressByOne();
                   stressMessage = this._stressMoveMessage();
-                  // TODO remove "roll for stress from 6 result"
                 }
 
                 // Build Dice list
@@ -1182,9 +978,7 @@ export class AtDCActorSheet extends ActorSheet {
                   });
 
                   if (threatDiceOutput) {
-                    diceOutput = `
-                          ${diceOutput}</br></br><b style="font-size:1.2em">Risk Die:</b></br>${threatDiceOutput}
-                      `;
+                    diceOutput = `${diceOutput}</br></br><b style="font-size:1.2em">Risk Die:</b></br>${threatDiceOutput}`;
                   }
                 }
 
@@ -1352,7 +1146,7 @@ export class AtDCActorSheet extends ActorSheet {
     });
   }
 
-  async asyncStressRoll(char) {
+  async asyncStressRoll() {
     const dice = [];
     let hdRoll = await new Roll("1d6").evaluate({ async: true });
     dice.push({
@@ -1375,10 +1169,9 @@ export class AtDCActorSheet extends ActorSheet {
     let stressVal = null;
     let stressMessage = "";
     let stressValMessage = "";
+
     if (game.user.character != null) {
-      // BUG this is always zero!!
-      stressVal = char.system.stress.value;
-      console.log("char.system.stress.value: "+char.system.stress);
+      stressVal = this.actor.system.stress.value;
 
       if (stressVal != null) {
         if (maxDieModified > stressVal) {
@@ -1442,13 +1235,11 @@ export class AtDCActorSheet extends ActorSheet {
     });
 
     // Mark anchor
-    // TODO wording update for chat
     if (move == 4) {
       this._markAnchor(true);
     }
     
     // mark expertise
-    // TODO wording update for chat
     if (move >= 1 && move <= 3) {
       if (roll.result >= 1 && roll.result <= 3) {
         console.log("mark expertise");
@@ -1457,10 +1248,8 @@ export class AtDCActorSheet extends ActorSheet {
     }
 
     // Stress reduction
-    // TODO wording update for chat; plus get result texts to add to chat
     if (move == 4 && (this.actor.system.anchor.missing || this.actor.system.anchor.taken)) {
       // don't reduce stress
-      // TODO solace should be disabled in this state in the future
     } else {
       // reduce stress
       if (roll.result == "6") {
@@ -1472,16 +1261,10 @@ export class AtDCActorSheet extends ActorSheet {
   }
 
   /* TODO
-    When expertise used
-    - disable it in move popups
-    - some visual thing on the expertise area on the char sheet
-
     moves
-    - update wording for things that are now automated
-      - especially stress stuff on a 6
     - create stress roll button in chats
-
-    - if anchor missing or taken, disable the solace move
+    - create a Harm roll button in chats
+    - put all the texts into the language file
   */
 
   // TODO return text to put in the 
