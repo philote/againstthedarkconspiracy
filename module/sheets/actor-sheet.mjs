@@ -257,7 +257,7 @@ export class AtDCActorSheet extends ActorSheet {
           return;
         }
         case "stress": {
-          this.asyncStressRoll();
+          this.asyncStressRoll(game.user.character);
           return;
         }
         case "behaveBadly": {
@@ -589,7 +589,11 @@ export class AtDCActorSheet extends ActorSheet {
     }
   }
 
-  _getMaxDieMessage(moveNumber, maxDieNumber) {
+  _getStressOnSixMessage() {
+    return `<br><b><i> Roll for ${this._getWordRiskWithFormatting()}</b></i>.`
+  }
+
+  _getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harmShowIntel) {
     switch (moveNumber) {
       case 1: {
         // Investigate
@@ -602,7 +606,11 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `you get the minimum needed to proceed and <b><i>Control will also answer 1 question</b></i>.`;
           case "6":
-            return `you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>, also <b><i>${this._getWordIntelWithFormatting()} increases</b></i> and <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
+            let message = `you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>. <br><b><i>${this._getWordIntelWithFormatting()} has been increased by one.</b></i>`;
+            if (showStressOnSix) {
+              message += this._getStressOnSixMessage();
+            }
+            return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
         }
@@ -617,7 +625,12 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `your cover holds, or they don’t find you.`;
           case "6":
-            return `you succeed brilliantly: <b><i>agree what extra benefit you get; ${this._getWordIntelWithFormatting()} increases;</b></i> and <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
+            let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
+            <br><b><i>${this._getWordIntelWithFormatting()} has been increased by one.</b></i>`;
+            if (showStressOnSix) {
+              message += this._getStressOnSixMessage();
+            }
+            return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
         }
@@ -631,7 +644,12 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `you get away clean unless Control chooses to spend ${this._getWordHeatWithFormatting()} to maintain the pursuit and forces you to <b><i>flee for your life</b></i>, again.`;
           case "6":
-            return `you succeed brilliantly: <b><i>agree what extra benefit you get; ${this._getWordIntelWithFormatting()} increases;</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
+            let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
+            <br><b><i>${this._getWordIntelWithFormatting()} has been increased by one.</b></i>`;
+            if (showStressOnSix) {
+              message += this._getStressOnSixMessage();
+            }
+            return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
         }
@@ -645,7 +663,12 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `you catch them unless Control chooses to spend ${this._getWordHeatWithFormatting()} to impede you and force you to <b><i>chase them down</i></b>, again.`;
           case "6":
-            return `you succeed brilliantly: <b><i>agree what extra benefit you get; ${this._getWordIntelWithFormatting()} increases;</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
+            let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
+            <br><b><i>${this._getWordIntelWithFormatting()} has been increased by one.</b></i>`;
+            if (showStressOnSix) {
+              message += this._getStressOnSixMessage();
+            }
+            return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
         }
@@ -659,34 +682,46 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `you succeed with no obvious complication or benefit`;
           case "6":
-            return `you succeed brilliantly: <b><i>agree what extra benefit you get; ${this._getWordIntelWithFormatting()} increases;</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
+            let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
+            <br><b><i>${this._getWordIntelWithFormatting()} has been increased by one.</b></i>`;
+            if (showStressOnSix) {
+              message += this._getStressOnSixMessage();
+            }
+            return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.6)</span>`;
         }
       case 7: // Harm
         switch (maxDieNumber) {
+          case 0:
           case 1:
           case 2:
           case 3:
             return `
                         The consequences are serious, say if:
                         <ul>
-                            <li>It’s mortal. You<b><i>fill your ${this._getWordRiskWithFormatting()} track</i></b> and crack.</li>
+                            <li>It’s mortal. You<b><i> fill your ${this._getWordRiskWithFormatting()} track</i></b> and crack.</li>
                             <li>It’s bloody. You’ll <b><i>die after one more action</i></b> without medical treatment.</li>
                             <li>It’s painful. You <b><i>cannot use your Expertise</i></b> until you get medical treatment.</li>
                         </ul>
-                        Medical treatment requires an Operator, who could be the one needing treatment, to mark a gear slot and declare a "Medical Kit".
+                        <i>Medical treatment requires an Operator, who could be the one needing treatment, to mark a gear slot and declare a "Medical Kit".</i>
                     `;
           case 4:
           case 5:
-            return `You were lucky this time! It hurts, but you’ll live`;
           case 6:
           case 7:
           case 8:
           case 9:
-            return `You were lucky this time! It hurts, but you’ll live, also <b><i>${this._getWordIntelWithFormatting()} increases</b></i> But that was close <b><i>roll for ${this._getWordRiskWithFormatting()}</b></i>.`;
+            let message = `You were lucky this time! It hurts, but you’ll live.`;
+            if (harmShowIntel) {
+              message += `<br><b><i>${this._getWordIntelWithFormatting()} has been increased by one.</b></i>`
+            }
+            if (showStressOnSix) {
+              message += this._getStressOnSixMessage();
+            }
+            return message;
           default:
-            return `<span style="color:#ff0000">ERROR(getMaxDieMessage.7)</span>`;
+            return `<span style="color:#ff0000">ERROR(getMaxDieMessage) hit default</span>`;
         }
       case 4: // Do Something Else
       default:
@@ -699,7 +734,12 @@ export class AtDCActorSheet extends ActorSheet {
           case "5":
             return `you succeed with no obvious complication or benefit.`;
           case "6":
-            return `you succeed brilliantly: <b><i>agree what extra benefit you get; ${this._getWordIntelWithFormatting()} increases  ;</i></b> and <b><i>roll for ${this._getWordRiskWithFormatting()}</i></b>.`;
+            let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
+            <br><b><i>${this._getWordIntelWithFormatting()} has been increased by one.</b></i>`;
+            if (showStressOnSix) {
+              message += this._getStressOnSixMessage();
+            }
+            return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
         }
@@ -711,13 +751,14 @@ export class AtDCActorSheet extends ActorSheet {
     diceOutput,
     maxDieNumber,
     stressMessage,
-    harmMessage
+    harmMessage,
+    showStressOnSix
   ) {
     const moveName = this._dialogTitle(moveNumber);
     return `
-        <p style="font-size: 1.5em;"><b>${moveName}</b> Result:</p>
+        <p style="font-size: 1.5em"><b>${moveName}</b> Result:</p>
         <p>${diceOutput}</p>
-        <p>${this._getMaxDieMessage(moveNumber, maxDieNumber)}</p>
+        <p>${this._getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix)}</p>
         ${stressMessage}
         ${harmMessage}
     `;
@@ -840,35 +881,24 @@ export class AtDCActorSheet extends ActorSheet {
     `;
   }
 
-  _stressChatContent(diceOutput, stressMessage, stressValMessage) {
-    return `
-        ${stressValMessage}
-        <p>
-            <span style="font-size: 1.5em;">
-              <b>${game.i18n.localize("ATDC.actor.actions.stress.label")}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")} 
-            </span> ${diceOutput}
-        </p>
-        <hr>
-        <span style="font-size: 1.2em;">${stressMessage}</span>
-    `;
-  }
-
   _harmChatContent(
     moveNumber,
     diceOutput,
     maxDieNumber,
     stressMessage,
-    bonusValue
+    bonusValue, 
+    showStressOnSix,
+    harmShowIntel
   ) {
     const moveName = this._dialogTitle(moveNumber);
     return `
-            <p style="font-size: 1.5em;"><b>${moveName}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")}</p>
+            <p style="font-size: 1.5em"><b>${moveName}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")}</p>
             <p>${diceOutput}</p>
             <b>${game.i18n.localize("ATDC.actor.actions.chat.result.harm.modifier.label")}</b> ${bonusValue}
             </br>
             <b>${game.i18n.localize("ATDC.actor.actions.chat.result.harm.final.label")}</b> ${maxDieNumber}
             <hr>
-            ${this._getMaxDieMessage(moveNumber, maxDieNumber)}
+            ${this._getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harmShowIntel)}
             ${stressMessage}
         `;
   }
@@ -876,9 +906,19 @@ export class AtDCActorSheet extends ActorSheet {
   _harmMoveMessage() {
     return `
             <hr>
-            <div style="font-size: 18px">
-                <b>You suffer a <i>Harmful Consequence</i>!</b>
-                </br><i style="color: ${CONFIG.ATDC.takeThemOutDieColor}">Roll for Harm</i> to find out how bad it is.
+            <div style="font-size: 1em">
+                <b>You suffer a <i>Harmful Consequence!</i></b>
+                </br><b><i style="color: ${CONFIG.ATDC.takeThemOutDieColor}">Roll for Harm</i></b> to find out how bad it is.
+            <div>
+        `;
+  }
+
+  _stressMoveMessage() {
+    return `
+            <hr>
+            <div style="font-size: 1em">
+                <b>The situation causes you ${this._getWordRiskWithFormatting()}!</b>
+                </br>Your ${this._getWordRiskWithFormatting()} has increased.
             <div>
         `;
   }
@@ -1109,6 +1149,7 @@ export class AtDCActorSheet extends ActorSheet {
                 if (isStressDie) {
                   this._increaseStressByOne();
                   stressMessage = this._stressMoveMessage();
+                  // TODO remove "roll for stress from 6 result"
                 }
 
                 // Build Dice list
@@ -1147,13 +1188,23 @@ export class AtDCActorSheet extends ActorSheet {
                   }
                 }
 
+                // Check if intel should increase & if stress button should show
+                let showStressOnSix = false;
+                if (maxDie.rollVal == "6") {
+                  if (!maxDie.isStress) {
+                    showStressOnSix = true;
+                  }
+                  this._increaseIntelByOne();
+                }
+
                 // Initialize chat data.
                 const chatContentMessage = this._chatContent(
                   move,
                   diceOutput,
                   maxDie.rollVal,
                   stressMessage,
-                  harmMessage
+                  harmMessage,
+                  showStressOnSix
                 );
                 const user = game.user.id;
                 const speaker = ChatMessage.getSpeaker({ actor: this.actor });
@@ -1165,11 +1216,6 @@ export class AtDCActorSheet extends ActorSheet {
                   rollMode: rollMode,
                   content: chatContentMessage,
                 });
-
-                // Check if intel should increase
-                if (maxDie.rollVal == "6") {
-                  this._increaseIntelByOne();
-                }
 
                 // ----
                 resolve(null);
@@ -1217,7 +1263,6 @@ export class AtDCActorSheet extends ActorSheet {
                 }
 
                 // bonuses
-
                 const radios = document.getElementsByName("rollBonus");
                 let bonusValue = 0;
                 for (var i = 0, length = radios.length; i < length; i++) {
@@ -1246,6 +1291,7 @@ export class AtDCActorSheet extends ActorSheet {
 
                 let maxDie = null;
                 if (stressDieR) {
+                  this._increaseStressByOne();
                   stressMessage = this._stressMoveMessage();
                   maxDie = stressDieR;
                 } else {
@@ -1261,13 +1307,25 @@ export class AtDCActorSheet extends ActorSheet {
                   );
                 });
 
+                // Check if stress button should show
+                let showStressOnSix = (maxDie.rollVal >= 6 && !maxDie.isStress);
+
+                // Check if intel should increase
+                let harmShowIntel = false;
+                if (maxDie.rollVal == "6") {
+                  harmShowIntel = true;
+                  this._increaseIntelByOne();
+                }
+
                 // Initialize chat data.
                 const chatContentMessage = this._harmChatContent(
                   move,
                   diceOutput,
                   maxDieModified,
                   stressMessage,
-                  bonusValue
+                  bonusValue,
+                  showStressOnSix,
+                  harmShowIntel
                 );
                 const user = game.user.id;
                 const speaker = ChatMessage.getSpeaker({ actor: this.actor });
@@ -1279,11 +1337,6 @@ export class AtDCActorSheet extends ActorSheet {
                   rollMode: rollMode,
                   content: chatContentMessage,
                 });
-
-                // Check if intel should increase
-                if (maxDieModified == 6) {
-                  this._increaseIntelByOne();
-                }
 
                 // ----
                 resolve(null);
@@ -1299,7 +1352,7 @@ export class AtDCActorSheet extends ActorSheet {
     });
   }
 
-  async asyncStressRoll() {
+  async asyncStressRoll(char) {
     const dice = [];
     let hdRoll = await new Roll("1d6").evaluate({ async: true });
     dice.push({
@@ -1324,8 +1377,8 @@ export class AtDCActorSheet extends ActorSheet {
     let stressValMessage = "";
     if (game.user.character != null) {
       // BUG this is always zero!!
-      stressVal = game.user.character.system.stress.value;
-      console.log("game.user.character.system.stress.value: "+game.user.character.system.stress);
+      stressVal = char.system.stress.value;
+      console.log("char.system.stress.value: "+char.system.stress);
 
       if (stressVal != null) {
         if (maxDieModified > stressVal) {
@@ -1348,8 +1401,6 @@ export class AtDCActorSheet extends ActorSheet {
       );
     });
 
-    // BUG: current stress is always zero
-    console.log("stressValMessage: "+stressValMessage);
     const dialogData = {
       diceOutput: diceOutput,
       stressMessage: stressMessage,
