@@ -3,14 +3,24 @@
  * @extends {ActorSheet}
  */
 export class AtDCActorSheet extends ActorSheet {
+
+  constructor(...args) {
+    super(...args);
+
+    let width = 720;
+    let height = 730;
+    if (this.actor.type == 'npc') {
+        width = 310;
+        height = 820;
+    }
+    this.position.width = width;
+    this.position.height = height;
+  }
+
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["atdc", "sheet", "actor"],
-      template:
-        "systems/againstthedarkconspiracy/templates/actor/actor-sheet.html",
-      width: 720,
-      height: 730,
       tabs: [
         {
           navSelector: ".sheet-tabs",

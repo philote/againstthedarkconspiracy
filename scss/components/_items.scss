@@ -31,6 +31,7 @@
   overflow-y: auto;
   scrollbar-width: thin;
   color: $c-tan;
+  width: -webkit-fill-available;
 
   // Child lists
   .item-list {
