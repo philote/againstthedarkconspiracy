@@ -1170,21 +1170,17 @@ export class AtDCActorSheet extends ActorSheet {
     let stressMessage = "";
     let stressValMessage = "";
 
-    if (game.user.character != null) {
-      stressVal = this.actor.system.stress.value;
+    stressVal = this.actor.system.stress.value;
 
-      if (stressVal != null) {
-        if (maxDieModified > stressVal) {
-          this._increaseStressByOne();
-          stressMessage = `Your ${this._getWordRiskWithFormatting()} is increases by one!`;
-        } else {
-          stressMessage = "All good, this time...";
-        }
-
-        stressValMessage = `Your Current Stress is ${this._getWordRiskWithFormatting()} <b>${stressVal}</b>`;
+    if (stressVal != null) {
+      if (maxDieModified > stressVal) {
+        this._increaseStressByOne();
+        stressMessage = `Your ${this._getWordRiskWithFormatting()} is increases by one!`;
+      } else {
+        stressMessage = "All good, this time...";
       }
-    } else {
-      console.log("game.user.character is null");
+
+      stressValMessage = `Your Current Stress is ${this._getWordRiskWithFormatting()} <b>${stressVal}</b>`;
     }
 
     dice.forEach((die) => {
@@ -1204,7 +1200,6 @@ export class AtDCActorSheet extends ActorSheet {
 
     ChatMessage.create({
       user:game.user_id,
-      type:CONST.CHAT_MESSAGE_TYPES.ROLL,
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       rollMode: game.settings.get("core", "rollMode"),
       content: rendered_html
@@ -1242,7 +1237,6 @@ export class AtDCActorSheet extends ActorSheet {
     // mark expertise
     if (move >= 1 && move <= 3) {
       if (roll.result >= 1 && roll.result <= 3) {
-        console.log("mark expertise");
         this._switchExpertise(true);
       }
     }

@@ -263,7 +263,7 @@
       "load.label": "Load"
     },
     "contact": {
-      "blown.label": "Blown",
+      "blown.label": "Blown?",
       "expertise.label": "Expertise"
     }
   }
