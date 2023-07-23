@@ -269,13 +269,28 @@
   },
   "ATDC.npc": {
     "name.placeholder": "Name",
+    "notes.label": "Notes",
     "skills.label": "Skills",
     "glance.label": "At a Glance",
-    "motivation.label": "Motivations",
-    "notes.label": "Notes"
+    "motivation.label": "Motivations"
   },
   "ATDC.safeHouse": {
     "name.placeholder": "Name",
-    "notes.label": "Notes"
+    "title": "The Safe House",
+    "notes.label": "Notes",
+    "target.label": "Target?",
+    "blown.label": "Blown?",
+    "questions": {
+      "placeLike.label": "What is this place like? Briefly describe it.",
+      "reassures.label": "Who is vulnerable nearby? Which innocent bystanders will be at risk if this place is hit by the Conspiracy?",
+      "vulnerable.label": "What single thing reassures you that this place is safe? Is there a good view of approach routes? Is there more than one way out? Is it well away from police patrol routes? Is it something else?",
+      "notIdeal.label": "Why isn’t this place ideal? What worries you about it as a safe house? What is its major drawback or vulnerability?"
+    },
+    "gearBenefit": {
+      "label": "The Gear Benefit",
+      "heavyWeapons.label": "Heavy weapons (with the heavy tag)",
+      "autoWeapons.label": "Auto weapons (with the auto tag but not the heavy tag)",
+      "techExplosives.label": "Technical Equipment & Explosives (with the tech or explode tag)"
+    }
   }
 }

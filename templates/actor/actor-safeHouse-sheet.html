@@ -1,0 +1,21 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header>
+    <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "ATDC.npc.name.placeholder"}}"/>
+    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+    <!-- TODO: add stress, put others in a tab system [notes, info, gear], add gear -->
+    <textarea name="system.skills" type="text" value="{{system.skills}}" placeholder="{{localize "ATDC.npc.skills.label"}}">{{system.skills}}</textarea>
+    <textarea name="system.glance" type="text" value="{{system.glance}}" placeholder="{{localize "ATDC.npc.glance.label"}}">{{system.glance}}</textarea>
+    <textarea name="system.motivation" type="text" value="{{system.motivation}}" placeholder="{{localize "ATDC.npc.motivation.label"}}">{{system.motivation}}</textarea>
+  </header>
+  
+  {{!-- Notes --}}
+  <div>
+      <h2>{{localize "ATDC.npc.notes.label"}}</h2>
+      <div class="notes">
+          {{editor system.notes target="system.notes" button=true engine="prosemirror" collaborate=false}}
+      </div>
+  </div>
+
+</form>
