@@ -223,6 +223,29 @@
       "motivation": "",
       "personalityTraits": ""
     },
+    "supernatural": {
+      "templates": ["base"],
+      "stress": {
+        "min": 0,
+        "value": [0],
+        "max": 0     
+      },
+      "skills": "",
+      "glance": "",
+      "motivation": "",
+      "personalityTraits": "",
+      "conspiracy": {
+        "type": "",
+        "power": "",
+        "powerDetails": "",
+        "compulsion": "",
+        "compulsionDetails": "",
+        "deterrent": "",
+        "deterrentDetails": "",
+        "vulnerability": "",
+        "vulnerabilityDetail": ""
+      }
+    },
     "safeHouse": {
       "templates": ["base"],
       "status": {
