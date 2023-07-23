@@ -415,6 +415,12 @@ nav.sheet-tabs {
 
 .npc {
   height: 100%;
+  margin: 0px 5px;
+
+  img {
+    height: 300px;
+    margin-bottom: 5px; 
+  }
 
   header {
       height: 100%;
@@ -422,13 +428,13 @@ nav.sheet-tabs {
       input[type=text] {
           text-align: center;
           font-size: 2em;
-          text-transform: uppercase;
           margin: 5px 0;
           padding: 20px;
       }
 
       textarea {
           resize: none;
+          margin: 0px 0px 5px 0px;
       }
   }
 

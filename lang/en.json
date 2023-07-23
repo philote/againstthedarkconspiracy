@@ -266,5 +266,16 @@
       "blown.label": "Blown?",
       "expertise.label": "Expertise"
     }
+  },
+  "ATDC.npc": {
+    "name.placeholder": "Name",
+    "skills.label": "Skills",
+    "glance.label": "At a Glance",
+    "motivation.label": "Motivations",
+    "notes.label": "Notes"
+  },
+  "ATDC.safeHouse": {
+    "name.placeholder": "Name",
+    "notes.label": "Notes"
   }
 }

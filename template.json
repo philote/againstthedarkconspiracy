@@ -222,6 +222,24 @@
       "glance": "",
       "motivation": "",
       "personalityTraits": ""
+    },
+    "safeHouse": {
+      "templates": ["base"],
+      "status": {
+        "target": false,
+        "blown": false
+      },
+      "questions": {
+        "placeLike": "",
+        "reassures": "",
+        "vulnerable": "",
+        "notIdeal": ""
+      },
+      "gearBenefit": {
+        "heavyWeapons": false,
+        "autoWeapons": false,
+        "techExplosives": false
+      }
     }
   },
   "Item": {

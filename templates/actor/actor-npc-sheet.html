@@ -2,16 +2,17 @@
 
   {{!-- Sheet Header --}}
   <header>
-    <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "breathless.gen.name"}}"/>
+    <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "ATDC.npc.name.placeholder"}}"/>
     <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
-    <textarea name="system.looks" type="text" value="{{system.looks}}" placeholder="{{localize "breathless.npc.LooksNpcInput"}}">{{system.looks}}</textarea>
-    <textarea name="system.behaviors" type="text" value="{{system.behaviors}}" placeholder="{{localize "breathless.npc.BehaviorsNpcInput"}}">{{system.behaviors}}</textarea>
-    <textarea name="system.motivations" type="text" value="{{system.motivations}}" placeholder="{{localize "breathless.npc.MotivationsNpcInput"}}">{{system.motivations}}</textarea>
+    <!-- TODO: add stress, put others in a tab system [notes, info, gear], add gear -->
+    <textarea name="system.skills" type="text" value="{{system.skills}}" placeholder="{{localize "ATDC.npc.skills.label"}}">{{system.skills}}</textarea>
+    <textarea name="system.glance" type="text" value="{{system.glance}}" placeholder="{{localize "ATDC.npc.glance.label"}}">{{system.glance}}</textarea>
+    <textarea name="system.motivation" type="text" value="{{system.motivation}}" placeholder="{{localize "ATDC.npc.motivation.label"}}">{{system.motivation}}</textarea>
   </header>
   
   {{!-- Notes --}}
   <div>
-      <h2>{{localize "breathless.ActorNotes"}}</h2>
+      <h2>{{localize "ATDC.npc.notes.label"}}</h2>
       <div class="notes">
           {{editor system.notes target="system.notes" button=true engine="prosemirror" collaborate=false}}
       </div>
