@@ -19,6 +19,14 @@
   ],
   "esmodules": ["module/atdc.mjs"],
   "styles": ["css/atdc.css"],
+  "packs": [
+    {
+      "name": "gear",
+      "label": "Gear",
+      "path": "./packs/gear.db",
+      "type": "Item"
+    }
+  ],
   "languages": [
     {
       "lang": "en",
