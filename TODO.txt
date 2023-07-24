@@ -28,6 +28,7 @@ Named Mortal Pawns
     - Pseudo-Scien�sts
     - Occul�sts
 Supernatties
+- Servitors vs full on creature
 - least 4 Stress, but it could take much more.
 - Powers
 - weaknesses
