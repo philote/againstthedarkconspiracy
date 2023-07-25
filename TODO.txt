@@ -1,10 +1,7 @@
 Create Safe house sheet
-Create supernatty sheet
-Choose conspiracy type, sets what lists you get for items?
-figure out NPCs
-figure out a solution for heat
-add a setting for conspiracy type
-Change supernatty sheet lists and wording based on choice?
+Create npc the 3 sheets
+Add conspiracy type to settings
+Hack the Blades Clocks to create a Heat meter
 add compendium items
     journal - Operation template
     roll tables for briefing
