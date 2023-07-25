@@ -7,6 +7,7 @@ import { AtDCItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ATDC } from "./helpers/config.mjs";
+import { ClockPanel } from "./helpers/clock-panel.js";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -33,6 +34,35 @@ Hooks.once("init", async function () {
   Actors.registerSheet("atdc", AtDCActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("atdc", AtDCItemSheet, { makeDefault: true });
+
+  // Testing for clocks
+
+  game.settings.register("global-progress-clocks", "activeClocks", {
+    name: "Active Clocks",
+    scope: "world",
+    type: Object,
+    default: {},
+    config: false
+  });
+
+  window.clock = { 
+    value: 0, 
+    max: 10, 
+    name: "HEAT", 
+    id: "heat-clock" ,
+    spokes: Array(10).keys()
+  };
+  window.clockPanel = new ClockPanel(window.clock);
+
+  // Create a spot for the clock panel to render into
+  const top = document.querySelector("#ui-top");
+  if (top) {
+      const template = document.createElement("template");
+      template.setAttribute("id", "clock-panel");
+      top?.insertAdjacentElement("afterend", template);
+  }
+
+  // end
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
@@ -64,6 +94,10 @@ Handlebars.registerHelper("toLowerCase", function (str) {
 Hooks.once("ready", async function () {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
   Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
+});
+
+Hooks.on("canvasReady", () => {
+  window.clockPanel.render(true);
 });
 
 /* -------------------------------------------- */

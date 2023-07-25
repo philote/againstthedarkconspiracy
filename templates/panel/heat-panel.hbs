@@ -1,0 +1,12 @@
+<section class="clock-panel {{#if @root.options.editable}}editable{{/if}} top">
+    <div class="clock-entry" data-id="heat-clock">
+        <div class="clock" style="--areas: {{clock.max}}; --filled: 1">
+            {{#each clock.spokes}}
+                <div class="spoke" style="--index: {{ this }}"></div>
+            {{/each}}
+        </div>
+        <div class="name-section">
+            <div class="name">HEAT</div>
+        </div>
+    </div>
+</section>
