@@ -37,8 +37,8 @@ Hooks.once("init", async function () {
 
   // Testing for clocks
 
-  game.settings.register("global-progress-clocks", "activeClocks", {
-    name: "Active Clocks",
+  game.settings.register("global-progress-clocks", "heatClock", {
+    name: "HEAT Clock",
     scope: "world",
     type: Object,
     default: {},
@@ -46,13 +46,14 @@ Hooks.once("init", async function () {
   });
 
   window.clock = { 
-    value: 0, 
-    max: 10, 
-    name: "HEAT", 
+    value: 0,
+    max: 10,
+    name: "HEAT",
     id: "heat-clock" ,
     spokes: Array(10).keys()
   };
   window.clockPanel = new ClockPanel(window.clock);
+  window.clockPanel.render(true);
 
   // Create a spot for the clock panel to render into
   const top = document.querySelector("#ui-top");
@@ -98,6 +99,18 @@ Hooks.once("ready", async function () {
 
 Hooks.on("canvasReady", () => {
   window.clockPanel.render(true);
+});
+
+Hooks.on("createSetting", (setting) => {
+  if (setting.key === "global-progress-clocks.heatClock") {
+    window.clockPanel.render(true);
+  }
+});
+
+Hooks.on("updateSetting", (setting) => {
+  if (setting.key === "global-progress-clocks.heatClock") {
+    window.clockPanel.render(true);
+  }
 });
 
 /* -------------------------------------------- */

@@ -1,7 +1,7 @@
 Create Safe house sheet
 Create npc the 3 sheets
 Add conspiracy type to settings
-Hack the Blades Clocks to create a Heat meter:https://github.com/CarlosFdez/global-progress-clocks/tree/master
+clean up heat meter
 add compendium items
     journal - Operation template
     roll tables for briefing
