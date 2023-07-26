@@ -13,7 +13,7 @@ import { ClockPanel } from "./helpers/clock-panel.js";
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
-Hooks.once("init", async function () {
+Hooks.once("init", () => {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.atdc = {
@@ -36,23 +36,15 @@ Hooks.once("init", async function () {
   Items.registerSheet("atdc", AtDCItemSheet, { makeDefault: true });
 
   // Testing for clocks
-
-  game.settings.register("global-progress-clocks", "heatClock", {
-    name: "HEAT Clock",
+  game.settings.register("againstthedarkconspiracy", "heat", {
+    name: "HEAT",
     scope: "world",
     type: Object,
     default: {},
     config: false
   });
 
-  window.clock = { 
-    value: 0,
-    max: 10,
-    name: "HEAT",
-    id: "heat-clock" ,
-    spokes: Array(10).keys()
-  };
-  window.clockPanel = new ClockPanel(window.clock);
+  window.clockPanel = new ClockPanel();
   window.clockPanel.render(true);
 
   // Create a spot for the clock panel to render into
@@ -63,10 +55,38 @@ Hooks.once("init", async function () {
       top?.insertAdjacentElement("afterend", template);
   }
 
-  // end
-
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
+});
+
+/* -------------------------------------------- */
+/*  Hooks                                  */
+/* -------------------------------------------- */
+
+Hooks.once("ready", () => {
+  // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
+  Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
+});
+
+Hooks.on("canvasReady", () => {
+  window.clockPanel.render(true);
+  console.log("LOG -- canvasReady");
+});
+
+Hooks.on("createSetting", (setting) => {
+  console.log("LOG -- createSetting");
+  if (setting.key === "againstthedarkconspiracy.heat") {
+    window.clockPanel.refresh();
+    console.log("LOG -- createSetting.heat");
+  }
+});
+
+Hooks.on("updateSetting", (setting) => {
+  console.log("LOG -- updateSetting");
+  if (setting.key === "againstthedarkconspiracy.heat") {
+    window.clockPanel.refresh();
+    console.log("LOG -- updateSetting.heat");
+  }
 });
 
 /* -------------------------------------------- */
@@ -86,31 +106,6 @@ Handlebars.registerHelper("concat", function () {
 
 Handlebars.registerHelper("toLowerCase", function (str) {
   return str.toLowerCase();
-});
-
-/* -------------------------------------------- */
-/*  Ready Hook                                  */
-/* -------------------------------------------- */
-
-Hooks.once("ready", async function () {
-  // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
-  Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
-});
-
-Hooks.on("canvasReady", () => {
-  window.clockPanel.render(true);
-});
-
-Hooks.on("createSetting", (setting) => {
-  if (setting.key === "global-progress-clocks.heatClock") {
-    window.clockPanel.render(true);
-  }
-});
-
-Hooks.on("updateSetting", (setting) => {
-  if (setting.key === "global-progress-clocks.heatClock") {
-    window.clockPanel.render(true);
-  }
 });
 
 /* -------------------------------------------- */
