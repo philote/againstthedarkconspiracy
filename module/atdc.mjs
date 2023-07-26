@@ -7,13 +7,13 @@ import { AtDCItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ATDC } from "./helpers/config.mjs";
-import { ClockPanel } from "./helpers/clock-panel.js";
+import { HeatPanel } from "./helpers/heat-panel.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
-Hooks.once("init", () => {
+Hooks.once("init", async function () {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.atdc = {
@@ -35,36 +35,17 @@ Hooks.once("init", () => {
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("atdc", AtDCItemSheet, { makeDefault: true });
 
-  // Testing for clocks
-
-  window.clockPanel = new ClockPanel();
-  window.clockPanel.render(true);
-
-  // Create a spot for the clock panel to render into
-  const top = document.querySelector("#ui-top");
-  if (top) {
-      const template = document.createElement("template");
-      template.setAttribute("id", "clock-panel");
-      top?.insertAdjacentElement("afterend", template);
-  }
+  // Heat
+  window.heatPanel = new HeatPanel();
+  window.heatPanel.render(true);
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
 
-/* -------------------------------------------- */
-/*  Hooks                                  */
-/* -------------------------------------------- */
-
-Hooks.once("ready", () => {
-  // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
-  Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
-});
-
-Hooks.on("canvasReady", () => {
-  window.clockPanel.render(true);
-  console.log("LOG -- canvasReady");
-});
+// Hooks.on("canvasReady", () => {
+//   window.heatPanel.render(true);
+// });
 
 /* -------------------------------------------- */
 /*  Handlebars Helpers                          */
@@ -83,6 +64,19 @@ Handlebars.registerHelper("concat", function () {
 
 Handlebars.registerHelper("toLowerCase", function (str) {
   return str.toLowerCase();
+});
+
+/* -------------------------------------------- */
+/*  Ready Hook                                  */
+/* -------------------------------------------- */
+
+Hooks.once("ready", async function () {
+  // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
+  Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
+});
+
+Hooks.on("canvasReady", async function () {
+  window.heatPanel.render(true);
 });
 
 /* -------------------------------------------- */
