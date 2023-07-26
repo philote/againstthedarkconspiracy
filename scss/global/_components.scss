@@ -117,74 +117,65 @@
 
 // Heat
 
-// .clock-panel {
-//   position: absolute;
-//   top: 15px;
-//   right: 320px;
+.heat-panel {
+  position: absolute;
+  top: 30px;
+  right: 325px;
+// right: 0;
 
-//   .editable {
-//     pointer-events: initial;
-//   }
+  .editable {
+    pointer-events: initial;
+  }
 
-//   .clock-entry {
-//     background: rgba(15, 15, 15, 0.7);
-//     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-//     display: flex;
-//     flex-direction: row-reverse;
-//     height: 44px;
-//     border-radius: 5px 22px 22px 5px;
+  .heat {
+    background: rgba(15, 15, 15, 0.7);
+    border: rgb(97, 97, 97) 1px solid;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row-reverse;
+    height: 44px;
+    border-radius: 5px 22px 22px 5px;
 
-//     .name {
-//       padding: 0 4px 2px 4px;
-//       color: white;
-//       font-size: 2em;
-//     }
-  
-//     .clock {
-//       cursor: pointer;
-//       width: 44px;
-//       height: 44px;
-  
-//       --spoke-width: 2px;
-  
-//       align-self: center;
-//       aspect-ratio: 1 / 1;
-  
-//       --filled-ratio: calc(var(--filled) / var(--areas) * 1turn);
-//       background: conic-gradient(red var(--filled-ratio), white var(--filled-ratio) 1turn);
-//       border-radius: 50%;
-//       border: black var(--spoke-width) solid;
-  
-//       position: relative;
-//     }
-  
-//     .clock .spoke {
-//       width: var(--spoke-width);
-  
-//       /* Make the spokes slightly larger than the inner radius so they overlay half the outer border, preventing subpixel gaps */
-//       height: calc(50% + .5 * var(--spoke-width));
-  
-//       top: calc(-.5 * var(--spoke-width));
-//       right: calc(50% - var(--spoke-width) / 2);
-  
-//       background: black;
-//       position: absolute;
-  
-//       transform-origin: center bottom;
-//       transform: rotate(calc((var(--index) * 1turn) / var(--areas)));
-//     }
-//   }
+    .name {
+      padding: 0 10px 0 10px;
+      color: white;
+      font-size: 2em;
+      align-self: center;
+      margin: 0;
+    }
 
-// }
-.heat {
-    width: 200px;
-    height: 200px;
-    background-color: #823c3c;
-    position: absolute;
-    top: 15px;
-    right: 320px;
-    
-    // .name {
+    .clock {
+      cursor: pointer;
+      width: 65px;
+      height: 65px;
 
-    // }
+      --spoke-width: 1px;
+
+      align-self: center;
+      aspect-ratio: 1 / 1;
+
+      --filled-ratio: calc(var(--filled) / var(--areas) * 1turn);
+      background: conic-gradient(red var(--filled-ratio), white var(--filled-ratio) 1turn);
+      border-radius: 50%;
+      border: black var(--spoke-width) solid;
+
+      position: relative;
+    }
+
+    .clock .spoke {
+      width: var(--spoke-width);
+
+      /* Make the spokes slightly larger than the inner radius so they overlay half the outer border, preventing subpixel gaps */
+      height: calc(50% + .5 * var(--spoke-width));
+
+      top: calc(-.5 * var(--spoke-width));
+      right: calc(50% - var(--spoke-width) / 2);
+
+      background: black;
+      position: absolute;
+
+      transform-origin: center bottom;
+      transform: rotate(calc((var(--index) * 1turn) / var(--areas)));
+    }
+  }
 }

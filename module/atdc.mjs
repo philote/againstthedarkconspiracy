@@ -13,7 +13,7 @@ import { HeatPanel } from "./helpers/heat-panel.mjs";
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
-Hooks.once("init", async function () {
+Hooks.once("init", () => {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.atdc = {
@@ -36,16 +36,20 @@ Hooks.once("init", async function () {
   Items.registerSheet("atdc", AtDCItemSheet, { makeDefault: true });
 
   // Heat
+  game.settings.register("againstthedarkconspiracy", "heat", {
+    name: "Heat",
+    scope: "world",
+    type: Object,
+    default: {},
+    config: false
+  });
+
   window.heatPanel = new HeatPanel();
   window.heatPanel.render(true);
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
-
-// Hooks.on("canvasReady", () => {
-//   window.heatPanel.render(true);
-// });
 
 /* -------------------------------------------- */
 /*  Handlebars Helpers                          */
@@ -70,13 +74,25 @@ Handlebars.registerHelper("toLowerCase", function (str) {
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
 
-Hooks.once("ready", async function () {
+Hooks.once("ready", () => {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
   Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
 });
 
-Hooks.on("canvasReady", async function () {
+Hooks.on("canvasReady", () => {
   window.heatPanel.render(true);
+});
+
+Hooks.on("createSetting", (setting) => {
+  if (setting.key === "againstthedarkconspiracy.heat") {
+    window.heatPanel.render(true);
+  }
+});
+
+Hooks.on("updateSetting", (setting) => {
+  if (setting.key === "againstthedarkconspiracy.heat") {
+    window.heatPanel.render(true);
+  }
 });
 
 /* -------------------------------------------- */
