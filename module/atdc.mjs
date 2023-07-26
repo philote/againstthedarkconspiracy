@@ -36,13 +36,6 @@ Hooks.once("init", () => {
   Items.registerSheet("atdc", AtDCItemSheet, { makeDefault: true });
 
   // Testing for clocks
-  game.settings.register("againstthedarkconspiracy", "heat", {
-    name: "HEAT",
-    scope: "world",
-    type: Object,
-    default: {},
-    config: false
-  });
 
   window.clockPanel = new ClockPanel();
   window.clockPanel.render(true);
@@ -71,22 +64,6 @@ Hooks.once("ready", () => {
 Hooks.on("canvasReady", () => {
   window.clockPanel.render(true);
   console.log("LOG -- canvasReady");
-});
-
-Hooks.on("createSetting", (setting) => {
-  console.log("LOG -- createSetting");
-  if (setting.key === "againstthedarkconspiracy.heat") {
-    window.clockPanel.refresh();
-    console.log("LOG -- createSetting.heat");
-  }
-});
-
-Hooks.on("updateSetting", (setting) => {
-  console.log("LOG -- updateSetting");
-  if (setting.key === "againstthedarkconspiracy.heat") {
-    window.clockPanel.refresh();
-    console.log("LOG -- updateSetting.heat");
-  }
 });
 
 /* -------------------------------------------- */

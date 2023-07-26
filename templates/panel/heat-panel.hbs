@@ -1,15 +1,5 @@
-<section class="clock-panel {{#if @root.editable}}editable{{/if}} top">
-    <div class="clock-entry">
-        {{log '@root.editable ' @root.editable}}
-        {{log 'clock.max ' clock.max}}
-        {{log 'clock.value ' clock.value}}
-        {{log 'clock.spokes ' clock.spokes}}
-        {{log 'clock.name ' clock.name}}
-        <div class="clock" style="--areas: {{clock.max}}; --filled: {{clock.value}}">
-            {{#each clock.spokes}}
-                <div class="spoke" style="--index: {{ this }}"></div>
-            {{/each}}
-        </div>
-        <div class="name">{{clock.name}}</div>
+<section class="clock-panel">
+    <div style="background-color: blue; width: 100px; height: 100px">
+        <div class="test">HERE!</div>
     </div>
 </section>
