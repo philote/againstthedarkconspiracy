@@ -1,14 +1,9 @@
 export class HeatPanel extends Application {
     refresh = foundry.utils.debounce(this.render, 100);
-    clockSize = 10;
 
     constructor(options) {
         super(options);
-        this.heat = {
-            value: 0,
-            max: this.clockSize,
-            spokes: Array(this.clockSize).keys()
-        };
+        this.currentHeat = 0
     }
 
     static get defaultOptions() {
@@ -23,17 +18,18 @@ export class HeatPanel extends Application {
     /** @override */
     async getData(options) {
         const data = await super.getData(options);
-        const savedHeat = game.settings.get("againstthedarkconspiracy", "heat");
-        console.log("savedHeat: "+savedHeat);
-        if (savedHeat) {
-            this.heat = savedHeat;
+        const savedCurrentHeat = game.settings.get("againstthedarkconspiracy", "currentHeat");
+        
+        if (savedCurrentHeat) {
+            this.currentHeat = savedCurrentHeat;
         }
+        
         return {
             ...data,
-            options: {
-                editable: game.user.isGM,
-            },
-            heat: this.heat
+            editable: game.user.isGM,
+            currentHeat: this.currentHeat,
+            max: 10,
+            spokes: Array(10).keys()
         };
     }
 
@@ -47,15 +43,13 @@ export class HeatPanel extends Application {
 
     _onHeatIncrease(event) {
         event.preventDefault();
-        this.heat.value = Math.min(this.heat.value + 1, this.heat.max);
-        game.settings.set("againstthedarkconspiracy", "heat", this.heat);
-        console.log("Heat goes up! "+this.heat.value);
+        this.currentHeat = Math.min(this.currentHeat + 1, 10);
+        game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
     }
 
     _onHeatDecrease(event) {
         event.preventDefault();
-        this.heat.value = Math.max(this.heat.value - 1, 0);
-        game.settings.set("againstthedarkconspiracy", "heat", this.heat);
-        console.log("Heat goes down! "+this.heat.value);
+        this.currentHeat = Math.max(this.currentHeat - 1, 0);
+        game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
     }
 }

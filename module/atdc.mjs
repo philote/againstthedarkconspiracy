@@ -36,11 +36,11 @@ Hooks.once("init", () => {
   Items.registerSheet("atdc", AtDCItemSheet, { makeDefault: true });
 
   // Heat
-  game.settings.register("againstthedarkconspiracy", "heat", {
-    name: "Heat",
+  game.settings.register("againstthedarkconspiracy", "currentHeat", {
+    name: "currentHeat",
     scope: "world",
-    type: Object,
-    default: {},
+    type: Number,
+    default: 0,
     config: false
   });
 
@@ -84,13 +84,13 @@ Hooks.on("canvasReady", () => {
 });
 
 Hooks.on("createSetting", (setting) => {
-  if (setting.key === "againstthedarkconspiracy.heat") {
+  if (setting.key === "againstthedarkconspiracy.currentHeat") {
     window.heatPanel.render(true);
   }
 });
 
 Hooks.on("updateSetting", (setting) => {
-  if (setting.key === "againstthedarkconspiracy.heat") {
+  if (setting.key === "againstthedarkconspiracy.currentHeat") {
     window.heatPanel.render(true);
   }
 });
