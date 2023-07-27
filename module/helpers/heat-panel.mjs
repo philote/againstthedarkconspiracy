@@ -39,6 +39,7 @@ export class HeatPanel extends Application {
 
         html.find('.on-click').click(this._onHeatIncrease.bind(this));
         html.find('.on-click').contextmenu(this._onHeatDecrease.bind(this));
+        html.find('.on-click-clear').click(this._onClearHeat.bind(this));
     }
 
     _onHeatIncrease(event) {
@@ -50,6 +51,13 @@ export class HeatPanel extends Application {
     _onHeatDecrease(event) {
         event.preventDefault();
         this.currentHeat = Math.max(this.currentHeat - 1, 0);
+        game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
+    }
+
+
+    _onClearHeat(event) {
+        event.preventDefault();
+        this.currentHeat = 0
         game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
     }
 }
