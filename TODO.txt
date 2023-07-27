@@ -1,7 +1,6 @@
 Create Safe house sheet
 Create npc the 3 sheets
 Add conspiracy type to settings
-clean up heat meter
 add compendium items
     journal - Operation template
     roll tables for briefing

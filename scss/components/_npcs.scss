@@ -1,0 +1,37 @@
+.npc {
+    height: 100%;
+    margin: 0px 5px;
+  
+    img {
+      height: 300px;
+      margin-bottom: 5px; 
+    }
+  
+    header {
+        height: 100%;
+        
+        input[type=text] {
+            text-align: center;
+            font-size: 2em;
+            margin: 5px 0;
+            padding: 20px;
+        }
+  
+        textarea {
+            resize: none;
+            margin: 0px 0px 5px 0px;
+        }
+    }
+  
+    .notes {
+        height: 215px;
+        border-radius: 5px;
+        border: 2px solid #00000047;
+        padding: 0 5px 0 5px;
+        background: rgba(0, 0, 0, 0.05);
+  
+        .editor {
+            height: 100%;
+        }
+    }
+  }

@@ -16,5 +16,7 @@
 /* Styles limited to atdc sheets */
 .atdc {
   @import 'components/forms';
+  @import 'components/npcs';
+  @import 'components/characters';
   @import 'components/items';
 }

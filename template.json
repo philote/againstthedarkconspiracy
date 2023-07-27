@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": ["character", "nameless", "named", "supernatural", "safeHouse"],
     "templates": {
       "base": {
         "notes": ""
@@ -211,7 +211,19 @@
         "careLeastDetails": ""
       }
     },
-    "npc": {
+    "nameless": {
+      "templates": ["base"],
+      "stress": {
+        "min": 0,
+        "value": [0],
+        "max": 0     
+      },
+      "skills": "",
+      "glance": "",
+      "motivation": "",
+      "personalityTraits": ""
+    },
+    "named": {
       "templates": ["base"],
       "stress": {
         "min": 0,
