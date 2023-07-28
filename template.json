@@ -4,21 +4,33 @@
     "templates": {
       "base": {
         "notes": ""
+      },
+      "npcBase": {
+        "stress": {
+          "min": 0,
+          "value": [0],
+          "max": 0
+        },
+        "skills": "",
+        "glance": "",
+        "motivation": "",
+        "personalityTraits": "",
+        "type": ""
       }
     },
     "character": {
       "templates": ["base"],
       "intel": {
-        "min":0,
-        "max":6,
+        "min": 0,
+        "max": 6,
         "value": [0],
-        "states":[false, false, false, false, false, false]
+        "states": [false, false, false, false, false, false]
       },
       "stress": {
-        "min":0,
-        "max":6,
+        "min": 0,
+        "max": 6,
         "value": [1],
-        "states":[true, false, false, false, false, false],
+        "states": [true, false, false, false, false, false],
         "manifestTwo": "",
         "manifestThree": "",
         "manifestFour": "",
@@ -212,51 +224,31 @@
       }
     },
     "nameless": {
-      "templates": ["base"],
-      "stress": {
-        "min": 0,
-        "value": [0],
-        "max": 0     
-      },
-      "skills": "",
-      "glance": "",
-      "motivation": "",
-      "personalityTraits": ""
+      "templates": ["base", "npcBase"]
     },
     "named": {
-      "templates": ["base"],
-      "stress": {
-        "min": 0,
-        "value": [0],
-        "max": 0     
-      },
-      "skills": "",
-      "glance": "",
-      "motivation": "",
-      "personalityTraits": ""
-    },
-    "supernatural": {
-      "templates": ["base"],
-      "stress": {
-        "min": 0,
-        "value": [0],
-        "max": 0     
-      },
-      "skills": "",
-      "glance": "",
-      "motivation": "",
-      "personalityTraits": "",
-      "conspiracy": {
-        "type": "",
-        "power": "",
-        "powerDetails": "",
+      "templates": ["base", "npcBase"],
+      "power": "",
+      "powerDetails": "",
+      "weaknesses": {
         "compulsion": "",
         "compulsionDetails": "",
         "deterrent": "",
-        "deterrentDetails": "",
-        "vulnerability": "",
-        "vulnerabilityDetail": ""
+        "deterrentDetails": ""
       }
+    },
+    "supernatural": {
+      "templates": ["base", "npcBase"],
+      "power": "",
+      "powerDetails": "",
+      "weaknesses": {
+        "compulsion": "",
+        "compulsionDetails": "",
+        "deterrent": "",
+        "deterrentDetails": ""
+      },
+      "vulnerability": "",
+      "vulnerabilityDetail": ""
     },
     "safeHouse": {
       "templates": ["base"],

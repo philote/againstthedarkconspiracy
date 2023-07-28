@@ -1,0 +1,82 @@
+.sheet {
+  h1 {
+    font-weight: bold;
+    border: none;
+  }
+
+  h2 {
+    font-weight: bold;
+    border: none;
+  }
+
+  h3 {
+    border: none;
+    font-weight: bold;
+  }
+
+  a {
+    color: rgb(129, 33, 33);
+    font-weight: bold;
+  }
+
+  .editor {
+    border: 1px black solid;
+    background: rgb(0 0 0 / 5%);
+    padding: 5px;
+  }
+}
+
+.underline-input {
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+}
+
+.box {
+  border: 1px solid black;
+  background-color: rgb(128 128 128 / 5%);
+  padding: 5px;
+  margin: 5px;
+  align-items: center;
+
+  .full-width {
+    width: -webkit-fill-available;
+  }
+}
+
+.window-content {
+  margin: 0;
+  padding: 0;
+}
+
+nav.sheet-tabs {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: rgb(128 128 128 / 20%);
+}
+
+.sheet-tabs {
+  flex: 0;
+}
+
+.sheet-body,
+.sheet-body .tab,
+.sheet-body .tab .editor {
+  height: auto;
+}
+
+.sheet-body {
+  margin: 5px;
+}
+
+.tox {
+  .tox-editor-container {
+    background: $c-white;
+  }
+
+  .tox-edit-area {
+    padding: 0 8px;
+  }
+}
