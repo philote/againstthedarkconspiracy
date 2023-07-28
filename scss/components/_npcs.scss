@@ -19,10 +19,7 @@
     }
 
     h1.charname {
-      height: 30px;
-      padding: 0px;
-      margin: 5px 5px 5px 5px;
-      font-size: 1.5em;
+      margin: 0px 0px 5px 0px;
 
       input[type="text"] {
         width: 100%;
@@ -31,10 +28,39 @@
       }
     }
 
-    textarea {
-      resize: none;
-      margin: 0px 0px 5px 0px;
+    .resources{
+        align-items: center;
+
+        .stress {
+            justify-self: flex-start;
+            align-items: center;
+    
+            .controls {
+                flex: 0;
+                margin-left: 5px;
+                margin-right: 8px;
+            }
+    
+            h3 {
+                flex: 0;
+                margin: 0;
+            }
+        }
+    
+        .type {
+            align-items: center;
+    
+            select {
+                width: 100%;
+            }
+    
+            h3 {
+                flex: 0;
+                margin: 0 10px 0 0;
+            }
+        }
     }
+    
   }
 
   .notes {

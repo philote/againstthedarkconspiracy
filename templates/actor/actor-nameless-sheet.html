@@ -5,11 +5,44 @@
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "ATDC.npc.name.placeholder"}}"/></h1>
-      <!-- TODO: add stress, put others in a tab system [notes, info, gear], add gear -->
-      <textarea name="system.skills" type="text" value="{{system.skills}}" placeholder="{{localize "ATDC.npc.skills.label"}}">{{system.skills}}</textarea>
-      <textarea name="system.glance" type="text" value="{{system.glance}}" placeholder="{{localize "ATDC.npc.glance.label"}}">{{system.glance}}</textarea>
-      <textarea name="system.motivation" type="text" value="{{system.motivation}}" placeholder="{{localize "ATDC.npc.motivation.label"}}">{{system.motivation}}</textarea>
-    </div>
+      
+      <div class="flexcol">
+        <div class="flexrow">
+            <h3><label for="skills">{{localize "ATDC.npc.skills.label"}}</label></h3>
+            <input class="flex3" name="system.skills" id="skills" type="text" value="{{system.skills}}"/>
+        </div>
+        <div class="flexrow">
+            <h3><label for="glance">{{localize "ATDC.npc.glance.label"}}</label></h3>
+            <input class="flex3" name="system.glance" id="glance" type="text" value="{{system.glance}}"/>
+        </div>
+        <div class="flexrow">
+            <h3><label for="motivation">{{localize "ATDC.npc.motivation.label"}}</label></h3>
+            <input class="flex3" name="system.motivation" id="motivation" type="text" value="{{system.motivation}}"/>
+        </div>
+        <div class="resources grid grid-2col">
+          <div class="stress flexrow">
+            <h3>{{localize "ATDC.actor.stress.title"}}</h3>
+            <div class="controls flexcol">
+              <a class="clickable" data-roll-type="stepup"><i class="fa-solid fa-caret-up"></i></a>
+              <a class="clickable" data-roll-type="stepdown"><i class="fa-solid fa-caret-down"></i></a>
+            </div>
+            <div class="flexrow">
+              {{#each system.stress.states as |state count|}}
+                <input class="clickable" type="checkbox" data-pos="{{count}}" data-roll-type="toggle-stress" {{#if state}}checked{{/if}} >
+              {{/each}}
+            </div>
+          </div>
+          <div class="type flexrow">
+            <h3>Type</h3>
+            <select name="" data-type="String">
+              <option  value="123">123 123 123 123 123 123 123 123 123 123 123 123</option>
+              <option  value="123">123</option>
+              <option  value="123">123</option>
+              <option  value="123">123</option>
+            </select>
+          </div>
+        </div>
+
   </header>
 
   {{!-- Sheet Tab Navigation --}}
