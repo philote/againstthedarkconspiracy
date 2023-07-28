@@ -8,6 +8,7 @@ import { AtDCItemSheet } from "./sheets/item-sheet.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ATDC } from "./helpers/config.mjs";
 import { HeatPanel } from "./helpers/heat-panel.mjs";
+import { registerSettings } from "./helpers/settings.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -20,6 +21,7 @@ Hooks.once("init", () => {
     AtDCActor,
     AtDCItem,
     rollItemMacro,
+    registerSettings,
   };
 
   // Add custom constants for configuration.
@@ -35,15 +37,10 @@ Hooks.once("init", () => {
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("atdc", AtDCItemSheet, { makeDefault: true });
 
-  // Heat
-  game.settings.register("againstthedarkconspiracy", "currentHeat", {
-    name: "currentHeat",
-    scope: "world",
-    type: Number,
-    default: 0,
-    config: false
-  });
+  // Register system settings
+  registerSettings();
 
+  // Heat
   window.heatPanel = new HeatPanel();
   window.heatPanel.render(true);
 

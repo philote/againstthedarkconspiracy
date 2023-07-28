@@ -544,5 +544,15 @@
       "autoWeapons.label": "Auto weapons (with the auto tag but not the heavy tag)",
       "techExplosives.label": "Technical Equipment & Explosives (with the tech or explode tag)"
     }
+  },
+  "ATDC.settings": {
+    "conspiracyType": {
+      "name.label": "Choose a Conspiracy Type",
+      "choices": {
+        "vampires.label": "The Vampires",
+        "demons.label": "The Demons",
+        "fae.label": "The Fae"
+      }
+    }
   }
 }
