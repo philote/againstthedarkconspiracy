@@ -272,18 +272,98 @@
     "notes.label": "Notes",
     "skills.label": "Skills",
     "glance.label": "At a Glance",
-    "motivation.label": "Motivations"
-  },
-  "ATDC.supernatural": {
-    "name.placeholder": "Name",
-    "notes.label": "Notes",
-    "skills.label": "Skills",
-    "glance.label": "At a Glance",
     "motivation.label": "Motivations",
-    "conspiracy": {
-      "label": "Conspiracy",
+    "nameless": {
       "types": {
-        "placeholder.label": "Choose a Conspiracy",
+        "option.1": "Criminal Pawn",
+        "option.2": "Paramilitary Pawn",
+        "option.3": "Criminal Pawn Leader",
+        "option.4": "Paramilitary Pawn Leader"
+      }
+    },
+    "named": {
+      "types": {
+        "option.1": "Special Ops Contractors",
+        "option.2": "Pseudo-Scientists",
+        "option.3": "Occultists"
+      }
+    },
+    "supernatural": {
+      "types": {
+        "vampire": {
+          "label": "The VAMPIRE Conspiracy",
+          "power": {
+            "label": "Power",
+            "options": {
+              "placeholder": "Choose a Power",
+              "option.1": "Cloak of Darkness",
+              "option.2": "Fly",
+              "option.3": "Grant Power",
+              "option.4": "Great Speed",
+              "option.5": "Great Strength*",
+              "option.6": "Inhuman Senses",
+              "option.7": "Incorporeal (Mist)",
+              "option.8": "Invisible",
+              "option.9": "Mesmerism",
+              "option.10": "Poltergeist*",
+              "option.11": "Possession",
+              "option.12": "Regenerate",
+              "option.13": "See in the dark",
+              "option.14": "Shapechange (Wolf)",
+              "option.15": "Spider Climb",
+              "option.16": "Stench of Fear",
+              "option.17": "Summon & Command Wolves",
+              "option.18": "Summon & Command Rats",
+              "option.19": "Summon & Command Zombies",
+              "option.20": "Teeth & Claws*",
+              "option.21": "Track ... by blood",
+              "option.22": "Track ... by psychic connection",
+              "option.23": "Wards, Bindings & Spells",
+              "option.24": "for Control ..."
+            }
+          },
+          "compulsion": {
+            "label": "Compulsion",
+            "options": {
+              "placeholder": "Choose a Compulsion",
+              "option.1": "Addicted to ... human flesh",
+              "option.2": "Addicted to ... Vampiric blood",
+              "option.3": "Attracted to ... noise",
+              "option.4": "Attracted to ... any blood",
+              "option.5": "Attracted to ... human blood",
+              "option.6": "Bound to place",
+              "option.7": "Obey ... Vampire Creator/Sire",
+              "option.8": "Tempt them",
+              "option.9": "for Control ..."
+            }
+          },
+          "deterrent": {
+            "label": "Deterrent",
+            "options": {
+              "placeholder": "Choose a Deterrent",
+              "option.1": "Fire",
+              "option.2": "Fresh ... Garlic",
+              "option.3": "Mirrors",
+              "option.4": "Running water",
+              "option.5": "Salt",
+              "option.6": "Sunlight",
+              "option.7": "Symbol of ... Faith",
+              "option.8": "for Control ..."
+            }
+          },
+          "vulnerability": {
+            "label": "Vulnerability",
+            "options": {
+              "placeholder": "Choose a Vulnerability",
+              "option.1": "Extreme Deterrence: Fire",
+              "option.2": "Vulnerable to ... Green Oak Stake",
+              "option.3": "Iconic Weapon of Faith",
+              "option.4": "Precise strike: Heart",
+              "option.5": "Double Tap",
+              "option.6": "for Control ..."
+            }
+          }
+        },
         "demonic": {
           "label": "The DEMONIC Conspiracy",
           "power": {
@@ -448,83 +528,9 @@
               "option.7": "for Control ..."
             }
           }
-        },
-        "vampire": {
-          "label": "The VAMPIRE Conspiracy",
-          "power": {
-            "label": "Power",
-            "options": {
-              "placeholder": "Choose a Power",
-              "option.1": "Cloak of Darkness",
-              "option.2": "Fly",
-              "option.3": "Grant Power",
-              "option.4": "Great Speed",
-              "option.5": "Great Strength*",
-              "option.6": "Inhuman Senses",
-              "option.7": "Incorporeal (Mist)",
-              "option.8": "Invisible",
-              "option.9": "Mesmerism",
-              "option.10": "Poltergeist*",
-              "option.11": "Possession",
-              "option.12": "Regenerate",
-              "option.13": "See in the dark",
-              "option.14": "Shapechange (Wolf)",
-              "option.15": "Spider Climb",
-              "option.16": "Stench of Fear",
-              "option.17": "Summon & Command Wolves",
-              "option.18": "Summon & Command Rats",
-              "option.19": "Summon & Command Zombies",
-              "option.20": "Teeth & Claws*",
-              "option.21": "Track ... by blood",
-              "option.22": "Track ... by psychic connection",
-              "option.23": "Wards, Bindings & Spells",
-              "option.24": "for Control ..."
-            }
-          },
-          "compulsion": {
-            "label": "Compulsion",
-            "options": {
-              "placeholder": "Choose a Compulsion",
-              "option.1": "Addicted to ... human flesh",
-              "option.2": "Addicted to ... Vampiric blood",
-              "option.3": "Attracted to ... noise",
-              "option.4": "Attracted to ... any blood",
-              "option.5": "Attracted to ... human blood",
-              "option.6": "Bound to place",
-              "option.7": "Obey ... Vampire Creator/Sire",
-              "option.8": "Tempt them",
-              "option.9": "for Control ..."
-            }
-          },
-          "deterrent": {
-            "label": "Deterrent",
-            "options": {
-              "placeholder": "Choose a Deterrent",
-              "option.1": "Fire",
-              "option.2": "Fresh ... Garlic",
-              "option.3": "Mirrors",
-              "option.4": "Running water",
-              "option.5": "Salt",
-              "option.6": "Sunlight",
-              "option.7": "Symbol of ... Faith",
-              "option.8": "for Control ..."
-            }
-          },
-          "vulnerability": {
-            "label": "Vulnerability",
-            "options": {
-              "placeholder": "Choose a Vulnerability",
-              "option.1": "Extreme Deterrence: Fire",
-              "option.2": "Vulnerable to ... Green Oak Stake",
-              "option.3": "Iconic Weapon of Faith",
-              "option.4": "Precise strike: Heart",
-              "option.5": "Double Tap",
-              "option.6": "for Control ..."
-            }
-          }
         }
       }
-    } 
+    }
   },
   "ATDC.safeHouse": {
     "name.placeholder": "Name",

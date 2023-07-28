@@ -15,8 +15,7 @@
         "skills": "",
         "glance": "",
         "motivation": "",
-        "personalityTraits": "",
-        "type": ""
+        "personalityTraits": ""
       }
     },
     "character": {
@@ -225,7 +224,16 @@
       }
     },
     "nameless": {
-      "templates": ["base", "npcBase"]
+      "templates": ["base", "npcBase"],
+      "type": {
+        "index": 0,
+        "options": [
+          "ATDC.npc.nameless.types.option.1",
+          "ATDC.npc.nameless.types.option.2",
+          "ATDC.npc.nameless.types.option.3",
+          "ATDC.npc.nameless.types.option.4"
+        ]
+      }
     },
     "named": {
       "templates": ["base", "npcBase"],

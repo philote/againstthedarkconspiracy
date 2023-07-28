@@ -23,8 +23,8 @@
           <div class="stress flexrow">
             <h3>{{localize "ATDC.actor.stress.title"}}</h3>
             <div class="controls flexcol">
-              <a class="clickable" data-roll-type="stepup"><i class="fa-solid fa-caret-up"></i></a>
-              <a class="clickable" data-roll-type="stepdown"><i class="fa-solid fa-caret-down"></i></a>
+              <a class="clickable" data-roll-type="npc-stress-increase"><i class="fa-solid fa-caret-up"></i></a>
+              <a class="clickable" data-roll-type="npc-stress-decrease"><i class="fa-solid fa-caret-down"></i></a>
             </div>
             <div class="flexrow">
               {{#each system.stress.states as |state count|}}
@@ -34,11 +34,12 @@
           </div>
           <div class="type flexrow">
             <h3>Type</h3>
-            <select name="" data-type="String">
-              <option  value="123">123 123 123 123 123 123 123 123 123 123 123 123</option>
-              <option  value="123">123</option>
-              <option  value="123">123</option>
-              <option  value="123">123</option>
+            <select name="system.type.index" data-type="String">
+              {{#select system.type.index}}
+                {{#each system.type.options as |option key|}}
+                  <option value="{{key}}">{{localize option}}</option>
+                {{/each}}
+              {{/select}}
             </select>
           </div>
         </div>

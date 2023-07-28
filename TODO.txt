@@ -1,6 +1,7 @@
 Create Safe house sheet
-Create npc the 3 sheets
-Add conspiracy type to settings
+Create npc nameless sheet
+Create npc named sheet
+Create npc Supernatural sheet
 add compendium items
     journal - Operation template
     roll tables for briefing

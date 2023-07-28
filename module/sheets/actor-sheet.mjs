@@ -213,6 +213,14 @@ export class AtDCActorSheet extends ActorSheet {
           this._onToggleStress(dataset.pos);
           return;
         }
+        case "npc-stress-increase": {
+          this._onNpcStressIncrease();
+          return;
+        }
+        case "npc-stress-decrease": {
+          this._onNpcStressDecrease();
+          return;
+        }
         case "toggle-intel": {
           this._onToggleIntel(dataset.pos);
           return;
@@ -310,7 +318,23 @@ export class AtDCActorSheet extends ActorSheet {
     }
 
     currentArray[pos] = newState;
-    return this.actor.update({ ["system.stress.states"]: currentArray });
+    this.actor.update({ ["system.stress.states"]: currentArray });
+  }
+
+  _onNpcStressIncrease() {
+    let currentArray = this.actor.system.stress.states;
+    let currentMax = this.actor.system.stress.max;
+    currentArray.push(false);
+    this.actor.update({ ["system.stress.states"]: currentArray });
+    this.actor.update({ ["system.stress.max"]: ++currentMax });
+  }
+
+  _onNpcStressDecrease() {
+    let currentArray = this.actor.system.stress.states;
+    let currentMax = this.actor.system.stress.max;
+    currentArray.pop();
+    this.actor.update({ ["system.stress.states"]: currentArray });
+    this.actor.update({ ["system.stress.max"]: --currentMax });
   }
 
   _onToggleIntel(pos) {
@@ -325,7 +349,7 @@ export class AtDCActorSheet extends ActorSheet {
     }
 
     currentArray[pos] = newState;
-    return this.actor.update({ ["system.intel.states"]: currentArray });
+    this.actor.update({ ["system.intel.states"]: currentArray });
   }
 
   // ----------------------
