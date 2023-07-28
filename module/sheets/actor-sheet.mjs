@@ -140,6 +140,12 @@ export class AtDCActorSheet extends ActorSheet {
       li.slideUp(200, () => this.render(false));
     });
 
+    html.find(".changeable").change(this._onChange.bind(this));
+    // html.find(".changeable").change(function(){
+    //   console.log("this.value " + this.value);
+    //   console.log("this.value.options " + this.options[this.selectedIndex].text);
+    // });
+
     // Clickable UI.
     html.find(".clickable").click(this._onClick.bind(this));
 
@@ -151,6 +157,24 @@ export class AtDCActorSheet extends ActorSheet {
         li.setAttribute("draggable", true);
         li.addEventListener("dragstart", handler, false);
       });
+    }
+  }
+
+  _onChange(e) {
+    e.preventDefault();
+    let choice = e.currentTarget.value;
+  
+    switch (choice) {
+      case '0': 
+      case '1': {
+        this._setStressMax(1);
+        return;
+      }
+      case '2': 
+      case '3': {
+        this._setStressMax(2);
+        return;
+      }
     }
   }
 
@@ -214,11 +238,11 @@ export class AtDCActorSheet extends ActorSheet {
           return;
         }
         case "npc-stress-increase": {
-          this._onNpcStressIncrease();
+          this._onNpcStressMaxIncrease();
           return;
         }
         case "npc-stress-decrease": {
-          this._onNpcStressDecrease();
+          this._onNpcStressMaxDecrease();
           return;
         }
         case "toggle-intel": {
@@ -321,7 +345,7 @@ export class AtDCActorSheet extends ActorSheet {
     this.actor.update({ ["system.stress.states"]: currentArray });
   }
 
-  _onNpcStressIncrease() {
+  _onNpcStressMaxIncrease() {
     let currentArray = this.actor.system.stress.states;
     let currentMax = this.actor.system.stress.max;
     currentArray.push(false);
@@ -329,12 +353,46 @@ export class AtDCActorSheet extends ActorSheet {
     this.actor.update({ ["system.stress.max"]: ++currentMax });
   }
 
-  _onNpcStressDecrease() {
+  _onNpcStressMaxDecrease() {
     let currentArray = this.actor.system.stress.states;
     let currentMax = this.actor.system.stress.max;
     currentArray.pop();
     this.actor.update({ ["system.stress.states"]: currentArray });
     this.actor.update({ ["system.stress.max"]: --currentMax });
+  }
+
+  _setStressMax(newMax) {
+    console.log("newMax: "+newMax);
+    
+
+    if (newMax < 0) return;
+    let currentArray = this.actor.system.stress.states;
+    console.log("currentArray.length: "+currentArray.length);
+    if (currentArray.length == newMax) return;
+
+    console.log("newMax: "+newMax);
+    console.log("currentArray.length: "+currentArray.length);
+
+    if (newMax > currentArray.length) {
+      const addAmount = newMax - currentArray.length;
+      console.log("addAmount: "+addAmount);
+      for (let i = 0; i < addAmount; i++) {
+        currentArray.push(false);
+        console.log("increase stress array by 1");
+      }
+    } else if (newMax < currentArray.length) {
+      const popAmount = currentArray.length - newMax;
+      console.log("popAmount: "+popAmount);
+      for (let i = 0; i < popAmount; i++) {
+        currentArray.pop();
+        console.log("decrease stress array by 1");
+      }
+    }
+
+    console.log("currentArray.length: "+currentArray.length);
+
+    this.actor.update({ ["system.stress.states"]: currentArray });
+    this.actor.update({ ["system.stress.max"]: newMax });
   }
 
   _onToggleIntel(pos) {

@@ -34,7 +34,7 @@
           </div>
           <div class="type flexrow">
             <h3>Type</h3>
-            <select name="system.type.index" data-type="String">
+            <select class="changeable" name="system.type.index" data-type="String">
               {{#select system.type.index}}
                 {{#each system.type.options as |option key|}}
                   <option value="{{key}}">{{localize option}}</option>
