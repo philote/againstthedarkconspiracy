@@ -7,8 +7,8 @@
   return loadTemplates([
 
     // Actor partials.
-    "systems/againstthedarkconspiracy/templates/actor/parts/actor-main.html",
-    "systems/againstthedarkconspiracy/templates/actor/parts/actor-biography.html",
-    "systems/againstthedarkconspiracy/templates/actor/parts/actor-relationships.html"
+    "systems/againstthedarkconspiracy/templates/actor/parts/actor-main.hbs",
+    "systems/againstthedarkconspiracy/templates/actor/parts/actor-biography.hbs",
+    "systems/againstthedarkconspiracy/templates/actor/parts/actor-relationships.hbs"
   ]);
 };

@@ -33,7 +33,7 @@ export class AtDCActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/againstthedarkconspiracy/templates/actor/actor-${this.actor.type}-sheet.html`;
+    return `systems/againstthedarkconspiracy/templates/actor/actor-${this.actor.type}-sheet.hbs`;
   }
 
   /* -------------------------------------------- */
