@@ -1,12 +1,7 @@
 <section class="heat-panel" {{#if @root.editable}}editable{{/if}}>
-    {{log '@root.editable' @root.editable}}
-    {{log 'max' max}}
-    {{log 'currentHeat' currentHeat}}
     <div class="heat">
         <div class="clock on-click" style="--areas: {{max}}; --filled: {{currentHeat}}">
-            {{log 'spokes' spokes}}
             {{#each spokes}}
-                {{log 'heat.spokes.index' this}}
                 <div class="spoke" style="--index: {{ this }}"></div>
             {{/each}}
         </div>

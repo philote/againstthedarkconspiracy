@@ -11,7 +11,7 @@ export class HeatPanel extends Application {
             ...super.defaultOptions,
             id: "heat-panel",
             popOut: false,
-            template: "systems/againstthedarkconspiracy/templates/panel/heat-panel.html",
+            template: "systems/againstthedarkconspiracy/templates/panel/heat-panel.hbs",
         };
     }
 

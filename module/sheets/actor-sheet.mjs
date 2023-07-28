@@ -1280,20 +1280,16 @@ export class AtDCActorSheet extends ActorSheet {
     if (!target) {
       target = true;
       this.actor.update({ "system.anchor.target": target });
-      console.log("Anchor target");
       return `${anchorName} has become a target of the conspiracy!`;
     } else if (!missing) {
       missing = true;
       this.actor.update({ "system.anchor.missing": missing });
-      console.log("Anchor missing");
       return `${anchorName} has gone missing!`;
     } else if (!taken) {
       taken = true;
       this.actor.update({ "system.anchor.taken": taken });
-      console.log("Anchor taken");
       return `${anchorName} has been taken!`;
     } else {
-      console.log("Anchor already taken!");
       return `${anchorName} has already been taken, you nee to save them.`;
     }
   }
