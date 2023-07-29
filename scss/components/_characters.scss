@@ -219,40 +219,6 @@
     }
   }
 
-  .gear,
-  .contact {
-    flex: 0 auto;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: 5px;
-
-    .profile-img {
-      flex: 0 0 190px;
-      height: 190px;
-      margin-right: 5px;
-    }
-
-    input[type="text"] {
-      height: auto;
-    }
-
-    .expertise {
-      grid-column: 2 / span 2;
-
-      select {
-        min-width: 0;
-        max-width: 100%;
-      }
-    }
-
-    textarea {
-      height: 94px;
-    }
-  }
-
   .biography {
     .why-conspiracy {
       .editor {

@@ -9,9 +9,9 @@ export class AtDCActorSheet extends ActorSheet {
 
     let width = 720;
     let height = 730;
-    if (this.actor.type == 'npc') {
-        width = 310;
-        height = 820;
+    if (this.actor.type != 'character') {
+        width = 720;
+        height = 600;
     }
     this.position.width = width;
     this.position.height = height;
@@ -60,7 +60,7 @@ export class AtDCActorSheet extends ActorSheet {
     }
 
     // Prepare NPC data and items.
-    if (actorData.type == "npc") {
+    if (actorData.type != "character") { // TODO fixme
       this._prepareItems(context);
     }
 

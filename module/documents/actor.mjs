@@ -13,12 +13,6 @@ export class AtDCActor extends Actor {
     super.prepareData();
   }
 
-  /** @override */
-  prepareBaseData() {
-    // Data modifications in this step occur before processing embedded
-    // documents or derived data.
-  }
-
   /**
    * @override
    * Augment the basic actor data with additional dynamic data. Typically,
@@ -83,41 +77,12 @@ export class AtDCActor extends Actor {
    * Prepare NPC type specific data.
    */
   _prepareNpcData(actorData) {
-    if (actorData.type !== 'npc') return;
+    if (this.type == 'character') return; // TODO fixme
+    // if ((actorData.type !== 'nameless') || (actorData.type !== 'named') || (actorData.type !== 'supernatural')) return;
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
     
     systemData.stress.value = systemData.stress.states.filter(Boolean).length;
   }
-
-  /**
-   * Override getRollData() that's supplied to rolls.
-   */
-  getRollData() {
-    const data = super.getRollData();
-
-    // Prepare character roll data.
-    this._getCharacterRollData(data);
-    this._getNpcRollData(data);
-
-    return data;
-  }
-
-  /**
-   * Prepare character roll data.
-   */
-  _getCharacterRollData(data) {
-    if (this.type !== 'character') return;
-  }
-
-  /**
-   * Prepare NPC roll data.
-   */
-  _getNpcRollData(data) {
-    if (this.type !== 'npc') return;
-
-    // Process additional NPC data here.
-  }
-
 }
