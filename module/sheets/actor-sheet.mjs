@@ -140,7 +140,7 @@ export class AtDCActorSheet extends ActorSheet {
       li.slideUp(200, () => this.render(false));
     });
 
-    html.find(".changeable").change(this._onChange.bind(this));
+    html.find(".npc-type-change").change(this._onNpcTypeChange.bind(this));
     // html.find(".changeable").change(function(){
     //   console.log("this.value " + this.value);
     //   console.log("this.value.options " + this.options[this.selectedIndex].text);
@@ -160,19 +160,37 @@ export class AtDCActorSheet extends ActorSheet {
     }
   }
 
-  _onChange(e) {
+  _onNpcTypeChange(e) {
     e.preventDefault();
     let choice = e.currentTarget.value;
-  
-    switch (choice) {
-      case '0': 
-      case '1': {
-        this._setStressMax(1);
+    const element = e.currentTarget;
+    const dataset = element.dataset;
+    const npcType = dataset.npcType
+
+    console.log("npcType: "+npcType);
+
+    switch (npcType) {
+      case 'nameless': {
+        switch (choice) {
+          case '0': 
+          case '1': {
+            this._setStressMax(1);
+            return;
+          }
+          case '2': 
+          case '3': {
+            this._setStressMax(2);
+            return;
+          }
+        }
         return;
       }
-      case '2': 
-      case '3': {
-        this._setStressMax(2);
+      case 'named': {
+
+        return;
+      }
+      case 'supernatural': {
+        
         return;
       }
     }
