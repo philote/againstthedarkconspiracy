@@ -103,6 +103,12 @@
         }
 
         .intel {
+
+          padding: 5px 10px 5px 10px;
+          background-color: #3c3c3c;
+          color: white;
+          align-self: center;
+          width: 100%;
           align-items: center;
           flex-grow: 0;
 
@@ -156,6 +162,9 @@
 
       .main-left {
         flex-grow: 3;
+        margin-right: 5px;
+        padding-right: 5px;
+        border-right: 1px solid rgba(126, 126, 126, 0.408)
       }
 
       .actions {

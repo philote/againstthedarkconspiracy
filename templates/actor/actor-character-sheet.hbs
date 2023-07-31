@@ -41,7 +41,6 @@
                 <input class="clickable" type="checkbox" data-pos="{{count}}" data-roll-type="toggle-intel" {{#if state}}checked{{/if}} >
             {{/each}}
           </div>
-          <hr>
           <!-- Load & Gear -->
           <div class="load-grid full-width">
             <div class="item">{{!-- empty --}}</div>
@@ -49,12 +48,12 @@
             <h4 class="item">{{localize "ATDC.actor.load.medium.label"}}</h4>
             <h4 class="item">{{localize "ATDC.actor.load.heavy.label"}}</h4>
 
-            <h3 class="item">{{localize "ATDC.actor.load.label"}}</h3>
+            <h2 class="item">{{localize "ATDC.actor.load.label"}}</h2>
             <input class="item" type="checkbox" name="system.load.light" {{checked system.load.light}}>
             <input class="item" type="checkbox" name="system.load.medium" {{checked system.load.medium}} {{#if system.load.medDisabled}}disabled{{/if}}>
             <input class="item" type="checkbox" name="system.load.heavy" {{checked system.load.heavy}} {{#if system.load.hvyDisabled}}disabled{{/if}}>
             
-            <h3 class="item">{{localize "ATDC.actor.load.gear.label"}}</h3>
+            <h2 class="item">{{localize "ATDC.actor.load.gear.label"}}</h2>
             <div class="item">
               <input type="checkbox" name="system.gear.light.one" {{checked system.gear.light.one}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
               <input type="checkbox" name="system.gear.light.two" {{checked system.gear.light.two}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
