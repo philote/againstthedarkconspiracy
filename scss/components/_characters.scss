@@ -38,8 +38,13 @@
 
       .stress-box {
         .stress {
+          flex: 0;
+          padding: 5px 5px 5px 5px;
+          background-color: rgba(128, 128, 128, 0.2);
+          color: black;
+          align-self: center;
+          width: 100%;
           align-items: center;
-          flex-grow: 0;
 
           input[type="checkbox"] {
             margin-left: 2px;
@@ -47,7 +52,7 @@
           }
 
           a {
-            margin-right: 10px;
+            margin-right: 2px;
             flex: auto;
 
             i {
@@ -103,10 +108,9 @@
         }
 
         .intel {
-
           padding: 5px 10px 5px 10px;
-          background-color: #3c3c3c;
-          color: white;
+          background-color: rgba(128, 128, 128, 0.2);
+          color: black;
           align-self: center;
           width: 100%;
           align-items: center;
@@ -282,11 +286,6 @@
 
     .contacts-header {
       align-items: center;
-      margin: 0 0 0.5rem;
-
-      h3 {
-        margin: 0;
-      }
 
       a {
         text-align-last: end;

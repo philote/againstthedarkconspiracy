@@ -15,15 +15,15 @@
   h3 {
     border: none;
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 5px 0;
     padding: 5px 10px 5px 10px;
-    background-color: #3c3c3c;
-    color: white;
+    background-color: rgba(128, 128, 128, 0.2);
+    color: black;
     align-self: center;
     width: 100%;
     
     a {
-      color: rgb(255, 67, 67);
+      // color: rgb(255, 67, 67);
       font-size: smaller;
       align-self: flex-end;
     }
