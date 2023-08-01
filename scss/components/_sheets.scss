@@ -29,6 +29,11 @@
     }
   }
 
+  h4 {
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+
   a {
     color: rgb(129, 33, 33);
     font-weight: bold;
@@ -92,7 +97,8 @@
 
   .gear,
   .contact {
-    flex: 0 auto;
+    flex: 1;
+    align-content: flex-start;
     overflow: hidden;
     display: flex;
     flex-direction: row;

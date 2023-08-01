@@ -4,24 +4,27 @@
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "ATDC.npc.name.placeholder"}}"/></h1>
+      <div class="flexrow field">
+            <h1 class="char-name-label"><label for="name">{{localize "ATDC.npc.name.placeholder"}}</label></h1>
+            <h1 class="char-name flex3"><input name="name" id="name" type="text" value="{{actor.name}}" /></h1>
+      </div>
       
       <div class="flexcol">
-        <div class="flexrow">
-            <h3><label for="skills">{{localize "ATDC.npc.skills.label"}}</label></h3>
+        <div class="flexrow field">
+            <h4><label for="skills">{{localize "ATDC.npc.skills.label"}}</label></h4>
             <input class="flex3" name="system.skills" id="skills" type="text" value="{{system.skills}}"/>
         </div>
-        <div class="flexrow">
-            <h3><label for="glance">{{localize "ATDC.npc.glance.label"}}</label></h3>
+        <div class="flexrow field">
+            <h4><label for="glance">{{localize "ATDC.npc.glance.label"}}</label></h4>
             <input class="flex3" name="system.glance" id="glance" type="text" value="{{system.glance}}"/>
         </div>
-        <div class="flexrow">
-            <h3><label for="motivation">{{localize "ATDC.npc.motivation.label"}}</label></h3>
+        <div class="flexrow field">
+            <h4><label for="motivation">{{localize "ATDC.npc.motivation.label"}}</label></h4>
             <input class="flex3" name="system.motivation" id="motivation" type="text" value="{{system.motivation}}"/>
         </div>
         <div class="resources grid grid-2col">
           <div class="stress flexrow">
-            <h3>{{localize "ATDC.actor.stress.title"}}</h3>
+            <h4>{{localize "ATDC.actor.stress.title"}}</h4>
             <div class="controls flexcol">
               <a class="clickable" data-roll-type="npc-stress-increase"><i class="fa-solid fa-caret-up"></i></a>
               <a class="clickable" data-roll-type="npc-stress-decrease"><i class="fa-solid fa-caret-down"></i></a>
@@ -33,7 +36,7 @@
             </div>
           </div>
           <div class="type flexrow">
-            <h3>Type</h3>
+            <h4>Type</h4>
             <select class="npc-type-change" name="system.type.index" data-roll-type="toggle-stress" data-npc-type="nameless" data-type="String">
               {{#select system.type.index}}
                 {{#each system.type.options as |option key|}}
@@ -52,9 +55,10 @@
     {{!--  Tab --}}
     <div class="main">
       <div class="flexrow">
-        <div class="flexcol">
-          <div class="gear">
-            <h2>{{localize "ATDC.actor.gear.label"}}</h2>
+        {{!-- <div class="box"> --}}
+          
+          <div class="box gear">
+            <h3>{{localize "ATDC.actor.gear.label"}}</h3>
             <ol class="items-list">
               <li class="item flexrow items-header">
                 <div class="item-name">{{localize "ATDC.item.gearList.name.label"}}</div>
@@ -82,11 +86,11 @@
               {{/each}}
             </ol>
           </div>
-        </div>
+        {{!-- </div> --}}
         <div class="flexcol">
           {{!-- Notes --}}
-          <div>
-            <h2>{{localize "ATDC.npc.notes.label"}}</h2>
+          <div class="box">
+            <h3>{{localize "ATDC.npc.notes.label"}}</h3>
             <div class="notes">
               {{editor system.notes target="system.notes" button=true engine="prosemirror" collaborate=false}}
             </div>

@@ -9,7 +9,7 @@ export class AtDCItemSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["atdc", "sheet", "item"],
       width: 520,
-      height: 480,
+      height: 230,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "main" }]
     });
   }
