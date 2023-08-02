@@ -25,6 +25,34 @@
       "label": "Gear",
       "path": "./packs/gear.db",
       "type": "Item"
+    },
+    {
+      "name": "compulsion",
+      "label": "NPC Compulsions",
+      "system": "againstthedarkconspiracy",
+      "path": "packs/compulsion",
+      "type": "Item"
+    },
+    {
+      "name": "deterrent",
+      "label": "NPC Deterrents",
+      "system": "againstthedarkconspiracy",
+      "path": "packs/deterrent",
+      "type": "Item"
+    },
+    {
+      "name": "powers",
+      "label": "NPC Powers",
+      "system": "againstthedarkconspiracy",
+      "path": "packs/powers",
+      "type": "Item"
+    },
+    {
+      "name": "vulnerability",
+      "label": "NPC Vulnerability",
+      "system": "againstthedarkconspiracy",
+      "path": "packs/vulnerability",
+      "type": "Item"
     }
   ],
   "languages": [
