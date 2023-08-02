@@ -10,7 +10,6 @@ npm-debug.log
 *.lock
 jsconfig.json
 foundry
-packs/gear/
 
 # VS Code
 .vscode/*
