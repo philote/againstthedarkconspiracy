@@ -90,6 +90,10 @@ export class AtDCActorSheet extends ActorSheet {
     // Initialize containers.
     const gear = [];
     const contact = [];
+    const power = [];
+    const compulsion = [];
+    const deterrent = [];
+    const vulnerability = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
@@ -98,15 +102,35 @@ export class AtDCActorSheet extends ActorSheet {
       if (i.type === "gear") {
         gear.push(i);
       }
-      // Append to features.
+      // Append to contacts.
       else if (i.type === "contact") {
         contact.push(i);
+      }
+      // Append to powers.
+      else if (i.type === "power") {
+        power.push(i);
+      }
+      // Append to compulsions.
+      else if (i.type === "compulsion") {
+        compulsion.push(i);
+      }
+      // Append to deterrents.
+      else if (i.type === "deterrent") {
+        deterrent.push(i);
+      }
+      // Append to vulnerabilities.
+      else if (i.type === "vulnerability") {
+        vulnerability.push(i);
       }
     }
 
     // Assign and return
     context.gear = gear;
     context.contact = contact;
+    context.power = power;
+    context.compulsion = compulsion;
+    context.deterrent = deterrent;
+    context.vulnerability = vulnerability;
   }
 
   /* -------------------------------------------- */
@@ -141,10 +165,6 @@ export class AtDCActorSheet extends ActorSheet {
     });
 
     html.find(".npc-type-change").change(this._onNpcTypeChange.bind(this));
-    // html.find(".changeable").change(function(){
-    //   console.log("this.value " + this.value);
-    //   console.log("this.value.options " + this.options[this.selectedIndex].text);
-    // });
 
     // Clickable UI.
     html.find(".clickable").click(this._onClick.bind(this));

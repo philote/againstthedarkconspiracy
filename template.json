@@ -6,12 +6,6 @@
         "notes": ""
       },
       "npcBase": {
-        "stress": {
-          "min": 0,
-          "value": [0],
-          "max": 4,
-          "states": [false, false, false, false]
-        },
         "skills": "",
         "glance": "",
         "motivation": "",
@@ -225,6 +219,12 @@
     },
     "nameless": {
       "templates": ["base", "npcBase"],
+      "stress": {
+        "min": 1,
+        "value": [0],
+        "max": 1,
+        "states": [false]
+      },
       "type": {
         "index": 0,
         "options": [
@@ -237,6 +237,12 @@
     },
     "named": {
       "templates": ["base", "npcBase"],
+      "stress": {
+        "min": 3,
+        "value": [0],
+        "max": 4,
+        "states": [false, false, false]
+      },
       "type": {
         "index": 0,
         "options": [
@@ -248,6 +254,12 @@
     },
     "supernatural": {
       "templates": ["base", "npcBase"],
+      "stress": {
+        "min": 4,
+        "value": [0],
+        "max": 10,
+        "states": [false, false, false, false]
+      },
       "typeIndex": 0,
       "subtypeIndex": 0
     },

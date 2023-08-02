@@ -37,7 +37,7 @@
           </div>
           <div class="type flexrow">
             <h4>Type</h4>
-            <select class="npc-type-change" name="system.type.index" data-roll-type="toggle-stress" data-npc-type="nameless" data-type="String">
+            <select name="system.type.index" data-roll-type="toggle-stress" data-npc-type="nameless" data-type="String">
               {{#select system.type.index}}
                 {{#each system.type.options as |option key|}}
                   <option value="{{key}}">{{localize option}}</option>
