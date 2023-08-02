@@ -19,39 +19,53 @@
   ],
   "esmodules": ["module/atdc.mjs"],
   "styles": ["css/atdc.css"],
+  "packFolders": [
+    {
+      "name": "Powers, Weaknesses and Vulnerabilities",
+      "sorting": "m",
+      "packs": ["powers", "compulsion", "deterrent", "vulnerability"]
+    }
+  ],
   "packs": [
     {
       "name": "gear",
       "label": "Gear",
+      "system": "againstthedarkconspiracy",
       "path": "./packs/gear.db",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER",
+        "GAMEMASTER": "OWNER"
+      }
+    },
+    {
+      "name": "powers",
+      "label": "NPC Powers",
+      "system": "againstthedarkconspiracy",
+      "path": "./packs/npc-powers.db",
       "type": "Item"
     },
     {
       "name": "compulsion",
       "label": "NPC Compulsions",
       "system": "againstthedarkconspiracy",
-      "path": "packs/compulsion",
+      "path": "./packs/npc-compulsions.db",
       "type": "Item"
     },
     {
       "name": "deterrent",
       "label": "NPC Deterrents",
       "system": "againstthedarkconspiracy",
-      "path": "packs/deterrent",
-      "type": "Item"
-    },
-    {
-      "name": "powers",
-      "label": "NPC Powers",
-      "system": "againstthedarkconspiracy",
-      "path": "packs/powers",
+      "path": "./packs/npc-deterrents.db",
       "type": "Item"
     },
     {
       "name": "vulnerability",
-      "label": "NPC Vulnerability",
+      "label": "NPC Vulnerabilities",
       "system": "againstthedarkconspiracy",
-      "path": "packs/vulnerability",
+      "path": "./packs/npc-vulnerabilities.db",
       "type": "Item"
     }
   ],
