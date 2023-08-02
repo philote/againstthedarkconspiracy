@@ -237,27 +237,19 @@
     },
     "named": {
       "templates": ["base", "npcBase"],
-      "power": "",
-      "powerDetails": "",
-      "weaknesses": {
-        "compulsion": "",
-        "compulsionDetails": "",
-        "deterrent": "",
-        "deterrentDetails": ""
+      "type": {
+        "index": 0,
+        "options": [
+          "ATDC.npc.named.types.option.1",
+          "ATDC.npc.named.types.option.2",
+          "ATDC.npc.named.types.option.3"
+        ]
       }
     },
     "supernatural": {
       "templates": ["base", "npcBase"],
-      "power": "",
-      "powerDetails": "",
-      "weaknesses": {
-        "compulsion": "",
-        "compulsionDetails": "",
-        "deterrent": "",
-        "deterrentDetails": ""
-      },
-      "vulnerability": "",
-      "vulnerabilityDetail": ""
+      "typeIndex": 0,
+      "subtypeIndex": 0
     },
     "safeHouse": {
       "templates": ["base"],
@@ -279,7 +271,7 @@
     }
   },
   "Item": {
-    "types": ["gear", "contact"],
+    "types": ["gear", "contact", "power", "compulsion", "deterrent", "vulnerability"],
     "templates": {
       "base": {
         "description": ""
@@ -318,6 +310,22 @@
           "ATDC.actor.relationships.contacts.expertiseOptions.option.19"
         ]
       }
+    },
+    "power": {
+      "templates": ["base"],
+      "addRiskDie": false
+    },
+    "compulsion": {
+      "templates": ["base"],
+      "detail": ""
+    },
+    "deterrent": {
+      "templates": ["base"],
+      "detail": ""
+    },
+    "vulnerability": {
+      "templates": ["base"],
+      "detail": ""
     }
   }
 }

@@ -11,7 +11,7 @@ export class AtDCActorSheet extends ActorSheet {
     let height = 730;
     if (this.actor.type != 'character') {
         width = 720;
-        height = 530;
+        height = 515;
     }
     this.position.width = width;
     this.position.height = height;

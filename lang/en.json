@@ -283,15 +283,36 @@
     },
     "named": {
       "types": {
-        "option.1": "Special Ops Contractors",
-        "option.2": "Pseudo-Scientists",
-        "option.3": "Occultists"
+        "option.1": "Special Ops Contractor",
+        "option.2": "Pseudo-Scientist",
+        "option.3": "Occultist"
       }
     },
     "supernatural": {
-      "types": {
+      "conspiracy_types": {
         "vampire": {
-          "label": "The VAMPIRE Conspiracy",
+          "label": "The Vampire Conspiracy",
+          "type": {
+            "servitor": {
+              "label": "Vampiric Servitor",
+              "subtypes": {
+                "placeholder": "Choose a type of Vampiric Servitor",
+                "option.1": "Ghoul",
+                "option.2": "Thrall",
+                "option.3": "Shade",
+                "option.4": "Zombie"
+              }
+            },
+            "full": {
+              "label": "Vampire",
+              "subtypes": {
+                "placeholder": "Choose a type of Vampire",
+                "option.1": "Young Vampire",
+                "option.2": "Old Vampire",
+                "option.3": "Ancient Vampire"
+              }
+            }
+          },
           "power": {
             "label": "Power",
             "options": {
@@ -300,12 +321,12 @@
               "option.2": "Fly",
               "option.3": "Grant Power",
               "option.4": "Great Speed",
-              "option.5": "Great Strength*",
+              "option.5": "*Great Strength",
               "option.6": "Inhuman Senses",
               "option.7": "Incorporeal (Mist)",
               "option.8": "Invisible",
               "option.9": "Mesmerism",
-              "option.10": "Poltergeist*",
+              "option.10": "*Poltergeist",
               "option.11": "Possession",
               "option.12": "Regenerate",
               "option.13": "See in the dark",
@@ -315,7 +336,7 @@
               "option.17": "Summon & Command Wolves",
               "option.18": "Summon & Command Rats",
               "option.19": "Summon & Command Zombies",
-              "option.20": "Teeth & Claws*",
+              "option.20": "*Teeth & Claws",
               "option.21": "Track ... by blood",
               "option.22": "Track ... by psychic connection",
               "option.23": "Wards, Bindings & Spells",
@@ -365,36 +386,56 @@
           }
         },
         "demonic": {
-          "label": "The DEMONIC Conspiracy",
+          "label": "The Demon Conspiracy",
+          "type": {
+            "servitor": {
+              "label": "Demonic Servitor",
+              "subtypes": {
+                "placeholder": "Choose a type of Demonic Servitor",
+                "option.1": "Demonic Spirit",
+                "option.2": "Grand Wizard",
+                "option.3": "Imp"
+              }
+            },
+            "full": {
+              "label": "Demon",
+              "subtypes": {
+                "placeholder": "Choose a type of Demon",
+                "option.1": "Demonic Foot-soldier",
+                "option.2": "Hellish Nobility",
+                "option.3": "Favored of Lucifer"
+              }
+            }
+          },
           "power": {
             "label": "Power",
             "options": {
               "placeholder": "Choose a Power",
-              "option.1": "Armoured* ... Chitinous skin",
+              "option.1": "*Armoured ... Chitinous skin",
               "option.2": "Cloak of Darkness",
               "option.3": "Discover Desire",
               "option.4": "Fly ... bat wings",
               "option.5": "Fly ... insect wings",
               "option.6": "Glamour",
               "option.7": "Grant Power",
-              "option.8": "Great Strength*",
+              "option.8": "*Great Strength",
               "option.9": "Inhuman Senses",
               "option.10": "Incorporeal",
               "option.11": "Open Portal ... to Hell",
-              "option.12": "Poltergeist*",
+              "option.12": "*Poltergeist",
               "option.13": "Possession",
               "option.14": "Project Desire or Emotion",
               "option.15": "Regenerate",
               "option.16": "See in the dark",
               "option.17": "Shocking True Form",
               "option.18": "Spider Climb",
-              "option.19": "Spit Venom*",
+              "option.19": "*Spit Venom",
               "option.20": "Stench of Fear",
               "option.21": "Summon & Command Insect Swarm",
               "option.22": "Summon & Command Imps",
               "option.23": "Summon & Command Servitor",
               "option.24": "Summon & Command Demon",
-              "option.25": "Teeth & Claws*",
+              "option.25": "*Teeth & Claws",
               "option.26": "Teleport",
               "option.27": "Track ... the soul",
               "option.28": "Track ... by sin",
@@ -449,20 +490,40 @@
           }
         },
         "fae": {
-          "label": "The FAE Conspiracy",
+          "label": "The Fae Conspiracy",
+          "type": {
+            "servitor": {
+              "label": "Vampiric Servitor",
+              "subtypes": {
+                "placeholder": "Choose a type of Fae Servitor",
+                "option.1": "Elementals",
+                "option.2": "Redcaps",
+                "option.3": "Werewolves"
+              }
+            },
+            "full": {
+              "label": "Fae Noble",
+              "subtypes": {
+                "placeholder": "Choose a type of Fae Noble",
+                "option.1": "Fae Courtier",
+                "option.2": "Fae Knight",
+                "option.3": "Fae Crown"
+              }
+            }
+          },
           "power": {
             "label": "Power",
             "options": {
               "placeholder": "Choose a Power",
-              "option.1": "Armoured* ... Bark Skin",
-              "option.2": "Berserk rage*",
+              "option.1": "*Armoured ... Bark Skin",
+              "option.2": "*Berserk rage",
               "option.3": "Cloak of Darkness",
               "option.4": "Discover Desire",
-              "option.5": "Elemental Blast* of Nature",
+              "option.5": "*Elemental Blast of Nature",
               "option.6": "Fly: butterfly wings",
               "option.7": "Glamour",
               "option.8": "Great Speed",
-              "option.9": "Great Strength*",
+              "option.9": "*Great Strength",
               "option.10": "Inhuman Senses",
               "option.11": "Inhuman Senses (Wolf)",
               "option.12": "Mesmerism",
@@ -478,7 +539,7 @@
               "option.22": "Summon & Command Servitors",
               "option.23": "Summon & Command Fae Courtier",
               "option.24": "Summon & Command Fae Knight",
-              "option.25": "Teeth & Claws*",
+              "option.25": "*Teeth & Claws",
               "option.26": "Track ... in 'the wild'",
               "option.27": "Wards, Bindings & Spells",
               "option.28": "for Control ..."
@@ -555,9 +616,9 @@
     "conspiracyType": {
       "name.label": "Choose a Conspiracy Type",
       "choices": {
-        "vampires.label": "The Vampires",
-        "demons.label": "The Demons",
-        "fae.label": "The Fae"
+        "vampires.label": "The Vampire Conspiracy",
+        "demons.label": "The Demon Conspiracy",
+        "fae.label": "The Fae Conspiracy"
       }
     }
   }
