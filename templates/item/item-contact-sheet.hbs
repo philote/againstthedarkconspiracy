@@ -2,12 +2,8 @@
   <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
   <div class="header-fields">
     <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "ATDC.item.name.placeholder"}}"/></h1>
-    <div class="grid grid-3col">
-      <div class="blown">
-        <input type="checkbox" name="system.expertise.blown" {{checked system.expertise.blown}}>
-        <label class="resource-label">{{localize "ATDC.item.contact.blown.label"}}</label>
-      </div>
-      <div class="expertise">
+    <div class="grid grid-3col info">
+      <div class="expertise grid-span-2">
         <select name="system.expertise.index">
           {{#select system.expertise.index}}
             {{#each system.expertise.options as |option key|}}
@@ -15,6 +11,10 @@
             {{/each}}
           {{/select}}
         </select>
+      </div>
+      <div class="center-label">
+        <input type="checkbox" name="system.expertise.blown" {{checked system.expertise.blown}}>
+        <label class="">{{localize "ATDC.item.contact.blown.label"}}</label>
       </div>
     </div>
     <textarea type="text" name="system.description" value="{{system.description}}">{{system.description}}</textarea>

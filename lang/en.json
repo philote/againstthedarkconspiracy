@@ -259,8 +259,8 @@
     "name.placeholder": "Name",
     "description.label": "Description",
     "gear": {
-      "tags.label": "Tags",
-      "load.label": "Load"
+      "tags.label": "Tags:",
+      "load.label": "Load:"
     },
     "contact": {
       "blown.label": "Blown?",

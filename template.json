@@ -313,6 +313,7 @@
     },
     "power": {
       "templates": ["base"],
+      "detail": "",
       "addRiskDie": false
     },
     "compulsion": {

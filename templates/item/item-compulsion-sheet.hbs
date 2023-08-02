@@ -1,15 +1,11 @@
 <form class="{{cssClass}} {{item.type}} sheet flexrow" autocomplete="off">
   <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
   <div class="header-fields">
-    <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "ATDC.item.name.placeholder"}}"/></h1>
-    <div class="grid grid-2col">
-      <div class="resource">
-        <label class="resource-label">{{localize "ATDC.item.gear.tags.label"}}</label>
-        <input type="text" name="system.tags" value="{{system.tags}}" data-dtype="String"/>
-      </div>
-      <div class="resource">
-        <label class="resource-label">{{localize "ATDC.item.gear.load.label"}}</label>
-        <input type="text" name="system.load" value="{{system.load}}" data-dtype="Number"/>
+    <h1><input name="name" type="text" value="{{item.name}}" placeholder="Power Name"/></h1>
+    <div class="grid grid-2col info">
+      <div class="left-label flexrow grid-span-2">
+        <label class="flexshrink">Detail:</label>
+        <input type="text" name="system.detail" value="{{system.detail}}" data-dtype="String"/>
       </div>
     </div>
     <textarea type="text" name="system.description" value="{{system.description}}">{{system.description}}</textarea>
