@@ -9,9 +9,12 @@ export class AtDCActorSheet extends ActorSheet {
 
     let width = 720;
     let height = 730;
-    if (this.actor.type != 'character') {
-        width = 720;
-        height = 515;
+    if (this.actor.type == 'nameless') {
+      width = 720;
+      height = 515;
+    } else if (this.actor.type != 'character') {
+      width = 720;
+      height = 600;
     }
     this.position.width = width;
     this.position.height = height;
