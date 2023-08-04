@@ -90,10 +90,17 @@
       "type": "Item"
     },
     {
-      "name": "complications",
-      "label": "Complication Table",
+      "name": "complications-details",
+      "label": "Complication Details Tables",
       "system": "againstthedarkconspiracy",
-      "path": "./packs/roll_tables/complications.db",
+      "path": "./packs/roll_tables/complication-details.db",
+      "type": "RollTable"
+    },
+    {
+      "name": "possible-complications",
+      "label": "Possible Complications Table",
+      "system": "againstthedarkconspiracy",
+      "path": "./packs/roll_tables/possible-complications.db",
       "type": "RollTable"
     },
     {
@@ -104,10 +111,17 @@
       "type": "RollTable"
     },
     {
-      "name": "operational-answers",
-      "label": "Briefing: Operational Detail Table",
+      "name": "operational-details",
+      "label": "Briefing: Operational Details Tables",
       "system": "againstthedarkconspiracy",
-      "path": "./packs/roll_tables/operational-answers.db",
+      "path": "./packs/roll_tables/operational-details.db",
+      "type": "RollTable"
+    },
+    {
+      "name": "operational-questions",
+      "label": "Briefing: Operational Questions Tables",
+      "system": "againstthedarkconspiracy",
+      "path": "./packs/roll_tables/operational-questions.db",
       "type": "RollTable"
     }
   ],
