@@ -21,22 +21,18 @@
   "styles": ["css/atdc.css"],
   "packFolders": [
     {
-      "name": "Powers, Weaknesses and Vulnerabilities",
+      "name": "NPC Powers, Weaknesses & Vulnerabilities",
       "sorting": "m",
-      "color": "#ff0000",
+      "color": "#380000",
       "packs": ["powers", "vulnerability"],
       "folders": [
         {
-          "name": "Weaknesses",
+          "name": "NPC Weaknesses",
           "sorting": "m",
+          "color": "#380000",
           "packs": ["compulsion", "deterrent"]
         }
       ]
-    },
-    {
-      "name": "Complications",
-      "sorting": "m",
-      "packs": ["complications"]
     },
     {
       "name": "Briefing Tables",
@@ -44,7 +40,7 @@
       "packs": ["random-lead"],
       "folders": [
         {
-          "name": "operational-answers",
+          "name": "Operation Question Detail Tables",
           "sorting": "m",
           "packs": ["operational-answers"]
         }
@@ -95,21 +91,21 @@
     },
     {
       "name": "complications",
-      "label": "Complications",
+      "label": "Complication Table",
       "system": "againstthedarkconspiracy",
       "path": "./packs/roll_tables/complications.db",
       "type": "RollTable"
     },
     {
       "name": "random-lead",
-      "label": "Briefing: Lead",
+      "label": "Briefing: Random Lead Table",
       "system": "againstthedarkconspiracy",
       "path": "./packs/roll_tables/random-lead.db",
       "type": "RollTable"
     },
     {
       "name": "operational-answers",
-      "label": "Briefing: Operational Answers",
+      "label": "Briefing: Operational Detail Table",
       "system": "againstthedarkconspiracy",
       "path": "./packs/roll_tables/operational-answers.db",
       "type": "RollTable"

@@ -11,10 +11,13 @@ npm-debug.log
 jsconfig.json
 foundry
 packs/gear/
-packs/compulsion/
-packs/deterrent/
-packs/powers/
-packs/vulnerability/
+packs/npc-compulsions/
+packs/npc-deterrents/
+packs/npc-powers/
+packs/npc-vulnerabilities/
+packs/roll_tables/complications
+packs/roll_tables/operational-answers
+packs/roll_tables/random-lead
 
 # VS Code
 .vscode/*
