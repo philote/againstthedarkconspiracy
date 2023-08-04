@@ -15,8 +15,11 @@ packs/npc-compulsions/
 packs/npc-deterrents/
 packs/npc-powers/
 packs/npc-vulnerabilities/
-packs/roll_tables/complications
-packs/roll_tables/operational-answers
+packs/roll_tables/complication-details
+packs/roll_tables/possible-complications
+packs/roll_tables/operational-details
+packs/roll_tables/operational-questions
+packs/roll_tables/possible-complications
 packs/roll_tables/random-lead
 
 # VS Code

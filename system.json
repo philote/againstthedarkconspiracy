@@ -37,14 +37,13 @@
     {
       "name": "Briefing Tables",
       "sorting": "m",
-      "packs": ["random-lead"],
-      "folders": [
-        {
-          "name": "Operation Question Detail Tables",
-          "sorting": "m",
-          "packs": ["operational-answers"]
-        }
-      ]
+      "color": "#001d38",
+      "packs": ["random-lead", "operational-questions", "operational-details"]
+    },
+    {
+      "name": "Complication Tables",
+      "sorting": "m",
+      "packs": ["possible-complications", "complications-details"]
     }
   ],
   "packs": [
@@ -105,21 +104,21 @@
     },
     {
       "name": "random-lead",
-      "label": "Briefing: Random Lead Table",
+      "label": "Random Lead Table",
       "system": "againstthedarkconspiracy",
       "path": "./packs/roll_tables/random-lead.db",
       "type": "RollTable"
     },
     {
       "name": "operational-details",
-      "label": "Briefing: Operational Details Tables",
+      "label": "Operational Details Tables",
       "system": "againstthedarkconspiracy",
       "path": "./packs/roll_tables/operational-details.db",
       "type": "RollTable"
     },
     {
       "name": "operational-questions",
-      "label": "Briefing: Operational Questions Tables",
+      "label": "Operational Questions Tables",
       "system": "againstthedarkconspiracy",
       "path": "./packs/roll_tables/operational-questions.db",
       "type": "RollTable"
