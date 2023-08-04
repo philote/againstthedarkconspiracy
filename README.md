@@ -8,11 +8,38 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 
 ## Features
 
-- TBD
+- PC Character Sheets
+    - Stress Tracking (mostly automated when rolling)
+    - Intel Tracking (automated when rolling)
+    - Buttons on the sheet to roll the different actions. Includes dialogs to choose what die to use.
+    - Checking Expertise Available disables choosing expertise die on the roll dialogs
+    - Marking an anchor as missing/target disables the "Seek Solace in a Relationship" button
+- NPC Character Sheets for:
+    - Nameless Pawns & Nameless Pawns Leaders
+    - Named Pawns with the 3 types (you can add power & weaknesses)
+    - Supernaturals (supernatural subtypes)
+- Safe House Sheet
+    - Safe House questions and answers
+    - Gear benefit type
+- A setting to switch between Conspiracy Types (Vampires, Demons, & Fae)
+    - It currently only effects the Supernaturals Character Sheet
+- Compendium Packs for:
+    - Gear
+    - NPC Powers, Weaknesses, & Vulnerabilities
+    - Briefing Roll Tables
+    - Complication Roll Tables
+- A Heat clock
+    - Shows for all players, floats in the upper right corner 
+    - Only the GM can update it
 
 ## To Be Done
 
-- Everything
+- Use Conspiracy type to change the look and feel of sheets
+- Have player rolls update the heat clock
+- Add the Conspiracy Alertness message to the Heat tracker
+- Add buttons to the roll chat output to roll for Stress and other actions
+- Adding Gear will update you Load/Gear and show an error dialog when there is no capacity
+- Add an Operation template journal to the Compendium
 
 <!-- ## How to Install
 

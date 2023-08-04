@@ -1,31 +1,7 @@
 Create Safe house sheet
-Create npc nameless sheet
-Create npc named sheet
-Create npc Supernatural sheet
-add compendium items
-    journal - Operation template
-    roll tables for briefing
-when adding gear to a PC sheet, have it take up gear slots and error when they dont have slots
+Finish the npc Supernatural sheet
 
 NPCs:
-
-Nameless Mortal Pawns
-- 1 stress
-- hand guns, SMG
-Nameless Mortal Pawn Leaders
-- 2 stress
-- same as pawns
--------
-Named Mortal Pawns
-- 3 stress (if Control spends HEAT, 4 Stress)
-- types
-    - Special Ops Contractors
-    - Pseudo-Scien�sts
-    - Occul�sts
-- If the named mortal pawn is ac�vely or passively opposing the ac�on of an Operator, and they have a skill set that matches the Operator’s Exper�se, then they cancel the Operator’s Exper�se for that roll.
-- may also have a Supernatural Power which could also cancel Operator Exper�se or add a Risk Die. Control will decide if they have also gained a Supernatural Weakness as a result.
-    - Powers
-    - weaknesses
 -------
 Supernatties
 - types
@@ -40,12 +16,6 @@ Supernatties
 - When they first appear in a scene or reveal their true nature, every Operator that sees them rolls for Stress.
 
 -----
-
-
-
-
-- Initialize NPC stress to the correct starting for the selected type
-- Name nameless pawn not show the name?
 
 Vampire conspiracy
 - Vampiric Servitor
