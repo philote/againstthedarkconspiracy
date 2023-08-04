@@ -55,11 +55,9 @@
     {{!--  Tab --}}
     <div class="nameless_main">
       <div class="flexrow">
-        {{!-- <div class="box"> --}}
-          
           <div class="box item-list">
             <h3>{{localize "ATDC.actor.gear.label"}}</h3>
-            <ol class="items-list">
+            <ol class="items-list box-body">
               <li class="item flexrow items-header">
                 <div class="item-name">{{localize "ATDC.item.gearList.name.label"}}</div>
                 <div class="item-tags">{{localize "ATDC.item.gearList.tags.label"}}</div>
@@ -86,12 +84,11 @@
               {{/each}}
             </ol>
           </div>
-        {{!-- </div> --}}
         <div class="flexcol">
           {{!-- Notes --}}
           <div class="box">
             <h3>{{localize "ATDC.npc.notes.label"}}</h3>
-            <div class="notes">
+            <div class="notes box-body">
               {{editor system.notes target="system.notes" button=true engine="prosemirror" collaborate=false}}
             </div>
           </div>

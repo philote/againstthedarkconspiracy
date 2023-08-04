@@ -15,7 +15,7 @@
   h3 {
     border: none;
     font-weight: bold;
-    margin: 0 0 5px 0;
+    margin: 0 0 0 0;
     padding: 5px 10px 5px 10px;
     background-color: rgba(128, 128, 128, 0.2);
     color: black;
@@ -32,6 +32,23 @@
   h4 {
     font-weight: bold;
     font-size: 1.25em;
+    color: #4f4f4f;
+  }
+
+  h5 {
+    font-weight: bold;
+    font-size: 1em;
+    color: #4f4f4f;
+    margin: 0;
+  }
+
+  hr {
+    flex-grow: 0;
+    width: -webkit-fill-available;
+    padding: 0;
+    border: none;
+    border-top: 1px solid rgba(126, 126, 126, 0.408);;
+    margin: 10px 0 10px 0;
   }
 
   a {
@@ -56,12 +73,22 @@
   .box {
     border: 1px solid black;
     background-color: rgb(128 128 128 / 5%);
-    padding: 5px;
+    padding: 0;
     margin: 5px;
     align-items: center;
   
     .full-width {
       width: -webkit-fill-available;
+    }
+
+    .item-list {
+      width: -webkit-fill-available;
+      margin-bottom: 5px;
+    }
+    
+    .box-body {
+      width: -webkit-fill-available;
+      padding: 5px;
     }
   }
   

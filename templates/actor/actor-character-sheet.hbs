@@ -14,22 +14,24 @@
                 <input class="clickable" type="checkbox" data-pos="{{count}}" data-roll-type="toggle-stress" {{#if state}}checked{{/if}} >
             {{/each}}
           </div>
-          <span class="full-width">{{localize "ATDC.actor.stress.manifestsAs.title"}}</span>
-          <div class="flexrow full-width">
-            <label for="stress2">{{localize "ATDC.actor.stress.manifestsAs.label.2"}}</label>
-            <input class="underline-input" id="stress2" type="text" name="system.stress.manifestTwo" value="{{system.stress.manifestTwo}}">
-          </div>
-          <div class="flexrow full-width">
-            <label for="stress3">{{localize "ATDC.actor.stress.manifestsAs.label.3"}}</label>
-            <input class="underline-input" id="stress3" type="text" name="system.stress.manifestThree" value="{{system.stress.manifestThree}}">
-          </div>
-          <div class="flexrow full-width">
-            <label for="stress4">{{localize "ATDC.actor.stress.manifestsAs.label.4"}}</label>
-            <input class="underline-input" id="stress4" type="text" name="system.stress.manifestFour" value="{{system.stress.manifestFour}}">
-          </div>
-          <div class="flexrow full-width">
-            <label for="stress5">{{localize "ATDC.actor.stress.manifestsAs.label.5"}}</label>
-            <input class="underline-input" id="stress5" type="text" name="system.stress.manifestFive" value="{{system.stress.manifestFive}}">
+          <div class="box-body">
+            <span>{{localize "ATDC.actor.stress.manifestsAs.title"}}</span>
+            <div class="flexrow">
+              <label for="stress2">{{localize "ATDC.actor.stress.manifestsAs.label.2"}}</label>
+              <input class="underline-input" id="stress2" type="text" name="system.stress.manifestTwo" value="{{system.stress.manifestTwo}}">
+            </div>
+            <div class="flexrow">
+              <label for="stress3">{{localize "ATDC.actor.stress.manifestsAs.label.3"}}</label>
+              <input class="underline-input" id="stress3" type="text" name="system.stress.manifestThree" value="{{system.stress.manifestThree}}">
+            </div>
+            <div class="flexrow">
+              <label for="stress4">{{localize "ATDC.actor.stress.manifestsAs.label.4"}}</label>
+              <input class="underline-input" id="stress4" type="text" name="system.stress.manifestFour" value="{{system.stress.manifestFour}}">
+            </div>
+            <div class="flexrow">
+              <label for="stress5">{{localize "ATDC.actor.stress.manifestsAs.label.5"}}</label>
+              <input class="underline-input" id="stress5" type="text" name="system.stress.manifestFive" value="{{system.stress.manifestFive}}">
+            </div>
           </div>
         </div>
 
@@ -41,29 +43,31 @@
                 <input class="clickable" type="checkbox" data-pos="{{count}}" data-roll-type="toggle-intel" {{#if state}}checked{{/if}} >
             {{/each}}
           </div>
-          <!-- Load & Gear -->
-          <div class="load-grid full-width">
-            <div class="item">{{!-- empty --}}</div>
-            <h4 class="item">{{localize "ATDC.actor.load.light.label"}}</h4>
-            <h4 class="item">{{localize "ATDC.actor.load.medium.label"}}</h4>
-            <h4 class="item">{{localize "ATDC.actor.load.heavy.label"}}</h4>
+          <div class="box-body flexcol">
+            <!-- Load & Gear -->
+            <div class="load-grid">
+              <div class="item">{{!-- empty --}}</div>
+              <h5 class="item">{{localize "ATDC.actor.load.light.label"}}</h5>
+              <h5 class="item">{{localize "ATDC.actor.load.medium.label"}}</h5>
+              <h5 class="item">{{localize "ATDC.actor.load.heavy.label"}}</h5>
 
-            <h2 class="item">{{localize "ATDC.actor.load.label"}}</h2>
-            <input class="item" type="checkbox" name="system.load.light" {{checked system.load.light}}>
-            <input class="item" type="checkbox" name="system.load.medium" {{checked system.load.medium}} {{#if system.load.medDisabled}}disabled{{/if}}>
-            <input class="item" type="checkbox" name="system.load.heavy" {{checked system.load.heavy}} {{#if system.load.hvyDisabled}}disabled{{/if}}>
-            
-            <h2 class="item">{{localize "ATDC.actor.load.gear.label"}}</h2>
-            <div class="item">
-              <input type="checkbox" name="system.gear.light.one" {{checked system.gear.light.one}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
-              <input type="checkbox" name="system.gear.light.two" {{checked system.gear.light.two}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
-              <input type="checkbox" name="system.gear.light.three" {{checked system.gear.light.three}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
+              <h4 class="item">{{localize "ATDC.actor.load.label"}}</h4>
+              <input class="item" type="checkbox" name="system.load.light" {{checked system.load.light}}>
+              <input class="item" type="checkbox" name="system.load.medium" {{checked system.load.medium}} {{#if system.load.medDisabled}}disabled{{/if}}>
+              <input class="item" type="checkbox" name="system.load.heavy" {{checked system.load.heavy}} {{#if system.load.hvyDisabled}}disabled{{/if}}>
+              
+              <h4 class="item">{{localize "ATDC.actor.load.gear.label"}}</h4>
+              <div class="item">
+                <input type="checkbox" name="system.gear.light.one" {{checked system.gear.light.one}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
+                <input type="checkbox" name="system.gear.light.two" {{checked system.gear.light.two}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
+                <input type="checkbox" name="system.gear.light.three" {{checked system.gear.light.three}} {{#if system.load.light}}enabled{{else}}disabled{{/if}}>
+              </div>
+              <div class="item">
+                <input type="checkbox" name="system.gear.medium.one" {{checked system.gear.medium.one}} {{#if system.load.medGearDisabled}}disabled{{/if}}>
+                <input type="checkbox" name="system.gear.medium.two" {{checked system.gear.medium.two}} {{#if system.load.medGearDisabled}}disabled{{/if}}>
+              </div>
+              <input class="item" type="checkbox" name="system.gear.heavy.one" {{checked system.gear.heavy.one}} {{#if system.load.hvyGearDisabled}}disabled{{/if}}>
             </div>
-            <div class="item">
-              <input type="checkbox" name="system.gear.medium.one" {{checked system.gear.medium.one}} {{#if system.load.medGearDisabled}}disabled{{/if}}>
-              <input type="checkbox" name="system.gear.medium.two" {{checked system.gear.medium.two}} {{#if system.load.medGearDisabled}}disabled{{/if}}>
-            </div>
-            <input class="item" type="checkbox" name="system.gear.heavy.one" {{checked system.gear.heavy.one}} {{#if system.load.hvyGearDisabled}}disabled{{/if}}>
           </div>
         </div>
       </div>
