@@ -81,3 +81,8 @@ Handlebars.registerHelper("concat", function () {
 Handlebars.registerHelper("toLowerCase", function (str) {
   return str.toLowerCase();
 });
+
+Handlebars.registerHelper("getSetting", function(arg) {
+  if (arg == "" || arg == "non" || arg == undefined) { return ; }
+  return game.settings.get('againstthedarkconspiracy', arg);
+});

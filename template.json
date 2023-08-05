@@ -261,7 +261,8 @@
         "states": [false, false, false, false]
       },
       "typeIndex": 0,
-      "subtypeIndex": 0
+      "types": [],
+      "subTypeIndex": 0
     },
     "safeHouse": {
       "templates": ["base"],

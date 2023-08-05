@@ -1,4 +1,14 @@
 .npc {
+  .conspiracy-header {
+    flex: 0;
+    font-size: x-large;
+    padding: 5px;
+    background-color: #00000024;
+    font-weight: bold;
+    text-align-last: center;
+    font-family: serif;
+  }
+
   .sheet-header {
     flex: 0 auto;
     overflow: hidden;
@@ -103,6 +113,16 @@
         border: 2px solid #00000047;
         padding: 0 5px 0 5px;
         background: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .subtype {
+    flex: 0;
+    padding: 5px;
+
+    h4 {
+      flex: 0;
+      margin-right: 10px;
     }
   }
 

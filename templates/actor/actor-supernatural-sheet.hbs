@@ -1,5 +1,5 @@
 <form class="{{cssClass}} {{actor.type}} npc flexcol" autocomplete="off">
-
+  <div class="conspiracy-header">{{system.conspiracyType}}</div>
   {{!-- Sheet Header --}}
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
@@ -37,10 +37,10 @@
           </div>
           <div class="type flexrow">
             <h4>Type</h4>
-            <select name="system.type.index" data-roll-type="toggle-stress" data-npc-type="nameless" data-type="String">
-              {{#select system.type.index}}
-                {{#each system.type.options as |option key|}}
-                  <option value="{{key}}">{{localize option}}</option>
+            <select name="system.typeIndex" data-roll-type="toggle-stress" data-npc-type="supernatural" data-type="String">
+              {{#select system.typeIndex}}
+                {{#each system.types as |type key|}}
+                  <option value="{{key}}">{{type.typeName}}</option>
                 {{/each}}
               {{/select}}
             </select>
@@ -62,6 +62,19 @@
     <div class="tab main" data-group="primary" data-tab="main">
       <div class="flexrow">
         <div class="flexcol">
+
+          <div class="subtype flexrow">
+            <h4>Subtype</h4>
+            {{log 'test'}}
+            <select name="system.subTypeIndex" data-roll-type="toggle-stress" data-npc-type="supernatural" data-type="String">
+              {{#select system.subTypeIndex}}
+                {{#each system.types.subtypes as |subtype key|}}
+                  <option value="{{key}}">{{subtype}}</option>
+                {{/each}}
+              {{/select}}
+            </select>
+          </div>
+
           <div class="box item-list">
             <h3>Powers</h3>
             <ol class="items-list box-body">

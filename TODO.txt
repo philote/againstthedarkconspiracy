@@ -24,26 +24,26 @@ Vampire conspiracy
     - Shade
     - Zombie
 - Vampire
-    - Young Vampire
-    - Old Vampire
-    - Ancient Vampire
+    "Young Vampire"
+    "Old Vampire"
+    "Ancient Vampire"
 
 Demon Conspiracy
 - Demonic Servitor
-    - Demonic Spirit
-    - Grand Wizard
-    - Imp
+    "Demonic Spirit",
+    "Grand Wizard",
+    "Imp",
 - Demons
-    - Demonic Foot-soldier
-    - Hellish Nobility
-    - Favored of Lucifer
+    "Demonic Foot-soldier",
+    "Hellish Nobility",
+    "Favored of Lucifer"
 
 Fae Conspiracy
 - Fae Servitor
-    - Elementals
-    - Redcaps
-    - Werewolves
+    "Elementals",
+    "Redcaps",
+    "Werewolves"
 - Noble Fae
-    - Fae Courtier
-    - Fae Knight
-    - Fae Crown
+    "Fae Courtier",
+    "Fae Knight",
+    "Fae Crown"

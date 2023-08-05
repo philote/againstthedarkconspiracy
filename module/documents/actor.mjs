@@ -51,6 +51,8 @@ export class AtDCActor extends Actor {
 
     systemData.anchor.noSolace = (systemData.anchor.missing || systemData.anchor.taken);
 
+    systemData.conspiracyType = this._getConspiracyName();
+
     // Load & Gear helpers
     if (systemData.load.light) {
       systemData.load.medDisabled = false;
@@ -82,7 +84,93 @@ export class AtDCActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    
+
+    const conspiracyTypeKey = game.settings.get('againstthedarkconspiracy', 'conspiracyType')
+    systemData.conspiracyType = this._getConspiracyName(conspiracyTypeKey);
+    systemData.types = this._setupNPCConspiracySubtypes(conspiracyTypeKey);
     systemData.stress.value = systemData.stress.states.filter(Boolean).length;
+  }
+
+  _setupNPCConspiracySubtypes(conspiracyType) {
+    switch (conspiracyType) {
+      case 'vampires': {
+        return [
+          {
+            "typeName": "Vampiric Servitor",
+            "subtypes": [
+              "Ghoul",
+              "Thrall",
+              "Shade",
+              "Zombie"
+            ]
+          },
+          {
+            "typeName": "Vampire",
+            "subtypes": [
+              "Young Vampire",
+              "Old Vampire",
+              "Ancient Vampire"
+            ]
+          },
+        ];
+      }
+      case 'demons': {
+        return [
+          {
+            "typeName": "Demonic Servitor",
+            "subtypes": [
+              "Demonic Spirit",
+              "Grand Wizard",
+              "Imp"
+            ]
+          },
+          {
+            "typeName": "Demons",
+            "subtypes": [
+              "Demonic Foot-soldier",
+              "Hellish Nobility",
+              "Favored of Lucifer"
+            ]
+          },
+        ];
+      }
+      case 'fae': {
+        return [
+          {
+            "typeName": "Fae Servitor",
+            "subtypes": [
+              "Elementals",
+              "Redcaps",
+              "Werewolves"
+            ]
+          },
+          {
+            "typeName": "Noble Fae",
+            "subtypes": [
+              "Fae Courtier",
+              "Fae Knight",
+              "Fae Crown"
+            ]
+          },
+        ];
+      }
+      default: {
+        return "default!"
+      }
+    }
+  }
+
+  _getConspiracyName(conspiracyTypeKey) {
+    switch (conspiracyTypeKey) {
+      case 'vampires': {
+        return game.i18n.localize("ATDC.settings.conspiracyType.choices.vampires.label");
+      }
+      case 'demons': {
+        return game.i18n.localize("ATDC.settings.conspiracyType.choices.demons.label");
+      }
+      case 'fae': {
+        return game.i18n.localize("ATDC.settings.conspiracyType.choices.fae.label");
+      }
+    }
   }
 }
