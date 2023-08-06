@@ -43,13 +43,13 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 - Finish adding text to localization files (dialogs, heat)
 - Use specific messages for Anchor in danger on chat output
 
-<!-- ## How to Install
+## How to Install
 
 You can install the latest released version of the system by using this manifest link in Foundry VTT.
 
 [Instructions](https://foundryvtt.com/article/tutorial/)
 
-Link: https://github.com/philote/FoundryVTT-AgainstTheDarkConspiracy/releases/latest/download/system.json -->
+Link: https://github.com/philote/FoundryVTT-AgainstTheDarkConspiracy/releases/latest/download/system.json
 
 ## Content License Note
 
