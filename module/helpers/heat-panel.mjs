@@ -3,7 +3,7 @@ export class HeatPanel extends Application {
 
     constructor(options) {
         super(options);
-        this.currentHeat = 0
+        this.currentHeat = 0;
     }
 
     static get defaultOptions() {
@@ -26,7 +26,6 @@ export class HeatPanel extends Application {
         
         return {
             ...data,
-            editable: game.user.isGM,
             currentHeat: this.currentHeat,
             max: 10,
             spokes: Array(10).keys()
