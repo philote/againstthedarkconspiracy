@@ -1,21 +1,76 @@
-<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+<form class="{{cssClass}} {{actor.type}} npc flexcol" autocomplete="off">
 
   {{!-- Sheet Header --}}
-  <header>
-    <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "ATDC.npc.name.placeholder"}}"/>
-    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
-    <!-- TODO: add stress, put others in a tab system [notes, info, gear], add gear -->
-    <textarea name="system.skills" type="text" value="{{system.skills}}" placeholder="{{localize "ATDC.npc.skills.label"}}">{{system.skills}}</textarea>
-    <textarea name="system.glance" type="text" value="{{system.glance}}" placeholder="{{localize "ATDC.npc.glance.label"}}">{{system.glance}}</textarea>
-    <textarea name="system.motivation" type="text" value="{{system.motivation}}" placeholder="{{localize "ATDC.npc.motivation.label"}}">{{system.motivation}}</textarea>
-  </header>
-  
-  {{!-- Notes --}}
-  <div>
-      <h2>{{localize "ATDC.npc.notes.label"}}</h2>
-      <div class="notes">
-          {{editor system.notes target="system.notes" button=true engine="prosemirror" collaborate=false}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+    <div class="header-fields">
+      <div class="flexrow field">
+            <h1 class="char-name-label"><label for="name">{{localize "ATDC.npc.name.placeholder"}}</label></h1>
+            <h1 class="char-name flex3"><input name="name" id="name" type="text" value="{{actor.name}}" /></h1>
       </div>
-  </div>
+      
+      <div class="flexcol safe-house-header">
+        <div class="flexrow target box">
+          <label for="target">Target?</label>
+          <input id="target" type="checkbox" name="system.status.target" {{checked system.status.target}}>
+          &emsp;
+          <label for="blown">Blown?</label>
+          <input id="blown" type="checkbox" name="system.status.blown" {{checked system.status.blown}}>
+        </div>
+
+        <div class="gear-benefit box">
+          <h3>Which single GEAR BENEFIT does it offer?</h3>
+          <div class="grid grid-3col box-body">
+            <label for="heavy">Heavy Weapons</label>
+            <label for="autoWeapons">Automatic Weapons</label>
+            <label for="techExplosives">Tech &amp; Explosives</label>
+            <input id="heavy" type="checkbox" name="system.gearBenefit.heavyWeapons" {{checked system.gearBenefit.heavyWeapons}}>
+            <input id="autoWeapons" type="checkbox" name="system.gearBenefit.autoWeapons" {{checked system.gearBenefit.autoWeapons}}>
+            <input id="techExplosives" type="checkbox" name="system.gearBenefit.techExplosives" {{checked system.gearBenefit.techExplosives}}>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section>
+
+    {{!--  Tab --}}
+    <div class="nameless_main">
+      <div class="flexrow">
+        <div class="main-left box">
+          <h3>Questions</h3>
+          <div class="box-body">
+            <label for="placeLike">What's this place like?</label>
+            <textarea class="bottom-margin" id="placeLike" type="text" name="system.questions.placeLike" value="{{system.questions.placeLike}}">{{system.questions.placeLike}}</textarea>
+            
+            <label for="vulnerable">who's vulnerable nearby?</label>
+            <textarea class="bottom-margin" id="vulnerable" type="text" name="system.questions.vulnerable" value="{{system.questions.vulnerable}}">{{system.questions.vulnerable}}</textarea>
+
+            <label for="reassures">What single thing reassures you most that this place is safe?</label>
+            <textarea class="bottom-margin" id="reassures" type="text" name="system.questions.reassures" value="{{system.questions.reassures}}">{{system.questions.reassures}}</textarea>
+
+            <label for="notIdeal">Why isn't this place ideal?</label>
+            <textarea id="notIdeal" type="text" name="system.questions.notIdeal" value="{{system.questions.notIdeal}}">{{system.questions.notIdeal}}</textarea>
+          </div>
+        </div>
+
+        <div class="flexcol">
+          {{!-- Notes --}}
+          <div class="box">
+            <h3>{{localize "ATDC.npc.notes.label"}}</h3>
+            <div class="safe-house-notes box-body">
+              {{editor system.notes target="system.notes" button=true engine="prosemirror" collaborate=false}}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  </section>
 
 </form>

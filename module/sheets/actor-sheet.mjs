@@ -10,14 +10,13 @@ export class AtDCActorSheet extends ActorSheet {
     let width = 720;
     let height = 730;
     if (this.actor.type == 'nameless') {
-      width = 720;
       height = 450;
     } else if (this.actor.type == 'named') {
-      width = 720;
       height = 570;
     } else if (this.actor.type == 'supernatural') {
-      width = 720;
       height = 650;
+    } else if (this.actor.type == 'safeHouse') {
+      height = 610;
     }
     this.position.width = width;
     this.position.height = height;

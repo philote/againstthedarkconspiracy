@@ -92,7 +92,9 @@ export class AtDCActor extends Actor {
       systemData.subType.options = this._getSubtypeOptionsFor(conspiracyTypeKey, systemData.type.index);
     }
     
-    systemData.stress.value = systemData.stress.states.filter(Boolean).length;
+    if (this.type != 'safeHouse') {
+      systemData.stress.value = systemData.stress.states.filter(Boolean).length;
+    }
   }
 
   _getTypeOptionsFor(conspiracyType) {
