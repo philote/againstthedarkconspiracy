@@ -4,7 +4,7 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 
 - The Against the Dark Conspiracy Game: https://gallusgames.itch.io/against-the-dark-conspiracy
 
-<!-- ![A screenshot of the Against the Dark Conspiracy character sheet and chat output in Foundry VTT](screenshot.webp) -->
+![A screenshot of the Against the Dark Conspiracy character sheet and chat output in Foundry VTT](screenshot.webp)
 
 ## Features
 
