@@ -87,75 +87,86 @@ export class AtDCActor extends Actor {
 
     const conspiracyTypeKey = game.settings.get('againstthedarkconspiracy', 'conspiracyType')
     systemData.conspiracyType = this._getConspiracyName(conspiracyTypeKey);
-    systemData.types = this._setupNPCConspiracySubtypes(conspiracyTypeKey);
+    
+    if (this.type == 'supernatural') {
+      systemData.type.options = this._getTypeOptionsFor(conspiracyTypeKey);
+      systemData.subType.options = this._getSubtypeOptionsFor(conspiracyTypeKey, systemData.type.index);
+    }
+    
+    
     systemData.stress.value = systemData.stress.states.filter(Boolean).length;
   }
 
-  _setupNPCConspiracySubtypes(conspiracyType) {
+  _getTypeOptionsFor(conspiracyType) {
     switch (conspiracyType) {
       case 'vampires': {
-        return [
-          {
-            "typeName": "Vampiric Servitor",
-            "subtypes": [
+        return ["Vampiric Servitor", "Vampire"];
+      }
+      case 'demons': {
+        return ["Demonic Servitor", "Demon"];
+      }
+      case 'fae': {
+        return ["Fae Servitor", "Noble Fae"];
+      }
+    }
+  }
+
+  _getSubtypeOptionsFor(conspiracyTypeKey ,typeIndex) {
+    switch (conspiracyType) {
+      case 'vampires': {
+        switch (typeIndex) {
+          case 0: {
+            return [
               "Ghoul",
               "Thrall",
               "Shade",
               "Zombie"
-            ]
-          },
-          {
-            "typeName": "Vampire",
-            "subtypes": [
+            ];
+          }
+          case 1: {
+            return [
               "Young Vampire",
               "Old Vampire",
               "Ancient Vampire"
-            ]
-          },
-        ];
+            ];
+          }
+        }
       }
       case 'demons': {
-        return [
-          {
-            "typeName": "Demonic Servitor",
-            "subtypes": [
+        switch (typeIndex) {
+          case 0: {
+            return [
               "Demonic Spirit",
               "Grand Wizard",
               "Imp"
-            ]
-          },
-          {
-            "typeName": "Demons",
-            "subtypes": [
+            ];
+          }
+          case 1: {
+            return [
               "Demonic Foot-soldier",
               "Hellish Nobility",
               "Favored of Lucifer"
-            ]
-          },
-        ];
+            ];
+          }
+        }
       }
       case 'fae': {
-        return [
-          {
-            "typeName": "Fae Servitor",
-            "subtypes": [
+        switch (typeIndex) {
+          case 0: {
+            return [
               "Elementals",
               "Redcaps",
               "Werewolves"
-            ]
-          },
-          {
-            "typeName": "Noble Fae",
-            "subtypes": [
+            ];
+          }
+          case 1: {
+            return [
               "Fae Courtier",
               "Fae Knight",
               "Fae Crown"
-            ]
-          },
-        ];
-      }
-      default: {
-        return "default!"
+            ];
+          }
+        }
       }
     }
   }

@@ -260,9 +260,14 @@
         "max": 10,
         "states": [false, false, false, false]
       },
-      "typeIndex": 0,
-      "types": [],
-      "subTypeIndex": 0
+      "type": {
+        "index": 0,
+        "options": []
+      },
+      "subType": {
+        "index": 0,
+        "options": []
+      }
     },
     "safeHouse": {
       "templates": ["base"],
