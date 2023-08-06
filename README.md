@@ -40,6 +40,8 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 - Add buttons to the roll chat output to roll for Stress and other actions
 - Adding Gear will update you Load/Gear and show an error dialog when there is no capacity
 - Add an Operation template journal to the Compendium
+- Finish adding text to localization files (dialogs, heat)
+- Use specific messages for Anchor in danger on chat output
 
 <!-- ## How to Install
 

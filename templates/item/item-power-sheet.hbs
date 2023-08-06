@@ -4,12 +4,12 @@
     <h1><input name="name" type="text" value="{{item.name}}" placeholder="Power Name"/></h1>
     <div class="grid grid-4col info">
       <div class="left-label flexrow grid-span-3">
-        <label class="flexshrink">Detail:</label>
+        <label class="flexshrink">{{localize "ATDC.item.detail.label"}}</label>
         <input type="text" name="system.detail" value="{{system.detail}}" data-dtype="String"/>
       </div>
       <div class="center-label">
         <input type="checkbox" name="system.addRiskDie" {{checked system.addRiskDie}}/>
-        <label class="">Risk Die?</label>
+        <label class="">{{localize "ATDC.item.risk.label"}}</label>
       </div>
     </div>
     <textarea type="text" name="system.description" value="{{system.description}}">{{system.description}}</textarea>

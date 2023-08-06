@@ -100,13 +100,22 @@ export class AtDCActor extends Actor {
   _getTypeOptionsFor(conspiracyType) {
     switch (conspiracyType) {
       case 'vampires': {
-        return ["Vampiric Servitor", "Vampire"];
+        return [
+          game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.vampire.type.servitor.label'), 
+          game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.vampire.type.full.label')
+        ];
       }
       case 'demons': {
-        return ["Demonic Servitor", "Demon"];
+        return [
+          game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.demonic.type.servitor.label'), 
+          game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.demonic.type.full.label')
+        ];
       }
       case 'fae': {
-        return ["Fae Servitor", "Noble Fae"];
+        return [
+          game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.fae.type.servitor.label'), 
+          game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.fae.type.full.label')
+        ];
       }
     }
   }
@@ -117,17 +126,17 @@ export class AtDCActor extends Actor {
         switch (typeIndex) {
           case '0': {
             return [
-              "Ghoul",
-              "Thrall",
-              "Shade",
-              "Zombie"
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.vampire.type.servitor.subtypes.ghoul.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.vampire.type.servitor.subtypes.thrall.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.vampire.type.servitor.subtypes.shade.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.vampire.type.servitor.subtypes.zombie.label')
             ];
           }
           case '1': {
             return [
-              "Young Vampire",
-              "Old Vampire",
-              "Ancient Vampire"
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.vampire.type.full.subtypes.young.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.vampire.type.full.subtypes.old.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.vampire.type.full.subtypes.ancient.label')
             ];
           }
         }
@@ -136,16 +145,16 @@ export class AtDCActor extends Actor {
         switch (typeIndex) {
           case '0': {
             return [
-              "Demonic Spirit",
-              "Grand Wizard",
-              "Imp"
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.demonic.type.servitor.subtypes.spirit.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.demonic.type.servitor.subtypes.wizard.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.demonic.type.servitor.subtypes.imp.label')
             ];
           }
           case '1': {
             return [
-              "Demonic Foot-soldier",
-              "Hellish Nobility",
-              "Favored of Lucifer"
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.demonic.type.full.subtypes.soldier.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.demonic.type.full.subtypes.nobility.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.demonic.type.full.subtypes.favored.label')
             ];
           }
         }
@@ -154,16 +163,16 @@ export class AtDCActor extends Actor {
         switch (typeIndex) {
           case '0': {
             return [
-              "Elemental",
-              "Redcap",
-              "Werewolf"
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.fae.type.servitor.subtypes.elemental.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.fae.type.servitor.subtypes.redcap.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.fae.type.servitor.subtypes.werewolf.label')
             ];
           }
           case '1': {
             return [
-              "Fae Courtier",
-              "Fae Knight",
-              "Fae Crown"
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.fae.type.full.subtypes.courtier.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.fae.type.full.subtypes.knight.label'),
+              game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.fae.type.full.subtypes.crown.label'),
             ];
           }
         }

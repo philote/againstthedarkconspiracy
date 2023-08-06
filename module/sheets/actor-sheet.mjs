@@ -538,10 +538,12 @@ export class AtDCActorSheet extends ActorSheet {
     }
   }
 
+  // TODO make translatable
   _getStressOnSixMessage() {
     return `<br><b><i> Roll for ${this._getWordRiskWithFormatting()}</b></i>.`
   }
 
+  // TODO make translatable
   _getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harmShowIntel) {
     switch (moveNumber) {
       case 1: {
@@ -711,6 +713,7 @@ export class AtDCActorSheet extends ActorSheet {
     `;
   }
 
+  // TODO make translatable
   _seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
     switch (moveNumber) {
       case 1: {
@@ -834,6 +837,7 @@ export class AtDCActorSheet extends ActorSheet {
         `;
   }
 
+  // TODO make translatable
   _harmMoveMessage() {
     return `<hr>
             <div style="font-size: 1em">
@@ -842,6 +846,7 @@ export class AtDCActorSheet extends ActorSheet {
             <div>`;
   }
 
+  // TODO make translatable
   _stressMoveMessage() {
     return `<hr>
             <div style="font-size: 1em">
@@ -874,6 +879,7 @@ export class AtDCActorSheet extends ActorSheet {
     )}</b>`;
   }
 
+  // TODO make translatable
   async asyncActionDialog({ title = "", content = "", move = 0 } = {}) {
     return await new Promise(async (resolve) => {
       new Dialog(
@@ -1107,6 +1113,7 @@ export class AtDCActorSheet extends ActorSheet {
                     );
                   });
 
+                  // TODO make translatable
                   if (threatDiceOutput) {
                     diceOutput = `${diceOutput}</br></br><b style="font-size:1.2em">Risk Die:</b></br>${threatDiceOutput}`;
                   }
@@ -1276,6 +1283,7 @@ export class AtDCActorSheet extends ActorSheet {
     });
   }
 
+  // TODO make translatable
   async asyncStressRoll() {
     const dice = [];
     let hdRoll = await new Roll("1d6").evaluate({ async: true });
@@ -1384,14 +1392,8 @@ export class AtDCActorSheet extends ActorSheet {
     }
   }
 
-  /* TODO
-    moves
-    - create stress roll button in chats
-    - create a Harm roll button in chats
-    - put all the texts into the language file
-  */
-
   // TODO return text to put in the 
+  // TODO make translatable
   _markAnchor() {
     const anchorName = this.actor.system.anchor.name;
     let target = this.actor.system.anchor.target;

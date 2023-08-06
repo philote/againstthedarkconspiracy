@@ -1,2 +1,0 @@
-get all the text into en file
-add heat message

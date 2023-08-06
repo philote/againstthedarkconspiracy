@@ -36,7 +36,7 @@
             </div>
           </div>
           <div class="type flexrow">
-            <h4>Type</h4>
+            <h4>{{localize "ATDC.npc.type.label"}}</h4>
             <select name="system.type.index" data-roll-type="toggle-stress" data-npc-type="nameless" data-type="String">
               {{#select system.type.index}}
                 {{#each system.type.options as |option key|}}
@@ -52,8 +52,8 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="main">Main</a>
-    <a class="item" data-tab="notes">Notes</a>
+    <a class="item" data-tab="main">{{localize "ATDC.npc.tab.main.label"}}</a>
+    <a class="item" data-tab="notes">{{localize "ATDC.npc.tab.notes.label"}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -93,11 +93,11 @@
           </div>
           
           <div class="box item-list">
-            <h3>Powers</h3>
+            <h3>{{localize "ATDC.npc.supernaturalAbilities.powers.label"}}</h3>
             <ol class="items-list box-body">
               <li class="item flexrow items-header">
-                <div class="item-name">Name</div>
-                <div class="item-risk-die">Risk Die?</div>
+                <div class="item-name">{{localize "ATDC.npc.supernaturalAbilities.name.label"}}</div>
+                <div class="item-risk-die">{{localize "ATDC.npc.supernaturalAbilities.risk.label"}}</div>
                 <div class="item-controls">
                   <a class="item-control item-create" title="Create item" data-type="power"><i class="fas fa-plus"></i></a>
                 </div>
@@ -122,14 +122,14 @@
         </div>
         
         <div class="flexcol box ">
-          <h3>Weaknesses</h3>
+          <h3>{{localize "ATDC.npc.supernaturalAbilities.weaknesses.label"}}</h3>
           <div class="box-body">
             <div class="item-list">
-              <h4>Compulsions</h4>
+              <h4>{{localize "ATDC.npc.supernaturalAbilities.weaknesses.compulsions.label"}}</h4>
               <ol class="items-list">
                 <li class="item flexrow items-header">
-                  <div class="item-name">Name</div>
-                  <div class="item-detail">Detail</div>
+                  <div class="item-name">{{localize "ATDC.npc.supernaturalAbilities.name.label"}}</div>
+                  <div class="item-detail">{{localize "ATDC.npc.supernaturalAbilities.detail.label"}}</div>
                   <div class="item-controls">
                     <a class="item-control item-create" title="Create item" data-type="compulsion"><i class="fas fa-plus"></i></a>
                   </div>
@@ -155,11 +155,11 @@
             <hr>
 
             <div class="item-list">
-              <h4>Deterrents</h4>
+              <h4>{{localize "ATDC.npc.supernaturalAbilities.weaknesses.deterrents.label"}}</h4>
               <ol class="items-list">
                 <li class="item flexrow items-header">
-                  <div class="item-name">Name</div>
-                  <div class="item-detail">Detail</div>
+                  <div class="item-name">{{localize "ATDC.npc.supernaturalAbilities.name.label"}}</div>
+                  <div class="item-detail">{{localize "ATDC.npc.supernaturalAbilities.detail.label"}}</div>
                   <div class="item-controls">
                     <a class="item-control item-create" title="Create item" data-type="deterrent"><i class="fas fa-plus"></i></a>
                   </div>

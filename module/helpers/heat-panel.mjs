@@ -23,10 +23,11 @@ export class HeatPanel extends Application {
         if (savedCurrentHeat) {
             this.currentHeat = savedCurrentHeat;
         }
-        
+
         return {
             ...data,
             currentHeat: this.currentHeat,
+            heatTitle: 'HEAT',
             max: 10,
             spokes: Array(10).keys()
         };

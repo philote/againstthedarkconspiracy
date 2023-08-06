@@ -5,25 +5,25 @@
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
     <div class="header-fields">
       <div class="flexrow field">
-            <h1 class="char-name-label"><label for="name">{{localize "ATDC.npc.name.placeholder"}}</label></h1>
+            <h1 class="char-name-label"><label for="name">{{localize "ATDC.safeHouse.name.placeholder"}}</label></h1>
             <h1 class="char-name flex3"><input name="name" id="name" type="text" value="{{actor.name}}" /></h1>
       </div>
       
       <div class="flexcol safe-house-header">
         <div class="flexrow target box">
-          <label for="target">Target?</label>
+          <label for="target">{{localize "ATDC.safeHouse.target.label"}}</label>
           <input id="target" type="checkbox" name="system.status.target" {{checked system.status.target}}>
           &emsp;
-          <label for="blown">Blown?</label>
+          <label for="blown">{{localize "ATDC.safeHouse.blown.label"}}</label>
           <input id="blown" type="checkbox" name="system.status.blown" {{checked system.status.blown}}>
         </div>
 
         <div class="gear-benefit box">
-          <h3>Which single GEAR BENEFIT does it offer?</h3>
+          <h3>{{localize "ATDC.safeHouse.gearBenefit.label"}}</h3>
           <div class="grid grid-3col box-body">
-            <label for="heavy">Heavy Weapons</label>
-            <label for="autoWeapons">Automatic Weapons</label>
-            <label for="techExplosives">Tech &amp; Explosives</label>
+            <label for="heavy">{{localize "ATDC.safeHouse.gearBenefit.heavyWeapons.label"}}</label>
+            <label for="autoWeapons">{{localize "ATDC.safeHouse.gearBenefit.autoWeapons.label"}}</label>
+            <label for="techExplosives">{{localize "ATDC.safeHouse.gearBenefit.techExplosives.label"}}</label>
             <input id="heavy" type="checkbox" name="system.gearBenefit.heavyWeapons" {{checked system.gearBenefit.heavyWeapons}}>
             <input id="autoWeapons" type="checkbox" name="system.gearBenefit.autoWeapons" {{checked system.gearBenefit.autoWeapons}}>
             <input id="techExplosives" type="checkbox" name="system.gearBenefit.techExplosives" {{checked system.gearBenefit.techExplosives}}>
@@ -42,18 +42,18 @@
     <div class="nameless_main">
       <div class="flexrow">
         <div class="main-left box">
-          <h3>Questions</h3>
+          <h3>{{localize "ATDC.safeHouse.questions.label"}}</h3>
           <div class="box-body">
-            <label for="placeLike">What's this place like?</label>
+            <label for="placeLike">{{localize "ATDC.safeHouse.questions.placeLike.label"}}</label>
             <textarea class="bottom-margin" id="placeLike" type="text" name="system.questions.placeLike" value="{{system.questions.placeLike}}">{{system.questions.placeLike}}</textarea>
             
-            <label for="vulnerable">who's vulnerable nearby?</label>
+            <label for="vulnerable">{{localize "ATDC.safeHouse.questions.vulnerable.label"}}</label>
             <textarea class="bottom-margin" id="vulnerable" type="text" name="system.questions.vulnerable" value="{{system.questions.vulnerable}}">{{system.questions.vulnerable}}</textarea>
 
-            <label for="reassures">What single thing reassures you most that this place is safe?</label>
+            <label for="reassures">{{localize "ATDC.safeHouse.questions.reassures.label"}}</label>
             <textarea class="bottom-margin" id="reassures" type="text" name="system.questions.reassures" value="{{system.questions.reassures}}">{{system.questions.reassures}}</textarea>
 
-            <label for="notIdeal">Why isn't this place ideal?</label>
+            <label for="notIdeal">{{localize "ATDC.safeHouse.questions.notIdeal.label"}}</label>
             <textarea id="notIdeal" type="text" name="system.questions.notIdeal" value="{{system.questions.notIdeal}}">{{system.questions.notIdeal}}</textarea>
           </div>
         </div>
