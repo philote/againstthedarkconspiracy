@@ -10,7 +10,8 @@ export const registerSettings = function() {
           "demons": "ATDC.settings.conspiracyType.choices.demons.label",
           "fae": "ATDC.settings.conspiracyType.choices.fae.label"
         },
-        default: "vampires"
+        default: "vampires",
+        onChange: _ => window.location.reload()
     });
 
     game.settings.register("againstthedarkconspiracy", "currentHeat", {

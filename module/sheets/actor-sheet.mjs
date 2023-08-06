@@ -193,30 +193,33 @@ export class AtDCActorSheet extends ActorSheet {
     const dataset = element.dataset;
     const npcType = dataset.npcType
 
-    console.log("npcType: "+npcType);
-
     switch (npcType) {
       case 'nameless': {
         switch (choice) {
           case '0': 
           case '1': {
-            this._setStressMax(1);
+            this._setStressMax(1, 1);
             return;
           }
           case '2': 
           case '3': {
-            this._setStressMax(2);
+            this._setStressMax(2, 2);
             return;
           }
         }
         return;
       }
-      case 'named': {
-
-        return;
-      }
       case 'supernatural': {
-        
+        switch (choice) {
+          case '0': {
+            this._setStressMax(4, 5);
+            return;
+          }
+          case '1': {
+            this._setStressMax(5, 20);
+            return;
+          }
+        }
         return;
       }
     }
@@ -405,38 +408,30 @@ export class AtDCActorSheet extends ActorSheet {
     this.actor.update({ ["system.stress.max"]: --currentMax });
   }
 
-  _setStressMax(newMax) {
-    console.log("newMax: "+newMax);
-    
-
-    if (newMax < 0) return;
+  _setStressMax(newStress, newMax) {
     let currentArray = this.actor.system.stress.states;
-    console.log("currentArray.length: "+currentArray.length);
-    if (currentArray.length == newMax) return;
-
-    console.log("newMax: "+newMax);
-    console.log("currentArray.length: "+currentArray.length);
-
-    if (newMax > currentArray.length) {
-      const addAmount = newMax - currentArray.length;
-      console.log("addAmount: "+addAmount);
-      for (let i = 0; i < addAmount; i++) {
-        currentArray.push(false);
-        console.log("increase stress array by 1");
-      }
-    } else if (newMax < currentArray.length) {
-      const popAmount = currentArray.length - newMax;
-      console.log("popAmount: "+popAmount);
-      for (let i = 0; i < popAmount; i++) {
-        currentArray.pop();
-        console.log("decrease stress array by 1");
-      }
+    
+    // set max
+    if (newMax > 0) {
+      this.actor.update({ ["system.stress.max"]: newMax });
     }
 
-    console.log("currentArray.length: "+currentArray.length);
+    if (newStress > 0) {
 
-    this.actor.update({ ["system.stress.states"]: currentArray });
-    this.actor.update({ ["system.stress.max"]: newMax });
+      if (newStress > currentArray.length) {
+        const addAmount = newStress - currentArray.length;
+        for (let i = 0; i < addAmount; i++) {
+          currentArray.push(false);
+        }
+      } else if (newStress < currentArray.length) {
+        const popAmount = currentArray.length - newStress;
+        for (let i = 0; i < popAmount; i++) {
+          currentArray.pop();
+        }
+      }
+
+      this.actor.update({ ["system.stress.states"]: currentArray });
+    }
   }
 
   _onToggleIntel(pos) {

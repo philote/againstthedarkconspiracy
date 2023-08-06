@@ -79,20 +79,18 @@ export class AtDCActor extends Actor {
    * Prepare NPC type specific data.
    */
   _prepareNpcData(actorData) {
-    if (this.type == 'character') return; // TODO fixme
-    // if ((actorData.type !== 'nameless') || (actorData.type !== 'named') || (actorData.type !== 'supernatural')) return;
-
+    if (this.type == 'character') return;
+    
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-
-    const conspiracyTypeKey = game.settings.get('againstthedarkconspiracy', 'conspiracyType')
-    systemData.conspiracyType = this._getConspiracyName(conspiracyTypeKey);
     
     if (this.type == 'supernatural') {
+      const conspiracyTypeKey = game.settings.get('againstthedarkconspiracy', 'conspiracyType')
+      systemData.conspiracyType = this._getConspiracyName(conspiracyTypeKey);
+
       systemData.type.options = this._getTypeOptionsFor(conspiracyTypeKey);
       systemData.subType.options = this._getSubtypeOptionsFor(conspiracyTypeKey, systemData.type.index);
     }
-    
     
     systemData.stress.value = systemData.stress.states.filter(Boolean).length;
   }
@@ -112,10 +110,10 @@ export class AtDCActor extends Actor {
   }
 
   _getSubtypeOptionsFor(conspiracyTypeKey ,typeIndex) {
-    switch (conspiracyType) {
+    switch (conspiracyTypeKey) {
       case 'vampires': {
         switch (typeIndex) {
-          case 0: {
+          case '0': {
             return [
               "Ghoul",
               "Thrall",
@@ -123,7 +121,7 @@ export class AtDCActor extends Actor {
               "Zombie"
             ];
           }
-          case 1: {
+          case '1': {
             return [
               "Young Vampire",
               "Old Vampire",
@@ -134,14 +132,14 @@ export class AtDCActor extends Actor {
       }
       case 'demons': {
         switch (typeIndex) {
-          case 0: {
+          case '0': {
             return [
               "Demonic Spirit",
               "Grand Wizard",
               "Imp"
             ];
           }
-          case 1: {
+          case '1': {
             return [
               "Demonic Foot-soldier",
               "Hellish Nobility",
@@ -152,14 +150,14 @@ export class AtDCActor extends Actor {
       }
       case 'fae': {
         switch (typeIndex) {
-          case 0: {
+          case '0': {
             return [
-              "Elementals",
-              "Redcaps",
-              "Werewolves"
+              "Elemental",
+              "Redcap",
+              "Werewolf"
             ];
           }
-          case 1: {
+          case '1': {
             return [
               "Fae Courtier",
               "Fae Knight",

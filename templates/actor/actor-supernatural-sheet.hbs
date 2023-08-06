@@ -37,10 +37,10 @@
           </div>
           <div class="type flexrow">
             <h4>Type</h4>
-            <select name="system.typeIndex" data-roll-type="toggle-stress" data-npc-type="supernatural" data-type="String">
-              {{#select system.typeIndex}}
-                {{#each system.types as |type key|}}
-                  <option value="{{key}}">{{type.typeName}}</option>
+            <select class="npc-type-change" name="system.type.index" data-roll-type="toggle-stress" data-npc-type="supernatural" data-type="String">
+              {{#select system.type.index}}
+                {{#each system.type.options as |type key|}}
+                  <option value="{{key}}">{{type}}</option>
                 {{/each}}
               {{/select}}
             </select>
@@ -65,10 +65,9 @@
 
           <div class="subtype flexrow">
             <h4>Subtype</h4>
-            {{log 'test'}}
-            <select name="system.subTypeIndex" data-roll-type="toggle-stress" data-npc-type="supernatural" data-type="String">
-              {{#select system.subTypeIndex}}
-                {{#each system.types.subtypes as |subtype key|}}
+            <select name="system.subType.index" data-roll-type="toggle-stress" data-npc-type="supernatural" data-type="String">
+              {{#select system.subType.index}}
+                {{#each system.subType.options as |subtype key|}}
                   <option value="{{key}}">{{subtype}}</option>
                 {{/each}}
               {{/select}}
