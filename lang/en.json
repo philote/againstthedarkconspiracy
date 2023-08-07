@@ -407,5 +407,10 @@
   },
   "ATDC.heatPanel": {
     "title": "HEAT"
+  },
+  "ATDC.dialog": {
+    "action": {
+      "risk.label": "Risk Die:"
+    }
   }
 }

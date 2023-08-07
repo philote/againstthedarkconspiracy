@@ -71,6 +71,13 @@ Hooks.on("preCreateActor", (actor) => {
   }
 });
 
+// TODO get stress roll buttons from chat
+// Hooks.on('renderChatLog', (_app, html, _data) => {
+//   html.on('click', 'button.click-me', (e) =>
+//     console.error("Clicked!")
+//   );
+// });
+
 /* -------------------------------------------- */
 /*  Handlebars Helpers                          */
 /* -------------------------------------------- */
