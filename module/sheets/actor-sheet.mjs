@@ -8,7 +8,7 @@ export class AtDCActorSheet extends ActorSheet {
     super(...args);
 
     let width = 720;
-    let height = 730;
+    let height = 740;
     if (this.actor.type == 'nameless') {
       height = 450;
     } else if (this.actor.type == 'named') {
@@ -695,24 +695,6 @@ export class AtDCActorSheet extends ActorSheet {
     }
   }
 
-  _chatContent(
-    moveNumber,
-    diceOutput,
-    maxDieNumber,
-    stressMessage,
-    harmMessage,
-    showStressOnSix
-  ) {
-    const moveName = this._dialogTitle(moveNumber);
-    return `
-        <p style="font-size: 1.5em"><b>${moveName}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")}</p>
-        <p>${diceOutput}</p>
-        <p>${this._getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix)}</p>
-        ${stressMessage}
-        ${harmMessage}
-    `;
-  }
-
   // TODO make translatable
   _seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
     switch (moveNumber) {
@@ -815,28 +797,6 @@ export class AtDCActorSheet extends ActorSheet {
     `;
   }
 
-  _harmChatContent(
-    moveNumber,
-    diceOutput,
-    maxDieNumber,
-    stressMessage,
-    bonusValue, 
-    showStressOnSix,
-    harmShowIntel
-  ) {
-    const moveName = this._dialogTitle(moveNumber);
-    return `
-            <p style="font-size: 1.5em"><b>${moveName}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")}</p>
-            <p>${diceOutput}</p>
-            <b>${game.i18n.localize("ATDC.actor.actions.chat.result.harm.modifier.label")}</b> ${bonusValue}
-            </br>
-            <b>${game.i18n.localize("ATDC.actor.actions.chat.result.harm.final.label")}</b> ${maxDieNumber}
-            <hr>
-            ${this._getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harmShowIntel)}
-            ${stressMessage}
-        `;
-  }
-
   // TODO make translatable
   _harmMoveMessage() {
     return `<hr>
@@ -879,7 +839,6 @@ export class AtDCActorSheet extends ActorSheet {
     )}</b>`;
   }
 
-  // TODO make translatable
   async asyncActionDialog({ title = "", content = "", move = 0 } = {}) {
     return await new Promise(async (resolve) => {
       new Dialog(
@@ -1113,9 +1072,8 @@ export class AtDCActorSheet extends ActorSheet {
                     );
                   });
 
-                  // TODO make translatable
                   if (threatDiceOutput) {
-                    diceOutput = `${diceOutput}</br></br><b style="font-size:1.2em">Risk Die:</b></br>${threatDiceOutput}`;
+                    diceOutput = `${diceOutput}</br></br><b style="font-size:1.2em">${game.i18n.localize("ATDC.dialog.action.risk.label")}</b></br>${threatDiceOutput}`;
                   }
                 }
 
@@ -1128,24 +1086,22 @@ export class AtDCActorSheet extends ActorSheet {
                   this._increaseIntelByOne();
                 }
 
-                // Initialize chat data.
-                const chatContentMessage = this._chatContent(
-                  move,
-                  diceOutput,
-                  maxDie.rollVal,
-                  stressMessage,
-                  harmMessage,
-                  showStressOnSix
-                );
-                const user = game.user.id;
-                const speaker = ChatMessage.getSpeaker({ actor: this.actor });
-                const rollMode = game.settings.get("core", "rollMode");
-
+                // chat message setup
+                const dialogData = {
+                  moveName: this._dialogTitle(move),
+                  diceOutput: diceOutput,
+                  maxDieMessage: this._getMaxDieMessage(move, maxDie.rollVal, showStressOnSix),
+                  stressMessage: stressMessage,
+                  harmMessage: harmMessage
+                }
+                const template = 'systems/againstthedarkconspiracy/templates/msg/action-chat-content.hbs';
+                const rendered_html = await renderTemplate(template, dialogData);
+            
                 ChatMessage.create({
-                  user: user,
-                  speaker: speaker,
-                  rollMode: rollMode,
-                  content: chatContentMessage,
+                  user:game.user_id,
+                  speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+                  rollMode: game.settings.get("core", "rollMode"),
+                  content: rendered_html
                 });
 
                 // ----
@@ -1248,25 +1204,22 @@ export class AtDCActorSheet extends ActorSheet {
                   this._increaseIntelByOne();
                 }
 
-                // Initialize chat data.
-                const chatContentMessage = this._harmChatContent(
-                  move,
-                  diceOutput,
-                  maxDieModified,
-                  stressMessage,
-                  bonusValue,
-                  showStressOnSix,
-                  harmShowIntel
-                );
-                const user = game.user.id;
-                const speaker = ChatMessage.getSpeaker({ actor: this.actor });
-                const rollMode = game.settings.get("core", "rollMode");
-
+                // chat message setup
+                const dialogData = {
+                  moveName: this._dialogTitle(move),
+                  diceOutput: diceOutput,
+                  maxDieMessage: this._getMaxDieMessage(move, maxDieModified, showStressOnSix, harmShowIntel),
+                  stressMessage: stressMessage,
+                  bonusValue: bonusValue
+                }
+                const template = 'systems/againstthedarkconspiracy/templates/msg/action-chat-content.hbs';
+                const rendered_html = await renderTemplate(template, dialogData);
+            
                 ChatMessage.create({
-                  user: user,
-                  speaker: speaker,
-                  rollMode: rollMode,
-                  content: chatContentMessage,
+                  user:game.user_id,
+                  speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+                  rollMode: game.settings.get("core", "rollMode"),
+                  content: rendered_html
                 });
 
                 // ----
