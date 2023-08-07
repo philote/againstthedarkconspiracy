@@ -1,11 +1,12 @@
-<form>
+<div class="action" data-owner-id="{{ownerId}}">
+    {{log "LOG" ownerId}}
     <p style="font-size: 1.5em"><b>{{{moveName}}}</b> {{localize "ATDC.actor.actions.chat.result.label"}}</p>
     <p>{{{diceOutput}}}</p>
     <p>{{{maxDieMessage}}}</p>
     {{{stressMessage}}}
     {{{harmMessage}}}
-    <!--
-    <br>
-    <button class="click-me">Click Me!</button>
-    -->
-</form>
+    {{#if showStressOnSix}}
+        <br>
+        <button type="button" class="roll-stress"><i class="fa-regular fa-dice"></i>{{localize "ATDC.actor.stress.title"}}</button>
+    {{/if}}
+</div>

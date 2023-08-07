@@ -1092,7 +1092,9 @@ export class AtDCActorSheet extends ActorSheet {
                   diceOutput: diceOutput,
                   maxDieMessage: this._getMaxDieMessage(move, maxDie.rollVal, showStressOnSix),
                   stressMessage: stressMessage,
-                  harmMessage: harmMessage
+                  harmMessage: harmMessage,
+                  showStressOnSix: true,
+                  ownerId: this.actor.id
                 }
                 const template = 'systems/againstthedarkconspiracy/templates/msg/action-chat-content.hbs';
                 const rendered_html = await renderTemplate(template, dialogData);

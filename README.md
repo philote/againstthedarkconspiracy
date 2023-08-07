@@ -42,6 +42,7 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 - Add an Operation template journal to the Compendium
 - Finish adding text to localization files (dialogs, heat)
 - Use specific messages for Anchor in danger on chat output
+- Setup default token setup (show name, show intel and stress, link actor, etc..)
 
 ## How to Install
 

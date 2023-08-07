@@ -9,6 +9,7 @@ import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ATDC } from "./helpers/config.mjs";
 import { HeatPanel } from "./helpers/heat-panel.mjs";
 import { registerSettings } from "./helpers/settings.mjs";
+import * as Chat from "./helpers/chat.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -71,12 +72,7 @@ Hooks.on("preCreateActor", (actor) => {
   }
 });
 
-// TODO get stress roll buttons from chat
-// Hooks.on('renderChatLog', (_app, html, _data) => {
-//   html.on('click', 'button.click-me', (e) =>
-//     console.error("Clicked!")
-//   );
-// });
+Hooks.on('renderChatLog', (app, html, data) => Chat.addChatListeners(html));
 
 /* -------------------------------------------- */
 /*  Handlebars Helpers                          */
