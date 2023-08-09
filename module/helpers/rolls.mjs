@@ -223,7 +223,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 );
 
                 if (maxThreatDie.rollVal >= maxDie.rollVal) {
-                  harmMessage = harmMoveMessage();
+                  harmMessage = await harmMoveMessage(actor);
                 }
 
                 // Build Threat Dice list
@@ -253,10 +253,11 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
               const dialogData = {
                 moveName: dialogTitle(move),
                 diceOutput: diceOutput,
-                maxDieMessage: getMaxDieMessage(move, maxDie.rollVal, showStressOnSix),
+                maxDieMessage: getMaxDieMessage(move, maxDie.rollVal),
                 stressMessage: stressMessage,
                 harmMessage: harmMessage,
-                showStressOnSix: true,
+                showStressOnSix: showStressOnSix,
+                stressOnSixMessage: getStressOnSixMessage(),
                 ownerId: actor.id
               }
               const template = 'systems/againstthedarkconspiracy/templates/msg/action-chat-content.hbs';
@@ -359,12 +360,13 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
                 );
               });
 
-              // Check if stress button should show
-              let showStressOnSix = (maxDie.rollVal >= 6 && !maxDie.isStress);
-
-              // Check if intel should increase
+              // Check if intel should increase & if stress button should show
+              let showStressOnSix = false;
               let harmShowIntel = false;
               if (maxDie.rollVal == "6") {
+                if (!maxDie.isStress) {
+                  showStressOnSix = true;
+                }
                 harmShowIntel = true;
                 increaseIntelByOne(actor);
               }
@@ -373,9 +375,12 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
               const dialogData = {
                 moveName: dialogTitle(move),
                 diceOutput: diceOutput,
-                maxDieMessage: getMaxDieMessage(move, maxDieModified, showStressOnSix, harmShowIntel),
+                maxDieMessage: getMaxDieMessage(move, maxDieModified, harmShowIntel),
                 stressMessage: stressMessage,
-                bonusValue: bonusValue
+                showStressOnSix: showStressOnSix,
+                stressOnSixMessage: getStressOnSixMessage(),
+                bonusValue: bonusValue,
+                ownerId: actor.id
               }
               const template = 'systems/againstthedarkconspiracy/templates/msg/action-chat-content.hbs';
               const rendered_html = await renderTemplate(template, dialogData);
@@ -572,11 +577,11 @@ export function getDiceForOutput(dieNumber, colorHex) {
 
 // TODO make translatable
 export function getStressOnSixMessage() {
-    return `<br><b><i> Roll for ${getWordRiskWithFormatting()}</b></i>.`
+    return `<b><i> Roll for ${getWordRiskWithFormatting()}</b></i>.`
 }
 
 // TODO make translatable
-export function getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harmShowIntel) {
+export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
     switch (moveNumber) {
       case 1: {
         // Investigate
@@ -590,9 +595,6 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harm
             return `you get the minimum needed to proceed and <b><i>Control will also answer 1 question</b></i>.`;
           case "6":
             let message = `you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>. <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            if (showStressOnSix) {
-              message += getStressOnSixMessage();
-            }
             return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
@@ -610,9 +612,6 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harm
           case "6":
             let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
             <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            if (showStressOnSix) {
-              message += getStressOnSixMessage();
-            }
             return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
@@ -629,9 +628,6 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harm
           case "6":
             let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
             <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            if (showStressOnSix) {
-              message += getStressOnSixMessage();
-            }
             return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
@@ -648,9 +644,6 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harm
           case "6":
             let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
             <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            if (showStressOnSix) {
-              message += getStressOnSixMessage();
-            }
             return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
@@ -667,9 +660,6 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harm
           case "6":
             let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
             <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            if (showStressOnSix) {
-              message += getStressOnSixMessage();
-            }
             return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.6)</span>`;
@@ -697,9 +687,6 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harm
             if (harmShowIntel) {
               message += `<br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`
             }
-            if (showStressOnSix) {
-              message += getStressOnSixMessage();
-            }
             return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage) hit default</span>`;
@@ -717,9 +704,6 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, showStressOnSix, harm
           case "6":
             let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
             <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            if (showStressOnSix) {
-              message += getStressOnSixMessage();
-            }
             return message;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
@@ -830,12 +814,13 @@ export function seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
 }
 
 // TODO make translatable
-export function harmMoveMessage() {
-    return `<hr>
-            <div style="font-size: 1em">
-                <b>You suffer a <i>Harmful Consequence!</i></b>
-                </br><b><i style="color: ${CONFIG.ATDC.takeThemOutDieColor}">Roll for Harm</i></b> to find out how bad it is.
-            <div>`;
+export async function harmMoveMessage(actor) {
+  const dialogData = {
+    takeThemOutDieColor: CONFIG.ATDC.takeThemOutDieColor,
+    ownerId: actor.id
+  }
+  const template = 'systems/againstthedarkconspiracy/templates/msg/harm-chat-roll-msg.hbs';
+  return await renderTemplate(template, dialogData);
 }
 
 // TODO make translatable
