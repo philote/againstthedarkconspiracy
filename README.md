@@ -1,5 +1,7 @@
 # Against the Dark Conspiracy System
 
+![A title image for the Against the Dark Conspiracy game system](cover.webp)
+
 ![Latest Release Download Count](https://img.shields.io/github/downloads/philote/FoundryVTT-AgainstTheDarkConspiracy/latest/system.zip)
 
 ![Supported Foundry Versions](https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https://github.com/philote/FoundryVTT-AgainstTheDarkConspiracy/releases/download/0.1.1/system.json)
