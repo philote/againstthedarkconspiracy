@@ -410,7 +410,8 @@
   },
   "ATDC.dialog": {
     "action": {
-      "risk.label": "Risk Die:"
+      "risk.label": "Risk Die:",
+      "rollStressButton.label": "Roll for"
     }
   }
 }

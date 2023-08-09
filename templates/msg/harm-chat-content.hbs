@@ -1,4 +1,4 @@
-<div>
+<div class="action" data-owner-id="{{ownerId}}">
     <p style="font-size: 1.5em"><b>{{{moveName}}}</b> {{localize "ATDC.actor.actions.chat.result.label"}}</p>
     <p>{{{diceOutput}}}</p>
     <b>{{localize "ATDC.actor.actions.chat.result.harm.modifier.label"}}</b> {{{bonusValue}}}
@@ -7,4 +7,8 @@
     <hr>
     {{{maxDieMessage}}}
     {{{stressMessage}}}
-</di>
+    {{#if showStressOnSix}}
+        <br>
+        <button type="button" class="roll-stress"><i class="fa-regular fa-dice"></i>{{{stressOnSixMessage}}}</button>
+    {{/if}}
+</div>

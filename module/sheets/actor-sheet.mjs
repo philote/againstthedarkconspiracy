@@ -1,25 +1,29 @@
-import { dialogTitle, dialogContent, asyncActionDialog, asyncHarmDialog, asyncStressRoll, asyncSeekReliefRoll } from "../helpers/rolls.mjs";
-// import * as Rolls from "../helpers/rolls.mjs";
-//
+import {
+  dialogTitle,
+  dialogContent,
+  asyncActionDialog,
+  asyncHarmDialog,
+  asyncStressRoll,
+  asyncSeekReliefRoll,
+} from "../helpers/rolls.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
 export class AtDCActorSheet extends ActorSheet {
-
   constructor(...args) {
     super(...args);
 
     let width = 720;
     let height = 740;
-    if (this.actor.type == 'nameless') {
+    if (this.actor.type == "nameless") {
       height = 450;
-    } else if (this.actor.type == 'named') {
+    } else if (this.actor.type == "named") {
       height = 570;
-    } else if (this.actor.type == 'supernatural') {
+    } else if (this.actor.type == "supernatural") {
       height = 650;
-    } else if (this.actor.type == 'safeHouse') {
+    } else if (this.actor.type == "safeHouse") {
       height = 610;
     }
     this.position.width = width;
@@ -49,18 +53,11 @@ export class AtDCActorSheet extends ActorSheet {
 
   /** @override */
   getData() {
-    // Retrieve the data structure from the base sheet. You can inspect or log
-    // the context variable to see the structure, but some key properties for
-    // sheets are the actor object, the data object, whether or not it's
-    // editable, the items array.
     const context = super.getData();
 
-    // Use a safe clone of the actor data for further operations.
     const actorData = this.actor.toObject(false);
 
-    // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
-    // context.flags = actorData.flags;
     
     // Prepare character data and items.
     if (actorData.type == "character") {
@@ -69,7 +66,7 @@ export class AtDCActorSheet extends ActorSheet {
     }
 
     // Prepare NPC data and items.
-    if (actorData.type != "character") { // TODO fixme
+    if (actorData.type != "character") {
       this._prepareItems(context);
     }
 
@@ -81,18 +78,14 @@ export class AtDCActorSheet extends ActorSheet {
 
   /**
    * Organize and classify Items for Character sheets.
-   *
    * @param {Object} actorData The actor to prepare.
-   *
    * @return {undefined}
    */
   _prepareCharacterData(context) {}
 
   /**
    * Organize and classify Items for Character sheets.
-   *
    * @param {Object} actorData The actor to prepare.
-   *
    * @return {undefined}
    */
   _prepareItems(context) {
@@ -194,31 +187,31 @@ export class AtDCActorSheet extends ActorSheet {
     let choice = e.currentTarget.value;
     const element = e.currentTarget;
     const dataset = element.dataset;
-    const npcType = dataset.npcType
+    const npcType = dataset.npcType;
 
     switch (npcType) {
-      case 'nameless': {
+      case "nameless": {
         switch (choice) {
-          case '0': 
-          case '1': {
+          case "0":
+          case "1": {
             this._setStressMax(1, 1);
             return;
           }
-          case '2': 
-          case '3': {
+          case "2":
+          case "3": {
             this._setStressMax(2, 2);
             return;
           }
         }
         return;
       }
-      case 'supernatural': {
+      case "supernatural": {
         switch (choice) {
-          case '0': {
+          case "0": {
             this._setStressMax(4, 5);
             return;
           }
-          case '1': {
+          case "1": {
             this._setStressMax(5, 20);
             return;
           }
@@ -420,14 +413,13 @@ export class AtDCActorSheet extends ActorSheet {
 
   _setStressMax(newStress, newMax) {
     let currentArray = this.actor.system.stress.states;
-    
+
     // set max
     if (newMax > 0) {
       this.actor.update({ ["system.stress.max"]: newMax });
     }
 
     if (newStress > 0) {
-
       if (newStress > currentArray.length) {
         const addAmount = newStress - currentArray.length;
         for (let i = 0; i < addAmount; i++) {
