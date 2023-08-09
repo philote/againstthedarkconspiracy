@@ -5,9 +5,15 @@
                 <div class="spoke" style="--index: {{ this }}"></div>
             {{/each}}
         </div>
-        <div class="name on-click-clear flexcol">
-            {{heatTitle}}
-            <span class="sub-header">Suspicious</span>
-        </div>
+        {{#if heatLevel}}
+            <div class="name-with flexcol">
+                <span class="on-click-clear">{{heatTitle}}</span>
+                <span class="sub-header">{{heatLevel}}</span>
+            </div>
+        {{else}}
+            <div class="name flexcol">
+                <span class="on-click-clear">{{heatTitle}}</span>
+            </div>
+        {{/if}}
     </div>
 </section>

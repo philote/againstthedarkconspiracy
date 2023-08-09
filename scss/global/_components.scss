@@ -121,7 +121,6 @@
   position: absolute;
   top: 30px;
   right: 325px;
-// right: 0;
 
   .editable {
     pointer-events: initial;
@@ -137,6 +136,14 @@
     border-radius: 5px 22px 22px 5px;
 
     .name {
+        padding: 0 10px 0 10px;
+        color: #eb7602;
+        font-size: 2em;
+        align-self: center;
+        margin: 0;
+    }
+
+    .name-with {
       padding: 0 10px 0 10px;
       color: #eb7602;
       font-size: 1.75em;

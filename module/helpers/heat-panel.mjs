@@ -24,10 +24,24 @@ export class HeatPanel extends Application {
             this.currentHeat = savedCurrentHeat;
         }
 
+        let heatLevel = "";
+        if (this.currentHeat >= 1 && this.currentHeat <= 4) {
+            heatLevel = "Suspicious";
+        } else if (this.currentHeat >= 5 && this.currentHeat <= 7) {
+            heatLevel = "Alarmed";
+        } else if (this.currentHeat >= 8 && this.currentHeat <= 9) {
+            heatLevel = "Capture";
+        } else if (this.currentHeat > 9) {
+            heatLevel = "Attack";
+        } else {
+            heatLevel = "";
+        }
+
         return {
             ...data,
             currentHeat: this.currentHeat,
             heatTitle: 'HEAT',
+            heatLevel: heatLevel,
             max: 10,
             spokes: Array(10).keys()
         };
