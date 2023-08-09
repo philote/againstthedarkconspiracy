@@ -1,5 +1,11 @@
 # Against the Dark Conspiracy System
 
+![Latest Release Download Count](https://img.shields.io/github/downloads/philote/FoundryVTT-AgainstTheDarkConspiracy/latest/system.zip)
+
+![Supported Foundry Versions](https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https://github.com/philote/FoundryVTT-AgainstTheDarkConspiracy/releases/download/0.1.1/system.json)
+
+![Repository License](https://img.shields.io/github/license/philote/FoundryVTT-AgainstTheDarkConspiracy)
+
 An unofficial, community-supported system for playing the [Against the Dark Conspiracy](https://gallusgames.itch.io/against-the-dark-conspiracy) TTRPG (Created by [Alun Rees](https://twitter.com/AlunRees14), Will Hobson, Paul Rivers, and Lowell Francis) on the Foundry VTT platform.
 
 - The Against the Dark Conspiracy Game: https://gallusgames.itch.io/against-the-dark-conspiracy
