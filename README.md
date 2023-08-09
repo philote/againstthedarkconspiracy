@@ -34,15 +34,17 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 
 ## To Be Done
 
-- Use Conspiracy type to change the look and feel of sheets
-- Have player rolls update the heat clock
+- [DONE] Have player rolls update the heat clock
 - Add the Conspiracy Alertness message to the Heat tracker
-- Add buttons to the roll chat output to roll for Stress and other actions
+- [DONE] Add buttons to the roll chat output to roll for Stress and harm
 - Adding Gear will update you Load/Gear and show an error dialog when there is no capacity
 - Add an Operation template journal to the Compendium
 - Finish adding text to localization files (dialogs, heat)
-- Use specific messages for Anchor in danger on chat output
 - Setup default token setup (show name, show intel and stress, link actor, etc..)
+- chat message when heat increases from a move
+- personal chat message to the player and the gm when an anchor gets marked
+- Use Conspiracy type to change the look and feel of sheets
+- Add buttons for seek relief from the horror moves in chat
 
 ## How to Install
 

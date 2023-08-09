@@ -270,6 +270,12 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 content: rendered_html
               });
 
+              if ((move >= 1 && move <= 6)) {
+                if (maxDie.rollVal >= 1 && maxDie.rollVal <= 3) {
+                  markHeat();
+                }
+              }
+
               // ----
               resolve(null);
             },
@@ -278,8 +284,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
         close: () => {
           resolve(null);
         },
-      },
-      { id: "ID-for-CSS" }
+      }
     ).render(true);
   });
 }
@@ -400,8 +405,7 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
         close: () => {
           resolve(null);
         },
-      },
-      { id: "ID-for-CSS" }
+      }
     ).render(true);
   });
 }
@@ -502,6 +506,13 @@ export async function asyncSeekReliefRoll(move = 0, actor) {
     }
   }
 
+  // mark heat
+  if (move >= 2 && move <= 3) {
+    if (roll.result >= 4 && roll.result <= 6) {
+      markHeat();
+    }
+  } 
+
   // Stress reduction
   if (move == 4 && (actor.system.anchor.missing || actor.system.anchor.taken)) {
     // don't reduce stress
@@ -513,6 +524,29 @@ export async function asyncSeekReliefRoll(move = 0, actor) {
       reduceStress(1, actor);
     }      
   }
+
+    /*
+    buttons for seek relief from the horror moves
+
+    --- behave badly
+    4-6
+    if operator they roll stress
+    if npc mark heat
+
+
+    --- reveal history
+    1-3
+    either 
+    mark expertise
+    or
+    mark anchor
+
+    4-6
+    then either
+    roll stress
+    or
+    makr anchor
+    */
 }
 
 export function dialogTitle(moveNumber) {
@@ -535,6 +569,32 @@ export function dialogTitle(moveNumber) {
       console.error("Error: case not matched in _dialogTitle");
       return `error`;
   }
+}
+
+export async function dialogContent(moveNumber, actor) {
+    const dialogData = {
+      riskDieColor: CONFIG.ATDC.riskDieColor,
+      bonusDieColor: CONFIG.ATDC.bonusDieColor,
+      takeThemOutDieColor: CONFIG.ATDC.takeThemOutDieColor,
+      expertiseUsed: actor.system.expertise.expertiseUsed
+    }
+    switch (moveNumber) {
+      case 1: // Investigate
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/investigate.hbs', dialogData);
+      case 2: // Maintain Your Cover
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/maintain-cover.hbs', dialogData);
+      case 3: // Flee For Your Life
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/flee.hbs', dialogData);
+      case 5: // Chase Them Down
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/chase.hbs', dialogData);
+      case 6: // Take Them Out
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/take-them-out.hbs', dialogData);
+      case 7: // harm
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/harm.hbs', dialogData);
+      case 4: // Do Something Else
+      default:
+        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/do-something-else.hbs', dialogData);
+    }
 }
 
 export function seekReliefDialogTitle(moveNumber) {
@@ -589,7 +649,7 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `you get the minimum amount of information you need to proceed and mark <b><i>${getWordHeatWithFormatting()}</b></i>`;
+            return `you get the minimum amount of information you need to proceed and <b><i>${getWordHeatWithFormatting()}</b></i> increases.`;
           case "4":
           case "5":
             return `you get the minimum needed to proceed and <b><i>Control will also answer 1 question</b></i>.`;
@@ -860,11 +920,17 @@ export function getWordAnchorWithFormatting() {
     )}</b>`;
 }
 
-// Helper functions
+// Helper functions for data manipulation
 
 export function switchExpertise(toggle, actor) {
     actor.system.expertise.expertiseUsed = toggle;
     actor.update({ "system.expertise.expertiseUsed": toggle });
+}
+
+export function markHeat() {
+    let currentHeat = game.settings.get("againstthedarkconspiracy", "currentHeat");
+    game.settings.set("againstthedarkconspiracy", "currentHeat", ++currentHeat);
+    // TODO chat message that heat increased
 }
 
 export function increaseStressByOne(actor) {
@@ -936,30 +1002,5 @@ export function markAnchor(actor) {
       taken = true;
       actor.update({ "system.anchor.taken": taken });
     }
-}
-
-export async function dialogContent(moveNumber, actor) {
-    const dialogData = {
-      riskDieColor: CONFIG.ATDC.riskDieColor,
-      bonusDieColor: CONFIG.ATDC.bonusDieColor,
-      takeThemOutDieColor: CONFIG.ATDC.takeThemOutDieColor,
-      expertiseUsed: actor.system.expertise.expertiseUsed
-    }
-    switch (moveNumber) {
-      case 1: // Investigate
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/investigate.hbs', dialogData);
-      case 2: // Maintain Your Cover
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/maintain-cover.hbs', dialogData);
-      case 3: // Flee For Your Life
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/flee.hbs', dialogData);
-      case 5: // Chase Them Down
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/chase.hbs', dialogData);
-      case 6: // Take Them Out
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/take-them-out.hbs', dialogData);
-      case 7: // harm
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/harm.hbs', dialogData);
-      case 4: // Do Something Else
-      default:
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/do-something-else.hbs', dialogData);
-    }
+    // TODO personal chat message that has anchor info
 }
