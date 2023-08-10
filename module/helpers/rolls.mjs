@@ -264,7 +264,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
               const rendered_html = await renderTemplate(template, dialogData);
           
               ChatMessage.create({
-                user:game.user_id,
+                user: game.user_id,
                 speaker: ChatMessage.getSpeaker({ actor: actor }),
                 rollMode: game.settings.get("core", "rollMode"),
                 content: rendered_html
@@ -391,7 +391,7 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
               const rendered_html = await renderTemplate(template, dialogData);
           
               ChatMessage.create({
-                user:game.user_id,
+                user: game.user_id,
                 speaker: ChatMessage.getSpeaker({ actor: actor }),
                 rollMode: game.settings.get("core", "rollMode"),
                 content: rendered_html
@@ -464,7 +464,7 @@ export async function asyncStressRoll(actor) {
   const rendered_html = await renderTemplate(template, dialogData);
 
   ChatMessage.create({
-    user:game.user_id,
+    user: game.user_id,
     speaker: ChatMessage.getSpeaker({ actor: actor }),
     rollMode: game.settings.get("core", "rollMode"),
     content: rendered_html

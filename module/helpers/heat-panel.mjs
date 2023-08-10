@@ -24,18 +24,7 @@ export class HeatPanel extends Application {
             this.currentHeat = savedCurrentHeat;
         }
 
-        let heatLevel = "";
-        if (this.currentHeat >= 1 && this.currentHeat <= 4) {
-            heatLevel = "Suspicious";
-        } else if (this.currentHeat >= 5 && this.currentHeat <= 7) {
-            heatLevel = "Alarmed";
-        } else if (this.currentHeat >= 8 && this.currentHeat <= 9) {
-            heatLevel = "Capture";
-        } else if (this.currentHeat > 9) {
-            heatLevel = "Attack";
-        } else {
-            heatLevel = "";
-        }
+        let heatLevel = this._getConspiracyThreatLevel(this.currentHeat);
 
         return {
             ...data,
@@ -56,10 +45,24 @@ export class HeatPanel extends Application {
         html.find('.on-click-clear').click(this._onClearHeat.bind(this));
     }
 
-    _onHeatIncrease(event) {
+    async _onHeatIncrease(event) {
         event.preventDefault();
+        const tempCH = this.currentHeat
         this.currentHeat = Math.min(this.currentHeat + 1, 10);
         game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
+
+        // Chat message
+        const dialogData = {
+            tempCH: tempCH,
+            currentHeat: this.currentHeat,
+            conspiracyThreatLevel: this._getConspiracyThreatLevel(this.currentHeat)
+        }
+        const template = 'systems/againstthedarkconspiracy/templates/msg/heat-increased-chat-msg.hbs';
+        const rendered_html = await renderTemplate(template, dialogData);
+    
+        ChatMessage.create({
+            content: rendered_html
+        });
     }
 
     _onHeatDecrease(event) {
@@ -73,5 +76,19 @@ export class HeatPanel extends Application {
         event.preventDefault();
         this.currentHeat = 0
         game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
+    }
+
+    _getConspiracyThreatLevel(heat) {
+        if (heat >= 1 && heat <= 4) {
+            return '<b style="color: #707000; font-size: 1.5em;">Suspicious</b>';
+        } else if (heat >= 5 && heat <= 7) {
+            return '<b style="color: #784e00; font-size: 1.5em;">Alarmed</b>';
+        } else if (heat >= 8 && heat <= 9) {
+            return '<b style="color: red; font-size: 1.5em;">Capture</b>';
+        } else if (heat > 9) {
+            return '<b style="color: purple; font-size: 1.5em;">Attack</b>';
+        } else {
+            return "";
+        }
     }
 }
