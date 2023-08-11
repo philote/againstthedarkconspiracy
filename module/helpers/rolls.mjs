@@ -270,11 +270,12 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 content: rendered_html
               });
 
-              if ((move >= 1 && move <= 6)) {
-                if (maxDie.rollVal >= 1 && maxDie.rollVal <= 3) {
-                  markHeat();
-                }
-              }
+              // TODO fixme, users can update heat as is
+              // if ((move >= 1 && move <= 6)) {
+              //   if (maxDie.rollVal >= 1 && maxDie.rollVal <= 3) {
+              //     markHeat();
+              //   }
+              // }
 
               // ----
               resolve(null);
@@ -387,7 +388,7 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
                 bonusValue: bonusValue,
                 ownerId: actor.id
               }
-              const template = 'systems/againstthedarkconspiracy/templates/msg/action-chat-content.hbs';
+              const template = 'systems/againstthedarkconspiracy/templates/msg/harm-chat-content.hbs';
               const rendered_html = await renderTemplate(template, dialogData);
           
               ChatMessage.create({
@@ -507,11 +508,12 @@ export async function asyncSeekReliefRoll(move = 0, actor) {
   }
 
   // mark heat
-  if (move >= 2 && move <= 3) {
-    if (roll.result >= 4 && roll.result <= 6) {
-      markHeat();
-    }
-  } 
+  // TODO fixme, users can update heat as is
+  // if (move >= 2 && move <= 3) {
+  //   if (roll.result >= 4 && roll.result <= 6) {
+  //     markHeat();
+  //   }
+  // } 
 
   // Stress reduction
   if (move == 4 && (actor.system.anchor.missing || actor.system.anchor.taken)) {
