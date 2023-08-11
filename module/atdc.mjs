@@ -40,27 +40,20 @@ Hooks.once("init", () => {
   // Register system settings
   registerSettings();
 
-  // Heat
-  window.heatPanel = new HeatPanel();
-  window.heatPanel.render(true);
-
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
 
-Hooks.on("canvasReady", () => {
-  window.heatPanel.render(true);
+Hooks.once("ready", () => {
+  // Heat
+  ui.heatPanel = new HeatPanel();
+  ui.heatPanel.render(true);
 });
 
-Hooks.on("createSetting", (setting) => {
-  if (setting.key === "againstthedarkconspiracy.currentHeat") {
-    window.heatPanel.render(true);
-  }
-});
-
-Hooks.on("updateSetting", (setting) => {
-  if (setting.key === "againstthedarkconspiracy.currentHeat") {
-    window.heatPanel.render(true);
+Hooks.on('renderChatMessage', (chatMessage, html, messageData) => {
+  const cssFlag = chatMessage.getFlag('againstthedarkconspiracy', 'data')
+  if (cssFlag) {
+    html.addClass(cssFlag);
   }
 });
 

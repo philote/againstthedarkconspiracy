@@ -440,7 +440,7 @@ export async function asyncStressRoll(actor) {
   if (stressVal != null) {
     if (maxDieModified > stressVal) {
       increaseStressByOne(actor);
-      stressMessage = `Your ${getWordRiskWithFormatting()} is increases by one!`;
+      stressMessage = `Your ${getWordRiskWithFormatting()} increases by one!`;
     } else {
       stressMessage = "All good, this time...";
     }
@@ -681,7 +681,7 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `you’re in trouble! Choose to either <b><i>get caught</b></i> or <b><i>agree with Control who or what gets left behind</b></i> and <b><i>mark ${getWordHeatWithFormatting()}</b></i> and <b><i>flee for your life</b></i>, again.`;
+            return `you’re in trouble! Choose to either <b><i>get caught</b></i> or <b><i>agree with Control who or what gets left behind</b></i> and <b><i>${getWordHeatWithFormatting()}</b></i> increases and <b><i>flee for your life</b></i>, again.`;
           case "4":
           case "5":
             return `you get away clean unless Control chooses to spend ${getWordHeatWithFormatting()} to maintain the pursuit and forces you to <b><i>flee for your life</b></i>, again.`;
@@ -697,7 +697,7 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `Dammit, they’re fast! Choose to either <b><i>let them get away</i></b> or <b><i>agree with Control the practical cost of staying in the race</i></b> and <b><i>mark ${getWordHeatWithFormatting()}</i></b> and <b><i>chase them down again</i></b>.`;
+            return `Dammit, they’re fast! Choose to either <b><i>let them get away</i></b> or <b><i>agree with Control the practical cost of staying in the race</i></b> and <b><i>${getWordHeatWithFormatting()}</i></b> increases and <b><i>chase them down again</i></b>.`;
           case "4":
           case "5":
             return `you catch them unless Control chooses to spend ${getWordHeatWithFormatting()} to impede you and force you to <b><i>chase them down</i></b>, again.`;
@@ -713,7 +713,7 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `you <b><i>fail</i></b>, or <b><i>succeed at a cost</i></b>, but always <b><i>mark ${getWordHeatWithFormatting()}</i></b>.`;
+            return `you <b><i>fail</i></b>, or <b><i>succeed at a cost</i></b>, but always <b><i>${getWordHeatWithFormatting()}</i></b> increases.`;
           case "4":
           case "5":
             return `you succeed with no obvious complication or benefit`;
@@ -757,7 +757,7 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `you either fail or <b><i>Control may offer you success at a cost</i></b>, but always <b><i>mark ${getWordHeatWithFormatting()}</i></b>.`;
+            return `you either fail or <b><i>Control may offer you success at a cost</i></b>, but always <b><i>${getWordHeatWithFormatting()}</i></b> increases.`;
           case "4":
           case "5":
             return `you succeed with no obvious complication or benefit.`;
@@ -803,9 +803,9 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
             return `You’re ashamed of yourself & distracted. You can’t use your Expertise until ${getWordRiskWithFormatting()} goes up.`;
           case "4":
           case "5":
-            return `<b><i>Mark ${getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.`;
+            return `<b><i>${getWordHeatWithFormatting()}</i></b> increases! Now agree how this draws the Conspiracy’s attention.`;
           case "6":
-            return `<b><i>Mark ${getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
+            return `<b><i>${getWordHeatWithFormatting()}</i></b> increases! Now agree how this draws the Conspiracy’s attention.
             </br></br>It was really worth it: ${getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
@@ -818,9 +818,9 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
             return `They see through your false contrition. You can’t use your Expertise until ${getWordRiskWithFormatting()} goes up.`;
           case "4":
           case "5":
-            return `<b><i>Mark ${getWordHeatWithFormatting()}</i></b> and describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.`;
+            return `<b><i>${getWordHeatWithFormatting()}</i></b> increases! Now describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.`;
           case "6":
-            return `<b><i>Mark ${getWordHeatWithFormatting()}</i></b> and describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.
+            return `<b><i>${getWordHeatWithFormatting()}</i></b> increases! Now describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.
             </br></br>It was really worth it: ${getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
@@ -928,9 +928,10 @@ export function switchExpertise(toggle, actor) {
 }
 
 export function markHeat() {
-    let currentHeat = game.settings.get("againstthedarkconspiracy", "currentHeat");
-    game.settings.set("againstthedarkconspiracy", "currentHeat", ++currentHeat);
-    // TODO chat message that heat increased
+    const currentHeat = game.settings.get("againstthedarkconspiracy", "currentHeat");
+    const newHeat = currentHeat + 1;
+    game.settings.set("againstthedarkconspiracy", "currentHeat", newHeat);
+    createHeatChatMessage(currentHeat, newHeat);
 }
 
 export function increaseStressByOne(actor) {
@@ -989,18 +990,87 @@ export function increaseIntelByOne(actor) {
 }
 
 export function markAnchor(actor) {
-    let target = actor.system.anchor.target;
-    let missing = actor.system.anchor.missing;
-    let taken = actor.system.anchor.taken;
-    if (!target) {
-      target = true;
-      actor.update({ "system.anchor.target": target });
-    } else if (!missing) {
-      missing = true;
-      actor.update({ "system.anchor.missing": missing });
-    } else if (!taken) {
-      taken = true;
-      actor.update({ "system.anchor.taken": taken });
-    }
-    // TODO personal chat message that has anchor info
+  const anchorName = actor.system.anchor.name;
+  let target = actor.system.anchor.target;
+  let missing = actor.system.anchor.missing;
+  let taken = actor.system.anchor.taken;
+  let message = "";
+  if (!target) {
+    target = true;
+    actor.update({ "system.anchor.target": target });
+    message = game.i18n.format("ATDC.dialog.anchor.target.message", {
+      anchorName: anchorName
+    })
+  } else if (!missing) {
+    missing = true;
+    actor.update({ "system.anchor.missing": missing });
+    message = game.i18n.format("ATDC.dialog.anchor.missing.message", {
+      anchorName: anchorName
+    })
+  } else if (!taken) {
+    taken = true;
+    actor.update({ "system.anchor.taken": taken });
+    message = game.i18n.format("ATDC.dialog.anchor.taken.message", {
+      anchorName: anchorName
+    })
+  } else {
+    message = game.i18n.format("ATDC.dialog.anchor.default.message", {
+      anchorName: anchorName
+    })
+  }
+  _createAnchorChatMessage(message);
+}
+
+function _createAnchorChatMessage(message) {
+  ChatMessage.create({
+    content: message,
+    whisper: ChatMessage.getWhisperRecipients("GM")
+  })
+}
+
+// Heat
+
+export async function createHeatChatMessage(oldHeat, newHeat) {
+  const dialogData = {
+      tempCH: oldHeat,
+      currentHeat: newHeat,
+      conspiracyThreatLevel: getConspiracyThreatLevel(newHeat),
+      threatColor: getConspiracyThreatLevelColor(newHeat),
+      name: getWordHeatWithFormatting()
+  };
+  const template = 'systems/againstthedarkconspiracy/templates/msg/heat-increased-chat-msg.hbs';
+  const rendered_html = await renderTemplate(template, dialogData);
+
+  ChatMessage.create({
+      content: rendered_html,
+      flags: { againstthedarkconspiracy: { data: "chat-message-heat" } }
+  });                 
+}
+
+export function getConspiracyThreatLevelColor(heat) {
+  if (heat >= 1 && heat <= 4) {
+      return "suspicious";
+  } else if (heat >= 5 && heat <= 7) {
+      return "alarmed";
+  } else if (heat >= 8 && heat <= 9) {
+      return "capture";
+  } else if (heat > 9) {
+      return "attack";
+  } else {
+      return "";
+  }
+}
+
+export function getConspiracyThreatLevel(heat) {
+  if (heat >= 1 && heat <= 4) {
+    return game.i18n.localize("ATDC.dialog.heat.suspicious.title");
+  } else if (heat >= 5 && heat <= 7) {
+    return game.i18n.localize("ATDC.dialog.heat.alarmed.title");
+  } else if (heat >= 8 && heat <= 9) {
+    return game.i18n.localize("ATDC.dialog.heat.capture.title");
+  } else if (heat > 9) {
+    return game.i18n.localize("ATDC.dialog.heat.attack.title");
+  } else {
+    return "";
+  }
 }

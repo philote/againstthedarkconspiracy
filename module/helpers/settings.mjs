@@ -19,6 +19,7 @@ export const registerSettings = function() {
       scope: "world",
       type: Number,
       default: 0,
-      config: false
+      config: false,
+      onChange: _ => ui.heatPanel.render(true)
     });
 }

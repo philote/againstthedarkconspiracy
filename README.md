@@ -19,9 +19,9 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 - PC Character Sheets
     - Stress Tracking (mostly automated when rolling)
     - Intel Tracking (automated when rolling)
-    - Buttons on the sheet to roll the different actions. Includes dialogs to choose what die to use.
+    - Buttons on the sheet to roll the different actions. Includes dialogs to choose what die to use
     - Checking Expertise Available disables choosing expertise die on the roll dialogs
-    - Marking an anchor as missing/target disables the "Seek Solace in a Relationship" button
+    - Marking an anchor as missing/target disables the "Seek Solace in a Relationship" button & sends the player and Control a message
 - NPC Character Sheets for:
     - Nameless Pawns & Nameless Pawns Leaders
     - Named Pawns with the 3 types (you can add power & weaknesses)
@@ -39,18 +39,18 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 - A Heat clock
     - Shows for all players, floats in the upper right corner 
     - Only the GM can update it
+    - On increase a chat message is show to all players
 
 ## To Be Done
 
-- Send a personal chat message to the player and the gm when an anchor gets marked
+- Finish adding text to localization files (dialogs)
 - Adding Gear will update character Load/Gear and show an error dialog when there is no capacity
 - Add an Operation template journal to the Compendium
-- Finish adding text to localization files (dialogs, heat)
-- Setup default token setup (show name, show intel and stress, link actor, etc..)
 - Basic sheet designs
-- Use Conspiracy type to change the look and feel of sheets
 - Add buttons for seek relief from the horror moves in chat
 - Improve dialog designs/layouts
+- Setup default token setup (show name, show intel and stress, link actor, etc..)
+- Use Conspiracy type to change the look and feel of sheets
 
 ## How to Install
 

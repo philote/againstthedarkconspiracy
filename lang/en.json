@@ -412,6 +412,19 @@
     "action": {
       "risk.label": "Risk Die:",
       "rollStressButton.label": "Roll for"
+    },
+    "heat": {
+      "title": "HEAT",
+      "suspicious.title": "Suspicious",
+      "alarmed.title": "Alarmed",
+      "capture.title": "Capture",
+      "attack.title": "Attack"
+    },
+    "anchor": {
+      "target.message": "{anchorName} has become a target of the conspiracy!",
+      "missing.message": "${anchorName} has gone missing!",
+      "taken.message": "${anchorName} has been taken!",
+      "default.message": "{anchorName} has already been taken, you nee to save them."
     }
   }
 }

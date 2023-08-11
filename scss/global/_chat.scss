@@ -4,4 +4,34 @@
         color: rgb(129, 33, 33);
         font-weight: bold;
     }
+
+    .heat {
+        .threat-level {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 2em;
+            color: black;
+            -webkit-text-stroke-width: 1px;
+        }
+
+        .suspicious {
+            -webkit-text-fill-color: #ffff00;
+            -webkit-text-stroke-color: rgb(42, 40, 0);
+        }
+
+        .alarmed {
+            -webkit-text-fill-color: #ff9100;
+            -webkit-text-stroke-color: rgb(42, 30, 0);
+        }
+
+        .capture {
+            -webkit-text-fill-color: #ce0000;
+            -webkit-text-stroke-color: rgb(42, 0, 0);
+        }
+
+        .attack {
+            -webkit-text-fill-color: #ce00b9;
+            -webkit-text-stroke-color: rgb(42, 0, 40);
+        }
+    }
 }
