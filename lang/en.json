@@ -430,7 +430,8 @@
       "message.increase": "Your {formattedStress} increases by one!",
       "message.good": "All good, this time...",
       "message.currentStress": "Your Current {formattedStress} is <b>{stressVal}</b>",
-      "onSixMessage": "<b><i> Roll for {formattedStress}</b></i>."
+      "onSixMessage": "<b><i> Roll for {formattedStress}</b></i>.",
+      "stressMoveMessage": "<b>The situation causes you {formattedStress}!</b></br>Your {formattedStress} has increased."
     },
     "maxDieMessage": {
       "investigate": {

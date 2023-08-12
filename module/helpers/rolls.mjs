@@ -824,13 +824,14 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
     }
 }
 
-export function seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
-    const moveName = seekReliefDialogTitle(moveNumber);
-    return `
-        <p style="font-size: 1.5em"><b>${moveName}</b> ${game.i18n.localize("ATDC.actor.actions.chat.result.label")}</p>
-        <p>${diceOutput}</p>
-        <p>${seekReliefMaxDieMessage(moveNumber, maxDieNumber)}</p>
-    `;
+export async function seekReliefChatContent(moveNumber, diceOutput, maxDieNumber) {
+  const dialogData = {
+    moveName: seekReliefDialogTitle(moveNumber),
+    diceOutput: diceOutput,
+    maxDieMessage: seekReliefMaxDieMessage(moveNumber, maxDieNumber)
+  }
+  const template = 'systems/againstthedarkconspiracy/templates/msg/seekRelief-chat-content.hbs';
+  return await renderTemplate(template, dialogData);
 }
 
 // TODO make translatable
@@ -844,12 +845,13 @@ export async function harmMoveMessage(actor) {
 }
 
 // TODO make translatable
-export function stressMoveMessage() {
-    return `<hr>
-            <div style="font-size: 1em">
-                <b>The situation causes you ${getWordRiskWithFormatting()}!</b>
-                </br>Your ${getWordRiskWithFormatting()} has increased.
-            <div>`;
+export async function stressMoveMessage() {
+  const stressMoveMessage = game.i18n.format("ATDC.stress.stressMoveMessage", {formattedStress: getWordRiskWithFormatting()})
+  const dialogData = {
+    stressMoveMessage: stressMoveMessage
+  }
+  const template = 'systems/againstthedarkconspiracy/templates/msg/stress-chat-roll-msg.hbs';
+  return await renderTemplate(template, dialogData);
 }
 
 /*
