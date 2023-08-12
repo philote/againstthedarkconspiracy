@@ -749,8 +749,7 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
 
 export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
     switch (moveNumber) {
-      case 1: {
-        // Behave Badly
+      case 1: { // Behave Badly
         switch (maxDieNumber) {
           case "1":
           case "2":
@@ -800,9 +799,9 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "3":
           case "4":
           case "5":
-            return `<b><i>Your ${getWordAnchorWithFormatting()} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i>`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.seekSolace.12345", {formattedAnchor: getWordAnchorWithFormatting()});
           case "6":
-            return `<b><i>Your ${getWordAnchorWithFormatting()} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i></br></br>It was really worth it: ${getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.seekSolace.6", {formattedAnchor: getWordAnchorWithFormatting(), formattedStress: getWordRiskWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
         }
