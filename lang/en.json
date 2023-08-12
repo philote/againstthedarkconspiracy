@@ -422,14 +422,15 @@
     },
     "anchor": {
       "target.message": "{anchorName} has become a target of the conspiracy!",
-      "missing.message": "${anchorName} has gone missing!",
-      "taken.message": "${anchorName} has been taken!",
+      "missing.message": "{anchorName} has gone missing!",
+      "taken.message": "{anchorName} has been taken!",
       "default.message": "{anchorName} has already been taken, you nee to save them."
     },
     "stress": {
       "message.increase": "Your {formattedStress} increases by one!",
       "message.good": "All good, this time...",
-      "message.currentStress": "Your Current {formattedStress} is <b>{stressVal}</b>"
+      "message.currentStress": "Your Current {formattedStress} is <b>{stressVal}</b>",
+      "onSixMessage": "<b><i> Roll for {formattedStress}</b></i>."
     },
     "maxDieMessage": {
       "investigate": {
@@ -466,6 +467,32 @@
         "0123": "The consequences are serious, say if:<ul><li>It’s mortal. You<b><i> fill your {formattedStress} track</i></b> and crack.</li><li>It’s bloody. You’ll <b><i>die after one more action</i></b> without medical treatment.</li><li>It’s painful. You <b><i>cannot use your Expertise</i></b> until you get medical treatment.</li></ul><i>Medical treatment requires an Operator, who could be the one needing treatment, to mark a gear slot and declare a \"Medical Kit\".</i>",
         "456789Part1": "You were lucky this time! It hurts, but you’ll live.",
         "456789Part2": "<br><b><i>{formattedIntel} has been increased by one.</b></i>"
+      }
+    },
+    "reliefMaxDieMessage": {
+      "behaveBadly": {
+        "123": "Your inadequacy is clear, they pity you. You can’t use your Expertise until {formattedStress} goes up.",
+        "45": "<b>If they are an Operator</b>, agree with them why and they take it so badly that <b><i>THEY roll for {formattedStress}</i></b>.</br><b>If they are an NPC, <i>mark {formattedHeat}</i></b> and agree how this draws the Conspiracy’s attention.",
+        "6": "<b>If they are an Operator</b>, agree with them why and they take it so badly & <b><i>THEY roll for {formattedStress}</i></b>.</br><b>If they are an NPC, <i>mark {formattedHeat}</i></b> and agree how this draws the Conspiracy’s attention.</br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
+      },
+      "vice": {
+        "123": "You’re ashamed of yourself & distracted. You can’t use your Expertise until {formattedStress} goes up.",
+        "45": "<b><i>{formattedHeat}</i></b> increases! Now agree how this draws the Conspiracy’s attention.",
+        "6": "<b><i>{formattedHeat}</i></b> increases! Now agree how this draws the Conspiracy’s attention.</br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
+      },
+      "guidance": {
+        "123": "They see through your false contrition. You can’t use your Expertise until {formattedStress} goes up.",
+        "45": "<b><i>{formattedHeat}</i></b> increases! Now describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.",
+        "6": "<b><i>{formattedHeat}</i></b> increases! Now describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.</br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
+      },
+      "seekSolace": {
+        "12345": "<b><i>Your {formattedAnchor} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i>",
+        "6": "<b><i>Your {formattedAnchor} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i></br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
+      },
+      "revealHistory": {
+        "123": "<b>EITHER</b> say why you feel bad about the event, then you can’t use your Expertise until {formattedStress} goes up;</br><b>OR</b> add something about your {formattedAnchor} to your recollection or its aftermath and <b><i>mark them</b></i>.",
+        "45": "The other Operator describes a different version or view of the same event. They: </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for {formattedStress}</b></i>;</br><b>OR</b> they choose to add something about their {formattedAnchor} to their recollection or its aftermath and then <b><i>they mark their {formattedAnchor}</b></i>.",
+        "6": "The other Operator describes a different version or view of the same event. They: </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for {formattedStress}</b></i>;</br><b>OR</b> they choose to add something about their {formattedAnchor} to their recollection or its aftermath and then <b><i>they mark their {formattedAnchor}</b></i>.</br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
       }
     }
   }
