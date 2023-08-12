@@ -425,6 +425,48 @@
       "missing.message": "${anchorName} has gone missing!",
       "taken.message": "${anchorName} has been taken!",
       "default.message": "{anchorName} has already been taken, you nee to save them."
+    },
+    "stress": {
+      "message.increase": "Your {formattedStress} increases by one!",
+      "message.good": "All good, this time...",
+      "message.currentStress": "Your Current {formattedStress} is <b>{stressVal}</b>"
+    },
+    "maxDieMessage": {
+      "investigate": {
+        "123": "you get the minimum amount of information you need to proceed and <b><i>{formattedHeat}</b></i> increases.",
+        "45": "you get the minimum needed to proceed and <b><i>Control will also answer 1 question</b></i>.",
+        "6": "you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>. <br><b><i>{formattedIntel} has been increased by one.</b></i>"
+      },
+      "cover": {
+        "123": "you’re blown! Choose to either <b><i>get caught</b></i> or <b><i>mark {formattedHeat}</b></i> and <b><i>flee for your life</b></i>.",
+        "45": "your cover holds, or they don’t find you.",
+        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i>{formattedIntel} has been increased by one.</b></i>"
+      },
+      "flee": {
+        "123": "you’re in trouble! Choose to either <b><i>get caught</b></i> or <b><i>agree with Control who or what gets left behind</b></i> and <b><i>{formattedHeat}</b></i> increases and <b><i>flee for your life</b></i>, again.",
+        "45": "you get away clean unless Control chooses to spend {formattedHeat} to maintain the pursuit and forces you to <b><i>flee for your life</b></i>, again.",
+        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i>{formattedIntel} has been increased by one.</b></i>"
+      },
+      "chase": {
+        "123": "Dammit, they’re fast! Choose to either <b><i>let them get away</i></b> or <b><i>agree with Control the practical cost of staying in the race</i></b> and <b><i>{formattedHeat}</i></b> increases and <b><i>chase them down again</i></b>.",
+        "45": "you catch them unless Control chooses to spend {formattedHeat} to impede you and force you to <b><i>chase them down</i></b>, again.",
+        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i>{formattedIntel} has been increased by one.</b></i>"
+      },
+      "takeThemOut": {
+        "123": "you <b><i>fail</i></b>, or <b><i>succeed at a cost</i></b>, but always <b><i>{formattedHeat}</i></b> increases.",
+        "45": "you succeed with no obvious complication or benefit",
+        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i>{formattedIntel} has been increased by one.</b></i>"
+      },
+      "doSomethingElse": {
+        "123": "you either fail or <b><i>Control may offer you success at a cost</i></b>, but always <b><i>{formattedHeat}</i></b> increases.",
+        "45": "you succeed with no obvious complication or benefit.",
+        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i>{formattedIntel} has been increased by one.</b></i>"
+      },
+      "harm": {
+        "0123": "The consequences are serious, say if:<ul><li>It’s mortal. You<b><i> fill your {formattedStress} track</i></b> and crack.</li><li>It’s bloody. You’ll <b><i>die after one more action</i></b> without medical treatment.</li><li>It’s painful. You <b><i>cannot use your Expertise</i></b> until you get medical treatment.</li></ul><i>Medical treatment requires an Operator, who could be the one needing treatment, to mark a gear slot and declare a \"Medical Kit\".</i>",
+        "456789Part1": "You were lucky this time! It hurts, but you’ll live.",
+        "456789Part2": "<br><b><i>{formattedIntel} has been increased by one.</b></i>"
+      }
     }
   }
 }

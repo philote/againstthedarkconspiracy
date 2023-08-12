@@ -440,12 +440,12 @@ export async function asyncStressRoll(actor) {
   if (stressVal != null) {
     if (maxDieModified > stressVal) {
       increaseStressByOne(actor);
-      stressMessage = `Your ${getWordRiskWithFormatting()} increases by one!`;
+      stressMessage = game.i18n.format("ATDC.dialog.stress.message.increase", {formattedStress: getWordRiskWithFormatting()});
     } else {
-      stressMessage = "All good, this time...";
+      stressMessage = game.i18n.localize("ATDC.dialog.stress.message.good");
     }
-
-    stressValMessage = `Your Current Stress is ${getWordRiskWithFormatting()} <b>${stressVal}</b>`;
+    
+    stressValMessage = game.i18n.format("ATDC.dialog.stress.message.currentStress", {formattedStress: getWordRiskWithFormatting(), stressVal: stressVal});
   }
 
   dice.forEach((die) => {
@@ -640,7 +640,6 @@ export function getStressOnSixMessage() {
     return `<b><i> Roll for ${getWordRiskWithFormatting()}</b></i>.`
 }
 
-// TODO make translatable
 export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
     switch (moveNumber) {
       case 1: {
@@ -649,13 +648,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `you get the minimum amount of information you need to proceed and <b><i>${getWordHeatWithFormatting()}</b></i> increases.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.investigate.123", {formattedHeat: getWordHeatWithFormatting()});
           case "4":
           case "5":
-            return `you get the minimum needed to proceed and <b><i>Control will also answer 1 question</b></i>.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.investigate.45");
           case "6":
-            let message = `you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>. <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            return message;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.investigate.6", {formattedIntel: getWordIntelWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
         }
@@ -665,14 +663,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `you’re blown! Choose to either <b><i>get caught</b></i> or <b><i>mark ${getWordHeatWithFormatting()}</b></i> and <b><i>flee for your life</b></i>.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.cover.123", {formattedHeat: getWordHeatWithFormatting()});
           case "4":
           case "5":
-            return `your cover holds, or they don’t find you.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.cover.45");
           case "6":
-            let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
-            <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            return message;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.cover.6", {formattedIntel: getWordIntelWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
         }
@@ -681,14 +677,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `you’re in trouble! Choose to either <b><i>get caught</b></i> or <b><i>agree with Control who or what gets left behind</b></i> and <b><i>${getWordHeatWithFormatting()}</b></i> increases and <b><i>flee for your life</b></i>, again.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.flee.123", {formattedHeat: getWordHeatWithFormatting()});
           case "4":
           case "5":
-            return `you get away clean unless Control chooses to spend ${getWordHeatWithFormatting()} to maintain the pursuit and forces you to <b><i>flee for your life</b></i>, again.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.flee.45", {formattedHeat: getWordHeatWithFormatting()});
           case "6":
-            let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
-            <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            return message;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.flee.6", {formattedIntel: getWordIntelWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
         }
@@ -697,14 +691,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `Dammit, they’re fast! Choose to either <b><i>let them get away</i></b> or <b><i>agree with Control the practical cost of staying in the race</i></b> and <b><i>${getWordHeatWithFormatting()}</i></b> increases and <b><i>chase them down again</i></b>.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.chase.123", {formattedHeat: getWordHeatWithFormatting()});
           case "4":
           case "5":
-            return `you catch them unless Control chooses to spend ${getWordHeatWithFormatting()} to impede you and force you to <b><i>chase them down</i></b>, again.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.chase.45", {formattedHeat: getWordHeatWithFormatting()});
           case "6":
-            let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
-            <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            return message;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.chase.6", {formattedIntel: getWordIntelWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
         }
@@ -713,14 +705,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `you <b><i>fail</i></b>, or <b><i>succeed at a cost</i></b>, but always <b><i>${getWordHeatWithFormatting()}</i></b> increases.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.123", {formattedHeat: getWordHeatWithFormatting()});
           case "4":
           case "5":
-            return `you succeed with no obvious complication or benefit`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.45");
           case "6":
-            let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
-            <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            return message;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.6", {formattedIntel: getWordIntelWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.6)</span>`;
         }
@@ -730,22 +720,16 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case 1:
           case 2:
           case 3:
-            return `The consequences are serious, say if:
-                    <ul>
-                        <li>It’s mortal. You<b><i> fill your ${getWordRiskWithFormatting()} track</i></b> and crack.</li>
-                        <li>It’s bloody. You’ll <b><i>die after one more action</i></b> without medical treatment.</li>
-                        <li>It’s painful. You <b><i>cannot use your Expertise</i></b> until you get medical treatment.</li>
-                    </ul>
-                    <i>Medical treatment requires an Operator, who could be the one needing treatment, to mark a gear slot and declare a "Medical Kit".</i>`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.harm.0123", getWordRiskWithFormatting());
           case 4:
           case 5:
           case 6:
           case 7:
           case 8:
           case 9:
-            let message = `You were lucky this time! It hurts, but you’ll live.`;
+            let message = game.i18n.format("ATDC.dialog.maxDieMessage.harm.456789Part1");
             if (harmShowIntel) {
-              message += `<br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`
+              message += game.i18n.format("ATDC.dialog.maxDieMessage.harm.456789Part2", getWordIntelWithFormatting());
             }
             return message;
           default:
@@ -757,14 +741,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return `you either fail or <b><i>Control may offer you success at a cost</i></b>, but always <b><i>${getWordHeatWithFormatting()}</i></b> increases.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.123", {formattedHeat: getWordHeatWithFormatting()});
           case "4":
           case "5":
-            return `you succeed with no obvious complication or benefit.`;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.45");
           case "6":
-            let message = `you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i>
-            <br><b><i>${getWordIntelWithFormatting()} has been increased by one.</b></i>`;
-            return message;
+            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.6", {formattedIntel: getWordIntelWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
         }
