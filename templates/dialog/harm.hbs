@@ -1,32 +1,44 @@
 <form>
     <p>
-        <b>If any Risk Die rolls equal to or greater than your highest roll</b>, you suffer a Harmful Consequence:
+        {{{localize "ATDC.dialog.harm.description"}}}
     </p>
     <form class="flexcol">
         <div class="form-group">
             <input type="checkbox" id="baseDie" name="baseDie" checked>
-            <label for="baseDie">Roll 1d6 to find out how bad it is.</label>
+            <label for="baseDie">
+                {{{localize "ATDC.dialog.harm.baseDie"}}}
+            </label>
         </div>
         <div class="form-group">
             <input type="checkbox" id="stressDie" name="stressDie">
-            <label for="stressDie">Add your <b><span style="color: {{riskDieColor}}">Stress Die</span></b> if you are willing to take that risk</label>
+            <label for="stressDie">
+                {{{localize "ATDC.dialog.harm.stressDieMessage"}}} <b style="color: {{riskDieColor}}">{{{localize "ATDC.dialog.harm.stressDieWords"}}}</b>
+            </label>
         </div>
         <hr>
         <div>
             <input type="radio" id="namelessPawn" name="rollBonus" value="3">
-            <label for="namelessPawn">+3 if they are <b>Nameless Mortal Pawns</b></label>
+            <label for="namelessPawn">
+                {{{localize "ATDC.dialog.harm.namelessPawn"}}}
+            </label>
         </div>
         <div>
             <input type="radio" id="namelessPawnLeader" name="rollBonus" value="2">
-            <label for="namelessPawnLeader">+2 if they are <b>the Leader of Nameless Mortal Pawns</b></label>
+            <label for="namelessPawnLeader">
+                {{{localize "ATDC.dialog.harm.namelessPawnLeader"}}}
+            </label>
         </div>
         <div>
             <input type="radio" id="namedMortalPawn" name="rollBonus" value="0">
-            <label for="namedMortalPawn">+0 if they are <b>a Named Mortal Pawn</b></label>
+            <label for="namedMortalPawn">
+                {{{localize "ATDC.dialog.harm.namedMortalPawn"}}}
+            </label>
         </div>
         <div>
             <input type="radio" id="supernatural" name="rollBonus" value="-1">
-            <label for="supernatural">-1 if they are <b>a Supernatural</b></label>
+            <label for="supernatural">
+                {{{localize "ATDC.dialog.harm.supernatural"}}}
+            </label>
         </div>
     </form>
     </br>

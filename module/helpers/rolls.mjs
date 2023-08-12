@@ -203,7 +203,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
               let stressMessage = "";
               if (isStressDie) {
                 increaseStressByOne(actor);
-                stressMessage = stressMoveMessage();
+                stressMessage = await stressMoveMessage();
               }
 
               // Build Dice list
@@ -350,7 +350,7 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
               let maxDie = null;
               if (stressDieR) {
                 increaseStressByOne(actor);
-                stressMessage = stressMoveMessage();
+                stressMessage = await stressMoveMessage();
                 maxDie = stressDieR;
               } else {
                 maxDie = setOfMaxDice[0];
@@ -381,6 +381,7 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
                 moveName: dialogTitle(move),
                 diceOutput: diceOutput,
                 maxDieMessage: getMaxDieMessage(move, maxDieModified, harmShowIntel),
+                maxDieNumber: maxDieModified,
                 stressMessage: stressMessage,
                 showStressOnSix: showStressOnSix,
                 stressOnSixMessage: game.i18n.format("ATDC.dialog.stress.onSixMessage", {formattedStress: getWordRiskWithFormatting()}),
@@ -476,7 +477,7 @@ export async function asyncSeekReliefRoll(move = 0, actor) {
     roll.result,
     CONFIG.ATDC.baseDieColor
   );
-  const chatContentMessage = seekReliefChatContent(
+  const chatContentMessage = await seekReliefChatContent(
     move,
     diceOutput,
     roll.result
@@ -834,7 +835,6 @@ export async function seekReliefChatContent(moveNumber, diceOutput, maxDieNumber
   return await renderTemplate(template, dialogData);
 }
 
-// TODO make translatable
 export async function harmMoveMessage(actor) {
   const dialogData = {
     takeThemOutDieColor: CONFIG.ATDC.takeThemOutDieColor,
@@ -844,7 +844,6 @@ export async function harmMoveMessage(actor) {
   return await renderTemplate(template, dialogData);
 }
 
-// TODO make translatable
 export async function stressMoveMessage() {
   const stressMoveMessage = game.i18n.format("ATDC.stress.stressMoveMessage", {formattedStress: getWordRiskWithFormatting()})
   const dialogData = {
@@ -945,7 +944,10 @@ export function increaseIntelByOne(actor) {
 }
 
 export function markAnchor(actor) {
-  const anchorName = actor.system.anchor.name;
+  let anchorName = actor.system.anchor.name;
+  if (anchorName.length <= 0) {
+    anchorName = game.i18n.localize("ATDC.dialog.anchor.default.name")
+  };
   let target = actor.system.anchor.target;
   let missing = actor.system.anchor.missing;
   let taken = actor.system.anchor.taken;
@@ -989,12 +991,16 @@ export async function createHeatChatMessage() {
   const oldHeat = game.settings.get("againstthedarkconspiracy", "currentHeat");
   const newHeat = oldHeat + 1;
 
+  const increaseMessage = game.i18n.format("ATDC.chat.heatIncrease.increaseMessage", {
+    name: getWordHeatWithFormatting(),
+    oldHeat: oldHeat,
+    newHeat: newHeat
+  });
+
   const dialogData = {
-      tempCH: oldHeat,
-      currentHeat: newHeat,
+      increaseMessage: increaseMessage,
       conspiracyThreatLevel: getConspiracyThreatLevel(newHeat),
       threatColor: getConspiracyThreatLevelColor(newHeat),
-      name: getWordHeatWithFormatting()
   };
 
   const template = 'systems/againstthedarkconspiracy/templates/msg/heat-increased-chat-msg.hbs';

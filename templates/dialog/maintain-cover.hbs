@@ -1,19 +1,25 @@
 <form>
     <p>
-        <b>When you are at risk of exposure, say how you brazen it out, avoid detection or hide from those who suspect you, or are looking for you</b>, roll:
+        {{{localize "ATDC.dialog.cover.description"}}}
     </p>
     <form class="flexcol">
         <div class="form-group">
             <input type="checkbox" id="baseDie" name="baseDie" checked>
-            <label for="baseDie">Always start with <b>1d6</b></label>
+            <label for="baseDie">
+                {{{localize "ATDC.dialog.cover.baseDie"}}}
+            </label>
         </div>
         <div class="form-group">
             <input type="checkbox" id="expertiseDie" name="expertiseDie" {{#if expertiseUsed}}disabled{{/if}}>
-            <label for="expertiseDie">Add another 1d6 if your <b>Expertise</b> is relevant</label>
+            <label for="expertiseDie">
+                {{{localize "ATDC.dialog.cover  .expertiseDie"}}}
+            </label>
         </div>
         <div class="form-group">
             <input type="checkbox" id="stressDie" name="stressDie">
-            <label for="stressDie">Add your <b><span style="color: {{riskDieColor}}">Stress Die</span></b> if you are willing to take that risk</label>
+            <label for="stressDie">
+                {{{localize "ATDC.dialog.cover.stressDieMessage"}}} <b style="color: {{riskDieColor}}">{{{localize "ATDC.dialog.cover.stressDieWords"}}}</b>
+            </label>
         </div>
     </form>
     </br>

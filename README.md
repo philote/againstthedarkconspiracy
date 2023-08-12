@@ -43,13 +43,13 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 
 ## To Be Done
 
-- Finish adding text to localization files (dialogs)
+- when stress is marked, reset expertise
 - Adding Gear will update character Load/Gear and show an error dialog when there is no capacity
 - Add an Operation template journal to the Compendium
 - Basic sheet designs
 - Add buttons for seek relief from the horror moves in chat
 - Improve dialog designs/layouts
-- Setup default token setup (show name, show intel and stress, link actor, etc..)
+- Create default token setup (show name, show intel and stress, link actor, etc..)
 - Use Conspiracy type to change the look and feel of sheets
 
 ## How to Install

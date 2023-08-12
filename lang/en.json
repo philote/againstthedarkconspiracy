@@ -424,7 +424,8 @@
       "target.message": "{anchorName} has become a target of the conspiracy!",
       "missing.message": "{anchorName} has gone missing!",
       "taken.message": "{anchorName} has been taken!",
-      "default.message": "{anchorName} has already been taken, you nee to save them."
+      "default.message": "{anchorName} has already been taken, you nee to save them.",
+      "default.name": "Your anchor"
     },
     "stress": {
       "message.increase": "Your {formattedStress} increases by one!",
@@ -495,6 +496,79 @@
         "45": "The other Operator describes a different version or view of the same event. They: </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for {formattedStress}</b></i>;</br><b>OR</b> they choose to add something about their {formattedAnchor} to their recollection or its aftermath and then <b><i>they mark their {formattedAnchor}</b></i>.",
         "6": "The other Operator describes a different version or view of the same event. They: </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for {formattedStress}</b></i>;</br><b>OR</b> they choose to add something about their {formattedAnchor} to their recollection or its aftermath and then <b><i>they mark their {formattedAnchor}</b></i>.</br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
       }
+    },
+    "chase": {
+      "description": "<b>When they are getting away and Control agrees there’s a reasonable way for you to catch them before they escape, and their Powers don’t make it impossible</b>, roll:",
+      "baseDie": "Always start with <b>1d6</b>",
+      "expertiseDie": "Add your <b>Expertise Die</b> if… <ul><li><b>it’s a foot chase</b> &amp; you have <b>Military Fieldcraft</b>.</li><li><b>they’re blending into a crowd</b> &amp; you have <b>Tradecraft</b>, <b>Larceny</b> or <b>Surveillance</b>.</li><li><b>If it’s a vehicle chase</b> &amp; you have <b>Vehicles</b>.</li></ul>",
+      "stressDieMessage": "If you are willing to take the risk, Add your",
+      "stressDieWords": "Stress Die"
+    },
+    "doSomethingElse": {
+      "description": "<b>When you do something that isn’t covered by another move</b>, say what success looks like and roll:",
+      "baseDie": "Always start with <b>1d6</b>",
+      "expertiseDie": "Add another 1d6 if your <b>Expertise</b> is relevant.",
+      "stressDieMessage": "If you are willing to take the risk, Add your",
+      "stressDieWords": "Stress Die"
+    },
+    "flee": {
+      "description": "<b>When you want to escape your fate by leaving the scene and Control agrees there’s a reasonable route by which you could get away</b>, roll:",
+      "baseDie": "Always start with <b>1d6</b>",
+      "expertiseDie": "Add your <b>Expertise Die</b> if… <ul><li><b>it’s a foot chase</b> &amp; you have <b>Military Fieldcraft</b>.</li><li><b>you’re blending into a crowd</b> &amp; you have <b>Tradecraft</b>, <b>Larceny</b> or <b>Disguise</b>.</li> <li><b>If it’s a vehicle chase</b> &amp; you have <b>Vehicles</b>.</li></ul>",
+      "stressDieMessage": "If you are willing to take the risk, Add your",
+      "stressDieWords": "Stress Die"
+    },
+    "investigate": {
+      "description": "<b>When you want to ask a question about someone, something or somewhere, or want Control to reveal something about the situation</b>, roll:",
+      "baseDie": "Always start with <b>1d6</b>",
+      "expertiseDie": "Add another 1d6 if your <b>Expertise</b> is relevant",
+      "stressDieMessage": "If you are willing to take the risk, Add your",
+      "stressDieWords": "Stress Die"
+    },
+    "cover": {
+      "description": "<b>When you are at risk of exposure, say how you brazen it out, avoid detection or hide from those who suspect you, or are looking for you</b>, roll:",
+      "baseDie": "Always start with <b>1d6</b>",
+      "expertiseDie": "Add another 1d6 if your <b>Expertise</b> is relevant",
+      "stressDieMessage": "If you are willing to take the risk, Add your",
+      "stressDieWords": "Stress Die"
+    },
+    "takeThemOut": {
+      "description": "<b>If you fight or shoot at a threat or they attack you, say what success looks like: Hurt them; Subdue them; Avoid their attempt to hurt you; Some other narrative outcome</b>, then roll:",
+      "baseDie": "Always start with <b>1d6</b>",
+      "expertiseDie": "Add your Expertise Die if <b>Small Arms</b> or <b>Hand-toHand</b> is relevant and it isn’t cancelled.",
+      "stressDieMessage": "If you are willing to take the risk, Add your",
+      "stressDieWords": "Stress Die",
+      "bonusDieMessage": "If your weapon is <b>heavy</b> or <b>explode</b> or you have the <b>Deadly</b> Expertise, Add the",
+      "bonusDieWords": "Bonus Die",
+      "riskDie": {
+        "description": "Take Them Out Risk Dice",
+        "threatHarmDie": "<b>If the threat is able to do you harm</b>, add 1 Risk Die to the dice pool.",
+        "threatSupernaturalDie": "<b>If they are a Supernatural</b>, add a 2nd Risk Die.",
+        "outnumberedDie": "<b>If you are outnumbered</b>, add another Risk Die.",
+        "weaponDie": "<b>If their weapon is heavy or explode</b>, add another Risk Die.",
+        "SupernaturalPowersDie": "If they have Powers, add another Risk Die per relevant Power.",
+        "note": "Maximum number of Risk Dice added = 5."
+      }
+    },
+    "harm": {
+      "description": "<b>If any Risk Die rolls equal to or greater than your highest roll</b>, you suffer a Harmful Consequence:",
+      "baseDie": "Roll 1d6 to find out how bad it is.",
+      "stressDieMessage": "If you are willing to take the risk, Add your",
+      "stressDieWords": "Stress Die",
+      "namelessPawn": "+3 if they are <b>Nameless Mortal Pawns</b>",
+      "namelessPawnLeader": "+2 if they are <b>the Leader of Nameless Mortal Pawns</b>",
+      "namedMortalPawn": "+0 if they are <b>a Named Mortal Pawn</b>",
+      "supernatural": "-1 if they are <b>a Supernatural</b>"
+    }
+  },
+  "ATDC.chat": {
+    "harmRoll": {
+      "message": "You suffer a <b><i>Harmful Consequence!</i></b> Roll to find out how bad it is.",
+      "buttonLabel": "Roll for Harm"
+    },
+    "heatIncrease": {
+      "increaseMessage": "{name} has increased from {oldHeat} to {newHeat}",
+      "threatLevelMessage": "<b>The Conspiracy Threat Level</b> is:"
     }
   }
 }

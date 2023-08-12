@@ -2,10 +2,10 @@
   "id": "againstthedarkconspiracy",
   "title": "Against the Dark Conspiracy",
   "description": "The Against the Dark Conspiracy system for FoundryVTT!",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "compatibility": {
     "minimum": 10,
-    "verified": "11.306",
+    "verified": "11.307",
     "maximum": 11
   },
   "authors": [
