@@ -6,7 +6,6 @@ export class HeatPanel extends Application {
 
     constructor(options) {
         super(options);
-        this.currentHeat = 0;
     }
 
     static get defaultOptions() {
@@ -22,20 +21,15 @@ export class HeatPanel extends Application {
     getData(options) {
         const data = super.getData(options);
         const savedCurrentHeat = game.settings.get("againstthedarkconspiracy", "currentHeat");
-        
-        if (savedCurrentHeat) {
-            this.currentHeat = savedCurrentHeat;
-        }
-
-        let heatLevel = getConspiracyThreatLevel(this.currentHeat);
 
         return {
             ...data,
-            currentHeat: this.currentHeat,
+            currentHeat: savedCurrentHeat,
             heatTitle: game.i18n.localize("ATDC.dialog.heat.title"),
-            heatLevel: heatLevel,
+            heatLevel: getConspiracyThreatLevel(savedCurrentHeat),
             max: 10,
-            spokes: Array(10).keys()
+            spokes: Array(10).keys(),
+            isGM: game.user.isGM
         };
     }
 
@@ -50,23 +44,19 @@ export class HeatPanel extends Application {
 
     async _onHeatIncrease(event) {
         event.preventDefault();
-        // const tempCH = this.currentHeat
-        // this.currentHeat = Math.min(this.currentHeat + 1, 10);
-        // game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
-        // createHeatChatMessage(tempCH, this.currentHeat);
         createHeatChatMessage();
     }
 
     _onHeatDecrease(event) {
         event.preventDefault();
-        this.currentHeat = Math.max(this.currentHeat - 1, 0);
-        game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
+        let heat = game.settings.get("againstthedarkconspiracy", "currentHeat");
+        heat = Math.max(heat - 1, 0);
+        game.settings.set("againstthedarkconspiracy", "currentHeat", heat);
     }
 
 
     _onClearHeat(event) {
         event.preventDefault();
-        this.currentHeat = 0
-        game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
+        game.settings.set("againstthedarkconspiracy", "currentHeat", 0);
     }
 }

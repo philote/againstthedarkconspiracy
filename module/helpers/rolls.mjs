@@ -270,11 +270,11 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 content: rendered_html
               });
 
-              // if ((move >= 1 && move <= 6)) {
-              //   if (maxDie.rollVal >= 1 && maxDie.rollVal <= 3) {
-              //     markHeat();
-              //   }
-              // }
+              if ((move >= 1 && move <= 6)) {
+                if (maxDie.rollVal >= 1 && maxDie.rollVal <= 3) {
+                  createHeatChatMessage();
+                }
+              }
 
               // ----
               resolve(null);
@@ -507,11 +507,11 @@ export async function asyncSeekReliefRoll(move = 0, actor) {
   }
 
   // mark heat
-  // if (move >= 2 && move <= 3) {
-  //   if (roll.result >= 4 && roll.result <= 6) {
-  //     markHeat();
-  //   }
-  // }
+  if (move >= 2 && move <= 3) {
+    if (roll.result >= 4 && roll.result <= 6) {
+      createHeatChatMessage();
+    }
+  }
 
   // Stress reduction
   if (move == 4 && (actor.system.anchor.missing || actor.system.anchor.taken)) {
@@ -925,14 +925,6 @@ export function getWordAnchorWithFormatting() {
 export function switchExpertise(toggle, actor) {
     actor.system.expertise.expertiseUsed = toggle;
     actor.update({ "system.expertise.expertiseUsed": toggle });
-}
-
-export function markHeat() {
-    // const currentHeat = game.settings.get("againstthedarkconspiracy", "currentHeat");
-    // const newHeat = currentHeat + 1;
-    // game.settings.set("againstthedarkconspiracy", "currentHeat", newHeat);
-    // createHeatChatMessage(currentHeat, newHeat);
-    createHeatChatMessage();
 }
 
 export function increaseStressByOne(actor) {

@@ -1,4 +1,4 @@
-<section class="heat-panel" {{#if @root.user.isGM}}editable{{/if}}>
+<section class="heat-panel {{#if isGM}}editable{{else}}disabled{{/if}}">
     <div class="heat">
         <div class="clock on-click" style="--areas: {{max}}; --filled: {{currentHeat}}">
             {{#each spokes}}

@@ -1,130 +1,131 @@
- /* The switch - the box around the slider */
- .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 26px;
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
 
-    /* Hide default HTML checkbox */
-    .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-    
-    /* The slider */
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #b2b2b2;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 
-    .slider:hover, .slider:active, .slider:focus {
-        -webkit-box-shadow: 0 0 5px $color-shadow-primary;
-        box-shadow: 0 0 5px $color-shadow-primary;
-    }
-    
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 20px;
-        width: 20px;
-        left: 4px;
-        bottom: 3px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-    
-    input:checked + .slider {
-        background-color: #823c3c;
-    }
-    
-    input:focus + .slider {
-        box-shadow: 0 0 1px #823c3c;
-    }
-    
-    input:checked + .slider:before {
-        -webkit-transform: translateX(18px);
-        -ms-transform: translateX(18px);
-        transform: translateX(18px);
-    }
-    
-    /* Rounded sliders */
-    .slider.round {
-        border-radius: 34px;
-    }
-    
-    .slider.round:before {
-        border-radius: 50%;
-    }
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b2b2b2;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:hover,
+  .slider:active,
+  .slider:focus {
+    -webkit-box-shadow: 0 0 5px $color-shadow-primary;
+    box-shadow: 0 0 5px $color-shadow-primary;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #823c3c;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #823c3c;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
 }
 
 // action boxes
 .collapsable {
+  .disabled {
+    pointer-events: none;
+  }
 
-    .disabled {
-        pointer-events: none;
+  div.disabled a {
+    color: #828282;
+  }
+
+  a {
+    i {
+      margin-right: 5px;
     }
+  }
 
-    div.disabled a {
-        color: #828282;
-    }
+  a.float {
+    position: relative;
+    top: 5px;
+    right: -210px;
+    height: 0;
+    display: flex;
+    width: fit-content;
+  }
 
-    a {
+  details > summary {
+    padding: 4px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+  }
 
-        i {
-            margin-right: 5px;
-        }
-    }
+  summary {
+    font-size: 0.95em;
+    font-weight: bold;
+  }
 
-    a.float {
-        position: relative;
-        top: 5px;
-        right: -210px;
-        height: 0;
-        display: flex;
-        width: fit-content;
-    }
+  summary::marker {
+    margin-right: 10px;
+  }
 
-    details > summary {
-        padding: 4px;
-        width: 200px;
-        border: none;
-        cursor: pointer;
-    }
-
-    summary {
-        font-size: 0.95em;
-        font-weight: bold;
-    }
-
-    summary::marker {
-        margin-right: 10px;
-    }
-      
-    details > p {
-        padding: 4px;
-        margin: 0;
-    }    
+  details > p {
+    padding: 4px;
+    margin: 0;
+  }
 }
 
 // Heat
+.disabled {
+    pointer-events: none;
+}
 
 .heat-panel {
   position: absolute;
   top: 30px;
   right: 325px;
 
-  .editable {
-    pointer-events: initial;
-  }
+  
 
   .heat {
     background: #363636;
@@ -136,11 +137,11 @@
     border-radius: 5px 22px 22px 5px;
 
     .name {
-        padding: 0 10px 0 10px;
-        color: #eb7602;
-        font-size: 2em;
-        align-self: center;
-        margin: 0;
+      padding: 0 10px 0 10px;
+      color: #eb7602;
+      font-size: 2em;
+      align-self: center;
+      margin: 0;
     }
 
     .name-with {
@@ -169,7 +170,13 @@
       aspect-ratio: 1 / 1;
 
       --filled-ratio: calc(var(--filled) / var(--areas) * 1turn);
-      background: conic-gradient(#eb7602 var(--filled-ratio), rgb(191 191 191) var(--filled-ratio) 0.4turn, rgb(175 175 175) var(--filled-ratio) 0.7turn, rgb(144 144 144) var(--filled-ratio) 0.9turn, rgb(128 128 128) var(--filled-ratio) 1turn);
+      background: conic-gradient(
+        #eb7602 var(--filled-ratio),
+        rgb(191 191 191) var(--filled-ratio) 0.4turn,
+        rgb(175 175 175) var(--filled-ratio) 0.7turn,
+        rgb(144 144 144) var(--filled-ratio) 0.9turn,
+        rgb(128 128 128) var(--filled-ratio) 1turn
+      );
       border-radius: 50%;
       border: rgb(97, 97, 97) var(--spoke-width) solid;
 
@@ -177,16 +184,16 @@
 
       .spoke {
         width: var(--spoke-width);
-  
+
         /* Make the spokes slightly larger than the inner radius so they overlay half the outer border, preventing subpixel gaps */
-        height: calc(50% + .5 * var(--spoke-width));
-  
-        top: calc(-.5 * var(--spoke-width));
+        height: calc(50% + 0.5 * var(--spoke-width));
+
+        top: calc(-0.5 * var(--spoke-width));
         right: calc(50% - var(--spoke-width) / 2);
-  
+
         background: rgb(97, 97, 97);
         position: absolute;
-  
+
         transform-origin: center bottom;
         transform: rotate(calc((var(--index) * 1turn) / var(--areas)));
       }

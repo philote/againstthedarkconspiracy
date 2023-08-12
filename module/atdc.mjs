@@ -57,7 +57,8 @@ Hooks.once("ready", () => {
       html.addClass(cssFlag);
     }
 
-    if (!game.user.isGM) return; // TODO what should we do if not the GM?
+    if (!game.user.isGM) return; 
+    // TODO create an error for no GM, so Heat did not update?
 
     const heatUpdate = data.heatUpdate;
     const heat = data.heat;
