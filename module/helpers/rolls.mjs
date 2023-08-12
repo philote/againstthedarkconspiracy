@@ -270,7 +270,6 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 content: rendered_html
               });
 
-              // TODO fixme, users can update heat as is
               // if ((move >= 1 && move <= 6)) {
               //   if (maxDie.rollVal >= 1 && maxDie.rollVal <= 3) {
               //     markHeat();
@@ -508,12 +507,11 @@ export async function asyncSeekReliefRoll(move = 0, actor) {
   }
 
   // mark heat
-  // TODO fixme, users can update heat as is
   // if (move >= 2 && move <= 3) {
   //   if (roll.result >= 4 && roll.result <= 6) {
   //     markHeat();
   //   }
-  // } 
+  // }
 
   // Stress reduction
   if (move == 4 && (actor.system.anchor.missing || actor.system.anchor.taken)) {
@@ -930,10 +928,11 @@ export function switchExpertise(toggle, actor) {
 }
 
 export function markHeat() {
-    const currentHeat = game.settings.get("againstthedarkconspiracy", "currentHeat");
-    const newHeat = currentHeat + 1;
-    game.settings.set("againstthedarkconspiracy", "currentHeat", newHeat);
-    createHeatChatMessage(currentHeat, newHeat);
+    // const currentHeat = game.settings.get("againstthedarkconspiracy", "currentHeat");
+    // const newHeat = currentHeat + 1;
+    // game.settings.set("againstthedarkconspiracy", "currentHeat", newHeat);
+    // createHeatChatMessage(currentHeat, newHeat);
+    createHeatChatMessage();
 }
 
 export function increaseStressByOne(actor) {
@@ -1032,7 +1031,10 @@ function _createAnchorChatMessage(message) {
 
 // Heat
 
-export async function createHeatChatMessage(oldHeat, newHeat) {
+export async function createHeatChatMessage() {
+  const oldHeat = game.settings.get("againstthedarkconspiracy", "currentHeat");
+  const newHeat = oldHeat + 1;
+
   const dialogData = {
       tempCH: oldHeat,
       currentHeat: newHeat,
@@ -1040,12 +1042,17 @@ export async function createHeatChatMessage(oldHeat, newHeat) {
       threatColor: getConspiracyThreatLevelColor(newHeat),
       name: getWordHeatWithFormatting()
   };
+
   const template = 'systems/againstthedarkconspiracy/templates/msg/heat-increased-chat-msg.hbs';
   const rendered_html = await renderTemplate(template, dialogData);
 
   ChatMessage.create({
       content: rendered_html,
-      flags: { againstthedarkconspiracy: { data: "chat-message-heat" } }
+      flags: { againstthedarkconspiracy: { data: {
+        css: "chat-message-heat",
+        heatUpdate: true,
+        heat: newHeat
+      } } }
   });                 
 }
 

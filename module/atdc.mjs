@@ -48,14 +48,26 @@ Hooks.once("ready", () => {
   // Heat
   ui.heatPanel = new HeatPanel();
   ui.heatPanel.render(true);
+
+  Hooks.on('renderChatMessage', (chatMessage, html, messageData) => {
+    const data = chatMessage.getFlag('againstthedarkconspiracy', 'data');
+    if (data == undefined) return;
+    const cssFlag = data.css;
+    if (cssFlag) {
+      html.addClass(cssFlag);
+    }
+
+    if (!game.user.isGM) return; // TODO what should we do if not the GM?
+
+    const heatUpdate = data.heatUpdate;
+    const heat = data.heat;
+    if (heatUpdate && (heat >= 0 && heat <= 10)) {
+      game.settings.set("againstthedarkconspiracy", "currentHeat", heat);
+    }
+  });
 });
 
-Hooks.on('renderChatMessage', (chatMessage, html, messageData) => {
-  const cssFlag = chatMessage.getFlag('againstthedarkconspiracy', 'data')
-  if (cssFlag) {
-    html.addClass(cssFlag);
-  }
-});
+
 
 Hooks.on("preCreateActor", (actor) => {
   if (actor.type == 'safeHouse') {

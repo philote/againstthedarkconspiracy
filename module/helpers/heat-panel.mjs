@@ -50,11 +50,11 @@ export class HeatPanel extends Application {
 
     async _onHeatIncrease(event) {
         event.preventDefault();
-        const tempCH = this.currentHeat
-        this.currentHeat = Math.min(this.currentHeat + 1, 10);
-        game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
-
-        createHeatChatMessage(tempCH, this.currentHeat);
+        // const tempCH = this.currentHeat
+        // this.currentHeat = Math.min(this.currentHeat + 1, 10);
+        // game.settings.set("againstthedarkconspiracy", "currentHeat", this.currentHeat);
+        // createHeatChatMessage(tempCH, this.currentHeat);
+        createHeatChatMessage();
     }
 
     _onHeatDecrease(event) {
