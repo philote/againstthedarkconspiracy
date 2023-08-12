@@ -257,7 +257,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 stressMessage: stressMessage,
                 harmMessage: harmMessage,
                 showStressOnSix: showStressOnSix,
-                stressOnSixMessage: getStressOnSixMessage(),
+                stressOnSixMessage: game.i18n.format("ATDC.dialog.stress.onSixMessage", {formattedStress: getWordRiskWithFormatting()}),
                 ownerId: actor.id
               }
               const template = 'systems/againstthedarkconspiracy/templates/msg/action-chat-content.hbs';
@@ -383,7 +383,7 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
                 maxDieMessage: getMaxDieMessage(move, maxDieModified, harmShowIntel),
                 stressMessage: stressMessage,
                 showStressOnSix: showStressOnSix,
-                stressOnSixMessage: getStressOnSixMessage(),
+                stressOnSixMessage: game.i18n.format("ATDC.dialog.stress.onSixMessage", {formattedStress: getWordRiskWithFormatting()}),
                 bonusValue: bonusValue,
                 ownerId: actor.id
               }
@@ -410,7 +410,6 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
   });
 }
 
-// TODO make translatable
 export async function asyncStressRoll(actor) {
   const dice = [];
   let hdRoll = await new Roll("1d6").evaluate({ async: true });
@@ -635,11 +634,6 @@ export function getDiceForOutput(dieNumber, colorHex) {
     }
 }
 
-// TODO make translatable
-export function getStressOnSixMessage() {
-    return `<b><i> Roll for ${getWordRiskWithFormatting()}</b></i>.`
-}
-
 export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
     switch (moveNumber) {
       case 1: {
@@ -720,7 +714,7 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case 1:
           case 2:
           case 3:
-            return game.i18n.format("ATDC.dialog.maxDieMessage.harm.0123", getWordRiskWithFormatting());
+            return game.i18n.format("ATDC.dialog.maxDieMessage.harm.0123", {formattedStress: getWordRiskWithFormatting()});
           case 4:
           case 5:
           case 6:
@@ -729,7 +723,7 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case 9:
             let message = game.i18n.format("ATDC.dialog.maxDieMessage.harm.456789Part1");
             if (harmShowIntel) {
-              message += game.i18n.format("ATDC.dialog.maxDieMessage.harm.456789Part2", getWordIntelWithFormatting());
+              message += game.i18n.format("ATDC.dialog.maxDieMessage.harm.456789Part2", {formattedIntel: getWordIntelWithFormatting()});
             }
             return message;
           default:
@@ -753,7 +747,6 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
     }
 }
 
-// TODO make translatable
 export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
     switch (moveNumber) {
       case 1: {
@@ -762,17 +755,12 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "1":
           case "2":
           case "3":
-            return `Your inadequacy is clear, they pity you. You can’t use your Expertise until ${getWordRiskWithFormatting()} goes up.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.behaveBadly.123", {formattedStress: getWordRiskWithFormatting()});
           case "4":
           case "5":
-            return `<b>If they are an Operator</b>, agree with them why and they take it so badly that <b><i>THEY roll for ${getWordRiskWithFormatting()}</i></b>.
-            </br>
-            <b>If they are an NPC, <i>mark ${getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.behaveBadly.45", {formattedStress: getWordRiskWithFormatting(), formattedHeat: getWordHeatWithFormatting()});
           case "6":
-            return `<b>If they are an Operator</b>, agree with them why and they take it so badly & <b><i>THEY roll for ${getWordRiskWithFormatting()}</i></b>.
-            </br>
-            <b>If they are an NPC, <i>mark ${getWordHeatWithFormatting()}</i></b> and agree how this draws the Conspiracy’s attention.
-            </br></br>It was really worth it: ${getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.behaveBadly.6", {formattedStress: getWordRiskWithFormatting(), formattedHeat: getWordHeatWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
         }
@@ -782,13 +770,12 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "1":
           case "2":
           case "3":
-            return `You’re ashamed of yourself & distracted. You can’t use your Expertise until ${getWordRiskWithFormatting()} goes up.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.vice.123", {formattedStress: getWordRiskWithFormatting()});
           case "4":
           case "5":
-            return `<b><i>${getWordHeatWithFormatting()}</i></b> increases! Now agree how this draws the Conspiracy’s attention.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.vice.45", {formattedHeat: getWordHeatWithFormatting()});
           case "6":
-            return `<b><i>${getWordHeatWithFormatting()}</i></b> increases! Now agree how this draws the Conspiracy’s attention.
-            </br></br>It was really worth it: ${getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.vice.6", {formattedHeat: getWordHeatWithFormatting(), formattedStress: getWordRiskWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
         }
@@ -797,13 +784,12 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "1":
           case "2":
           case "3":
-            return `They see through your false contrition. You can’t use your Expertise until ${getWordRiskWithFormatting()} goes up.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.guidance.123", {formattedStress: getWordRiskWithFormatting()});
           case "4":
           case "5":
-            return `<b><i>${getWordHeatWithFormatting()}</i></b> increases! Now describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.guidance.45", {formattedHeat: getWordHeatWithFormatting()});
           case "6":
-            return `<b><i>${getWordHeatWithFormatting()}</i></b> increases! Now describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.
-            </br></br>It was really worth it: ${getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.guidance.6", {formattedHeat: getWordHeatWithFormatting(), formattedStress: getWordRiskWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
         }
@@ -816,8 +802,7 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "5":
             return `<b><i>Your ${getWordAnchorWithFormatting()} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i>`;
           case "6":
-            return `<b><i>Your ${getWordAnchorWithFormatting()} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i>
-            </br></br>It was really worth it: ${getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
+            return `<b><i>Your ${getWordAnchorWithFormatting()} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i></br></br>It was really worth it: ${getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
         }
@@ -826,18 +811,12 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "1":
           case "2":
           case "3":
-            return `<b>EITHER</b> say why you feel bad about the event, then you can’t use your Expertise until ${getWordRiskWithFormatting()} goes up;
-            </br><b>OR</b> add something about your ${getWordAnchorWithFormatting()} to your recollection or its aftermath and <b><i>mark them</b></i>.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.revealHistory.123", {formattedStress: getWordRiskWithFormatting(), formattedAnchor: getWordAnchorWithFormatting()});
           case "4":
           case "5":
-            return `The other Operator describes a different version or view of the same event. They: 
-            </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for ${getWordRiskWithFormatting()}</b></i>;
-            </br><b>OR</b> they choose to add something about their ${getWordAnchorWithFormatting()} to their recollection or its aftermath and then <b><i>they mark their ${getWordAnchorWithFormatting()}</b></i>.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.revealHistory.45", {formattedHeat: getWordHeatWithFormatting(), formattedStress: getWordRiskWithFormatting(), formattedAnchor: getWordAnchorWithFormatting()});
           case "6":
-            return `The other Operator describes a different version or view of the same event. They: 
-            </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for ${getWordRiskWithFormatting()}</b></i>;
-            </br><b>OR</b> they choose to add something about their ${getWordAnchorWithFormatting()} to their recollection or its aftermath and then <b><i>they mark their ${getWordAnchorWithFormatting()}</b></i>.
-            </br></br>It was really worth it: ${getWordRiskWithFormatting()} reduced by 2 instead of 1.`;
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.revealHistory.6", {formattedStress: getWordRiskWithFormatting(), formattedAnchor: getWordAnchorWithFormatting()});
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
         }
