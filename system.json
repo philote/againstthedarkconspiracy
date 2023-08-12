@@ -99,7 +99,7 @@
       "name": "possible-complications",
       "label": "Possible Complications Table",
       "system": "againstthedarkconspiracy",
-      "path": "./packs/roll_tables/possible-complications.db",
+      "path": "./packs/roll_tables/possible-complications-table.db",
       "type": "RollTable"
     },
     {
