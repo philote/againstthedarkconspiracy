@@ -43,7 +43,8 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 
 ## To Be Done
 
-- when stress is marked, reset expertise
+- Add expertise descriptions
+- When stress is marked, reset expertise
 - Adding Gear will update character Load/Gear and show an error dialog when there is no capacity
 - Add an Operation template journal to the Compendium
 - Basic sheet designs

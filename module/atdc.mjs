@@ -73,7 +73,7 @@ Hooks.once("ready", () => {
 Hooks.on("preCreateActor", (actor) => {
   if (actor.type == 'safeHouse') {
     actor.updateSource({
-      "img": 'systems/againstthedarkconspiracy/assets/actors/safe-house.svg'
+      "img": 'systems/againstthedarkconspiracy/assets/actors/safe-house.webp'
     });
   }
 });
