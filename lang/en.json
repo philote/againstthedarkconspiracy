@@ -88,10 +88,7 @@
     },
     "actions": {
       "label": "Roll!",
-      "intel.colored": "INTEL",
-      "risk.colored": "Stress",
       "heat.colored": "HEAT",
-      "anchor.colored": "Anchor",
       "chat.result": {
         "label": "Result:",
         "harm.modifier.label": "Antagonist Modifier:",
@@ -428,73 +425,73 @@
       "default.name": "Your anchor"
     },
     "stress": {
-      "message.increase": "Your {formattedStress} increases by one!",
+      "message.increase": "Your <span class=\"stress-format\">Stress</span> increases by one!",
       "message.good": "All good, this time...",
-      "message.currentStress": "Your Current {formattedStress} is <b>{stressVal}</b>",
-      "onSixMessage": "<b><i> Roll for {formattedStress}</b></i>.",
-      "stressMoveMessage": "<b>The situation causes you {formattedStress}!</b></br>Your {formattedStress} has increased."
+      "message.currentStress": "Your Current <span class=\"stress-format\">Stress</span> is <b>{stressVal}</b>",
+      "onSixMessage": "<b><i> Roll for <span class=\"stress-format\">Stress</span></b></i>.",
+      "stressMoveMessage": "<b>The situation causes you <span class=\"stress-format\">Stress</span>!</b></br>Your <span class=\"stress-format\">Stress</span> has increased."
     },
     "maxDieMessage": {
       "investigate": {
-        "123": "you get the minimum amount of information you need to proceed and <b><i>{formattedHeat}</b></i> increases.",
+        "123": "you get the minimum amount of information you need to proceed and <b><i><span class=\"heat-format\">HEAT</span></b></i> increases.",
         "45": "you get the minimum needed to proceed and <b><i>Control will also answer 1 question</b></i>.",
-        "6": "you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>. <br><b><i>{formattedIntel} has been increased by one.</b></i>"
+        "6": "you get the minimum needed to proceed and <b><i>Control will also answer 2 questions</b></i>. <br><b><i><span class=\"intel-format\">INTEL</span> has been increased by one.</b></i>"
       },
       "cover": {
-        "123": "you’re blown! Choose to either <b><i>get caught</b></i> or <b><i>mark {formattedHeat}</b></i> and <b><i>flee for your life</b></i>.",
+        "123": "you’re blown! Choose to either <b><i>get caught</b></i> or <b><i>mark <span class=\"heat-format\">HEAT</span></b></i> and <b><i>flee for your life</b></i>.",
         "45": "your cover holds, or they don’t find you.",
-        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i>{formattedIntel} has been increased by one.</b></i>"
+        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i><span class=\"intel-format\">INTEL</span> has been increased by one.</b></i>"
       },
       "flee": {
-        "123": "you’re in trouble! Choose to either <b><i>get caught</b></i> or <b><i>agree with Control who or what gets left behind</b></i> and <b><i>{formattedHeat}</b></i> increases and <b><i>flee for your life</b></i>, again.",
-        "45": "you get away clean unless Control chooses to spend {formattedHeat} to maintain the pursuit and forces you to <b><i>flee for your life</b></i>, again.",
-        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i>{formattedIntel} has been increased by one.</b></i>"
+        "123": "you’re in trouble! Choose to either <b><i>get caught</b></i> or <b><i>agree with Control who or what gets left behind</b></i> and <b><i><span class=\"heat-format\">HEAT</span></b></i> increases and <b><i>flee for your life</b></i>, again.",
+        "45": "you get away clean unless Control chooses to spend <span class=\"heat-format\">HEAT</span> to maintain the pursuit and forces you to <b><i>flee for your life</b></i>, again.",
+        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i><span class=\"intel-format\">INTEL</span> has been increased by one.</b></i>"
       },
       "chase": {
-        "123": "Dammit, they’re fast! Choose to either <b><i>let them get away</i></b> or <b><i>agree with Control the practical cost of staying in the race</i></b> and <b><i>{formattedHeat}</i></b> increases and <b><i>chase them down again</i></b>.",
-        "45": "you catch them unless Control chooses to spend {formattedHeat} to impede you and force you to <b><i>chase them down</i></b>, again.",
-        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i>{formattedIntel} has been increased by one.</b></i>"
+        "123": "Dammit, they’re fast! Choose to either <b><i>let them get away</i></b> or <b><i>agree with Control the practical cost of staying in the race</i></b> and <span class=\"heat-format\">HEAT</span> increases and <b><i>chase them down again</i></b>.",
+        "45": "you catch them unless Control chooses to spend <span class=\"heat-format\">HEAT</span> to impede you and force you to <b><i>chase them down</i></b>, again.",
+        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i><span class=\"intel-format\">INTEL</span> has been increased by one.</b></i>"
       },
       "takeThemOut": {
-        "123": "you <b><i>fail</i></b>, or <b><i>succeed at a cost</i></b>, but always <b><i>{formattedHeat}</i></b> increases.",
+        "123": "you <b><i>fail</i></b>, or <b><i>succeed at a cost</i></b>, but always <span class=\"heat-format\">HEAT</span> increases.",
         "45": "you succeed with no obvious complication or benefit",
-        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i>{formattedIntel} has been increased by one.</b></i>"
+        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i><span class=\"intel-format\">INTEL</span> has been increased by one.</b></i>"
       },
       "doSomethingElse": {
-        "123": "you either fail or <b><i>Control may offer you success at a cost</i></b>, but always <b><i>{formattedHeat}</i></b> increases.",
+        "123": "you either fail or <b><i>Control may offer you success at a cost</i></b>, but always <span class=\"heat-format\">HEAT</span> increases.",
         "45": "you succeed with no obvious complication or benefit.",
-        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i>{formattedIntel} has been increased by one.</b></i>"
+        "6": "you succeed brilliantly: <b><i>agree with Control what extra benefit you get; </b></i><br><b><i><span class=\"intel-format\">INTEL</span> has been increased by one.</b></i>"
       },
       "harm": {
-        "0123": "The consequences are serious, say if:<ul><li>It’s mortal. You<b><i> fill your {formattedStress} track</i></b> and crack.</li><li>It’s bloody. You’ll <b><i>die after one more action</i></b> without medical treatment.</li><li>It’s painful. You <b><i>cannot use your Expertise</i></b> until you get medical treatment.</li></ul><i>Medical treatment requires an Operator, who could be the one needing treatment, to mark a gear slot and declare a \"Medical Kit\".</i>",
+        "0123": "The consequences are serious, say if:<ul><li>It’s mortal. You<b><i> fill your <span class=\"stress-format\">Stress</span> track</i></b> and crack.</li><li>It’s bloody. You’ll <b><i>die after one more action</i></b> without medical treatment.</li><li>It’s painful. You <b><i>cannot use your Expertise</i></b> until you get medical treatment.</li></ul><i>Medical treatment requires an Operator, who could be the one needing treatment, to mark a gear slot and declare a \"Medical Kit\".</i>",
         "456789Part1": "You were lucky this time! It hurts, but you’ll live.",
-        "456789Part2": "<br><b><i>{formattedIntel} has been increased by one.</b></i>"
+        "456789Part2": "<br><b><i><span class=\"intel-format\">INTEL</span> has been increased by one.</b></i>"
       }
     },
     "reliefMaxDieMessage": {
       "behaveBadly": {
-        "123": "Your inadequacy is clear, they pity you. You can’t use your Expertise until {formattedStress} goes up.",
-        "45": "<b>If they are an Operator</b>, agree with them why and they take it so badly that <b><i>THEY roll for {formattedStress}</i></b>.</br><b>If they are an NPC, <i>mark {formattedHeat}</i></b> and agree how this draws the Conspiracy’s attention.",
-        "6": "<b>If they are an Operator</b>, agree with them why and they take it so badly & <b><i>THEY roll for {formattedStress}</i></b>.</br><b>If they are an NPC, <i>mark {formattedHeat}</i></b> and agree how this draws the Conspiracy’s attention.</br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
+        "123": "Your inadequacy is clear, they pity you. You can’t use your Expertise until <span class=\"stress-format\">Stress</span> goes up.",
+        "45": "<b>If they are an Operator</b>, agree with them why and they take it so badly that <b><i>THEY roll for <span class=\"stress-format\">Stress</span></i></b>.</br><b>If they are an NPC, <i>mark <span class=\"heat-format\">HEAT</span></i></b> and agree how this draws the Conspiracy’s attention.",
+        "6": "<b>If they are an Operator</b>, agree with them why and they take it so badly & <b><i>THEY roll for <span class=\"stress-format\">Stress</span></i></b>.</br><b>If they are an NPC, <i>mark <span class=\"heat-format\">HEAT</span></i></b> and agree how this draws the Conspiracy’s attention.</br></br>It was really worth it: <span class=\"stress-format\">Stress</span> reduced by 2 instead of 1."
       },
       "vice": {
-        "123": "You’re ashamed of yourself & distracted. You can’t use your Expertise until {formattedStress} goes up.",
-        "45": "<b><i>{formattedHeat}</i></b> increases! Now agree how this draws the Conspiracy’s attention.",
-        "6": "<b><i>{formattedHeat}</i></b> increases! Now agree how this draws the Conspiracy’s attention.</br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
+        "123": "You’re ashamed of yourself & distracted. You can’t use your Expertise until <span class=\"stress-format\">Stress</span> goes up.",
+        "45": "<span class=\"heat-format\">HEAT</span> increases! Now agree how this draws the Conspiracy’s attention.",
+        "6": "<span class=\"heat-format\">HEAT</span> increases! Now agree how this draws the Conspiracy’s attention.</br></br>It was really worth it: <span class=\"stress-format\">Stress</span> reduced by 2 instead of 1."
       },
       "guidance": {
-        "123": "They see through your false contrition. You can’t use your Expertise until {formattedStress} goes up.",
-        "45": "<b><i>{formattedHeat}</i></b> increases! Now describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.",
-        "6": "<b><i>{formattedHeat}</i></b> increases! Now describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.</br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
+        "123": "They see through your false contrition. You can’t use your Expertise until <span class=\"stress-format\">Stress</span> goes up.",
+        "45": "<span class=\"heat-format\">HEAT</span> increases! Now describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.",
+        "6": "<span class=\"heat-format\">HEAT</span> increases! Now describe what they ask you to do to restore their belief in you and how this draws the attention of the Conspiracy to the team or makes things difficult for you. You cannot go back to them for support until you fulfil the obligation they have placed on you.</br></br>It was really worth it: <span class=\"stress-format\">Stress</span> reduced by 2 instead of 1."
       },
       "seekSolace": {
-        "12345": "<b><i>Your {formattedAnchor} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i>",
-        "6": "<b><i>Your {formattedAnchor} has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i></br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
+        "12345": "<b><i>Your <span class=\"anchor-format\">Anchor</span> has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i>",
+        "6": "<b><i>Your <span class=\"anchor-format\">Anchor</span> has been Marked!</i></b>, placing them on the Conspiracy Target list, or Missing if they are already a Target. <i>Only Control can mark Taken.</i></br></br>It was really worth it: <span class=\"stress-format\">Stress</span> reduced by 2 instead of 1."
       },
       "revealHistory": {
-        "123": "<b>EITHER</b> say why you feel bad about the event, then you can’t use your Expertise until {formattedStress} goes up;</br><b>OR</b> add something about your {formattedAnchor} to your recollection or its aftermath and <b><i>mark them</b></i>.",
-        "45": "The other Operator describes a different version or view of the same event. They: </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for {formattedStress}</b></i>;</br><b>OR</b> they choose to add something about their {formattedAnchor} to their recollection or its aftermath and then <b><i>they mark their {formattedAnchor}</b></i>.",
-        "6": "The other Operator describes a different version or view of the same event. They: </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for {formattedStress}</b></i>;</br><b>OR</b> they choose to add something about their {formattedAnchor} to their recollection or its aftermath and then <b><i>they mark their {formattedAnchor}</b></i>.</br></br>It was really worth it: {formattedStress} reduced by 2 instead of 1."
+        "123": "<b>EITHER</b> say why you feel bad about the event, then you can’t use your Expertise until <span class=\"stress-format\">Stress</span> goes up;</br><b>OR</b> add something about your <span class=\"anchor-format\">Anchor</span> to your recollection or its aftermath and <b><i>mark them</b></i>.",
+        "45": "The other Operator describes a different version or view of the same event. They: </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for <span class=\"stress-format\">Stress</span></b></i>;</br><b>OR</b> they choose to add something about their <span class=\"anchor-format\">Anchor</span> to their recollection or its aftermath and then <b><i>they mark their <span class=\"anchor-format\">Anchor</span></b></i>.",
+        "6": "The other Operator describes a different version or view of the same event. They: </br><b>EITHER</b> say why they are hurt by it and then they <b><i>roll for <span class=\"stress-format\">Stress</span></b></i>;</br><b>OR</b> they choose to add something about their <span class=\"anchor-format\">Anchor</span> to their recollection or its aftermath and then <b><i>they mark their <span class=\"anchor-format\">Anchor</span></b></i>.</br></br>It was really worth it: <span class=\"stress-format\">Stress</span> reduced by 2 instead of 1."
       }
     },
     "chase": {

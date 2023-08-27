@@ -257,7 +257,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 stressMessage: stressMessage,
                 harmMessage: harmMessage,
                 showStressOnSix: showStressOnSix,
-                stressOnSixMessage: game.i18n.format("ATDC.dialog.stress.onSixMessage", {formattedStress: getWordRiskWithFormatting()}),
+                stressOnSixMessage: game.i18n.format("ATDC.dialog.stress.onSixMessage"),
                 ownerId: actor.id
               }
               const template = 'systems/againstthedarkconspiracy/templates/msg/action-chat-content.hbs';
@@ -384,7 +384,7 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
                 maxDieNumber: maxDieModified,
                 stressMessage: stressMessage,
                 showStressOnSix: showStressOnSix,
-                stressOnSixMessage: game.i18n.format("ATDC.dialog.stress.onSixMessage", {formattedStress: getWordRiskWithFormatting()}),
+                stressOnSixMessage: game.i18n.format("ATDC.dialog.stress.onSixMessage"),
                 bonusValue: bonusValue,
                 ownerId: actor.id
               }
@@ -440,12 +440,12 @@ export async function asyncStressRoll(actor) {
   if (stressVal != null) {
     if (maxDieModified > stressVal) {
       increaseStressByOne(actor);
-      stressMessage = game.i18n.format("ATDC.dialog.stress.message.increase", {formattedStress: getWordRiskWithFormatting()});
+      stressMessage = game.i18n.format("ATDC.dialog.stress.message.increase");
     } else {
       stressMessage = game.i18n.localize("ATDC.dialog.stress.message.good");
     }
     
-    stressValMessage = game.i18n.format("ATDC.dialog.stress.message.currentStress", {formattedStress: getWordRiskWithFormatting(), stressVal: stressVal});
+    stressValMessage = game.i18n.format("ATDC.dialog.stress.message.currentStress", {stressVal: stressVal});
   }
 
   dice.forEach((die) => {
@@ -643,12 +643,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.investigate.123", {formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.investigate.123");
           case "4":
           case "5":
             return game.i18n.format("ATDC.dialog.maxDieMessage.investigate.45");
           case "6":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.investigate.6", {formattedIntel: getWordIntelWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.investigate.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
         }
@@ -658,12 +658,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.cover.123", {formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.cover.123");
           case "4":
           case "5":
             return game.i18n.format("ATDC.dialog.maxDieMessage.cover.45");
           case "6":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.cover.6", {formattedIntel: getWordIntelWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.cover.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
         }
@@ -672,12 +672,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.flee.123", {formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.flee.123");
           case "4":
           case "5":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.flee.45", {formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.flee.45");
           case "6":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.flee.6", {formattedIntel: getWordIntelWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.flee.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
         }
@@ -686,12 +686,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.chase.123", {formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.chase.123");
           case "4":
           case "5":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.chase.45", {formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.chase.45");
           case "6":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.chase.6", {formattedIntel: getWordIntelWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.chase.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
         }
@@ -700,12 +700,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.123", {formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.123");
           case "4":
           case "5":
             return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.45");
           case "6":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.6", {formattedIntel: getWordIntelWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.6)</span>`;
         }
@@ -715,7 +715,7 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case 1:
           case 2:
           case 3:
-            return game.i18n.format("ATDC.dialog.maxDieMessage.harm.0123", {formattedStress: getWordRiskWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.harm.0123");
           case 4:
           case 5:
           case 6:
@@ -724,7 +724,7 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case 9:
             let message = game.i18n.format("ATDC.dialog.maxDieMessage.harm.456789Part1");
             if (harmShowIntel) {
-              message += game.i18n.format("ATDC.dialog.maxDieMessage.harm.456789Part2", {formattedIntel: getWordIntelWithFormatting()});
+              message += game.i18n.format("ATDC.dialog.maxDieMessage.harm.456789Part2");
             }
             return message;
           default:
@@ -736,12 +736,12 @@ export function getMaxDieMessage(moveNumber, maxDieNumber, harmShowIntel) {
           case "1":
           case "2":
           case "3":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.123", {formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.123");
           case "4":
           case "5":
             return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.45");
           case "6":
-            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.6", {formattedIntel: getWordIntelWithFormatting()});
+            return game.i18n.format("ATDC.dialog.maxDieMessage.takeThemOut.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
         }
@@ -755,12 +755,12 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "1":
           case "2":
           case "3":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.behaveBadly.123", {formattedStress: getWordRiskWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.behaveBadly.123");
           case "4":
           case "5":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.behaveBadly.45", {formattedStress: getWordRiskWithFormatting(), formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.behaveBadly.45");
           case "6":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.behaveBadly.6", {formattedStress: getWordRiskWithFormatting(), formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.behaveBadly.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.1)</span>`;
         }
@@ -770,12 +770,12 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "1":
           case "2":
           case "3":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.vice.123", {formattedStress: getWordRiskWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.vice.123");
           case "4":
           case "5":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.vice.45", {formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.vice.45");
           case "6":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.vice.6", {formattedHeat: getWordHeatWithFormatting(), formattedStress: getWordRiskWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.vice.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.2)</span>`;
         }
@@ -784,12 +784,12 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "1":
           case "2":
           case "3":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.guidance.123", {formattedStress: getWordRiskWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.guidance.123");
           case "4":
           case "5":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.guidance.45", {formattedHeat: getWordHeatWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.guidance.45");
           case "6":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.guidance.6", {formattedHeat: getWordHeatWithFormatting(), formattedStress: getWordRiskWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.guidance.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.3)</span>`;
         }
@@ -800,9 +800,9 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "3":
           case "4":
           case "5":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.seekSolace.12345", {formattedAnchor: getWordAnchorWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.seekSolace.12345");
           case "6":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.seekSolace.6", {formattedAnchor: getWordAnchorWithFormatting(), formattedStress: getWordRiskWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.seekSolace.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.4)</span>`;
         }
@@ -811,12 +811,12 @@ export function seekReliefMaxDieMessage(moveNumber, maxDieNumber) {
           case "1":
           case "2":
           case "3":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.revealHistory.123", {formattedStress: getWordRiskWithFormatting(), formattedAnchor: getWordAnchorWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.revealHistory.123");
           case "4":
           case "5":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.revealHistory.45", {formattedHeat: getWordHeatWithFormatting(), formattedStress: getWordRiskWithFormatting(), formattedAnchor: getWordAnchorWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.revealHistory.45");
           case "6":
-            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.revealHistory.6", {formattedStress: getWordRiskWithFormatting(), formattedAnchor: getWordAnchorWithFormatting()});
+            return game.i18n.format("ATDC.dialog.reliefMaxDieMessage.revealHistory.6");
           default:
             return `<span style="color:#ff0000">ERROR(getMaxDieMessage.5)</span>`;
         }
@@ -839,46 +839,18 @@ export async function harmMoveMessage(actor) {
   const dialogData = {
     takeThemOutDieColor: CONFIG.ATDC.takeThemOutDieColor,
     ownerId: actor.id
-  }
+  };
   const template = 'systems/againstthedarkconspiracy/templates/msg/harm-chat-roll-msg.hbs';
   return await renderTemplate(template, dialogData);
 }
 
 export async function stressMoveMessage() {
-  const stressMoveMessage = game.i18n.format("ATDC.stress.stressMoveMessage", {formattedStress: getWordRiskWithFormatting()})
+  const stressMoveMessage = game.i18n.format("ATDC.dialog.stress.stressMoveMessage");
   const dialogData = {
     stressMoveMessage: stressMoveMessage
   }
   const template = 'systems/againstthedarkconspiracy/templates/msg/stress-chat-roll-msg.hbs';
   return await renderTemplate(template, dialogData);
-}
-
-/*
-    special word functions
-*/
-
-export function getWordIntelWithFormatting() {
-    return `<b style="color: ${CONFIG.ATDC.intelColor}">${game.i18n.localize(
-        "ATDC.actor.actions.intel.colored"
-    )}</b>`;
-}
-
-export function getWordRiskWithFormatting() {
-    return `<b style="color: ${CONFIG.ATDC.riskDieColor}">${game.i18n.localize(
-        "ATDC.actor.actions.risk.colored"
-    )}</b>`;
-}
-
-export function getWordHeatWithFormatting() {
-    return `<b style="color: ${CONFIG.ATDC.heatColor}">${game.i18n.localize(
-        "ATDC.actor.actions.heat.colored"
-    )}</b>`;
-}
-
-export function getWordAnchorWithFormatting() {
-    return `<b style="color: ${CONFIG.ATDC.anchorColor}">${game.i18n.localize(
-        "ATDC.actor.actions.anchor.colored"
-    )}</b>`;
 }
 
 // Helper functions for data manipulation
@@ -992,7 +964,6 @@ export async function createHeatChatMessage() {
   const newHeat = oldHeat + 1;
 
   const increaseMessage = game.i18n.format("ATDC.chat.heatIncrease.increaseMessage", {
-    name: getWordHeatWithFormatting(),
     oldHeat: oldHeat,
     newHeat: newHeat
   });
