@@ -564,7 +564,7 @@
       "buttonLabel": "Roll for Harm"
     },
     "heatIncrease": {
-      "increaseMessage": "{name} has increased from {oldHeat} to {newHeat}",
+      "increaseMessage": "<span class=\"heat-format\">HEAT</span> has increased from {oldHeat} to {newHeat}",
       "threatLevelMessage": "<b>The Conspiracy Threat Level</b> is:"
     }
   }

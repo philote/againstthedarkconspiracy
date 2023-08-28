@@ -68,8 +68,6 @@ Hooks.once("ready", () => {
   });
 });
 
-
-
 Hooks.on("preCreateActor", (actor) => {
   if (actor.type == 'safeHouse') {
     actor.updateSource({
