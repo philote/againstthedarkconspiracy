@@ -6,8 +6,6 @@ weakness section not filling in [ff]
 
 PC
 roll buttons lost right hand padding [FF]
-getting stress should undo expertise
-behave badly is not decreasing stress
 test why its hard to mark stress sometimes, maybe its after a stress roll fails to update stress
 
 --------
@@ -17,3 +15,4 @@ Contacts should be a shared list, added contact owner
 PC Sheet - expertise should just be a checkbox instead of a switch
 NPC Sheet - really need more space in the "main" tab
 add an "increase heat button" on chase, flee, cover failed rolls
+getting stress should undo expertise
