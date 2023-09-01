@@ -1,0 +1,18 @@
+NPC Sheet
+weakness section not filling in [ff]
+really need more space in the main tab
+
+PC
+roll buttons lost right hand padding [FF]
+heat chat spacing issues
+maintain your cover - expertise text is broken
+maintain your cover - marks heat automatically (it shouldn't)
+do something else stress text was broken
+getting stress should undo expertise
+expertise should just be a check
+behave badly is not decreasing stress
+test why its hard to mark stress sometimes, maybe its after a stress roll fails to update stress
+
+Features
+Dice so nice - not working on rolls
+Contacts should be a shared list, added contact owner

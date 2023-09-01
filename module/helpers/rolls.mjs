@@ -13,48 +13,99 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
             icon: '<i class="fa-solid fa-dice"></i>',
             label: game.i18n.localize("ATDC.actor.actions.label"),
             callback: async (html) => {
+              const baseDSNCustomColorSet = {
+                colorset: "custom",
+                foreground: "#FFFFFF",
+                background: "#000000",
+                outline: "#000000",
+                edge: "#000000",
+                texture: "none",
+                material: "plastic",
+                font: "Arial",
+                system: "standard"
+              };
+              const stressDSNCustomColorSet = {
+                colorset: "custom",
+                foreground: "#FFFFFF",
+                background: "#850000",
+                outline: "#850000",
+                edge: "#850000",
+                texture: "none",
+                material: "plastic",
+                font: "Arial",
+                system: "standard"
+              };
+              const bonusDSNCustomColorSet = {
+                colorset: "custom",
+                foreground: "#FFFFFF",
+                background: "#002185",
+                outline: "#002185",
+                edge: "#002185",
+                texture: "none",
+                material: "plastic",
+                font: "Arial",
+                system: "standard"
+              };
+              const threatDSNCustomColorSet = {
+                colorset: "custom",
+                foreground: "#FFFFFF",
+                background: "#007506",
+                outline: "#007506",
+                edge: "#007506",
+                texture: "none",
+                material: "plastic",
+                font: "Arial",
+                system: "standard"
+              };
               const dice = [];
+              const diceSoNiceActions = [];
 
               if (document.getElementById("baseDie").checked) {
-                let hdRoll = await new Roll("1d6").evaluate({ async: true });
+                let baseDieRoll = await new Roll("1d6").evaluate({ async: true });
+                baseDieRoll.dice[0].options.appearance = baseDSNCustomColorSet;
+                diceSoNiceActions.push(baseDieRoll);
                 dice.push({
                   dieColor: CONFIG.ATDC.baseDieColor,
                   isStress: false,
                   isRisk: false,
-                  rollVal: hdRoll.result,
+                  rollVal: baseDieRoll.result,
                 });
               }
 
               if (document.getElementById("expertiseDie").checked) {
-                let odRoll = await new Roll("1d6").evaluate({ async: true });
+                let expertiseDieRoll = await new Roll("1d6").evaluate({ async: true });
+                expertiseDieRoll.dice[0].options.appearance = baseDSNCustomColorSet;
+                diceSoNiceActions.push(expertiseDieRoll);
                 dice.push({
                   dieColor: CONFIG.ATDC.baseDieColor,
                   isStress: false,
                   isRisk: false,
-                  rollVal: odRoll.result,
+                  rollVal: expertiseDieRoll.result,
                 });
               }
 
               if (document.getElementById("stressDie").checked) {
-                let idRoll = await new Roll("1d6").evaluate({ async: true });
+                let stressDieRoll = await new Roll("1d6[red]").evaluate({ async: true });
+                stressDieRoll.dice[0].options.appearance = stressDSNCustomColorSet;
+                diceSoNiceActions.push(stressDieRoll);
                 dice.push({
                   dieColor: CONFIG.ATDC.riskDieColor,
                   isStress: true,
                   isRisk: false,
-                  rollVal: idRoll.result,
+                  rollVal: stressDieRoll.result,
                 });
               }
 
               if (document.getElementById("bonusDie") != null) {
                 if (document.getElementById("bonusDie").checked) {
-                  let idRoll = await new Roll("1d6").evaluate({
-                    async: true,
-                  });
+                  let bonusDieRoll = await new Roll("1d6[blue]").evaluate({async: true,});
+                  bonusDieRoll.dice[0].options.appearance = bonusDSNCustomColorSet;
+                  diceSoNiceActions.push(bonusDieRoll);
                   dice.push({
                     dieColor: CONFIG.ATDC.bonusDieColor,
                     isStress: false,
                     isRisk: false,
-                    rollVal: idRoll.result,
+                    rollVal: bonusDieRoll.result,
                   });
                 }
               }
@@ -64,14 +115,16 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
 
               if (document.getElementById("threatHarmDie") != null) {
                 if (document.getElementById("threatHarmDie").checked) {
-                  let idRoll = await new Roll("1d6").evaluate({
+                  let threatHarmDieRoll = await new Roll("1d6[green]").evaluate({
                     async: true,
                   });
+                  threatHarmDieRoll.dice[0].options.appearance = threatDSNCustomColorSet;
+                  diceSoNiceActions.push(threatHarmDieRoll);
                   threatDice.push({
                     dieColor: CONFIG.ATDC.takeThemOutDieColor,
                     isStress: false,
                     isRisk: true,
-                    rollVal: idRoll.result,
+                    rollVal: threatHarmDieRoll.result,
                   });
                 }
               }
@@ -80,42 +133,48 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 if (
                   document.getElementById("threatSupernaturalDie").checked
                 ) {
-                  let idRoll = await new Roll("1d6").evaluate({
+                  let threatSupernaturalDieRoll = await new Roll("1d6[green]").evaluate({
                     async: true,
                   });
+                  threatSupernaturalDieRoll.dice[0].options.appearance = threatDSNCustomColorSet;
+                  diceSoNiceActions.push(threatSupernaturalDieRoll);
                   threatDice.push({
                     dieColor: CONFIG.ATDC.takeThemOutDieColor,
                     isStress: false,
                     isRisk: true,
-                    rollVal: idRoll.result,
+                    rollVal: threatSupernaturalDieRoll.result,
                   });
                 }
               }
 
               if (document.getElementById("outnumberedDie") != null) {
                 if (document.getElementById("outnumberedDie").checked) {
-                  let idRoll = await new Roll("1d6").evaluate({
+                  let outnumberedDieRoll = await new Roll("1d6[green]").evaluate({
                     async: true,
                   });
+                  outnumberedDieRoll.dice[0].options.appearance = threatDSNCustomColorSet;
+                  diceSoNiceActions.push(outnumberedDieRoll);
                   threatDice.push({
                     dieColor: CONFIG.ATDC.takeThemOutDieColor,
                     isStress: false,
                     isRisk: true,
-                    rollVal: idRoll.result,
+                    rollVal: outnumberedDieRoll.result,
                   });
                 }
               }
 
               if (document.getElementById("weaponDie") != null) {
                 if (document.getElementById("weaponDie").checked) {
-                  let idRoll = await new Roll("1d6").evaluate({
+                  let weaponDieRoll = await new Roll("1d6[green]").evaluate({
                     async: true,
                   });
+                  weaponDieRoll.dice[0].options.appearance = threatDSNCustomColorSet;
+                  diceSoNiceActions.push(weaponDieRoll);
                   threatDice.push({
                     dieColor: CONFIG.ATDC.takeThemOutDieColor,
                     isStress: false,
                     isRisk: true,
-                    rollVal: idRoll.result,
+                    rollVal: weaponDieRoll.result,
                   });
                 }
               }
@@ -124,14 +183,16 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 if (
                   document.getElementById("SupernaturalPowersDie1").checked
                 ) {
-                  let idRoll = await new Roll("1d6").evaluate({
+                  let supernaturalPowersDie1Roll = await new Roll("1d6[green]").evaluate({
                     async: true,
                   });
+                  supernaturalPowersDie1Roll.dice[0].options.appearance = threatDSNCustomColorSet;
+                  diceSoNiceActions.push(supernaturalPowersDie1Roll);
                   threatDice.push({
                     dieColor: CONFIG.ATDC.takeThemOutDieColor,
                     isStress: false,
                     isRisk: true,
-                    rollVal: idRoll.result,
+                    rollVal: supernaturalPowersDie1Roll.result,
                   });
                 }
               }
@@ -140,14 +201,16 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 if (
                   document.getElementById("SupernaturalPowersDie2").checked
                 ) {
-                  let idRoll = await new Roll("1d6").evaluate({
+                  let supernaturalPowersDie2Roll = await new Roll("1d6[green]").evaluate({
                     async: true,
                   });
+                  supernaturalPowersDie2Roll.dice[0].options.appearance = threatDSNCustomColorSet;
+                  diceSoNiceActions.push(supernaturalPowersDie2Roll);
                   threatDice.push({
                     dieColor: CONFIG.ATDC.takeThemOutDieColor,
                     isStress: false,
                     isRisk: true,
-                    rollVal: idRoll.result,
+                    rollVal: supernaturalPowersDie2Roll.result,
                   });
                 }
               }
@@ -156,14 +219,16 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 if (
                   document.getElementById("SupernaturalPowersDie3").checked
                 ) {
-                  let idRoll = await new Roll("1d6").evaluate({
+                  let supernaturalPowersDie3Roll = await new Roll("1d6[green]").evaluate({
                     async: true,
                   });
+                  supernaturalPowersDie3Roll.dice[0].options.appearance = threatDSNCustomColorSet;
+                  diceSoNiceActions.push(supernaturalPowersDie3Roll);
                   threatDice.push({
                     dieColor: CONFIG.ATDC.takeThemOutDieColor,
                     isStress: false,
                     isRisk: true,
-                    rollVal: idRoll.result,
+                    rollVal: supernaturalPowersDie3Roll.result,
                   });
                 }
               }
@@ -172,20 +237,21 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 if (
                   document.getElementById("SupernaturalPowersDie4").checked
                 ) {
-                  let idRoll = await new Roll("1d6").evaluate({
+                  let supernaturalPowersDie4Roll = await new Roll("1d6[green]").evaluate({
                     async: true,
                   });
+                  supernaturalPowersDie4Roll.dice[0].options.appearance = threatDSNCustomColorSet;
+                  diceSoNiceActions.push(supernaturalPowersDie4Roll);
                   threatDice.push({
                     dieColor: CONFIG.ATDC.takeThemOutDieColor,
                     isStress: false,
                     isRisk: true,
-                    rollVal: idRoll.result,
+                    rollVal: supernaturalPowersDie4Roll.result,
                   });
                 }
               }
 
               // -----------------
-
               const maxDie = dice.reduce((a, b) =>
                 a.rollVal > b.rollVal ? a : b
               );
@@ -262,12 +328,14 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
               }
               const template = 'systems/againstthedarkconspiracy/templates/msg/action-chat-content.hbs';
               const rendered_html = await renderTemplate(template, dialogData);
-          
+
               ChatMessage.create({
                 user: game.user_id,
                 speaker: ChatMessage.getSpeaker({ actor: actor }),
                 rollMode: game.settings.get("core", "rollMode"),
-                content: rendered_html
+                content: rendered_html,
+                type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+                rolls: diceSoNiceActions
               });
 
               if ((move >= 1 && move <= 6)) {
@@ -300,23 +368,50 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
             icon: '<i class="fa-solid fa-dice"></i>',
             label: game.i18n.localize("ATDC.actor.actions.label"),
             callback: async (html) => {
+              const baseDSNCustomColorSet = {
+                colorset: "custom",
+                foreground: "#FFFFFF",
+                background: "#000000",
+                outline: "#000000",
+                edge: "#000000",
+                texture: "none",
+                material: "plastic",
+                font: "Arial",
+                system: "standard"
+              };
+              const stressDSNCustomColorSet = {
+                colorset: "custom",
+                foreground: "#FFFFFF",
+                background: "#850000",
+                outline: "#850000",
+                edge: "#850000",
+                texture: "none",
+                material: "plastic",
+                font: "Arial",
+                system: "standard"
+              };
               const dice = [];
+              const diceSoNiceActions = [];
 
               if (document.getElementById("baseDie").checked) {
-                let hdRoll = await new Roll("1d6").evaluate({ async: true });
+                let baseDieRoll = await new Roll("1d6").evaluate({ async: true });
+                baseDieRoll.dice[0].options.appearance = baseDSNCustomColorSet;
+                diceSoNiceActions.push(baseDieRoll);
                 dice.push({
                   dieColor: CONFIG.ATDC.baseDieColor,
                   isStress: false,
-                  rollVal: hdRoll.result,
+                  rollVal: baseDieRoll.result,
                 });
               }
 
               if (document.getElementById("stressDie").checked) {
-                let idRoll = await new Roll("1d6").evaluate({ async: true });
+                let stressDieRoll = await new Roll("1d6").evaluate({ async: true });
+                stressDieRoll.dice[0].options.appearance = stressDSNCustomColorSet;
+                diceSoNiceActions.push(stressDieRoll);
                 dice.push({
                   dieColor: CONFIG.ATDC.riskDieColor,
                   isStress: true,
-                  rollVal: idRoll.result,
+                  rollVal: stressDieRoll.result,
                 });
               }
 
@@ -395,7 +490,9 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
                 user: game.user_id,
                 speaker: ChatMessage.getSpeaker({ actor: actor }),
                 rollMode: game.settings.get("core", "rollMode"),
-                content: rendered_html
+                content: rendered_html,
+                type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+                rolls: diceSoNiceActions
               });
 
               // ----
@@ -412,12 +509,27 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
 }
 
 export async function asyncStressRoll(actor) {
+  const stressDSNCustomColorSet = {
+    colorset: "custom",
+    foreground: "#FFFFFF",
+    background: "#850000",
+    outline: "#850000",
+    edge: "#850000",
+    texture: "none",
+    material: "plastic",
+    font: "Arial",
+    system: "standard"
+  };
   const dice = [];
-  let hdRoll = await new Roll("1d6").evaluate({ async: true });
+  const diceSoNiceActions = [];
+
+  let stressDieRoll = await new Roll("1d6").evaluate({ async: true });
+  stressDieRoll.dice[0].options.appearance = stressDSNCustomColorSet;
+  diceSoNiceActions.push(stressDieRoll);
   dice.push({
     dieColor: CONFIG.ATDC.riskDieColor,
     isStress: false,
-    rollVal: hdRoll.result,
+    rollVal: stressDieRoll.result,
   });
 
   let diceOutput = "";
@@ -467,12 +579,27 @@ export async function asyncStressRoll(actor) {
     user: game.user_id,
     speaker: ChatMessage.getSpeaker({ actor: actor }),
     rollMode: game.settings.get("core", "rollMode"),
-    content: rendered_html
+    content: rendered_html,
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+    rolls: diceSoNiceActions
   });
 }
 
 export async function asyncSeekReliefRoll(move = 0, actor) {
+  const baseDSNCustomColorSet = {
+    colorset: "custom",
+    foreground: "#FFFFFF",
+    background: "#000000",
+    outline: "#000000",
+    edge: "#000000",
+    texture: "none",
+    material: "plastic",
+    font: "Arial",
+    system: "standard"
+  };
   const roll = await new Roll("1d6").evaluate({ async: true });
+  roll.dice[0].options.appearance = baseDSNCustomColorSet;
+
   const diceOutput = getDiceForOutput(
     roll.result,
     CONFIG.ATDC.baseDieColor
@@ -492,6 +619,8 @@ export async function asyncSeekReliefRoll(move = 0, actor) {
     speaker: speaker,
     rollMode: rollMode,
     content: chatContentMessage,
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+    rolls: [roll]
   });
 
   // Mark anchor
