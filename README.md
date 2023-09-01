@@ -40,6 +40,7 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
     - Shows for all players, floats in the upper right corner 
     - Only the GM can update it
     - On increase a chat message is show to all players
+- Added support for Dice so Nice!, the dice colors match those in the chat window
 
 ## To Be Done
 
@@ -48,6 +49,7 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 - Adding Gear will update character Load/Gear and show an error dialog when there is no capacity
 - Add an Operation template journal to the Compendium
 - Basic sheet designs
+- Better chat message designs
 - Add buttons for seek relief from the horror moves in chat
 - Improve dialog designs/layouts
 - Create default token setup (show name, show intel and stress, link actor, etc..)

@@ -338,7 +338,9 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 rolls: diceSoNiceActions
               });
 
-              if ((move >= 1 && move <= 6)) {
+              // 1,6,4
+              // not 2,3,5
+              if ((move == 1 || move == 4 || move == 6)) {
                 if (maxDie.rollVal >= 1 && maxDie.rollVal <= 3) {
                   createHeatChatMessage();
                 }
