@@ -16,3 +16,4 @@ PC Sheet - expertise should just be a checkbox instead of a switch
 NPC Sheet - really need more space in the "main" tab
 add an "increase heat button" on chase, flee, cover failed rolls
 getting stress should undo expertise
+only trigger heat and anchor chats after the main chat shows (Dice so nice)
