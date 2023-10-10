@@ -17,8 +17,8 @@
     font-weight: bold;
     margin: 0 0 0 0;
     padding: 5px 10px 5px 10px;
-    background-color: rgba(128, 128, 128, 0.2);
-    color: black;
+    background-color: #0B2039;
+    color: white;
     align-self: center;
     width: 100%;
     
@@ -32,13 +32,13 @@
   h4 {
     font-weight: bold;
     font-size: 1.25em;
-    color: #4f4f4f;
+    color: #a4a4a4;
   }
 
   h5 {
     font-weight: bold;
     font-size: 1em;
-    color: #4f4f4f;
+    color: #a4a4a4;
     margin: 0;
   }
 
@@ -52,7 +52,7 @@
   }
 
   a {
-    color: rgb(129, 33, 33);
+    color: #FF4848;
     font-weight: bold;
   }
 
@@ -71,8 +71,8 @@
   }
   
   .box {
-    border: 1px solid black;
-    background-color: rgb(128 128 128 / 5%);
+    border: 1px solid #94ABBF;
+    background-color: #0b203940;
     padding: 0;
     margin: 5px;
     align-items: center;
@@ -93,9 +93,9 @@
   }
   
   nav.sheet-tabs {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    background-color: rgb(128 128 128 / 20%);
+    border-top: 1px solid #94ABBF;
+    border-bottom: 1px solid #94ABBF;
+    background-color: #0b203940;
   }
   
   .sheet-tabs {
