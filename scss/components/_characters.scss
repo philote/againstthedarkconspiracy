@@ -1,55 +1,4 @@
 .character {
-  color: #dfdfdf;
- 
-  input[type="text"], 
-  input[type="number"], 
-  input[type="password"], 
-  input[type="date"], 
-  input[type="time"], 
-  input[type="search"] {
-
-    &, &:focus, &:disabled:hover {
-      color: #dfdfdf;
-      background: none;
-      border: none;
-      border-bottom: 1px #94ABBF solid;
-    }
-
-    &:hover {
-      color: #f4f4f4;
-      background-color: #0d2441;
-      border: none;
-      border-bottom: 1px #94ABBF solid;
-    }
-
-    &::placeholder {
-      color: #909090;
-    }
-  }
-
-  textarea {
-    color: white;
-    // background-color: #0B2039;
-    border: 1px #94ABBF solid;
-  }
-
-  .editor {
-    color: white;
-    // background-color: #0B2039;
-    border: 1px #94ABBF solid;
-  }
-
-  select {
-    color: white;
-    background-color: #0B2039;
-    border: 1px #94ABBF solid;
-
-    option {
-      color: #f4f4f4;
-      background-color: #0d2441;
-    }
-  }
-
   .sheet-header {
     flex: 0 auto;
     overflow: hidden;
@@ -60,8 +9,8 @@
     margin: 5px;
 
     .profile-img {
-      flex: 0 0 190px;
-      height: 190px;
+      flex: 0 0 196px;
+      height: 196px;
       margin-right: 5px;
       margin-left: 5px;
       border: 1px #94ABBF solid;
@@ -159,6 +108,7 @@
             margin: 0;
             margin-right: 10px;
             flex-grow: 0;
+            color: #3697BD;
           }
 
           input[type="checkbox"] {

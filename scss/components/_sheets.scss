@@ -1,6 +1,8 @@
 .window-content {
   margin: 0;
   padding: 0;
+  background: none;
+  background-color: #0D0D0D;
   
   h1 {
     font-weight: bold;
@@ -69,6 +71,57 @@
     border-bottom: 1px solid black;
     border-radius: 0;
   }
+
+  color: #dfdfdf;
+ 
+  input[type="text"], 
+  input[type="number"], 
+  input[type="password"], 
+  input[type="date"], 
+  input[type="time"], 
+  input[type="search"] {
+
+    &, &:focus, &:disabled:hover {
+      color: #dfdfdf;
+      background: none;
+      border: none;
+      border-bottom: 1px #3d4750 solid;
+    }
+
+    &:hover {
+      color: #f4f4f4;
+      background-color: #0d2441;
+      border: none;
+      border-bottom: 1px #3d4750 solid;
+    }
+
+    &::placeholder {
+      color: #909090;
+    }
+  }
+
+  textarea {
+    color: white;
+    // background-color: #0B2039;
+    border: 1px #3d4750 solid;
+  }
+
+  .editor {
+    color: white;
+    // background-color: #0B2039;
+    border: 1px #3d4750 solid;
+  }
+
+  select {
+    color: white;
+    background-color: #0D0D0D;
+    border: 1px #3d4750  solid;
+
+    option {
+      color: #f4f4f4;
+      background-color: #0d2441;
+    }
+  }
   
   .box {
     border: 1px solid #94ABBF;
@@ -92,12 +145,29 @@
     }
   }
   
+  .tabs .item {
+    color: #616161;
+    text-shadow: none;
+  
+    &.active {
+      text-shadow: none;
+      color: white;
+      border-bottom: 2px solid #c0dfce;
+      background: none;
+    }
+  }
+
   nav.sheet-tabs {
+    margin: 0;
     border-top: 1px solid #94ABBF;
     border-bottom: 1px solid #94ABBF;
-    background-color: #0b203940;
+    background-image: url(../assets/actors/tab_area.webp);
+
+    .item {
+      padding: 12px;
+    }
   }
-  
+
   .sheet-tabs {
     flex: 0;
   }

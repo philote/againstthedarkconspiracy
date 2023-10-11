@@ -5,7 +5,11 @@
   padding: 0;
   align-items: center;
   background: rgba(0, 0, 0, 0.05);
-  border: $border-groove;
+  border: none;
+  border-top: 1px solid #c9c7b8;
+  border-bottom: 1px solid #c9c7b8;
+  // border-right: none;
+  // border-left: none;
   font-weight: bold;
   > * {
     font-size: 14px;
@@ -30,7 +34,7 @@
   padding: 0;
   overflow-y: auto;
   scrollbar-width: thin;
-  color: $c-tan;
+  color: #dfdfdf;
   width: -webkit-fill-available;
 
   // Child lists
@@ -74,7 +78,7 @@
     padding: 0 2px; // to align with the header border
     border-bottom: 1px solid $c-faint;
     .item-name {
-      color: $c-dark;
+      color: #dfdfdf;
       .item-image {
         flex: 0 0 30px;
         height: 30px;
@@ -100,8 +104,11 @@
     margin: 2px 0;
     padding: 0;
     align-items: center;
-    background: rgba(0, 0, 0, 0.05);
-    border: $border-groove;
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid #c9c7b8;
+    border-bottom: 1px solid #c9c7b8;
+    border-right: none;
+    border-left: none;
     font-weight: bold;
     > * {
       font-size: 12px;
