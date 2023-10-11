@@ -1,28 +1,53 @@
 .character {
   color: #dfdfdf;
-
-  input[type="text"]:focus, 
-  input[type="number"]:focus, 
-  input[type="password"]:focus, 
-  input[type="date"]:focus, 
-  input[type="time"]:focus, 
-  input[type="search"]:focus, 
+ 
   input[type="text"], 
   input[type="number"], 
   input[type="password"], 
   input[type="date"], 
   input[type="time"], 
   input[type="search"] {
-    color: #dfdfdf;
+
+    &, &:focus, &:disabled:hover {
+      color: #dfdfdf;
+      background: none;
+      border: none;
+      border-bottom: 1px #94ABBF solid;
+    }
+
+    &:hover {
+      color: #f4f4f4;
+      background-color: #0d2441;
+      border: none;
+      border-bottom: 1px #94ABBF solid;
+    }
+
+    &::placeholder {
+      color: #909090;
+    }
   }
 
-  input[type="text"]::placeholder, 
-  input[type="number"]::placeholder, 
-  input[type="password"]::placeholder, 
-  input[type="date"]::placeholder, 
-  input[type="time"]::placeholder, 
-  input[type="search"]::placeholder {
-    color: #909090;
+  textarea {
+    color: white;
+    // background-color: #0B2039;
+    border: 1px #94ABBF solid;
+  }
+
+  .editor {
+    color: white;
+    // background-color: #0B2039;
+    border: 1px #94ABBF solid;
+  }
+
+  select {
+    color: white;
+    background-color: #0B2039;
+    border: 1px #94ABBF solid;
+
+    option {
+      color: #f4f4f4;
+      background-color: #0d2441;
+    }
   }
 
   .sheet-header {
@@ -39,6 +64,7 @@
       height: 190px;
       margin-right: 5px;
       margin-left: 5px;
+      border: 1px #94ABBF solid;
     }
 
     .header-fields {
@@ -164,18 +190,6 @@
 
   .sheet-body {
     .main {
-      input[type="text"]:disabled {
-        color: red;
-      }
-
-      input[type="text"]:disabled:hover {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        border: none;
-        background: none;
-        border-bottom: 1px solid black;
-        border-radius: 0;
-      }
 
       .main-left {
         flex-grow: 3;
