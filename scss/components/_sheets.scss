@@ -3,6 +3,7 @@
   padding: 0;
   background: none;
   background-color: #0D0D0D;
+  color: #dfdfdf;
   
   h1 {
     font-weight: bold;
@@ -16,6 +17,7 @@
 
   h3 {
     border: none;
+    border-radius: 6px 6px 0px 0px;
     font-weight: bold;
     margin: 0 0 0 0;
     padding: 5px 10px 5px 10px;
@@ -71,8 +73,6 @@
     border-bottom: 1px solid black;
     border-radius: 0;
   }
-
-  color: #dfdfdf;
  
   input[type="text"], 
   input[type="number"], 
@@ -125,6 +125,7 @@
   
   .box {
     border: 1px solid #94ABBF;
+    border-radius: 6px 6px 0px 0px;
     background-color: #0b203940;
     padding: 0;
     margin: 5px;
