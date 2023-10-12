@@ -48,7 +48,6 @@ An unofficial, community-supported system for playing the [Against the Dark Cons
 - When stress is marked, reset expertise
 - Adding Gear will update character Load/Gear and show an error dialog when there is no capacity
 - Add an Operation template journal to the Compendium
-- Basic sheet designs
 - Better chat message designs
 - Add buttons for seek relief from the horror moves in chat
 - Improve dialog designs/layouts
