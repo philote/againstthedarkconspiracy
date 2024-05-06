@@ -1,18 +1,18 @@
 # Against the Dark Conspiracy System
 
-![A title image for the Against the Dark Conspiracy game system](cover.webp)
+![A title image for the Against the Dark Conspiracy game system](./assets/cover.webp)
 
-![Latest Release Download Count](https://img.shields.io/github/downloads/philote/FoundryVTT-AgainstTheDarkConspiracy/latest/system.zip)
+![Latest Release Download Count](https://img.shields.io/github/downloads/philote/againstthedarkconspiracy/latest/system.zip)
 
-![Supported Foundry Versions](https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https://github.com/philote/FoundryVTT-AgainstTheDarkConspiracy/releases/download/0.1.1/system.json)
+![Supported Foundry Versions](https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https://github.com/philote/againstthedarkconspiracy/releases/latest/download/system.json)
 
-![Repository License](https://img.shields.io/github/license/philote/FoundryVTT-AgainstTheDarkConspiracy)
+![Repository License](https://img.shields.io/github/license/philote/againstthedarkconspiracy)
 
 An unofficial, community-supported system for playing the [Against the Dark Conspiracy](https://gallusgames.itch.io/against-the-dark-conspiracy) TTRPG (Created by [Alun Rees](https://twitter.com/AlunRees14), Will Hobson, Paul Rivers, and Lowell Francis) on the Foundry VTT platform.
 
 - The Against the Dark Conspiracy Game: https://gallusgames.itch.io/against-the-dark-conspiracy
 
-![A screenshot of the Against the Dark Conspiracy character sheet and chat output in Foundry VTT](screenshot.webp)
+![A screenshot of the Against the Dark Conspiracy character sheet and chat output in Foundry VTT](./assets/screenshot.webp)
 
 ## Features
 
@@ -60,7 +60,7 @@ You can install the latest released version of the system by using this manifest
 
 [Instructions](https://foundryvtt.com/article/tutorial/)
 
-Link: https://github.com/philote/FoundryVTT-AgainstTheDarkConspiracy/releases/latest/download/system.json
+Link: https://github.com/philote/againstthedarkconspiracy/releases/latest/download/system.json
 
 ## Content License Note
 

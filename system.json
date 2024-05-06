@@ -5,47 +5,19 @@
   "version": "0.3.0",
   "compatibility": {
     "minimum": 10,
-    "verified": "11.313",
-    "maximum": 11
+    "verified": 11.315,
+    "maximum": 12
   },
   "authors": [
     {
       "name": "ephson",
       "url": "https://github.com/philote",
       "discord": "ephson#3451",
-      "mastodon": "@ephson@dice.camp",
       "reddit": "u/ephson"
     }
   ],
   "esmodules": ["module/atdc.mjs"],
   "styles": ["css/atdc.css"],
-  "packFolders": [
-    {
-      "name": "NPC Powers, Weaknesses & Vulnerabilities",
-      "sorting": "m",
-      "color": "#380000",
-      "packs": ["powers", "vulnerability"],
-      "folders": [
-        {
-          "name": "NPC Weaknesses",
-          "sorting": "m",
-          "color": "#380000",
-          "packs": ["compulsion", "deterrent"]
-        }
-      ]
-    },
-    {
-      "name": "Briefing Tables",
-      "sorting": "m",
-      "color": "#001d38",
-      "packs": ["random-lead", "operational-questions", "operational-details"]
-    },
-    {
-      "name": "Complication Tables",
-      "sorting": "m",
-      "packs": ["possible-complications", "complications-details"]
-    }
-  ],
   "packs": [
     {
       "name": "gear",
@@ -124,6 +96,33 @@
       "type": "RollTable"
     }
   ],
+  "packFolders": [
+    {
+      "name": "NPC Powers, Weaknesses & Vulnerabilities",
+      "sorting": "m",
+      "color": "#380000",
+      "packs": ["powers", "vulnerability"],
+      "folders": [
+        {
+          "name": "NPC Weaknesses",
+          "sorting": "m",
+          "color": "#380000",
+          "packs": ["compulsion", "deterrent"]
+        }
+      ]
+    },
+    {
+      "name": "Briefing Tables",
+      "sorting": "m",
+      "color": "#001d38",
+      "packs": ["random-lead", "operational-questions", "operational-details"]
+    },
+    {
+      "name": "Complication Tables",
+      "sorting": "m",
+      "packs": ["possible-complications", "complications-details"]
+    }
+  ],
   "languages": [
     {
       "lang": "en",
@@ -133,29 +132,29 @@
   ],
   "primaryTokenAttribute": "stress",
   "secondaryTokenAttribute": "intel",
-  "socket": true,
-  "url": "https://github.com/philote/FoundryVTT-AgainstTheDarkConspiracy",
-  "manifest": "https://github.com/philote/FoundryVTT-AgainstTheDarkConspiracy/releases/latest/download/system.json",
-  "download": "https://github.com/philote/FoundryVTT-AgainstTheDarkConspiracy/releases/latest/download/system.zip",
+  "url": "https://github.com/philote/againstthedarkconspiracy",
+  "manifest": "https://github.com/philote/againstthedarkconspiracy/releases/latest/download/system.json",
+  "download": "https://github.com/philote/againstthedarkconspiracy/releases/download/0.3.0/system.json",
   "license": "LICENSE",
-  "bugs": "https://github.com/philote/FoundryVTT-AgainstTheDarkConspiracy/issues",
+  "readme": "README.md",
+  "bugs": "https://github.com/philote/againstthedarkconspiracy/issues",
   "media": [
     {
       "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/philote/FoundryVTT-AgainstTheDarkConspiracy/main/screenshot.webp",
+      "url": "https://raw.githubusercontent.com/philote/againstthedarkconspiracy/main/assets/screenshot.webp",
       "loop": false,
       "caption": "Against the Dark Conspiracy screenshot from Foundry VTT."
     },
     {
       "type": "cover",
-      "url": "https://raw.githubusercontent.com/philote/FoundryVTT-AgainstTheDarkConspiracy/main/cover.webp",
+      "url": "https://raw.githubusercontent.com/philote/againstthedarkconspiracy/main/assets/cover.webp",
       "loop": false,
       "caption": "Cover Images for the Unofficial Against the Dark Conspiracy package."
     },
     {
       "type": "setup",
-      "url": "https://raw.githubusercontent.com/philote/FoundryVTT-AgainstTheDarkConspiracy/main/package_image.webp",
-      "thumbnail": "https://raw.githubusercontent.com/philote/FoundryVTT-AgainstTheDarkConspiracy/main/package_image_thumb.webp"
+      "url": "https://raw.githubusercontent.com/philote/againstthedarkconspiracy/main/assets/package_image.webp",
+      "thumbnail": "https://raw.githubusercontent.com/philote/againstthedarkconspiracy/main/assets/package_image_thumb.webp"
     }
   ]
 }
