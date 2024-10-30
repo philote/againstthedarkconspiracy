@@ -1,0 +1,32 @@
+{
+  "name": "Armoured",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This could be chitinous plates or bark, or something else. It cancels Small Arms or Hand-to-Hand Expertise when an Operator is taking them out due to the protection it offers. It can also make the the threat more inclined to throw itself into the attack and add a Risk Die.\nBerserk Rage*\nIt takes 1 extra Stress to finish a threat with this Power; they simply don’t notice the harm being done to them. Control can spend HEAT to add another Stress, extending the rage or its depth. They are also more dangerous in a fight, hence the option to add a Risk Die.",
+    "detail": "",
+    "addRiskDie": true
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.QLQzQtAlZlBbjBge"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003552629,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "hEsM3Gu9JK35rLJG",
+  "_key": "!items!hEsM3Gu9JK35rLJG"
+}

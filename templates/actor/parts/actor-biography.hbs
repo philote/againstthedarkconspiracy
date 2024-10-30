@@ -10,11 +10,7 @@
     <div class="box why-conspiracy">
       <div class="box-body">
         <select name="system.whyConfrontConspiracy.index" data-type="String">
-          {{#select system.whyConfrontConspiracy.index}}
-            {{#each system.whyConfrontConspiracy.options as |option key|}}
-              <option  value="{{key}}">{{localize option.answer}}</option>
-            {{/each}}
-          {{/select}}
+          {{selectOptions system.whyConfrontConspiracy.tempAnswers selected=system.whyConfrontConspiracy.index labelAttr='label' localize=true}}
         </select>
         <p class="answer">{{system.whyConfrontConspiracy.answer}}</p>
         <p class="question">{{system.whyConfrontConspiracy.question}}</p>

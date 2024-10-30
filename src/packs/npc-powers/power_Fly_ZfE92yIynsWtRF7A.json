@@ -1,0 +1,32 @@
+{
+  "name": "Fly",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "Control will say whether this involves feathered, bat or insect wings, or levitation etc. It creates fictional positioning to move a confrontation into a third dimension, put the threat out of reach, or deny an Operator the option to chase them down.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.V6O6ikD5IOHObbXD"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003564504,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "ZfE92yIynsWtRF7A",
+  "_key": "!items!ZfE92yIynsWtRF7A"
+}

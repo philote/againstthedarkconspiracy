@@ -1,0 +1,32 @@
+{
+  "name": "Tech Toolkit",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/tech-toolkit.svg",
+  "system": {
+    "description": "",
+    "tags": "Technical, Tech",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.HH8UUbDnGXUqFbx2"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690162790811,
+    "modifiedTime": 1690172462025,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "ZbuwBHSTIgCluB7H",
+  "_key": "!items!ZbuwBHSTIgCluB7H"
+}

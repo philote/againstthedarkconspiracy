@@ -1,0 +1,32 @@
+{
+  "name": "Tranq gun",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/tranq-gun.svg",
+  "system": {
+    "description": "",
+    "tags": "Close, Stun",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.5RYl1dM64kDCijnP"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690162920650,
+    "modifiedTime": 1690172463487,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "FmPzIkpED1IWj4Xe",
+  "_key": "!items!FmPzIkpED1IWj4Xe"
+}

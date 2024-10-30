@@ -1,0 +1,32 @@
+{
+  "name": "Improvised weapon",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/improvised-weapon.svg",
+  "system": {
+    "description": "",
+    "tags": "Intimate",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.Bnopl3Ty4OkHd2ZS"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690161223412,
+    "modifiedTime": 1690172422501,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "NbNeFMiqo7KAjiWB",
+  "_key": "!items!NbNeFMiqo7KAjiWB"
+}

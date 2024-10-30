@@ -1,0 +1,32 @@
+{
+  "name": "Grenades, Frag x 2",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/grenade-frag.svg",
+  "system": {
+    "description": "",
+    "tags": "Close, Area, Heavy",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.lcDesOXKLFHixkEc"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690161013501,
+    "modifiedTime": 1690172417717,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "Ny3PZ3YJUHTMuNH3",
+  "_key": "!items!Ny3PZ3YJUHTMuNH3"
+}

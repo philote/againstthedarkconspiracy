@@ -1,0 +1,32 @@
+{
+  "name": "Compact SMG",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/submachine-gun-spectre-m4.svg",
+  "system": {
+    "description": "",
+    "tags": "Close, Auto",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.FfQZnz9lFgyc6d5i"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690160432378,
+    "modifiedTime": 1690172395333,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "VUIQWAyDQekDb3gJ",
+  "_key": "!items!VUIQWAyDQekDb3gJ"
+}

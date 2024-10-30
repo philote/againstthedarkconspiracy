@@ -1,0 +1,32 @@
+{
+  "name": "Inhuman Senses",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "These make it more difficult for an Operator to maintain their cover by hiding as all the threat’s senses are preternaturally acute. Animal sense is a more limited application appropriate to a particular animal: the low light ‘vision’ of a bat, a wolf’s sense of smell, the ability of an insect to detect scent at very long range, etc.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.wYNOf9ABkM9BaEQ7"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003571270,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "TA5IvOwEP1mLqbTt",
+  "_key": "!items!TA5IvOwEP1mLqbTt"
+}

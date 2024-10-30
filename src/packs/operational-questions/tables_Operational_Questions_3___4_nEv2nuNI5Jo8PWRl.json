@@ -1,0 +1,255 @@
+{
+  "name": "Operational Questions 3 & 4",
+  "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-question.svg",
+  "description": "<b>Question 3:</b> What’s the threat the Operators want to face?</br>\n<b>Question 4:</b> What activity are they engaged in?",
+  "results": [
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "TAMMwOg3fOR2F8th",
+      "text": "<b>Nameless mortal - Organized Crime pawns</b>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.TAMMwOg3fOR2F8th"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "text": "Q4: Nameless organized crime pawns of the Conspiracy",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "WCNPuE1LmdIndi36",
+      "_id": "ndD2xOnLzcaxpImt",
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.ndD2xOnLzcaxpImt"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "C1wMgHIbgztbKNEY",
+      "text": "<b>Nameless mortal - Paramilitary pawns</b>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.C1wMgHIbgztbKNEY"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "text": "Q4: Nameless paramilitary pawns of the Conspiracy",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "dnUJdO9ONs0dZpPj",
+      "_id": "JJQJpN5LNIW9NtM8",
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.JJQJpN5LNIW9NtM8"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "5keOo9cJ1PCblg5Z",
+      "text": "<b>Nameless mortal - Special Ops Contractors</b>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.5keOo9cJ1PCblg5Z"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "text": "Q4: Named mortal Special Ops Contractors",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "Ww1kyL5Gc63vk3Tw",
+      "_id": "32Crc5CN2qZrZTns",
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.32Crc5CN2qZrZTns"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "IUcqdX2zoaR7KDsn",
+      "text": "<b>Nameless mortal - Pseudo-Scientists</b>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.IUcqdX2zoaR7KDsn"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "text": "Q4: Named mortal Pseudo-Scientists",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "G3Xtt4dhDGSODhxk",
+      "_id": "VPHygcJz3LV1Meu0",
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.VPHygcJz3LV1Meu0"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "ai6XwSx9Mc32s51G",
+      "text": "<b>Nameless mortal - Occultists</b>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.ai6XwSx9Mc32s51G"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "text": "Q4: Named mortal Occultists",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "6LTC8DaXOUPTZL5z",
+      "_id": "PAmfFTgQyU4wDGr1",
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.PAmfFTgQyU4wDGr1"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "JACwPbqz1D2Y8h9S",
+      "text": "<b>Supernatural Servitors of the Vampire Conspiracy</b>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.JACwPbqz1D2Y8h9S"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "text": "Q4: Supernatural Servitors of the Vampire Conspiracy",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "HMEcuOEnqfzxr31O",
+      "_id": "lxZDpNXClqIdYUBb",
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.lxZDpNXClqIdYUBb"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "2AF0Udug0T8SUTLs",
+      "text": "<b>Greater Supernatural Vampires</b>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.2AF0Udug0T8SUTLs"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "text": "Q4: Greater Supernatural Vampires",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "8z0EUe0XAwCgM7zU",
+      "_id": "VJ8fWhzZVmhkIuw6",
+      "flags": {},
+      "_key": "!tables.results!nEv2nuNI5Jo8PWRl.VJ8fWhzZVmhkIuw6"
+    }
+  ],
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": false,
+  "flags": {
+    "core": {
+      "sourceId": "RollTable.EMaupD6VUxsrgYSP"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1686354671046,
+    "modifiedTime": 1691180180116,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "nEv2nuNI5Jo8PWRl",
+  "_key": "!tables!nEv2nuNI5Jo8PWRl"
+}

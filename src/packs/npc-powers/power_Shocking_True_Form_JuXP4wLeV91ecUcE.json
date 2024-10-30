@@ -1,0 +1,32 @@
+{
+  "name": "Shocking True Form",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "Some Supernaturals appear mortal but must reveal their true form to use their Power. The demon can’t benefit from their insect carapace until they manifest in it, for instance. Seeing the true form will require Operators who see it to roll for Stress.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.ic2ldqlkNKGpiPhj"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003587067,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "JuXP4wLeV91ecUcE",
+  "_key": "!items!JuXP4wLeV91ecUcE"
+}

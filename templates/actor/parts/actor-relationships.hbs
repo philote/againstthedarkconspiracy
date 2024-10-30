@@ -39,11 +39,7 @@
             </div>
             <div class="item-prop item-expertise">
               <select class="item-edit-checked" name="item.system.expertise.index" data-field="system.expertise.index" data-item-id="{{item._id}}">
-                {{#select item.system.expertise.index}}
-                  {{#each item.system.expertise.options as |option key|}}
-                    <option value="{{key}}">{{localize option}}</option>
-                  {{/each}}
-                {{/select}}
+                {{selectOptions item.system.expertise.options selected=item.system.expertise.index labelAttr='label' localize=true}}
               </select>
             </div>
             <div class="item-controls">

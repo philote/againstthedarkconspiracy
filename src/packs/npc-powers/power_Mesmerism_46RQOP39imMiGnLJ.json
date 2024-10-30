@@ -1,0 +1,32 @@
+{
+  "name": "Mesmerism",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This may require eye contact or may be via a psychic connection, but it turns an innocent bystander into a meat puppet pawn. Control will judge whether the threat can control more than one mortal at a time but a crowd of previously innocent bystanders after blood presents a dramatic and challenging moral (and morale) issue to Operators.\nIn the name of game balance this can only target one Operator at a time. They can resist by rolling to do something else but with the option to mark Stress in place of failure. The HEAT marked with a failure might reflect the threat learning something about them or the team. Operators who refuse the option to mark Stress and accept the fail can always try to break the link by rolling when Control judges the fiction has changed. The link is also automatically lost if the threat is sufficiently distracted, perhaps by a convenient Compulsion or being shot at.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.qGhlQlxSFGKhqPqe"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003574078,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "46RQOP39imMiGnLJ",
+  "_key": "!items!46RQOP39imMiGnLJ"
+}

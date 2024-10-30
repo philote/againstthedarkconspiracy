@@ -1,0 +1,32 @@
+{
+  "name": "Ultraviolet Lamp",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/ultraviolet-lamp.svg",
+  "system": {
+    "description": "",
+    "tags": "UV",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.6DWzvcCsROHJK41u"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690163002123,
+    "modifiedTime": 1690172464865,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "5HQaex3hEFQcbEPd",
+  "_key": "!items!5HQaex3hEFQcbEPd"
+}

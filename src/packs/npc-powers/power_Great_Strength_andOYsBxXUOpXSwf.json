@@ -1,0 +1,32 @@
+{
+  "name": "Great Strength",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "They always win a trial of strength with a single Operator and are more dangerous in a fight. Control will judge how much they can change the fiction by bringing down walls or throwing heavy items around a scene.",
+    "detail": "",
+    "addRiskDie": true
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.4JaIgpC99fn8LJpN"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003568713,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "andOYsBxXUOpXSwf",
+  "_key": "!items!andOYsBxXUOpXSwf"
+}

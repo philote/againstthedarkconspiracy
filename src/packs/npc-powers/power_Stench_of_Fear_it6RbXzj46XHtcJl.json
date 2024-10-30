@@ -1,0 +1,32 @@
+{
+  "name": "Stench of Fear",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "Control will say how wide an area is affected and whether it’s a literal stench or just an aura. Control will also say if a successful roll to do something else is necessary to ignore it so Expertise ceases to be cancelled.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.KFeNZzC7ZYZACIgL"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003593490,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "it6RbXzj46XHtcJl",
+  "_key": "!items!it6RbXzj46XHtcJl"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Machete/Kukri",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/machete.svg",
+  "system": {
+    "description": "",
+    "tags": "Intimate",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.VAOJneOM8AqNbV5X"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690161548060,
+    "modifiedTime": 1690172428102,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "NbAk951gcj0eJrMA",
+  "_key": "!items!NbAk951gcj0eJrMA"
+}

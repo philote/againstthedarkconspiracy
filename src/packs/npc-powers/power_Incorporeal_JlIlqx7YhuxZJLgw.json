@@ -1,0 +1,32 @@
+{
+  "name": "Incorporeal",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This resembles Invisible but does not usually render the threat entirely transparent. Control will say if this is a permanent state or one it can adopt at will or at a certain time of the day or in particular locations. If the threat can materialize at will, then the shock of its appearance would constitute surprise. Physical barriers mean nothing when incorporeal and neither does gravity. The legend of vampires turning to and from mist is covered by this, though it may mean they can only move through gaps, however small, rather than through solids.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.5C83AZJeTlz2IMg6"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003569707,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "JlIlqx7YhuxZJLgw",
+  "_key": "!items!JlIlqx7YhuxZJLgw"
+}

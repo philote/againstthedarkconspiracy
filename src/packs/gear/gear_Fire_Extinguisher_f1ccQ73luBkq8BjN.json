@@ -1,0 +1,32 @@
+{
+  "name": "Fire Extinguisher",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/fire-extinguisher.svg",
+  "system": {
+    "description": "",
+    "tags": "Close, Stun",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.bMoAoxtdIYIl4OkX"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690160903316,
+    "modifiedTime": 1690172406847,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "f1ccQ73luBkq8BjN",
+  "_key": "!items!f1ccQ73luBkq8BjN"
+}

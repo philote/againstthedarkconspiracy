@@ -2,10 +2,10 @@
   "id": "againstthedarkconspiracy",
   "title": "Against the Dark Conspiracy",
   "description": "The Against the Dark Conspiracy system for FoundryVTT!",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "compatibility": {
-    "minimum": 10,
-    "verified": 11.315,
+    "minimum": 12,
+    "verified": 12.331,
     "maximum": 12
   },
   "authors": [
@@ -64,35 +64,35 @@
       "name": "complications-details",
       "label": "Complication Details Tables",
       "system": "againstthedarkconspiracy",
-      "path": "./packs/roll_tables/complication-details.db",
+      "path": "./packs/complication-details.db",
       "type": "RollTable"
     },
     {
       "name": "possible-complications",
       "label": "Possible Complications Table",
       "system": "againstthedarkconspiracy",
-      "path": "./packs/roll_tables/possible-complications-table.db",
+      "path": "./packs/possible-complications-table.db",
       "type": "RollTable"
     },
     {
       "name": "random-lead",
       "label": "Random Lead Table",
       "system": "againstthedarkconspiracy",
-      "path": "./packs/roll_tables/random-lead.db",
+      "path": "./packs/random-lead.db",
       "type": "RollTable"
     },
     {
       "name": "operational-details",
       "label": "Operational Details Tables",
       "system": "againstthedarkconspiracy",
-      "path": "./packs/roll_tables/operational-details.db",
+      "path": "./packs/operational-details.db",
       "type": "RollTable"
     },
     {
       "name": "operational-questions",
       "label": "Operational Questions Tables",
       "system": "againstthedarkconspiracy",
-      "path": "./packs/roll_tables/operational-questions.db",
+      "path": "./packs/operational-questions.db",
       "type": "RollTable"
     }
   ],

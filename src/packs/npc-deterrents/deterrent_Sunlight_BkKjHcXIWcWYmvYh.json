@@ -1,0 +1,31 @@
+{
+  "name": "Sunlight",
+  "type": "deterrent",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/deterrent.svg",
+  "system": {
+    "description": "The table may want vampires or demons to burst into flame in sunlight but if they also want some daylight confrontations then making it a Deterrent nods to lore without forcing most of the action into darkness; unless that fits the tone of the game. Control will say if this is a matter of radiation, so that ultra-violet light can bring the sun indoors, or if it is the mystical effect of the literal light of day that the threat fears.",
+    "detail": ""
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.tgwnNsqoLo9rB3uy"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1691004565659,
+    "modifiedTime": 1691005468363,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "BkKjHcXIWcWYmvYh",
+  "_key": "!items!BkKjHcXIWcWYmvYh"
+}

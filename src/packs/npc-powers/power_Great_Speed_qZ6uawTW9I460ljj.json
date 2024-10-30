@@ -1,0 +1,32 @@
+{
+  "name": "Great Speed",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "They can shorten range from close to intimate in one action and they cancel Operator Expertise during flee for their life or chase them down so long as the Operators are on foot.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.zAkwMKE9IZRLJ7FT"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003567714,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "qZ6uawTW9I460ljj",
+  "_key": "!items!qZ6uawTW9I460ljj"
+}

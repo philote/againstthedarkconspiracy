@@ -1,0 +1,32 @@
+{
+  "name": "Teleport",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This is similar to Great speed but operates for line of sight, allowing even greater distances to be covered in the blink of an eye and reducing Operators’ opportunity to attack at range before the threat gets to Intimate range. It may also make it impossible to chase them down.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.mgNidAtDt7xbvHCH"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003601818,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "dRvRclZuI9AfnB4K",
+  "_key": "!items!dRvRclZuI9AfnB4K"
+}

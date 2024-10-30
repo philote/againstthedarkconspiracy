@@ -1,0 +1,32 @@
+{
+  "name": "Handgun",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/handgun.svg",
+  "system": {
+    "description": "",
+    "tags": "Close, Hidden, Silenced",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.TP88yOwYAOANNhJz"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690161143673,
+    "modifiedTime": 1690172420802,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "Rd5DLE2PkS0cFF7G",
+  "_key": "!items!Rd5DLE2PkS0cFF7G"
+}

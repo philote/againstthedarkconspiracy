@@ -1,0 +1,223 @@
+{
+  "name": "Operational Question 2",
+  "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-question.svg",
+  "description": "<b>Question 2:</b> Where is the SPECIFIC focus of the Operation?",
+  "results": [
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "text": "Q2: Entertainment",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "R26vDL8HwVc4yTz9",
+      "_id": "2Rddzf9AKLPzPFq8",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.2Rddzf9AKLPzPFq8"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "text": "Q2: Event",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "r1DypgsO7vY64sHX",
+      "_id": "QmNGBVXJpI0YBxFS",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.QmNGBVXJpI0YBxFS"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "text": "Q2: Facility",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "zFrx5wYnUdyUDaH0",
+      "_id": "5LxCU3x2LJFTO9wg",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.5LxCU3x2LJFTO9wg"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "text": "Q2: Far Away",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "wdJAiscH44V0M0yI",
+      "_id": "CKsKzz670lZBvLJl",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.CKsKzz670lZBvLJl"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "text": "Q2: High Society",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "Wolr42iU6pUtRiAi",
+      "_id": "at49k0DIW5Ts9WUf",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.at49k0DIW5Ts9WUf"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "text": "Q2: In Transit",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "2jlmSHRVqYh8eqx8",
+      "_id": "ZoTNIO9442wRjhWX",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.ZoTNIO9442wRjhWX"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "text": "Q2: Industrial",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "KZoC04nQvIDFYVrz",
+      "_id": "giedUQj8hNivwC9h",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.giedUQj8hNivwC9h"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "text": "Q2: On the Street",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "khqYKaFAWYyzRR9K",
+      "_id": "TsO0KXZiCiJjEmHo",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.TsO0KXZiCiJjEmHo"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "text": "Q2: Public/Official",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "3OTNx1annn5SBYTB",
+      "_id": "tTrLv3hRUcUwuiWU",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.tTrLv3hRUcUwuiWU"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "text": "Q2: Residential",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "yI8c1TB8eBUgWxf0",
+      "_id": "1Jm8OW7iYrdO9jcP",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.1Jm8OW7iYrdO9jcP"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "text": "Q2: Subterranean",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "inR8SbKdVGh5SPps",
+      "_id": "1zmkWyUHwX5k853H",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.1zmkWyUHwX5k853H"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "text": "Q2: Transport Hub",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentCollection": "RollTable",
+      "documentId": "x4y3kw92bmHRIMEc",
+      "_id": "ckcc0RIdBe0gs3bR",
+      "flags": {},
+      "_key": "!tables.results!sxVS8arxjAbA11gU.ckcc0RIdBe0gs3bR"
+    }
+  ],
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": false,
+  "flags": {
+    "core": {
+      "sourceId": "RollTable.EMaupD6VUxsrgYSP"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1686354671046,
+    "modifiedTime": 1691180178650,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "sxVS8arxjAbA11gU",
+  "_key": "!tables!sxVS8arxjAbA11gU"
+}

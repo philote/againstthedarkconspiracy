@@ -1,0 +1,32 @@
+{
+  "name": "Grant Power",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This allows a Supernatural to endow a mortal with a Power. Control will decide if this benefit is paired with a Weakness. It is possible that one Conspiracy faction could grant a Power to an Operator confronting their rivals. However, supping with the devil requires a long spoon and Operators should beware costs in the form of Weaknesses that change who they are.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.kMH1BFLzc8Phc0u2"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003566478,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "iEqKCxU6jtBTpvOl",
+  "_key": "!items!iEqKCxU6jtBTpvOl"
+}

@@ -1,0 +1,127 @@
+{
+  "name": "Q2: Subterranean",
+  "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+  "description": "Where is the SPECIFIC focus of the Operation?\nSubterranean",
+  "results": [
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "kK9DKpv8WFAEXTzJ",
+      "text": "<b>Subterranean:</b> Cave System",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!A0RBlhpYpLbhN6dq.kK9DKpv8WFAEXTzJ"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "AN5e020bHdaEItYA",
+      "text": "<b>Subterranean:</b> Catacombs",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!A0RBlhpYpLbhN6dq.AN5e020bHdaEItYA"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "t3li1D95UjVFMV5F",
+      "text": "<b>Subterranean:</b> Crypt",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!A0RBlhpYpLbhN6dq.t3li1D95UjVFMV5F"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "vMeN8URv5ei78yls",
+      "text": "<b>Subterranean:</b> Mine",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!A0RBlhpYpLbhN6dq.vMeN8URv5ei78yls"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "ThdIVrVzG6F27xmw",
+      "text": "<b>Subterranean:</b> Sewers",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!A0RBlhpYpLbhN6dq.ThdIVrVzG6F27xmw"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "0jS7pb5IfDTFqOng",
+      "text": "<b>Subterranean:</b> Vault",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!A0RBlhpYpLbhN6dq.0jS7pb5IfDTFqOng"
+    }
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": false,
+  "flags": {
+    "core": {
+      "sourceId": "RollTable.inR8SbKdVGh5SPps"
+    }
+  },
+  "_stats": {
+    "systemId": "custom-system-builder",
+    "systemVersion": "2.3.0",
+    "coreVersion": "10.291",
+    "createdTime": 1686356240631,
+    "modifiedTime": 1691090682661,
+    "lastModifiedBy": "6UEkwTAOmwQ2wA1W"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "6UEkwTAOmwQ2wA1W": 3
+  },
+  "_id": "A0RBlhpYpLbhN6dq",
+  "_key": "!tables!A0RBlhpYpLbhN6dq"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Ceramic Vest",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/ceramic-vest.svg",
+  "system": {
+    "description": "",
+    "tags": "Absorb-2",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.Y8dT9nLkG2QPty4S"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690160363863,
+    "modifiedTime": 1690172393682,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "2njN4THByBUyQkrT",
+  "_key": "!items!2njN4THByBUyQkrT"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Noise",
+  "type": "deterrent",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/deterrent.svg",
+  "system": {
+    "description": "Control will say whether this is the sound of children’s laughter, the clashing of brass cymbals or the tinkling of silver bells. It might even be a sufficiently loud noise at a frequency an INTEL spend has revealed.",
+    "detail": ""
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.uFBMnWn4eupPYxyg"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1691004565659,
+    "modifiedTime": 1691005464559,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "qWzKahdycpUXcVpu",
+  "_key": "!items!qWzKahdycpUXcVpu"
+}

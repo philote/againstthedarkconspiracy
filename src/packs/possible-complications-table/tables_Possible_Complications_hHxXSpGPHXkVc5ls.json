@@ -1,0 +1,79 @@
+{
+  "name": "Possible Complications",
+  "img": "systems/againstthedarkconspiracy/assets/roll_tables/complications.svg",
+  "description": "",
+  "results": [
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "text": "Changing circumstances complicate the Operation…",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/complications.svg",
+      "documentCollection": "RollTable",
+      "documentId": "yk0OnrSlap7wBcpC",
+      "_id": "uhCQiKaTjIeEZt58",
+      "flags": {},
+      "_key": "!tables.results!hHxXSpGPHXkVc5ls.uhCQiKaTjIeEZt58"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "text": "Mortals complicate the Operation…",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/complications.svg",
+      "documentCollection": "RollTable",
+      "documentId": "hRlAw3KyBxIz7ZSM",
+      "_id": "USkeCqeMOIjLJR8b",
+      "flags": {},
+      "_key": "!tables.results!hHxXSpGPHXkVc5ls.USkeCqeMOIjLJR8b"
+    },
+    {
+      "type": 1,
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "text": "Supernaturals complicate the Operation…",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/complications.svg",
+      "documentCollection": "RollTable",
+      "documentId": "RojOI0kguYPnJPe6",
+      "_id": "890xliwYzGjI4qVO",
+      "flags": {},
+      "_key": "!tables.results!hHxXSpGPHXkVc5ls.890xliwYzGjI4qVO"
+    }
+  ],
+  "formula": "1d3",
+  "replacement": true,
+  "displayRoll": false,
+  "flags": {
+    "core": {
+      "sourceId": "RollTable.2Hi7Fzm9aaK9T5QK"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1686374575932,
+    "modifiedTime": 1691180069990,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "hHxXSpGPHXkVc5ls",
+  "_key": "!tables!hHxXSpGPHXkVc5ls"
+}

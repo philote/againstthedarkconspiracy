@@ -1,0 +1,32 @@
+{
+  "name": "Molotov",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/molotov.svg",
+  "system": {
+    "description": "",
+    "tags": "Close, Stun, Fire",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.7LeHO8wMVoLRxY4u"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690161841572,
+    "modifiedTime": 1690172434088,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "kbF1v0JElgl7XakD",
+  "_key": "!items!kbF1v0JElgl7XakD"
+}

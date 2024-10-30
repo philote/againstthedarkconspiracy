@@ -1,0 +1,32 @@
+{
+  "name": "Summon & Command Swarm",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "... of rats, bats, insects, small birds or even clouds of plant seeds or fungal spores. These are impossible to hit with a bullet so swarms should either be avoided or run from, unless the Operator can deploy fire or something with a similar area effect against them. They can force Operators to split up or drive them towards a more serious threat. Control will say if they draw blood or clog mouths or noses, in which case a roll to take them out them will be necessary during which only the Operator is at risk unless they have a means to do the swarm harm.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.AfzITk8nZSz2j7ak"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003596659,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "kjRKWzRdlruzrLq3",
+  "_key": "!items!kjRKWzRdlruzrLq3"
+}

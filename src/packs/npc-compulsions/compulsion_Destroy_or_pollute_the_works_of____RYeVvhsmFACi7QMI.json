@@ -1,0 +1,31 @@
+{
+  "name": "Destroy or pollute the works of...",
+  "type": "compulsion",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/compulsion.svg",
+  "system": {
+    "description": "... God, or to the ‘New Gods’ the Fae hate so much. Examples could include threats having to deface a church altar or trash a computer.",
+    "detail": ""
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.Jiv3GbImgTVwLUuD"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1691004362930,
+    "modifiedTime": 1691005435017,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "RYeVvhsmFACi7QMI",
+  "_key": "!items!RYeVvhsmFACi7QMI"
+}

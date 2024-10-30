@@ -1,0 +1,32 @@
+{
+  "name": "Medical Kit",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/medical-kit.svg",
+  "system": {
+    "description": "",
+    "tags": "1-use treat Consequence",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.itcdFhRCoeg9VwjS"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690161756269,
+    "modifiedTime": 1690172432575,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "FcVmukCs2sAo1uKc",
+  "_key": "!items!FcVmukCs2sAo1uKc"
+}

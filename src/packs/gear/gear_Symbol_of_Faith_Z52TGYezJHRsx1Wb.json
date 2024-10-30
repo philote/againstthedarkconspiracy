@@ -1,0 +1,32 @@
+{
+  "name": "Symbol of Faith",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/symbol-of-faith.svg",
+  "system": {
+    "description": "",
+    "tags": "Holy",
+    "load": 0
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.xGYGnYqONwSsUyOe"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690162450427,
+    "modifiedTime": 1690172459263,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "Z52TGYezJHRsx1Wb",
+  "_key": "!items!Z52TGYezJHRsx1Wb"
+}

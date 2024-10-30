@@ -1,0 +1,127 @@
+{
+  "name": "Q1: An Organization is the focus of the Operation",
+  "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+  "description": "An Organization is the focus of the Operation",
+  "results": [
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "kK9DKpv8WFAEXTzJ",
+      "text": "a News Organization/Political Party (reputable?)",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!GqTZM5TlCDcAgc5L.kK9DKpv8WFAEXTzJ"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "AN5e020bHdaEItYA",
+      "text": "a Charity/Pressure Group (reputable?)",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!GqTZM5TlCDcAgc5L.AN5e020bHdaEItYA"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "t3li1D95UjVFMV5F",
+      "text": "a Company/Corporation (subject to investigation?)",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!GqTZM5TlCDcAgc5L.t3li1D95UjVFMV5F"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "vMeN8URv5ei78yls",
+      "text": "a Criminal Group/Gang (subject to investigation?)",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!GqTZM5TlCDcAgc5L.vMeN8URv5ei78yls"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "ThdIVrVzG6F27xmw",
+      "text": "a Community Group (privileged or disadvantaged?)",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!GqTZM5TlCDcAgc5L.ThdIVrVzG6F27xmw"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "0jS7pb5IfDTFqOng",
+      "text": "Some other organization",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!GqTZM5TlCDcAgc5L.0jS7pb5IfDTFqOng"
+    }
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": false,
+  "flags": {
+    "core": {
+      "sourceId": "RollTable.CvtPPpfjnJxXvt0V"
+    }
+  },
+  "_stats": {
+    "systemId": "custom-system-builder",
+    "systemVersion": "2.3.0",
+    "coreVersion": "10.291",
+    "createdTime": 1686356240631,
+    "modifiedTime": 1691090662504,
+    "lastModifiedBy": "6UEkwTAOmwQ2wA1W"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "6UEkwTAOmwQ2wA1W": 3
+  },
+  "_id": "GqTZM5TlCDcAgc5L",
+  "_key": "!tables!GqTZM5TlCDcAgc5L"
+}

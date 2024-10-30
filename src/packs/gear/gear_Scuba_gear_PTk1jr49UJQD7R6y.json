@@ -1,0 +1,32 @@
+{
+  "name": "Scuba gear",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/scuba-gear.svg",
+  "system": {
+    "description": "",
+    "tags": "",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.JbdM3deJsx0iqflR"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690161986378,
+    "modifiedTime": 1690172440442,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "PTk1jr49UJQD7R6y",
+  "_key": "!items!PTk1jr49UJQD7R6y"
+}

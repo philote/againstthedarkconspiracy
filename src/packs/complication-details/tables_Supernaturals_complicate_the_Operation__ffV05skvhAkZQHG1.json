@@ -1,0 +1,127 @@
+{
+  "name": "Supernaturals complicate the Operation…",
+  "img": "systems/againstthedarkconspiracy/assets/roll_tables/complications.svg",
+  "description": "",
+  "results": [
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "mYAxyk82mQowmtV2",
+      "text": "<b>Divided:</b> A Supernatural divides the team. Do you work to get back together or does one group find a different way to achieve the Objective?",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ffV05skvhAkZQHG1.mYAxyk82mQowmtV2"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "5CPDQcBtgmcF7fWh",
+      "text": "<b>This doesn't feel right:</b> You have a bad feeling about what is around that corner. You will face a supernatural threat you weren’t briefed on if you carry on…",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ffV05skvhAkZQHG1.5CPDQcBtgmcF7fWh"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "uG2TsHg1kTHngGN1",
+      "text": "<b>Did you hear that?</b> There's something following you. Do you confront it or keep going?",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ffV05skvhAkZQHG1.uG2TsHg1kTHngGN1"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "A3hqh62auKxRioW8",
+      "text": "<b>Who IS the villain?</b> The apparent villain appears to have been misrepresented, at least to a degree. Could they be useful and if so who is the big bad?",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ffV05skvhAkZQHG1.A3hqh62auKxRioW8"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "UUgKH9d1edyNNnIC",
+      "text": "<b>Did anyone else feel that?</b> The hairs on the back of your neck just told you a potent Supernatural will be appearing in the fiction…",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ffV05skvhAkZQHG1.UUgKH9d1edyNNnIC"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "tIAyvf3VL8wIQRpf",
+      "text": "<b>Super-Bad:</b> There's a supernatural threat on site more than one level above what the Briefing indicated...",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ffV05skvhAkZQHG1.tIAyvf3VL8wIQRpf"
+    }
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": false,
+  "flags": {
+    "core": {
+      "sourceId": "RollTable.RojOI0kguYPnJPe6"
+    }
+  },
+  "_stats": {
+    "systemId": "custom-system-builder",
+    "systemVersion": "2.3.0",
+    "coreVersion": "10.291",
+    "createdTime": 1686374665009,
+    "modifiedTime": 1691090617808,
+    "lastModifiedBy": "6UEkwTAOmwQ2wA1W"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "6UEkwTAOmwQ2wA1W": 3
+  },
+  "_id": "ffV05skvhAkZQHG1",
+  "_key": "!tables!ffV05skvhAkZQHG1"
+}

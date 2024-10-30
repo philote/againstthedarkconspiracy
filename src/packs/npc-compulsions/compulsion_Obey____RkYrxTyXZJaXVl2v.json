@@ -1,0 +1,31 @@
+{
+  "name": "Obey...",
+  "type": "compulsion",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/compulsion.svg",
+  "system": {
+    "description": "... sire, patron, creator etc. Conspiracies are hierarchical and there is a clear pecking order among them.",
+    "detail": ""
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.k1NL4NTdIyLl6XOj"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1691004362930,
+    "modifiedTime": 1691005439540,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "RkYrxTyXZJaXVl2v",
+  "_key": "!items!RkYrxTyXZJaXVl2v"
+}

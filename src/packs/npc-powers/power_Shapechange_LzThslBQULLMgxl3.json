@@ -1,0 +1,32 @@
+{
+  "name": "Shapechange",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "It is for Control to say, but bats, wolves, plants or swarms of rats or insects are all possibilities depending on the nature of the Conspiracy. This Power can be used to make the threat look harmless, as a means of surprise, or to escape, depending on circumstances. Turning into a swarm of locusts will make the threat difficult to hit (see Summon & command swarm).",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.HF6MbhsR9FFD6xLJ"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003585934,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "LzThslBQULLMgxl3",
+  "_key": "!items!LzThslBQULLMgxl3"
+}

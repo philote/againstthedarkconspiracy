@@ -1,0 +1,32 @@
+{
+  "name": "Cloak of Darkness",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This sheathes the target in darkness that makes it difficult to target them and may allow them to achieve surprise. It might confer the ability to travel in a mortal’s shadow.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.fpgqZbwkdF0XW8Dy"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003557457,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "S343UgZIMIZ60KTy",
+  "_key": "!items!S343UgZIMIZ60KTy"
+}

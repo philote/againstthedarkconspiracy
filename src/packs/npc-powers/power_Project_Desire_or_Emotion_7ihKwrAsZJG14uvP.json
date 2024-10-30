@@ -1,0 +1,32 @@
+{
+  "name": "Project Desire or Emotion",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "The Supernatural can project a desire or emotion onto an Operator, provoking one of the seven deadly sins or a strong emotion of the threat’s choice in an innocent bystander or Operator. An Operator can resist this in the way they can resist Mesmerism unless the threat has already forced them to reveal themselves with Discover Desire, in which case every outcome from do something else requires them to mark an extra Stress to resist doing what the possessing threat demands.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.HhMdrHY0pbmhZBlS"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003582164,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "7ihKwrAsZJG14uvP",
+  "_key": "!items!7ihKwrAsZJG14uvP"
+}

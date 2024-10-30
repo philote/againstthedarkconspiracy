@@ -1,0 +1,32 @@
+{
+  "name": "Sniper Rifle",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/sniper-rifle.svg",
+  "system": {
+    "description": "",
+    "tags": "Long, Heavy",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.XJinfORGhvQseiKv"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690162112648,
+    "modifiedTime": 1690172443675,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "ZhzQJbqko4HEZJCd",
+  "_key": "!items!ZhzQJbqko4HEZJCd"
+}

@@ -5,11 +5,7 @@
     <div class="grid grid-3col info">
       <div class="expertise grid-span-2">
         <select name="system.expertise.index">
-          {{#select system.expertise.index}}
-            {{#each system.expertise.options as |option key|}}
-              <option value="{{key}}">{{localize option}}</option>
-            {{/each}}
-          {{/select}}
+          {{selectOptions system.expertise.options selected=system.expertise.index labelAttr='label' localize=true}}
         </select>
       </div>
       <div class="center-label">

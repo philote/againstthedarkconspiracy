@@ -1,0 +1,31 @@
+{
+  "name": "Fascinated by...",
+  "type": "compulsion",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/compulsion.svg",
+  "system": {
+    "description": "... riddles, or mortal beauty or something else. Fae may have a reputation for being unable to resist a riddling contest or other word game, for instance. There is no need for this to become an actual contest between Control and an Operator. It could simply be abstracted to a roll to do something else with Persuasion Expertise being relevant. This would reflect distracting the threat with the contest while other Operators do what they came to do. Failure might shift the interaction to take them out, where Risk Die are gradually added. Operator success doesn’t cause Stress to the threat but keeps its interest and wins more time. When a Risk Die finally equals or exceeds the Operator's best roll the threat’s patience has been exceeded and it turns to violence.\nIf a threat is fascinated by ‘beauty’ or ‘wit’ or some other mortal characteristic, then Control will use the previous fiction or Operator background or Expertise to decide who attracts their attention. Perhaps the Supernatural is content to banter or argue with that Operator while trying to kill the others. Alternatively, perhaps it hates the idea of beautiful or witty mortals and aims to kill them first. Control will agree with the players what is most interesting and dramatic.",
+    "detail": ""
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.Ranc3OHv83W07LLk"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1691004362930,
+    "modifiedTime": 1691005436086,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "46bYYJyFiOC00U6R",
+  "_key": "!items!46bYYJyFiOC00U6R"
+}

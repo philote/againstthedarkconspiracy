@@ -38,11 +38,7 @@
           <div class="type flexrow">
             <h4>{{localize "ATDC.npc.type.label"}}</h4>
             <select class="npc-type-change" name="system.type.index" data-roll-type="toggle-stress" data-npc-type="supernatural" data-type="String">
-              {{#select system.type.index}}
-                {{#each system.type.options as |type key|}}
-                  <option value="{{key}}">{{type}}</option>
-                {{/each}}
-              {{/select}}
+              {{selectOptions system.type.options selected=system.type.index labelAttr='label'}}
             </select>
           </div>
         </div>
@@ -67,11 +63,7 @@
           <div class="subtype flexrow">
             <h4>{{localize "ATDC.npc.subtype.label"}}</h4>
             <select name="system.subType.index" data-roll-type="toggle-stress" data-npc-type="supernatural" data-type="String">
-              {{#select system.subType.index}}
-                {{#each system.subType.options as |subtype key|}}
-                  <option value="{{key}}">{{subtype}}</option>
-                {{/each}}
-              {{/select}}
+              {{selectOptions system.subType.options selected=system.subType.index labelAttr='label'}}
             </select>
           </div>
 

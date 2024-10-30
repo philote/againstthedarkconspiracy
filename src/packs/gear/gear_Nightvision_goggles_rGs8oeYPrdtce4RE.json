@@ -1,0 +1,32 @@
+{
+  "name": "Nightvision goggles",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/nightvision-goggles.svg",
+  "system": {
+    "description": "",
+    "tags": "Light",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.17g7HMGspHqjCarl"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690161346047,
+    "modifiedTime": 1690172437368,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "rGs8oeYPrdtce4RE",
+  "_key": "!items!rGs8oeYPrdtce4RE"
+}

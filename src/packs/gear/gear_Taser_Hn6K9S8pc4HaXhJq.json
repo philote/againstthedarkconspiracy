@@ -1,0 +1,32 @@
+{
+  "name": "Taser",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/taser.svg",
+  "system": {
+    "description": "",
+    "tags": "Intimate, Stun",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.w7DLwTjU9sBspQKC"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690162615764,
+    "modifiedTime": 1690172460611,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "Hn6K9S8pc4HaXhJq",
+  "_key": "!items!Hn6K9S8pc4HaXhJq"
+}

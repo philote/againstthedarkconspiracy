@@ -1,0 +1,31 @@
+{
+  "name": "Symbol of...",
+  "type": "deterrent",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/deterrent.svg",
+  "system": {
+    "description": "... faith, power or something else.\nControl will decide if a threat with mortal origins is particularly susceptible to a symbol of the faith it betrayed. Alternatively, it might be the power of an Operator’s faith that is at work and the symbol simply represents this, in which case some fictional positioning by the Operator is necessary to give it effect. It needn’t be a literal symbol such as a Star of David; it could be a vial of water blessed by a priest, or a Moslem or Hindu text. It may require a call on a Contact to obtain a genuine blessed item.\nIt could be a symbol of faith in the New Gods, that the Fae abhor, such as a working smart phone.\nA symbol of ‘power’ might be a pentagram or some other ‘magic symbol or glyph’.\nControl may judge that a ‘symbol of that which they are not’ is a valid Deterrent. This might explain why a vampire is deterred by the laughter of children; their young life is the antithesis of its long death.\nIt might explain why ‘magical’ Fae fear some of the ‘technological’ works of the New Gods, such as digital ring tones or the sound of a Facebook like.\nIn the case of elemental Supernaturals, the opposite element or condition is likely to deter them. A source of heat might deter a Supernatural of Winter ice, while a Supernatural of hot Summer might not enter a refrigerated space.",
+    "detail": ""
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.SuIpsoZzvrpV0v5C"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1691004565659,
+    "modifiedTime": 1691005469518,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "UAyqqYTVdiFsmxYX",
+  "_key": "!items!UAyqqYTVdiFsmxYX"
+}

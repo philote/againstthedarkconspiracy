@@ -1,0 +1,32 @@
+{
+  "name": "C4 & Detonator",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/c4-detonator.svg",
+  "system": {
+    "description": "",
+    "tags": "Area, Explode",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.GoaCCZot95NJa0L1"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690160190704,
+    "modifiedTime": 1690172386578,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "jjp5rNDzK0wbar57",
+  "_key": "!items!jjp5rNDzK0wbar57"
+}

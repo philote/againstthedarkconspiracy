@@ -1,0 +1,127 @@
+{
+  "name": "Changing circumstances complicate the Operation…",
+  "img": "systems/againstthedarkconspiracy/assets/roll_tables/complications.svg",
+  "description": "",
+  "results": [
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "mYAxyk82mQowmtV2",
+      "text": "<b>Can you smell that?</b> There's something in the atmosphere. The whiff of tear gas or something worse, or could it have a supernatural origin?",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Vv2IBIrY6NXLU62S.mYAxyk82mQowmtV2"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "5CPDQcBtgmcF7fWh",
+      "text": "<b>You're expected:</b> They think you're someone more, or possibly less, dangerous to their plans. Your cover may be more, or less, at risk.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Vv2IBIrY6NXLU62S.5CPDQcBtgmcF7fWh"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "uG2TsHg1kTHngGN1",
+      "text": "<b>Gear check!</b> You need gear you haven't declared yet. Declare it now or call on a Contact to have it...",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Vv2IBIrY6NXLU62S.uG2TsHg1kTHngGN1"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "A3hqh62auKxRioW8",
+      "text": "<b>Unforeseen obstacle:</b> There’s an obstacle of some kind. It’s going to cost time going in and getting out...",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Vv2IBIrY6NXLU62S.A3hqh62auKxRioW8"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "UUgKH9d1edyNNnIC",
+      "text": "<b>It's a set-up!</b> Everything you've learned was fed to you to get you here... into the Conspiracy's cross-hairs...",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Vv2IBIrY6NXLU62S.UUgKH9d1edyNNnIC"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "tIAyvf3VL8wIQRpf",
+      "text": "<b>Clock is ticking:</b> The Operation is now under even greater time pressure than you expected...",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Vv2IBIrY6NXLU62S.tIAyvf3VL8wIQRpf"
+    }
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": false,
+  "flags": {
+    "core": {
+      "sourceId": "RollTable.yk0OnrSlap7wBcpC"
+    }
+  },
+  "_stats": {
+    "systemId": "custom-system-builder",
+    "systemVersion": "2.3.0",
+    "coreVersion": "10.291",
+    "createdTime": 1686374665009,
+    "modifiedTime": 1691090615378,
+    "lastModifiedBy": "6UEkwTAOmwQ2wA1W"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "6UEkwTAOmwQ2wA1W": 3
+  },
+  "_id": "Vv2IBIrY6NXLU62S",
+  "_key": "!tables!Vv2IBIrY6NXLU62S"
+}

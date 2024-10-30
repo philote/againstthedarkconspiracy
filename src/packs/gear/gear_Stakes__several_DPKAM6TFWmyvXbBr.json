@@ -1,0 +1,32 @@
+{
+  "name": "Stakes, several",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/stakes.svg",
+  "system": {
+    "description": "",
+    "tags": "Intimate",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.a17ObhUrqFy9pFoa"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690162395298,
+    "modifiedTime": 1690172456973,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "DPKAM6TFWmyvXbBr",
+  "_key": "!items!DPKAM6TFWmyvXbBr"
+}

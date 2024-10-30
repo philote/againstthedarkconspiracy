@@ -1,0 +1,127 @@
+{
+  "name": "Q2: Far Away",
+  "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+  "description": "Where is the SPECIFIC focus of the Operation?\nFar Away",
+  "results": [
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "kK9DKpv8WFAEXTzJ",
+      "text": "<b>Far Away:</b> Forest/Jungle",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!F0RXENl931uI1LuJ.kK9DKpv8WFAEXTzJ"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "AN5e020bHdaEItYA",
+      "text": "<b>Far Away:</b> Mountains",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!F0RXENl931uI1LuJ.AN5e020bHdaEItYA"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "t3li1D95UjVFMV5F",
+      "text": "<b>Far Away:</b> Plains/Steppe",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!F0RXENl931uI1LuJ.t3li1D95UjVFMV5F"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "vMeN8URv5ei78yls",
+      "text": "<b>Far Away:</b> Remote/an Island",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!F0RXENl931uI1LuJ.vMeN8URv5ei78yls"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "ThdIVrVzG6F27xmw",
+      "text": "<b>Far Away:</b> Swamp/Marsh",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!F0RXENl931uI1LuJ.ThdIVrVzG6F27xmw"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "0jS7pb5IfDTFqOng",
+      "text": "<b>Far Away:</b> Tundra/Snowbound",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!F0RXENl931uI1LuJ.0jS7pb5IfDTFqOng"
+    }
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": false,
+  "flags": {
+    "core": {
+      "sourceId": "RollTable.wdJAiscH44V0M0yI"
+    }
+  },
+  "_stats": {
+    "systemId": "custom-system-builder",
+    "systemVersion": "2.3.0",
+    "coreVersion": "10.291",
+    "createdTime": 1686356240631,
+    "modifiedTime": 1691090669518,
+    "lastModifiedBy": "6UEkwTAOmwQ2wA1W"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "6UEkwTAOmwQ2wA1W": 3
+  },
+  "_id": "F0RXENl931uI1LuJ",
+  "_key": "!tables!F0RXENl931uI1LuJ"
+}

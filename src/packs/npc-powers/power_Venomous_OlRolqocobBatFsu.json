@@ -1,0 +1,32 @@
+{
+  "name": "Venomous",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This adds an extra Risk Die to Teeth & Claws but with the potential to have effects similar to Spit Venom.\nWards, Bindings & Spells\nIt is for Control to say how this works, but threats could use it to imbue an object, location or threshold with another Power which is activated when an Operator triggers it. This if the default Power of an Occultist.",
+    "detail": "",
+    "addRiskDie": true
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.45hwJActv12T7nbM"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003605617,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "OlRolqocobBatFsu",
+  "_key": "!items!OlRolqocobBatFsu"
+}

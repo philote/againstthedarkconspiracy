@@ -4,7 +4,8 @@
       <div class="expertise-grid-header">
         <h3>{{localize "ATDC.actor.expertise.professionalHistory.label"}}</h3>
         <div><!-- empty --></div>
-        <h3>{{localize "ATDC.actor.expertise.label"}} <a class="clickable" data-roll-type="info-expertise" title="info"><i class="fa-regular fa-xs fa-circle-info"></i></a></h3>
+        <h3>{{localize "ATDC.actor.expertise.label"}} </h3>
+        {{!-- <a class="clickable" data-roll-type="info-expertise" title="info"><i class="fa-regular fa-xs fa-circle-info"></i></a> --}}
       </div>
 
       <div class="expertise-grid box-body">
@@ -13,11 +14,7 @@
         <input class="underline-input" type="text" id="init-expertise" value="{{localize "ATDC.actor.expertise.initial.value"}}" disabled>
         <!-- workedFor -->
         <select name="system.expertise.workedFor.index" data-type="String">
-          {{#select system.expertise.workedFor.index}}
-            {{#each system.expertise.workedFor.options as |option key|}}
-              <option value="{{key}}">{{localize option.question}}</option>
-            {{/each}}
-          {{/select}}
+          {{selectOptions system.expertise.workedFor.tempQuestions selected=system.expertise.workedFor.index labelAttr='label' localize=true}}
         </select>
         <div><i class="fa-solid fa-caret-right"></i></div>
         <input class="underline-input" type="text" value="{{system.expertise.workedFor.answer}}" disabled>
@@ -25,11 +22,7 @@
         <div class="specialism flexrow">
           <input type="checkbox" name="system.expertise.specialism.used" {{checked system.expertise.specialism.used}}>
           <select name="system.expertise.specialism.index">
-            {{#select system.expertise.specialism.index}}
-              {{#each system.expertise.specialism.options as |option key|}}
-                <option value="{{key}}">{{localize option.question}}</option>
-              {{/each}}
-            {{/select}}
+            {{selectOptions system.expertise.specialism.tempQuestions selected=system.expertise.specialism.index labelAttr='label' localize=true}}
           </select>
         </div>
         <div><i class="fa-solid fa-caret-right"></i></div>
@@ -48,11 +41,7 @@
         
         <!-- final expertise -->
         <select name="system.expertise.final.index">
-          {{#select system.expertise.final.index}}
-            {{#each system.expertise.final.options as |option key|}}
-              <option value="{{key}}">{{localize option}}</option>
-            {{/each}}
-          {{/select}}
+          {{selectOptions system.expertise.final.options selected=system.expertise.final.index labelAttr='label' localize=true}}
         </select>
       </div>
     </div>

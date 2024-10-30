@@ -1,0 +1,32 @@
+{
+  "name": "Grenades, Stun x 2",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/stun-grenade.svg",
+  "system": {
+    "description": "",
+    "tags": "Close, Area, Heavy, Stun",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.Ra5T9coNfY7cFpwA"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690161013501,
+    "modifiedTime": 1690172419367,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "JHAXrsZQwj2OPUYm",
+  "_key": "!items!JHAXrsZQwj2OPUYm"
+}

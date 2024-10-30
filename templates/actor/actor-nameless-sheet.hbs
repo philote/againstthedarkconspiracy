@@ -38,11 +38,7 @@
           <div class="type flexrow">
             <h4>{{localize "ATDC.npc.type.label"}}</h4>
             <select class="npc-type-change" name="system.type.index" data-roll-type="toggle-stress" data-npc-type="nameless" data-type="String">
-              {{#select system.type.index}}
-                {{#each system.type.options as |option key|}}
-                  <option value="{{key}}">{{localize option}}</option>
-                {{/each}}
-              {{/select}}
+              {{selectOptions system.type.options selected=system.type.index labelAttr='label' blank='-' sort=true localize=true}}
             </select>
           </div>
         </div>

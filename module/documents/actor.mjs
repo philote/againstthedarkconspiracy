@@ -44,8 +44,14 @@ export class AtDCActor extends Actor {
     // update Stress and Intel so they can be used as token resources
     systemData.stress.value = systemData.stress.states.filter(Boolean).length;
     systemData.intel.value = systemData.intel.states.filter(Boolean).length;
+
+    systemData.expertise.workedFor.tempQuestions = systemData.expertise.workedFor.options.map((x) => x.question);
     systemData.expertise.workedFor.answer = game.i18n.localize(systemData.expertise.workedFor.options[systemData.expertise.workedFor.index].answer);
+    systemData.expertise.specialism.tempQuestions = systemData.expertise.specialism.options.map((x) => x.question);
     systemData.expertise.specialism.answer = game.i18n.localize(systemData.expertise.specialism.options[systemData.expertise.specialism.index].answer);
+    
+    systemData.whyConfrontConspiracy.tempAnswers = systemData.whyConfrontConspiracy.options.map((x) => x.answer);
+    
     systemData.whyConfrontConspiracy.answer = game.i18n.localize(systemData.whyConfrontConspiracy.options[systemData.whyConfrontConspiracy.index].answerMore);
     systemData.whyConfrontConspiracy.question = game.i18n.localize(systemData.whyConfrontConspiracy.options[systemData.whyConfrontConspiracy.index].question);
 
@@ -89,6 +95,7 @@ export class AtDCActor extends Actor {
       systemData.conspiracyType = this._getConspiracyName(conspiracyTypeKey);
 
       systemData.type.options = this._getTypeOptionsFor(conspiracyTypeKey);
+      if (systemData.type.index == 0) {systemData.type.index = '0'};
       systemData.subType.options = this._getSubtypeOptionsFor(conspiracyTypeKey, systemData.type.index);
     }
     
@@ -117,6 +124,9 @@ export class AtDCActor extends Actor {
           game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.fae.type.full.label')
         ];
       }
+      default: {
+        console.error(`_getTypeOptionsFor failed`);
+      }
     }
   }
 
@@ -139,6 +149,9 @@ export class AtDCActor extends Actor {
               game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.vampire.type.full.subtypes.ancient.label')
             ];
           }
+          default: {
+            console.error(`_getSubtypeOptionsFor:vampires failed`);
+          }
         }
       }
       case 'demons': {
@@ -156,6 +169,9 @@ export class AtDCActor extends Actor {
               game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.demonic.type.full.subtypes.nobility.label'),
               game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.demonic.type.full.subtypes.favored.label')
             ];
+          }
+          default: {
+            console.error(`_getSubtypeOptionsFor:demons failed`);
           }
         }
       }
@@ -175,7 +191,13 @@ export class AtDCActor extends Actor {
               game.i18n.localize('ATDC.npc.supernatural.conspiracy_types.fae.type.full.subtypes.crown.label'),
             ];
           }
+          default: {
+            console.error(`_getSubtypeOptionsFor:fae failed`);
+          }
         }
+      }
+      default: {
+        console.error(`_getSubtypeOptionsFor failed`);
       }
     }
   }

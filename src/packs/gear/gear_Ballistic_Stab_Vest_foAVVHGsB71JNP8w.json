@@ -1,0 +1,32 @@
+{
+  "name": "Ballistic/Stab Vest",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/ballistic-stab-vest.svg",
+  "system": {
+    "description": "",
+    "tags": "Absorb-1, Hidden",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.5aABqDm2a4GE4tOV"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690159921469,
+    "modifiedTime": 1690172380500,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "foAVVHGsB71JNP8w",
+  "_key": "!items!foAVVHGsB71JNP8w"
+}

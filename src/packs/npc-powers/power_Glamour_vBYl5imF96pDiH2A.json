@@ -1,0 +1,32 @@
+{
+  "name": "Glamour",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This is the power of appearing as someone, or something, else. Threats may use this to conceal their true form, in which case it’s often paired with Shocking true form. It is a perfect cover; they are that person, until they choose to reveal themselves or, at Control's discretion, they become very angry or distracted. Usually, they must reveal their true form to use their other Powers openly, though Control will be the final judge of that.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.droRSoa0wlqU8d4I"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003565450,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "vBYl5imF96pDiH2A",
+  "_key": "!items!vBYl5imF96pDiH2A"
+}

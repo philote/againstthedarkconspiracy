@@ -1,0 +1,32 @@
+{
+  "name": "Track",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "... by scent, psychic connection, blood, or by communing with nature spirits along the route an Operator has taken, or perhaps anywhere in a location the threat knows well. Control will say which depending on the nature of the Conspiracy. This is likely to make it more difficult to flee for your life or maintain your cover, so Expertise would be cancelled.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.vYNEAHgKfnbg2IMz"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003604467,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "epOhwZ5emWld23OE",
+  "_key": "!items!epOhwZ5emWld23OE"
+}

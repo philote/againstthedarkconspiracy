@@ -1,0 +1,32 @@
+{
+  "name": "See in the dark",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This puts Operators at a disadvantage even if they have a flashlight, though night vision googles, or floodlights will usually put the Operator back on an equal footing.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.PDB8Kqg9o3iKxmgg"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003584860,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "ZHmOWuQFMqjm0UU6",
+  "_key": "!items!ZHmOWuQFMqjm0UU6"
+}

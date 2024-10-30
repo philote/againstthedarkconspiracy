@@ -1,0 +1,31 @@
+{
+  "name": "Salt (or some other mineral)",
+  "type": "deterrent",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/deterrent.svg",
+  "system": {
+    "description": "This can be treated like Fresh... . Control will say whether the mineral has to be collected in a special way or subjected to some ritual before use.",
+    "detail": ""
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.oy2Rt08VmORSEmCP"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1691004565659,
+    "modifiedTime": 1691005467117,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "HTdwkMUcQ2jd36vQ",
+  "_key": "!items!HTdwkMUcQ2jd36vQ"
+}

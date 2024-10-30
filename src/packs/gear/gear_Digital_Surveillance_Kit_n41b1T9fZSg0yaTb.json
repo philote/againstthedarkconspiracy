@@ -1,0 +1,32 @@
+{
+  "name": "Digital Surveillance Kit",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/digital-surveillance-kit.svg",
+  "system": {
+    "description": "",
+    "tags": "Surveillance, Tech",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.IVAMNcwu0d1OVB7S"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690160586476,
+    "modifiedTime": 1690172397106,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "n41b1T9fZSg0yaTb",
+  "_key": "!items!n41b1T9fZSg0yaTb"
+}

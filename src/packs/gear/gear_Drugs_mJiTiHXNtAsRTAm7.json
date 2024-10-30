@@ -1,0 +1,32 @@
+{
+  "name": "Drugs",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/drugs.svg",
+  "system": {
+    "description": "",
+    "tags": "Seek relief",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.m0rgJQ9KYyW7Up9E"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690160799463,
+    "modifiedTime": 1690172401870,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "mJiTiHXNtAsRTAm7",
+  "_key": "!items!mJiTiHXNtAsRTAm7"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Flashlight/Head Torch",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/flashlight.svg",
+  "system": {
+    "description": "",
+    "tags": "Light-ish",
+    "load": 0
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.sWgw7zoxgtVGPWJr"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690160937833,
+    "modifiedTime": 1690172408586,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "YY2QHM0fcRFEzvFE",
+  "_key": "!items!YY2QHM0fcRFEzvFE"
+}

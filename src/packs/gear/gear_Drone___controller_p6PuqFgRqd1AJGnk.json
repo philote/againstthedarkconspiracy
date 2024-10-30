@@ -1,0 +1,32 @@
+{
+  "name": "Drone & controller",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/drone-controller.svg",
+  "system": {
+    "description": "",
+    "tags": "Drive, Tech",
+    "load": 2
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.U763EJS2vsQhXlvk"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690160726787,
+    "modifiedTime": 1690172400036,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "p6PuqFgRqd1AJGnk",
+  "_key": "!items!p6PuqFgRqd1AJGnk"
+}

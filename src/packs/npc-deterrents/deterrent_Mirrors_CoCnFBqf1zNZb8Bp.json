@@ -1,0 +1,31 @@
+{
+  "name": "Mirrors",
+  "type": "deterrent",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/deterrent.svg",
+  "system": {
+    "description": "Whether these reveal the true nature of a Supernatural, which even they want to avoid, or are a literal mirror into any twisted and perverted fragment of a soul they still have, is for Control to say. Perhaps they have no reflection, so they avoid mirrors by reflex as it’s such a giveaway. The table can agree a rationale if they want to, but it’s the effect that matters.",
+    "detail": ""
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.MGqgmW76T7l5MxNu"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1691004565659,
+    "modifiedTime": 1691005463425,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "CoCnFBqf1zNZb8Bp",
+  "_key": "!items!CoCnFBqf1zNZb8Bp"
+}

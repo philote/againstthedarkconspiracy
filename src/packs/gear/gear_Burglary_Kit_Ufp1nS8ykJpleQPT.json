@@ -1,0 +1,32 @@
+{
+  "name": "Burglary Kit",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/burglary-kit.svg",
+  "system": {
+    "description": "",
+    "tags": "Intrusion, Tech",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.ihppn839LSIzh0An"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690160069154,
+    "modifiedTime": 1690172384242,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "Ufp1nS8ykJpleQPT",
+  "_key": "!items!Ufp1nS8ykJpleQPT"
+}

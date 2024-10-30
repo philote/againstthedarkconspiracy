@@ -1,0 +1,32 @@
+{
+  "name": "Knives, several",
+  "type": "gear",
+  "img": "systems/againstthedarkconspiracy/assets/items/gear/knives-several.svg",
+  "system": {
+    "description": "",
+    "tags": "Intimate, Close(thrown)",
+    "load": 1
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "0aHnpUj7lqUkkfFz": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Item.VciCkej7HbJL9RKp"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.291",
+    "createdTime": 1690161395660,
+    "modifiedTime": 1690172424195,
+    "lastModifiedBy": "0aHnpUj7lqUkkfFz"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "OsfpEliJyTDQxXgE",
+  "_key": "!items!OsfpEliJyTDQxXgE"
+}

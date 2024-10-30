@@ -1,0 +1,32 @@
+{
+  "name": "Spit venom",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This is one of the (mercifully) few ways a threat can attack from beyond Intimate range unless they make use of mundane weapons. Control will say if it does anything other than sting like hell and require a successful roll to do something else to resume normal actions, or cause temporary blindness, creeping paralysis or some other narrative effect.",
+    "detail": "",
+    "addRiskDie": true
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.JB1MfVshbZddbFkJ"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003592531,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "VEh095uAtJI4VqWr",
+  "_key": "!items!VEh095uAtJI4VqWr"
+}

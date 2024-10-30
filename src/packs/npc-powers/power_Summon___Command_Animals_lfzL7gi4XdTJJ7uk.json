@@ -1,0 +1,32 @@
+{
+  "name": "Summon & Command Animals",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "... such as a pack of hounds, wolves, or a murder of ravens. The summoned animals can be treated like a group of nameless mortals though they are likely to outnumber any single Operator. The sudden growth of a thorny hedge or the animation of vines can be treated in the same way, unless Control says they just slow Operators down and distract them until a machete or Molotov is used.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.XgFK0p6QDVVN5Zi0"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003594460,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "lfzL7gi4XdTJJ7uk",
+  "_key": "!items!lfzL7gi4XdTJJ7uk"
+}

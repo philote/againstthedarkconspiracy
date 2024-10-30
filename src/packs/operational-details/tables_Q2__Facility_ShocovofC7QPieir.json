@@ -1,0 +1,127 @@
+{
+  "name": "Q2: Facility",
+  "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+  "description": "Where is the SPECIFIC focus of the Operation?\nFacility",
+  "results": [
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "kK9DKpv8WFAEXTzJ",
+      "text": "<b>Facility:</b> Detention/Prison",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ShocovofC7QPieir.kK9DKpv8WFAEXTzJ"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "AN5e020bHdaEItYA",
+      "text": "<b>Facility:</b> Espionage/Terrorist",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ShocovofC7QPieir.AN5e020bHdaEItYA"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "t3li1D95UjVFMV5F",
+      "text": "<b>Facility:</b> Care/Hospital",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ShocovofC7QPieir.t3li1D95UjVFMV5F"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "vMeN8URv5ei78yls",
+      "text": "<b>Facility:</b> Military",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ShocovofC7QPieir.vMeN8URv5ei78yls"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "ThdIVrVzG6F27xmw",
+      "text": "<b>Facility:</b> Organized Crime",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ShocovofC7QPieir.ThdIVrVzG6F27xmw"
+    },
+    {
+      "type": 0,
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "documentCollection": "",
+      "_id": "0jS7pb5IfDTFqOng",
+      "text": "<b>Facility:</b> University",
+      "img": "systems/againstthedarkconspiracy/assets/roll_tables/operational-answers.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ShocovofC7QPieir.0jS7pb5IfDTFqOng"
+    }
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": false,
+  "flags": {
+    "core": {
+      "sourceId": "RollTable.zFrx5wYnUdyUDaH0"
+    }
+  },
+  "_stats": {
+    "systemId": "custom-system-builder",
+    "systemVersion": "2.3.0",
+    "coreVersion": "10.291",
+    "createdTime": 1686356240631,
+    "modifiedTime": 1691090668342,
+    "lastModifiedBy": "6UEkwTAOmwQ2wA1W"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "6UEkwTAOmwQ2wA1W": 3
+  },
+  "_id": "ShocovofC7QPieir",
+  "_key": "!tables!ShocovofC7QPieir"
+}

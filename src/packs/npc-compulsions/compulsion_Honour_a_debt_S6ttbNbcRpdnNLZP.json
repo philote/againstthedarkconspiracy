@@ -1,0 +1,31 @@
+{
+  "name": "Honour a debt",
+  "type": "compulsion",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/compulsion.svg",
+  "system": {
+    "description": "Control should discourage haggling over the wording or allow the scope to be too large, so every fae never owes every mortal a debt. Debts should be limited to an individual or group of Supernaturals. What matters is that there is a debt so Operators should seek opportunities to squeeze one out of a cornered threat in return for mercy or during an Interrogation scene, or define success when they take it out to involve the owing of a debt. Given sufficient fictional positioning Control might allow an INTEL spend to define some ancient debt the Supernatural thinks mortals have forgotten about. However, such a potent Compulsion might require a series of Operations to uncover, much like a True name Deterrent.If a threat is fascinated by ‘beauty’ or ‘wit’ or some other mortal characteristic, then Control will use the previous fiction or Operator background or Expertise to decide who attracts their attention. Perhaps the Supernatural is content to banter or argue with that Operator while trying to kill the others. Alternatively, perhaps it hates the idea of beautiful or witty mortals and aims to kill them first. Control will agree with the players what is most interesting and dramatic.",
+    "detail": ""
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.oZeAp7LTvxEIkbBc"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1691004362930,
+    "modifiedTime": 1691005437434,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "S6ttbNbcRpdnNLZP",
+  "_key": "!items!S6ttbNbcRpdnNLZP"
+}

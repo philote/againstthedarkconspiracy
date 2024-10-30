@@ -992,7 +992,7 @@ export function switchExpertise(toggle, actor) {
 }
 
 export function increaseStressByOne(actor) {
-    let newStress = duplicate(actor.system.stress.value);
+    let newStress = foundry.utils.duplicate(actor.system.stress.value);
 
     if (newStress < 6) {
       let currentArray = actor.system.stress.states;
@@ -1010,7 +1010,7 @@ export function increaseStressByOne(actor) {
 }
 
 export function reduceStress(amount = 1, actor) {
-    let newStress = duplicate(actor.system.stress.value);
+    let newStress = foundry.utils.duplicate(actor.system.stress.value);
 
     if (newStress > 0) {
       let currentArray = actor.system.stress.states;
@@ -1030,7 +1030,7 @@ export function reduceStress(amount = 1, actor) {
 }
 
 export function increaseIntelByOne(actor) {
-    let newIntel = duplicate(actor.system.intel.value);
+    let newIntel = foundry.utils.duplicate(actor.system.intel.value);
 
     if (newIntel < 6) {
       let currentArray = actor.system.intel.states;

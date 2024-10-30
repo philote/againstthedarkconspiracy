@@ -1,0 +1,31 @@
+{
+  "name": "Attracted to...",
+  "type": "compulsion",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/compulsion.svg",
+  "system": {
+    "description": "... noise, blood, mortal fear or pain etc. Control will say if blood needs to be human or whether animal blood can substitute, and if this alters a threat’s behavior. An attraction to mortal fear could be paired with a power likely to induce fear, and pain may be emotional or physical or both. Zombies are famous for being Attracted to noise, and the louder it is the faster they may move.",
+    "detail": ""
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.Zl7vq4CaD8YUbLqj"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1691004362930,
+    "modifiedTime": 1691005432191,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "eIVooap4lwgXobEm",
+  "_key": "!items!eIVooap4lwgXobEm"
+}

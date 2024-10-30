@@ -1,0 +1,32 @@
+{
+  "name": "Invisible",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This is very similar to Incorporeal but an Operator certainly can’t see them and they can’t attack something they can’t see other though they might attack with an area weapon. It is for Control to say whether IR goggles or other aids could help and if this is a permanent state or not. While it may be more trouble than it’s worth, Control can say that they are invisible only to artificial image capture such as film or digital cameras.",
+    "detail": "",
+    "addRiskDie": false
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.63VuXk7Zs8ss5AHo"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003572974,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "a9ZUmamj7dWdQrsa",
+  "_key": "!items!a9ZUmamj7dWdQrsa"
+}

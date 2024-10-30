@@ -1,0 +1,32 @@
+{
+  "name": "Elemental Blast",
+  "type": "power",
+  "img": "systems/againstthedarkconspiracy/assets/items/npc/power.svg",
+  "system": {
+    "description": "This is the channelling of an element or force against the Operators. Chilling cold or heat could do Operators harm and add a Risk Die. Darkness, Leaves or Light could distract them and cancel Expertise.",
+    "detail": "",
+    "addRiskDie": true
+  },
+  "effects": [],
+  "flags": {
+    "core": {
+      "sourceId": "Item.mOHHvd66MHLIwQKS"
+    }
+  },
+  "_stats": {
+    "systemId": "againstthedarkconspiracy",
+    "systemVersion": "0.0.1",
+    "coreVersion": "10.303",
+    "createdTime": 1690994483905,
+    "modifiedTime": 1691003561173,
+    "lastModifiedBy": "mT6bctSlNz1r9Qfc"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "mT6bctSlNz1r9Qfc": 3
+  },
+  "_id": "32Q6gJihowgdGU9S",
+  "_key": "!items!32Q6gJihowgdGU9S"
+}
