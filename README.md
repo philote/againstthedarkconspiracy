@@ -2,15 +2,36 @@
 
 ![A title image for the Against the Dark Conspiracy game system](./assets/cover.webp)
 
-![Latest Release Download Count](https://img.shields.io/github/downloads/philote/againstthedarkconspiracy/latest/system.zip)
-
-![Supported Foundry Versions](https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https://github.com/philote/againstthedarkconspiracy/releases/latest/download/system.json)
-
-![Repository License](https://img.shields.io/github/license/philote/againstthedarkconspiracy)
+<p align="center">
+    <img alt="Foundry Version 12 support" src="https://img.shields.io/badge/Foundry-v12-informational">
+    <img alt="Latest Release Download Count" src="https://img.shields.io/github/downloads/philote/againstthedarkconspiracy/latest/total"> 
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/philote/againstthedarkconspiracy"> 
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/philote/againstthedarkconspiracy">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/philote/againstthedarkconspiracy">
+</p>
+<p align="center">
+    <img alt="GitHub" src="https://img.shields.io/github/license/philote/againstthedarkconspiracy"> 
+    <a href="https://github.com/philote/againstthedarkconspiracy/issues">
+        <img alt="GitHub issues" src="https://img.shields.io/github/issues/philote/againstthedarkconspiracy">
+    </a> 
+    <a href="https://github.com/philote/againstthedarkconspiracy/network">
+        <img alt="GitHub forks" src="https://img.shields.io/github/forks/philote/againstthedarkconspiracy">
+    </a> 
+    <a href="https://github.com/philote/againstthedarkconspiracy/stargazers">
+        <img alt="GitHub stars" src="https://img.shields.io/github/stars/philote/againstthedarkconspiracy">
+    </a>
+</p>
+<p align="center">
+   	<a href='https://ko-fi.com/G2G3I91JQ' target='_blank'>
+					<img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+				</a>
+</p>
 
 An unofficial, community-supported system for playing the [Against the Dark Conspiracy](https://gallusgames.itch.io/against-the-dark-conspiracy) TTRPG (Created by [Alun Rees](https://twitter.com/AlunRees14), Will Hobson, Paul Rivers, and Lowell Francis) on the Foundry VTT platform.
 
 - The Against the Dark Conspiracy Game: https://gallusgames.itch.io/against-the-dark-conspiracy
+
+If you’ve enjoyed my work and find value in what I create, please consider supporting me with a small donation on [Ko-fi](https://ko-fi.com/G2G3I91JQ). I truly love what I do, and your support helps me dedicate time and resources to ongoing development. Every contribution, no matter the size, makes a difference and allows me to continue doing what I’m passionate about. Thank you for considering—it means the world to me.
 
 ![A screenshot of the Against the Dark Conspiracy character sheet and chat output in Foundry VTT](./assets/screenshot.webp)
 
