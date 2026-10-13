@@ -8,7 +8,8 @@
     "watch": "gulp",
     "gulp": "gulp",
     "pushLDBtoJSON": "node ./tools/pushLDBtoJSON.mjs",
-    "pullJSONtoLDB": "node ./tools/pullJSONtoLDB.mjs"
+    "pullJSONtoLDB": "node ./tools/pullJSONtoLDB.mjs",
+    "createSymlinks": "node ./tools/create-symlinks.mjs"
   },
   "browserslist": [
     "last 3 versions"
@@ -17,11 +18,12 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@foundryvtt/foundryvtt-cli": "^1.0.2",
+    "@foundryvtt/foundryvtt-cli": "^3.0.5",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.5",
+    "js-yaml": "^5.4.3",
     "sass": "^1.53.0"
   }
 }
