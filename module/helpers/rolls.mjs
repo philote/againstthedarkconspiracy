@@ -1110,11 +1110,15 @@ export async function createHeatChatMessage() {
 
   ChatMessage.create({
       content: rendered_html,
-      flags: { againstthedarkconspiracy: { data: {
-        css: "chat-message-heat",
-        heatUpdate: true,
-        heat: newHeat
-      } } }
+      flags: { 
+        againstthedarkconspiracy: { 
+          data: {
+            css: "chat-message-heat",
+            heatUpdate: true,
+            heat: newHeat
+          }
+        }
+      }
   });                 
 }
 
