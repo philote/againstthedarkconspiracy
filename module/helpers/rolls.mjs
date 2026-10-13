@@ -61,7 +61,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
               const diceSoNiceActions = [];
 
               if (document.getElementById("baseDie").checked) {
-                let baseDieRoll = await new Roll("1d6").evaluate({ async: true });
+                let baseDieRoll = await new Roll("1d6").evaluate();
                 baseDieRoll.dice[0].options.appearance = baseDSNCustomColorSet;
                 diceSoNiceActions.push(baseDieRoll);
                 dice.push({
@@ -73,7 +73,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
               }
 
               if (document.getElementById("expertiseDie").checked) {
-                let expertiseDieRoll = await new Roll("1d6").evaluate({ async: true });
+                let expertiseDieRoll = await new Roll("1d6").evaluate();
                 expertiseDieRoll.dice[0].options.appearance = baseDSNCustomColorSet;
                 diceSoNiceActions.push(expertiseDieRoll);
                 dice.push({
@@ -85,7 +85,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
               }
 
               if (document.getElementById("stressDie").checked) {
-                let stressDieRoll = await new Roll("1d6[red]").evaluate({ async: true });
+                let stressDieRoll = await new Roll("1d6[red]").evaluate();
                 stressDieRoll.dice[0].options.appearance = stressDSNCustomColorSet;
                 diceSoNiceActions.push(stressDieRoll);
                 dice.push({
@@ -98,7 +98,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
 
               if (document.getElementById("bonusDie") != null) {
                 if (document.getElementById("bonusDie").checked) {
-                  let bonusDieRoll = await new Roll("1d6[blue]").evaluate({async: true,});
+                  let bonusDieRoll = await new Roll("1d6[blue]").evaluate();
                   bonusDieRoll.dice[0].options.appearance = bonusDSNCustomColorSet;
                   diceSoNiceActions.push(bonusDieRoll);
                   dice.push({
@@ -115,9 +115,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
 
               if (document.getElementById("threatHarmDie") != null) {
                 if (document.getElementById("threatHarmDie").checked) {
-                  let threatHarmDieRoll = await new Roll("1d6[green]").evaluate({
-                    async: true,
-                  });
+                  let threatHarmDieRoll = await new Roll("1d6[green]").evaluate();
                   threatHarmDieRoll.dice[0].options.appearance = threatDSNCustomColorSet;
                   diceSoNiceActions.push(threatHarmDieRoll);
                   threatDice.push({
@@ -133,9 +131,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 if (
                   document.getElementById("threatSupernaturalDie").checked
                 ) {
-                  let threatSupernaturalDieRoll = await new Roll("1d6[green]").evaluate({
-                    async: true,
-                  });
+                  let threatSupernaturalDieRoll = await new Roll("1d6[green]").evaluate();
                   threatSupernaturalDieRoll.dice[0].options.appearance = threatDSNCustomColorSet;
                   diceSoNiceActions.push(threatSupernaturalDieRoll);
                   threatDice.push({
@@ -149,9 +145,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
 
               if (document.getElementById("outnumberedDie") != null) {
                 if (document.getElementById("outnumberedDie").checked) {
-                  let outnumberedDieRoll = await new Roll("1d6[green]").evaluate({
-                    async: true,
-                  });
+                  let outnumberedDieRoll = await new Roll("1d6[green]").evaluate();
                   outnumberedDieRoll.dice[0].options.appearance = threatDSNCustomColorSet;
                   diceSoNiceActions.push(outnumberedDieRoll);
                   threatDice.push({
@@ -165,9 +159,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
 
               if (document.getElementById("weaponDie") != null) {
                 if (document.getElementById("weaponDie").checked) {
-                  let weaponDieRoll = await new Roll("1d6[green]").evaluate({
-                    async: true,
-                  });
+                  let weaponDieRoll = await new Roll("1d6[green]").evaluate();
                   weaponDieRoll.dice[0].options.appearance = threatDSNCustomColorSet;
                   diceSoNiceActions.push(weaponDieRoll);
                   threatDice.push({
@@ -183,9 +175,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 if (
                   document.getElementById("SupernaturalPowersDie1").checked
                 ) {
-                  let supernaturalPowersDie1Roll = await new Roll("1d6[green]").evaluate({
-                    async: true,
-                  });
+                  let supernaturalPowersDie1Roll = await new Roll("1d6[green]").evaluate();
                   supernaturalPowersDie1Roll.dice[0].options.appearance = threatDSNCustomColorSet;
                   diceSoNiceActions.push(supernaturalPowersDie1Roll);
                   threatDice.push({
@@ -201,9 +191,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 if (
                   document.getElementById("SupernaturalPowersDie2").checked
                 ) {
-                  let supernaturalPowersDie2Roll = await new Roll("1d6[green]").evaluate({
-                    async: true,
-                  });
+                  let supernaturalPowersDie2Roll = await new Roll("1d6[green]").evaluate();
                   supernaturalPowersDie2Roll.dice[0].options.appearance = threatDSNCustomColorSet;
                   diceSoNiceActions.push(supernaturalPowersDie2Roll);
                   threatDice.push({
@@ -219,9 +207,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 if (
                   document.getElementById("SupernaturalPowersDie3").checked
                 ) {
-                  let supernaturalPowersDie3Roll = await new Roll("1d6[green]").evaluate({
-                    async: true,
-                  });
+                  let supernaturalPowersDie3Roll = await new Roll("1d6[green]").evaluate();
                   supernaturalPowersDie3Roll.dice[0].options.appearance = threatDSNCustomColorSet;
                   diceSoNiceActions.push(supernaturalPowersDie3Roll);
                   threatDice.push({
@@ -237,9 +223,7 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 if (
                   document.getElementById("SupernaturalPowersDie4").checked
                 ) {
-                  let supernaturalPowersDie4Roll = await new Roll("1d6[green]").evaluate({
-                    async: true,
-                  });
+                  let supernaturalPowersDie4Roll = await new Roll("1d6[green]").evaluate();
                   supernaturalPowersDie4Roll.dice[0].options.appearance = threatDSNCustomColorSet;
                   diceSoNiceActions.push(supernaturalPowersDie4Roll);
                   threatDice.push({
@@ -327,16 +311,13 @@ export async function asyncActionDialog({ title = "", content = "", move = 0, ac
                 ownerId: actor.id
               }
               const template = 'systems/againstthedarkconspiracy/templates/msg/action-chat-content.hbs';
-              const rendered_html = await renderTemplate(template, dialogData);
+              const rendered_html = await foundry.applications.handlebars.renderTemplate(template, dialogData);
 
               ChatMessage.create({
-                user: game.user_id,
                 speaker: ChatMessage.getSpeaker({ actor: actor }),
-                rollMode: game.settings.get("core", "rollMode"),
                 content: rendered_html,
-                type: CONST.CHAT_MESSAGE_TYPES.ROLL,
                 rolls: diceSoNiceActions
-              });
+              }, { messageMode: game.settings.get("core", "messageMode") });
 
               // 1,6,4
               // not 2,3,5
@@ -396,7 +377,7 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
               const diceSoNiceActions = [];
 
               if (document.getElementById("baseDie").checked) {
-                let baseDieRoll = await new Roll("1d6").evaluate({ async: true });
+                let baseDieRoll = await new Roll("1d6").evaluate();
                 baseDieRoll.dice[0].options.appearance = baseDSNCustomColorSet;
                 diceSoNiceActions.push(baseDieRoll);
                 dice.push({
@@ -407,7 +388,7 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
               }
 
               if (document.getElementById("stressDie").checked) {
-                let stressDieRoll = await new Roll("1d6").evaluate({ async: true });
+                let stressDieRoll = await new Roll("1d6").evaluate();
                 stressDieRoll.dice[0].options.appearance = stressDSNCustomColorSet;
                 diceSoNiceActions.push(stressDieRoll);
                 dice.push({
@@ -486,16 +467,13 @@ export async function asyncHarmDialog({ title = "", content = "", move = 0, acto
                 ownerId: actor.id
               }
               const template = 'systems/againstthedarkconspiracy/templates/msg/harm-chat-content.hbs';
-              const rendered_html = await renderTemplate(template, dialogData);
+              const rendered_html = await foundry.applications.handlebars.renderTemplate(template, dialogData);
           
               ChatMessage.create({
-                user: game.user_id,
                 speaker: ChatMessage.getSpeaker({ actor: actor }),
-                rollMode: game.settings.get("core", "rollMode"),
                 content: rendered_html,
-                type: CONST.CHAT_MESSAGE_TYPES.ROLL,
                 rolls: diceSoNiceActions
-              });
+              }, { messageMode: game.settings.get("core", "messageMode") });
 
               // ----
               resolve(null);
@@ -525,7 +503,7 @@ export async function asyncStressRoll(actor) {
   const dice = [];
   const diceSoNiceActions = [];
 
-  let stressDieRoll = await new Roll("1d6").evaluate({ async: true });
+  let stressDieRoll = await new Roll("1d6").evaluate();
   stressDieRoll.dice[0].options.appearance = stressDSNCustomColorSet;
   diceSoNiceActions.push(stressDieRoll);
   dice.push({
@@ -575,16 +553,13 @@ export async function asyncStressRoll(actor) {
     stressValMessage: stressValMessage
   }
   const template = 'systems/againstthedarkconspiracy/templates/msg/stress-chat-content.hbs';
-  const rendered_html = await renderTemplate(template, dialogData);
+  const rendered_html = await foundry.applications.handlebars.renderTemplate(template, dialogData);
 
   ChatMessage.create({
-    user: game.user_id,
     speaker: ChatMessage.getSpeaker({ actor: actor }),
-    rollMode: game.settings.get("core", "rollMode"),
     content: rendered_html,
-    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
     rolls: diceSoNiceActions
-  });
+  }, { messageMode: game.settings.get("core", "messageMode") });
 }
 
 export async function asyncSeekReliefRoll(move = 0, actor) {
@@ -599,7 +574,7 @@ export async function asyncSeekReliefRoll(move = 0, actor) {
     font: "Arial",
     system: "standard"
   };
-  const roll = await new Roll("1d6").evaluate({ async: true });
+  const roll = await new Roll("1d6").evaluate();
   roll.dice[0].options.appearance = baseDSNCustomColorSet;
 
   const diceOutput = getDiceForOutput(
@@ -612,18 +587,14 @@ export async function asyncSeekReliefRoll(move = 0, actor) {
     roll.result
   );
 
-  const user = game.user.id;
   const speaker = ChatMessage.getSpeaker({ actor: actor });
-  const rollMode = game.settings.get("core", "rollMode");
+  const messageMode = game.settings.get("core", "messageMode");
 
   ChatMessage.create({
-    user: user,
     speaker: speaker,
-    rollMode: rollMode,
     content: chatContentMessage,
-    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
     rolls: [roll]
-  });
+  }, { messageMode: messageMode });
 
   // Mark anchor
   if (move == 4) {
@@ -711,20 +682,20 @@ export async function dialogContent(moveNumber, actor) {
     }
     switch (moveNumber) {
       case 1: // Investigate
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/investigate.hbs', dialogData);
+        return await foundry.applications.handlebars.renderTemplate('systems/againstthedarkconspiracy/templates/dialog/investigate.hbs', dialogData);
       case 2: // Maintain Your Cover
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/maintain-cover.hbs', dialogData);
+        return await foundry.applications.handlebars.renderTemplate('systems/againstthedarkconspiracy/templates/dialog/maintain-cover.hbs', dialogData);
       case 3: // Flee For Your Life
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/flee.hbs', dialogData);
+        return await foundry.applications.handlebars.renderTemplate('systems/againstthedarkconspiracy/templates/dialog/flee.hbs', dialogData);
       case 5: // Chase Them Down
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/chase.hbs', dialogData);
+        return await foundry.applications.handlebars.renderTemplate('systems/againstthedarkconspiracy/templates/dialog/chase.hbs', dialogData);
       case 6: // Take Them Out
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/take-them-out.hbs', dialogData);
+        return await foundry.applications.handlebars.renderTemplate('systems/againstthedarkconspiracy/templates/dialog/take-them-out.hbs', dialogData);
       case 7: // harm
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/harm.hbs', dialogData);
+        return await foundry.applications.handlebars.renderTemplate('systems/againstthedarkconspiracy/templates/dialog/harm.hbs', dialogData);
       case 4: // Do Something Else
       default:
-        return await renderTemplate('systems/againstthedarkconspiracy/templates/dialog/do-something-else.hbs', dialogData);
+        return await foundry.applications.handlebars.renderTemplate('systems/againstthedarkconspiracy/templates/dialog/do-something-else.hbs', dialogData);
     }
 }
 
@@ -963,7 +934,7 @@ export async function seekReliefChatContent(moveNumber, diceOutput, maxDieNumber
     maxDieMessage: seekReliefMaxDieMessage(moveNumber, maxDieNumber)
   }
   const template = 'systems/againstthedarkconspiracy/templates/msg/seekRelief-chat-content.hbs';
-  return await renderTemplate(template, dialogData);
+  return await foundry.applications.handlebars.renderTemplate(template, dialogData);
 }
 
 export async function harmMoveMessage(actor) {
@@ -972,7 +943,7 @@ export async function harmMoveMessage(actor) {
     ownerId: actor.id
   };
   const template = 'systems/againstthedarkconspiracy/templates/msg/harm-chat-roll-msg.hbs';
-  return await renderTemplate(template, dialogData);
+  return await foundry.applications.handlebars.renderTemplate(template, dialogData);
 }
 
 export async function stressMoveMessage() {
@@ -981,7 +952,7 @@ export async function stressMoveMessage() {
     stressMoveMessage: stressMoveMessage
   }
   const template = 'systems/againstthedarkconspiracy/templates/msg/stress-chat-roll-msg.hbs';
-  return await renderTemplate(template, dialogData);
+  return await foundry.applications.handlebars.renderTemplate(template, dialogData);
 }
 
 // Helper functions for data manipulation
@@ -1106,7 +1077,7 @@ export async function createHeatChatMessage() {
   };
 
   const template = 'systems/againstthedarkconspiracy/templates/msg/heat-increased-chat-msg.hbs';
-  const rendered_html = await renderTemplate(template, dialogData);
+  const rendered_html = await foundry.applications.handlebars.renderTemplate(template, dialogData);
 
   ChatMessage.create({
       content: rendered_html,

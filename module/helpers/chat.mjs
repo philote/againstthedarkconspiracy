@@ -1,8 +1,8 @@
 import { asyncHarmDialog, asyncStressRoll, dialogContent, dialogTitle } from "../helpers/rolls.mjs";
 
-export async function addChatListeners(html) {
-    html.on('click', 'button.roll-stress', rollStress);
-    html.on('click', 'button.roll-harm', rollHarm);
+export function addChatListeners(html) {
+    html.querySelectorAll('button.roll-stress').forEach((button) => button.addEventListener('click', rollStress));
+    html.querySelectorAll('button.roll-harm').forEach((button) => button.addEventListener('click', rollHarm));
 }
 
 function rollStress(event) {

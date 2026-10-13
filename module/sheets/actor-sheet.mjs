@@ -11,7 +11,7 @@ import {
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class AtDCActorSheet extends ActorSheet {
+export class AtDCActorSheet extends foundry.appv1.sheets.ActorSheet {
   constructor(...args) {
     super(...args);
 

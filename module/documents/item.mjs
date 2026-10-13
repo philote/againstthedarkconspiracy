@@ -36,17 +36,16 @@ export class AtDCItem extends Item {
 
     // Initialize chat data.
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
-    const rollMode = game.settings.get('core', 'rollMode');
+    const messageMode = game.settings.get('core', 'messageMode');
     const label = `[${item.type}] ${item.name}`;
 
     // If there's no roll data, send a chat message.
     if (!this.system.formula) {
       ChatMessage.create({
         speaker: speaker,
-        rollMode: rollMode,
         flavor: label,
         content: item.system.description ?? ''
-      });
+      }, { messageMode: messageMode });
     }
     // Otherwise, create a roll and send a chat message from it.
     else {
@@ -56,12 +55,11 @@ export class AtDCItem extends Item {
       // Invoke the roll and submit it to chat.
       const roll = new Roll(rollData.item.formula, rollData);
       // If you need to store the value first, uncomment the next line.
-      // let result = await roll.roll({async: true});
+      // let result = await roll.evaluate();
       roll.toMessage({
         speaker: speaker,
-        rollMode: rollMode,
         flavor: label,
-      });
+      }, { messageMode: messageMode });
       return roll;
     }
   }

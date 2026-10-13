@@ -32,10 +32,8 @@ Hooks.once("init", () => {
   CONFIG.Item.documentClass = AtDCItem;
 
   // Register sheet application classes
-  Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("atdc", AtDCActorSheet, { makeDefault: true });
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("atdc", AtDCItemSheet, { makeDefault: true });
+  foundry.documents.collections.Actors.registerSheet("atdc", AtDCActorSheet, { makeDefault: true });
+  foundry.documents.collections.Items.registerSheet("atdc", AtDCItemSheet, { makeDefault: true });
 
   // Register system settings
   registerSettings();
@@ -76,7 +74,7 @@ Hooks.on("preCreateActor", (actor) => {
   }
 });
 
-Hooks.on('renderChatLog', (app, html, data) => Chat.addChatListeners(html));
+Hooks.on('renderChatMessageHTML', (chatMessage, html) => Chat.addChatListeners(html));
 
 /* -------------------------------------------- */
 /*  Handlebars Helpers                          */
