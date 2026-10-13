@@ -7,6 +7,7 @@ node_modules/
 npm-debug.log
 
 # Foundry
+foundry-config.yaml
 *.lock
 jsconfig.json
 foundry
@@ -32,11 +33,9 @@ packs/*
 *.sass.map
 *.scss.map
 
-# Optional eslint cache
-.eslintcache
-
-# Optional npm cache directory
-.npm
-
 #OS
 .DS_Store
+
+# Other
+CLAUDE.md
+.claude/

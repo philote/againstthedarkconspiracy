@@ -4,9 +4,9 @@
   "description": "The Against the Dark Conspiracy system for FoundryVTT!",
   "version": "#{VERSION}#",
   "compatibility": {
-    "minimum": 12,
-    "verified": 12.331,
-    "maximum": 12
+    "minimum": 14,
+    "verified": 14.369,
+    "maximum": 14
   },
   "authors": [
     {
